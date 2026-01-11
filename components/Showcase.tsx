@@ -8,22 +8,22 @@ import { ExternalLink, Code } from "lucide-react";
 const projects = [
   {
     title: "E-commerce Moderno",
-    description: "Plataforma de comercio electrónico con sistema de pagos integrado y panel de administración completo.",
-    tech: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
+    description: "Desarrollo de tiendas en línea con Shopify y plataformas personalizadas. Soluciones completas para vender en línea con integración de pagos, gestión de inventario y optimización de conversiones.",
+    tech: ["Shopify", "WooCommerce", "Stripe", "PayPal"],
     image: "/project-1.jpg",
     gradient: "from-blue-500 to-purple-600",
   },
   {
     title: "Dashboard Empresarial",
-    description: "Sistema de gestión y análisis de datos con visualizaciones interactivas en tiempo real.",
-    tech: ["React", "Node.js", "MongoDB", "D3.js"],
+    description: "Sistemas de gestión empresarial personalizados. Comandas a cocina, manejo de cuentas, facturación automatizada y control de inventario. Todo en una plataforma integrada.",
+    tech: ["React", "Node.js", "PostgreSQL", "API Integration"],
     image: "/project-2.jpg",
     gradient: "from-green-500 to-teal-600",
   },
   {
-    title: "Plataforma SaaS",
-    description: "Software como servicio con autenticación, suscripciones y múltiples integraciones.",
-    tech: ["Next.js", "Prisma", "AWS", "Redis"],
+    title: "Páginas Web para Negocios",
+    description: "Páginas web profesionales con integración de anuncios de Google, diseño responsive, hosteo optimizado y CRM integrado. Soluciones completas para hacer crecer tu negocio online.",
+    tech: ["Google Ads", "Diseño Web", "Hosting", "CRM"],
     image: "/project-3.jpg",
     gradient: "from-orange-500 to-red-600",
   },
@@ -55,12 +55,12 @@ export default function Showcase() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               whileHover={{ y: -10 }}
               className="group relative"

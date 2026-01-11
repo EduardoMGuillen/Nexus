@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, Sparkles } from "lucide-react";
 import Image from "next/image";
 import ParticleNetwork from "./ParticleNetwork";
 
@@ -117,25 +116,9 @@ export default function Hero() {
             Ver Servicios
           </motion.a>
         </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center text-dark-400"
-          >
-            <span className="text-sm mb-2">Scroll</span>
-            <ArrowDown className="w-6 h-6" />
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );
 }
+
 

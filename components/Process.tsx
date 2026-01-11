@@ -67,9 +67,6 @@ export default function Process() {
         </motion.div>
 
         <div className="relative">
-          {/* Timeline Line */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-500 via-primary-400 to-primary-500 transform -translate-y-1/2" />
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
               <motion.div
@@ -79,9 +76,6 @@ export default function Process() {
                 transition={{ duration: 0.6, delay: index * 0.15 }}
                 className="relative"
               >
-                {/* Timeline Dot */}
-                <div className="hidden lg:block absolute top-1/2 left-1/2 w-4 h-4 bg-primary-500 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-10" />
-
                 <div className="relative h-full p-6 bg-dark-800/50 backdrop-blur-sm rounded-xl border border-dark-700 hover:border-primary-500/50 transition-all duration-300 text-center">
                   {/* Icon */}
                   <motion.div
@@ -114,27 +108,30 @@ export default function Process() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="mt-16 flex justify-center"
         >
-          {[
-            "Comunicación constante",
-            "Entregas puntuales",
-            "Soporte post-lanzamiento",
-          ].map((benefit, index) => (
-            <motion.div
-              key={benefit}
-              initial={{ opacity: 0, x: -20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-              className="flex items-center space-x-3 p-4 bg-dark-800/30 rounded-lg"
-            >
-              <CheckCircle className="w-5 h-5 text-primary-500 flex-shrink-0" />
-              <span className="text-dark-200">{benefit}</span>
-            </motion.div>
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
+            {[
+              "Comunicación constante",
+              "Entregas puntuales",
+              "Soporte post-lanzamiento",
+            ].map((benefit, index) => (
+              <motion.div
+                key={benefit}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                className="flex items-center justify-center space-x-3 p-4 bg-dark-800/30 rounded-lg"
+              >
+                <CheckCircle className="w-5 h-5 text-primary-500 flex-shrink-0" />
+                <span className="text-dark-200">{benefit}</span>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
   );
 }
+
 
