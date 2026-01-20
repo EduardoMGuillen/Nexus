@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink, Code } from "lucide-react";
+import Link from "next/link";
 
 const projects = [
   {
@@ -12,6 +13,7 @@ const projects = [
     tech: ["Shopify", "WooCommerce", "Stripe", "PayPal"],
     image: "/project-1.jpg",
     gradient: "from-blue-500 to-purple-600",
+    link: "/ecommerce",
   },
   {
     title: "Dashboard Empresarial",
@@ -19,6 +21,7 @@ const projects = [
     tech: ["React", "Node.js", "PostgreSQL", "API Integration"],
     image: "/project-2.jpg",
     gradient: "from-green-500 to-teal-600",
+    link: "/dashboard",
   },
   {
     title: "Páginas Web para Negocios",
@@ -26,6 +29,7 @@ const projects = [
     tech: ["Google Ads", "Diseño Web", "Hosting", "CRM"],
     image: "/project-3.jpg",
     gradient: "from-orange-500 to-red-600",
+    link: "/paginas-web",
   },
 ];
 
@@ -82,16 +86,18 @@ export default function Showcase() {
                   </div>
                   
                   {/* Overlay on Hover */}
-                  <div className="absolute inset-0 bg-dark-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
-                    <motion.button
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="px-6 py-3 bg-primary-500 text-white rounded-lg font-semibold flex items-center space-x-2"
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                      <span>Ver Proyecto</span>
-                    </motion.button>
-                  </div>
+                  <Link href={project.link}>
+                    <div className="absolute inset-0 bg-dark-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4 cursor-pointer">
+                      <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="px-6 py-3 bg-primary-500 text-white rounded-lg font-semibold flex items-center space-x-2"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                        <span>Ver Detalles</span>
+                      </motion.div>
+                    </div>
+                  </Link>
                 </div>
 
                 {/* Content */}
