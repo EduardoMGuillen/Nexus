@@ -17,7 +17,7 @@ export default function Footer() {
             <Link href="#inicio" className="flex items-center space-x-3 mb-4">
               <div className="relative w-10 h-10">
                 <Image
-                  src="/nexuscasa.png"
+                  src="/NexusGPTHD.png"
                   alt="Nexus Global Logo"
                   fill
                   className="object-contain"

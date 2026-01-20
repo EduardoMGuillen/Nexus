@@ -49,7 +49,7 @@ export default function Header() {
               className="relative w-12 h-12"
             >
               <Image
-                src="/nexuscasa.png"
+                src="/NexusGPTHD.png"
                 alt="Nexus Global Logo"
                 fill
                 className="object-contain"

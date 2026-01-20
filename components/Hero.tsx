@@ -62,7 +62,7 @@ export default function Hero() {
           >
             <div className="relative w-32 h-32 mx-auto">
               <Image
-                src="/nexuscasa.png"
+                src="/NexusGPTHD.png"
                 alt="Nexus Global Logo"
                 fill
                 className="object-contain drop-shadow-2xl"
