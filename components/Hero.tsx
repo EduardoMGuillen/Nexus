@@ -60,7 +60,7 @@ export default function Hero() {
             transition={{ duration: 3, repeat: Infinity }}
             className="inline-block mb-6"
           >
-            <div className="relative w-32 h-32 mx-auto">
+            <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 mx-auto">
               <Image
                 src="/NexusGPTHD.png"
                 alt="Nexus Global Logo"
