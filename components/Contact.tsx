@@ -162,7 +162,7 @@ export default function Contact() {
               className="p-8 bg-slate-100 dark:bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-dark-700 space-y-6"
             >
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-dark-300 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-dark-300 mb-2">
                   Nombre
                 </label>
                 <input
@@ -172,13 +172,13 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-dark-900 border border-dark-700 rounded-lg text-white placeholder-dark-500 focus:outline-none focus:border-primary-500 transition-colors"
+                  className="w-full px-4 py-3 bg-white dark:bg-dark-900 border border-slate-300 dark:border-dark-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-dark-500 focus:outline-none focus:border-primary-500 transition-colors"
                   placeholder="Tu nombre"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-dark-300 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-dark-300 mb-2">
                   Email
                 </label>
                 <input
@@ -188,13 +188,13 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-dark-900 border border-dark-700 rounded-lg text-white placeholder-dark-500 focus:outline-none focus:border-primary-500 transition-colors"
+                  className="w-full px-4 py-3 bg-white dark:bg-dark-900 border border-slate-300 dark:border-dark-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-dark-500 focus:outline-none focus:border-primary-500 transition-colors"
                   placeholder="tu@email.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-dark-300 mb-2">
+                <label htmlFor="phone" className="block text-sm font-medium text-slate-700 dark:text-dark-300 mb-2">
                   Teléfono (Opcional)
                 </label>
                 <input
@@ -203,13 +203,13 @@ export default function Contact() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-dark-900 border border-dark-700 rounded-lg text-white placeholder-dark-500 focus:outline-none focus:border-primary-500 transition-colors"
+                  className="w-full px-4 py-3 bg-white dark:bg-dark-900 border border-slate-300 dark:border-dark-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-dark-500 focus:outline-none focus:border-primary-500 transition-colors"
                   placeholder="+1 234 567 8900"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-dark-300 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-dark-300 mb-2">
                   Mensaje
                 </label>
                 <textarea
@@ -219,7 +219,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-dark-900 border border-dark-700 rounded-lg text-white placeholder-dark-500 focus:outline-none focus:border-primary-500 transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-white dark:bg-dark-900 border border-slate-300 dark:border-dark-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-dark-500 focus:outline-none focus:border-primary-500 transition-colors resize-none"
                   placeholder="Cuéntanos sobre tu proyecto..."
                 />
               </div>
