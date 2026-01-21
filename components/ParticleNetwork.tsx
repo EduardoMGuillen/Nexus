@@ -12,6 +12,12 @@ export default function ParticleNetwork() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    // En móvil priorizamos rendimiento: desactivamos partículas
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      return;
+    }
+
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -28,9 +34,8 @@ export default function ParticleNetwork() {
       radius: number;
     }> = [];
 
-    const isMobile = window.innerWidth < 768;
-    const particleCount = isMobile ? 25 : 70;
-    const connectionDistance = isMobile ? 100 : 170;
+    const particleCount = 70;
+    const connectionDistance = 170;
 
     let animationFrameId: number;
 
