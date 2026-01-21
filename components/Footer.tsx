@@ -14,7 +14,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
           {/* Brand */}
           <div>
-            <Link href="#inicio" className="flex items-center space-x-3 mb-4">
+            <Link
+              href="#inicio"
+              className="flex flex-col md:flex-row items-center md:space-x-3 space-y-2 md:space-y-0 mb-4"
+            >
               <div className="relative w-10 h-10">
                 <Image
                   src="/NexusGPTHD.png"
