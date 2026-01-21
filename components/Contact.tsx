@@ -46,7 +46,7 @@ export default function Contact() {
     <section
       id="contacto"
       ref={ref}
-      className="py-24 bg-gradient-to-b from-dark-900 to-dark-800 relative overflow-hidden"
+      className="py-24 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-dark-900 dark:to-dark-800 relative overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

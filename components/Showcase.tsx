@@ -41,7 +41,7 @@ export default function Showcase() {
     <section
       id="proyectos"
       ref={ref}
-      className="py-24 bg-gradient-to-b from-dark-800 to-dark-900"
+      className="py-24 bg-gradient-to-b from-white to-slate-100 dark:from-dark-800 dark:to-dark-900"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div

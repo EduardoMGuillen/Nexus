@@ -12,14 +12,6 @@ export default function ParticleNetwork() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Respeta usuarios que prefieren reducir movimiento
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-    if (prefersReducedMotion) {
-      return;
-    }
-
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -37,8 +29,8 @@ export default function ParticleNetwork() {
     }> = [];
 
     const isMobile = window.innerWidth < 768;
-    const particleCount = isMobile ? 25 : 60;
-    const connectionDistance = isMobile ? 100 : 150;
+    const particleCount = isMobile ? 25 : 70;
+    const connectionDistance = isMobile ? 100 : 170;
 
     let animationFrameId: number;
 

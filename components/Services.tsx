@@ -37,7 +37,7 @@ export default function Services() {
     <section
       id="servicios"
       ref={ref}
-      className="py-24 bg-gradient-to-b from-dark-900 to-dark-800"
+      className="py-24 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-dark-900 dark:to-dark-800"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
