@@ -128,8 +128,8 @@ export default function Contact() {
                   <Mail className="w-5 h-5 text-primary-400" />
                 </div>
                 <div>
-                  <div className="text-sm text-dark-400">Email</div>
-                  <div className="text-white">contacto@nexusglobal.com</div>
+                  <div className="text-sm text-slate-600 dark:text-dark-400">Email</div>
+                  <div className="text-slate-900 dark:text-white">contacto@nexusglobal.com</div>
                 </div>
               </motion.a>
 
@@ -144,8 +144,8 @@ export default function Contact() {
                   <Instagram className="w-5 h-5 text-primary-400" />
                 </div>
                 <div>
-                  <div className="text-sm text-dark-400">Instagram</div>
-                  <div className="text-white">@nexus_suministros</div>
+                  <div className="text-sm text-slate-600 dark:text-dark-400">Instagram</div>
+                  <div className="text-slate-900 dark:text-white">@nexus_suministros</div>
                 </div>
               </motion.a>
             </div>

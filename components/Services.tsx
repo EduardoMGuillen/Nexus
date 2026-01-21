@@ -93,7 +93,7 @@ export default function Services() {
                     {service.features.map((feature) => (
                       <li
                         key={feature}
-                        className="flex items-center text-slate-600 dark:text-dark-400 text-sm"
+                        className="flex items-center justify-center md:justify-start text-slate-600 dark:text-dark-400 text-sm"
                       >
                         <span className="w-1.5 h-1.5 bg-primary-500 rounded-full mr-2" />
                         {feature}
