@@ -72,10 +72,10 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            <span className="text-white">Hablemos de tu</span>{" "}
+            <span className="text-slate-900 dark:text-white">Hablemos de tu</span>{" "}
             <span className="gradient-text">Proyecto</span>
           </h2>
-          <p className="text-dark-300 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-dark-300 text-lg max-w-2xl mx-auto">
             Estamos listos para convertir tus ideas en realidad digital
           </p>
         </motion.div>
@@ -89,10 +89,10 @@ export default function Contact() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
                 Información de Contacto
               </h3>
-              <p className="text-dark-300 mb-8">
+              <p className="text-slate-600 dark:text-dark-300 mb-8">
                 Completa el formulario o contáctanos directamente. Estamos aquí para ayudarte.
               </p>
             </div>

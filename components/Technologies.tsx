@@ -36,10 +36,10 @@ export default function Technologies() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            <span className="text-white">Tecnologías</span>{" "}
+            <span className="text-slate-900 dark:text-white">Tecnologías</span>{" "}
             <span className="gradient-text">Modernas</span>
           </h2>
-          <p className="text-dark-300 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-dark-300 text-lg max-w-2xl mx-auto">
             Utilizamos las mejores herramientas para crear soluciones de clase mundial
           </p>
         </motion.div>
@@ -55,10 +55,10 @@ export default function Technologies() {
               className="group relative"
             >
               <div className="p-6 bg-dark-800/50 backdrop-blur-sm rounded-xl border border-dark-700 hover:border-primary-500/50 transition-all duration-300 text-center">
-                <div className="text-2xl font-bold text-white mb-2 group-hover:gradient-text transition-all">
+                <div className="text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:gradient-text transition-all">
                   {tech.name}
                 </div>
-                <div className="text-xs text-dark-400">{tech.category}</div>
+                <div className="text-xs text-slate-600 dark:text-dark-400">{tech.category}</div>
                 
                 {/* Hover Glow */}
                 <div className="absolute inset-0 rounded-xl bg-primary-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
@@ -73,7 +73,7 @@ export default function Technologies() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-12 text-center"
         >
-          <p className="text-dark-400 text-sm">
+          <p className="text-slate-600 dark:text-dark-400 text-sm">
             Y muchas más tecnologías según las necesidades de tu proyecto
           </p>
         </motion.div>

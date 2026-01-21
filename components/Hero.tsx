@@ -78,7 +78,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6"
         >
-          <span className="text-white">Conectamos tu</span>
+          <span className="text-slate-900 dark:text-white">Conectamos tu</span>
           <br />
           <span className="gradient-text">futuro digital</span>
         </motion.h1>
@@ -87,7 +87,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-xl sm:text-2xl text-dark-300 mb-12 max-w-3xl mx-auto"
+          className="text-xl sm:text-2xl text-slate-600 dark:text-dark-300 mb-12 max-w-3xl mx-auto"
         >
           Creamos páginas web, plataformas personalizadas y soluciones digitales
           que transforman ideas en realidad.

@@ -27,7 +27,7 @@ export default function Footer() {
                 Nexus Global
               </span>
             </Link>
-            <p className="text-dark-400 text-sm">
+            <p className="text-slate-300 dark:text-dark-400 text-sm">
               Conectando tu negocio con el futuro digital
             </p>
           </div>
@@ -45,7 +45,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-dark-400 hover:text-primary-400 transition-colors text-sm"
+                    className="text-slate-300 dark:text-dark-400 hover:text-primary-400 transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -84,10 +84,10 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-dark-800 pt-8 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-dark-500 text-sm">
+          <p className="text-slate-400 dark:text-dark-500 text-sm">
             © {currentYear} Nexus Global. Todos los derechos reservados.
           </p>
-          <p className="text-dark-500 text-sm mt-2 sm:mt-0">
+          <p className="text-slate-400 dark:text-dark-500 text-sm mt-2 sm:mt-0">
             Hecho con ❤️ por Nexus Global
           </p>
         </div>

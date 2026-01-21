@@ -58,10 +58,10 @@ export default function Process() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            <span className="text-white">Nuestro</span>{" "}
+            <span className="text-slate-900 dark:text-white">Nuestro</span>{" "}
             <span className="gradient-text">Proceso</span>
           </h2>
-          <p className="text-dark-300 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-dark-300 text-lg max-w-2xl mx-auto">
             Un enfoque estructurado que garantiza resultados excepcionales
           </p>
         </motion.div>
@@ -91,10 +91,10 @@ export default function Process() {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-bold text-white mb-2">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-dark-300 text-sm">
+                  <p className="text-slate-600 dark:text-dark-300 text-sm">
                     {step.description}
                   </p>
                 </div>
@@ -124,7 +124,7 @@ export default function Process() {
                 className="flex items-center justify-center space-x-3 p-4 bg-dark-800/30 rounded-lg"
               >
                 <CheckCircle className="w-5 h-5 text-primary-500 flex-shrink-0" />
-                <span className="text-dark-200">{benefit}</span>
+                <span className="text-slate-700 dark:text-dark-200">{benefit}</span>
               </motion.div>
             ))}
           </div>

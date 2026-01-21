@@ -35,7 +35,7 @@ export default function Header() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-dark-900/80 backdrop-blur-md shadow-lg"
+          ? "bg-white/80 dark:bg-dark-900/80 backdrop-blur-md shadow-lg"
           : "bg-transparent"
       }`}
     >
@@ -67,7 +67,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-dark-200 hover:text-primary-400 transition-colors duration-200 relative group"
+                className="text-slate-900 dark:text-dark-200 hover:text-primary-400 transition-colors duration-200 relative group"
               >
                 {item.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300" />
@@ -79,7 +79,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-dark-800 hover:bg-dark-700 transition-colors"
+              className="p-2 rounded-lg bg-slate-100 dark:bg-dark-800 hover:bg-slate-200 dark:hover:bg-dark-700 transition-colors"
               aria-label="Toggle theme"
             >
               {theme === "dark" ? (
@@ -91,7 +91,7 @@ export default function Header() {
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg bg-dark-800 hover:bg-dark-700 transition-colors"
+              className="md:hidden p-2 rounded-lg bg-slate-100 dark:bg-dark-800 hover:bg-slate-200 dark:hover:bg-dark-700 transition-colors"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -111,7 +111,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-dark-900/95 backdrop-blur-md border-t border-dark-800"
+            className="md:hidden bg-white/95 dark:bg-dark-900/95 backdrop-blur-md border-t border-dark-800"
           >
             <div className="container mx-auto px-4 py-4 space-y-4">
               {navItems.map((item, index) => (
@@ -124,7 +124,7 @@ export default function Header() {
                   <Link
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block text-dark-200 hover:text-primary-400 transition-colors py-2"
+                    className="block text-slate-900 dark:text-dark-200 hover:text-primary-400 transition-colors py-2"
                   >
                     {item.name}
                   </Link>

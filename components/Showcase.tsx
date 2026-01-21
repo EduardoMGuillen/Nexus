@@ -51,10 +51,10 @@ export default function Showcase() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            <span className="text-white">Nuestros</span>{" "}
+            <span className="text-slate-900 dark:text-white">Nuestros</span>{" "}
             <span className="gradient-text">Proyectos</span>
           </h2>
-          <p className="text-dark-300 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-dark-300 text-lg max-w-2xl mx-auto">
             Cada proyecto es una oportunidad de demostrar nuestra pasión por la excelencia
           </p>
         </motion.div>
@@ -102,10 +102,10 @@ export default function Showcase() {
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-white mb-3">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
                     {project.title}
                   </h3>
-                  <p className="text-dark-300 mb-4">
+                  <p className="text-slate-600 dark:text-dark-300 mb-4">
                     {project.description}
                   </p>
 

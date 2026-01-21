@@ -47,10 +47,10 @@ export default function Services() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            <span className="text-white">Nuestros</span>{" "}
+            <span className="text-slate-900 dark:text-white">Nuestros</span>{" "}
             <span className="gradient-text">Servicios</span>
           </h2>
-          <p className="text-dark-300 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-dark-300 text-lg max-w-2xl mx-auto">
             Soluciones digitales completas para llevar tu negocio al siguiente nivel
           </p>
         </motion.div>
@@ -81,10 +81,10 @@ export default function Services() {
 
                 {/* Content */}
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-bold text-white mb-4">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-dark-300 mb-6">
+                  <p className="text-slate-600 dark:text-dark-300 mb-6">
                     {service.description}
                   </p>
 
@@ -93,7 +93,7 @@ export default function Services() {
                     {service.features.map((feature) => (
                       <li
                         key={feature}
-                        className="flex items-center text-dark-400 text-sm"
+                        className="flex items-center text-slate-600 dark:text-dark-400 text-sm"
                       >
                         <span className="w-1.5 h-1.5 bg-primary-500 rounded-full mr-2" />
                         {feature}
