@@ -12,6 +12,14 @@ export default function ParticleNetwork() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    // Respeta usuarios que prefieren reducir movimiento
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReducedMotion) {
+      return;
+    }
+
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -28,8 +36,11 @@ export default function ParticleNetwork() {
       radius: number;
     }> = [];
 
-    const particleCount = 50;
-    const connectionDistance = 150;
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 25 : 60;
+    const connectionDistance = isMobile ? 100 : 150;
+
+    let animationFrameId: number;
 
     // Create particles
     for (let i = 0; i < particleCount; i++) {
@@ -84,13 +95,16 @@ export default function ParticleNetwork() {
         });
       });
 
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     };
 
     animate();
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
     };
   }, []);
 

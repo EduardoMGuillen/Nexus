@@ -1,12 +1,29 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Showcase from "@/components/Showcase";
-import Process from "@/components/Process";
-import Technologies from "@/components/Technologies";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+
+// Lazy-load secciones que están por debajo del primer pantallazo
+const Services = dynamic(() => import("@/components/Services"), {
+  loading: () => null,
+});
+
+const Showcase = dynamic(() => import("@/components/Showcase"), {
+  loading: () => null,
+});
+
+const Process = dynamic(() => import("@/components/Process"), {
+  loading: () => null,
+});
+
+const Technologies = dynamic(() => import("@/components/Technologies"), {
+  loading: () => null,
+});
+
+const Contact = dynamic(() => import("@/components/Contact"), {
+  loading: () => null,
+});
 
 export const metadata: Metadata = {
   title: "Inicio - Nexus Global",
