@@ -83,7 +83,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-dark-800 pt-8 flex flex-col sm:flex-row justify-between items-center">
+        <div className="border-t border-dark-800 pt-8 flex flex-col sm:flex-row justify-center sm:justify-between items-center text-center">
           <p className="text-slate-400 dark:text-dark-500 text-sm">
             © {currentYear} Nexus Global. Todos los derechos reservados.
           </p>
