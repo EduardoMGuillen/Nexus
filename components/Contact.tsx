@@ -17,22 +17,43 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setSubmitted(false);
+    setError(null);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || "Error al enviar el mensaje");
+      }
+
+      setSubmitted(true);
       setFormData({ name: "", email: "", phone: "", message: "" });
-    }, 3000);
+
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 4000);
+    } catch (err: any) {
+      console.error(err);
+      setError(
+        err?.message ||
+          "Ocurrió un error al enviar tu mensaje. Inténtalo nuevamente."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -202,6 +223,10 @@ export default function Contact() {
                   placeholder="Cuéntanos sobre tu proyecto..."
                 />
               </div>
+
+              {error && (
+                <p className="text-sm text-red-400">{error}</p>
+              )}
 
               <motion.button
                 type="submit"
