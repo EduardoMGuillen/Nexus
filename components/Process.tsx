@@ -75,8 +75,8 @@ export default function Process() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
                 className="relative"
-              >
-                <div className="relative h-full p-6 bg-dark-800/50 backdrop-blur-sm rounded-xl border border-dark-700 hover:border-primary-500/50 transition-all duration-300 text-center">
+            >
+              <div className="relative h-full p-6 bg-slate-100 dark:bg-dark-800/50 backdrop-blur-sm rounded-xl border border-slate-200 dark:border-dark-700 hover:border-primary-500/50 transition-all duration-300 text-center">
                   {/* Icon */}
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
@@ -121,7 +121,7 @@ export default function Process() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                className="flex items-center justify-center space-x-3 p-4 bg-dark-800/30 rounded-lg"
+                className="flex items-center justify-center space-x-3 p-4 bg-slate-100 dark:bg-dark-800/30 rounded-lg"
               >
                 <CheckCircle className="w-5 h-5 text-primary-500 flex-shrink-0" />
                 <span className="text-slate-700 dark:text-dark-200">{benefit}</span>

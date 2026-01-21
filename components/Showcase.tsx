@@ -69,7 +69,7 @@ export default function Showcase() {
               whileHover={{ y: -10 }}
               className="group relative"
             >
-              <div className="relative h-full overflow-hidden rounded-2xl bg-dark-800 border border-dark-700 hover:border-primary-500/50 transition-all duration-300">
+              <div className="relative h-full overflow-hidden rounded-2xl bg-slate-100 dark:bg-dark-800 border border-slate-200 dark:border-dark-700 hover:border-primary-500/50 transition-all duration-300">
                 {/* Project Image/Placeholder */}
                 <div
                   className={`h-64 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}

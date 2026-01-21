@@ -122,7 +122,7 @@ export default function Contact() {
               <motion.a
                 href="mailto:contacto@nexusglobal.com"
                 whileHover={{ x: 5 }}
-                className="flex items-center space-x-4 p-4 bg-dark-800/50 rounded-lg border border-dark-700 hover:border-primary-500/50 transition-all"
+                className="flex items-center space-x-4 p-4 bg-slate-100 dark:bg-dark-800/50 rounded-lg border border-slate-200 dark:border-dark-700 hover:border-primary-500/50 transition-all"
               >
                 <div className="p-3 bg-primary-500/20 rounded-lg">
                   <Mail className="w-5 h-5 text-primary-400" />
@@ -138,7 +138,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ x: 5 }}
-                className="flex items-center space-x-4 p-4 bg-dark-800/50 rounded-lg border border-dark-700 hover:border-primary-500/50 transition-all"
+                className="flex items-center space-x-4 p-4 bg-slate-100 dark:bg-dark-800/50 rounded-lg border border-slate-200 dark:border-dark-700 hover:border-primary-500/50 transition-all"
               >
                 <div className="p-3 bg-primary-500/20 rounded-lg">
                   <Instagram className="w-5 h-5 text-primary-400" />
@@ -159,7 +159,7 @@ export default function Contact() {
           >
             <form
               onSubmit={handleSubmit}
-              className="p-8 bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700 space-y-6"
+              className="p-8 bg-slate-100 dark:bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-dark-700 space-y-6"
             >
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-dark-300 mb-2">

@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer className="bg-slate-900 dark:bg-dark-900 border-t border-dark-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
           {/* Brand */}
           <div>
             <Link href="#inicio" className="flex items-center space-x-3 mb-4">
@@ -57,7 +57,7 @@ export default function Footer() {
           {/* Social */}
           <div>
             <h3 className="text-white font-semibold mb-4">Síguenos</h3>
-            <div className="flex space-x-4">
+            <div className="flex justify-center md:justify-start space-x-4">
               <motion.a
                 href="https://www.instagram.com/nexus_suministros/"
                 target="_blank"

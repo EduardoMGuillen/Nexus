@@ -65,7 +65,7 @@ export default function Services() {
               whileHover={{ y: -10 }}
               className="group relative"
             >
-              <div className="relative h-full p-8 bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700 hover:border-primary-500/50 transition-all duration-300 overflow-hidden">
+              <div className="relative h-full p-8 bg-slate-100 dark:bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-dark-700 hover:border-primary-500/50 transition-all duration-300 overflow-hidden">
                 {/* Gradient Background on Hover */}
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}

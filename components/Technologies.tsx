@@ -54,7 +54,7 @@ export default function Technologies() {
               whileHover={{ scale: 1.1, y: -5 }}
               className="group relative"
             >
-              <div className="p-6 bg-dark-800/50 backdrop-blur-sm rounded-xl border border-dark-700 hover:border-primary-500/50 transition-all duration-300 text-center">
+              <div className="p-6 bg-slate-100 dark:bg-dark-800/50 backdrop-blur-sm rounded-xl border border-slate-200 dark:border-dark-700 hover:border-primary-500/50 transition-all duration-300 text-center">
                 <div className="text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:gradient-text transition-all">
                   {tech.name}
                 </div>
