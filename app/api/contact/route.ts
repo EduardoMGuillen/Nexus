@@ -36,7 +36,7 @@ export async function POST(request: Request) {
       },
     });
 
-    const to = process.env.CONTACT_EMAIL || "nexusglobalsuministros@gmail.com";
+    const to = process.env.CONTACT_EMAIL || "Eduardoguillendev@proton.me";
 
     await transporter.sendMail({
       from: `"Nexus Global Website" <${user}>`,
