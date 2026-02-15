@@ -94,7 +94,7 @@ export default function Partners() {
               rel="noopener noreferrer"
               className="flex-shrink-0 mx-6 sm:mx-10"
             >
-              <div className="relative flex flex-col items-center gap-4 px-8 py-6 bg-white dark:bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-dark-700 hover:border-primary-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10 group/card w-44 sm:w-52">
+              <div className="relative flex items-center justify-center px-8 py-6 bg-white dark:bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-dark-700 hover:border-primary-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10 group/card w-44 sm:w-52">
                 {/* Logo */}
                 <div className="relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center">
                   <Image
@@ -105,11 +105,6 @@ export default function Partners() {
                     sizes="(max-width: 640px) 96px, 112px"
                   />
                 </div>
-
-                {/* Name */}
-                <span className="text-sm sm:text-base font-semibold text-slate-800 dark:text-white whitespace-nowrap">
-                  {partner.name}
-                </span>
 
                 {/* Hover glow */}
                 <div className="absolute inset-0 rounded-2xl bg-primary-500/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none" />

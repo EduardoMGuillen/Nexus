@@ -38,6 +38,7 @@ export async function POST(request: Request) {
 
     const to = process.env.CONTACT_EMAIL || "Eduardoguillendev@proton.me";
 
+    // 1. Email to Nexus (notification with contact details)
     await transporter.sendMail({
       from: `"Nexus Global Website" <${user}>`,
       to,
@@ -58,6 +59,47 @@ ${message}
         <p><strong>Teléfono:</strong> ${phone || "No especificado"}</p>
         <p><strong>Mensaje:</strong></p>
         <p>${message.replace(/\n/g, "<br />")}</p>
+      `,
+    });
+
+    // 2. Auto-reply to the client
+    await transporter.sendMail({
+      from: `"Nexus Global" <${user}>`,
+      to: email,
+      replyTo: "Eduardoguillendev@proton.me",
+      subject: `Gracias por contactarnos, ${name}`,
+      text: `
+Hola ${name},
+
+Gracias por ponerte en contacto con Nexus Global. Hemos recibido tu mensaje y nuestro equipo lo revisará a la brevedad.
+
+Te responderemos lo antes posible.
+
+Saludos,
+Nexus Global
+nexusglobal.com
+      `.trim(),
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; background-color: #f8fafc; border-radius: 12px;">
+          <div style="text-align: center; margin-bottom: 32px;">
+            <h1 style="color: #0f172a; font-size: 24px; margin: 0;">Nexus Global</h1>
+          </div>
+          <div style="background-color: #ffffff; padding: 32px; border-radius: 8px; border: 1px solid #e2e8f0;">
+            <h2 style="color: #0f172a; font-size: 20px; margin-top: 0;">¡Hola ${name}!</h2>
+            <p style="color: #475569; font-size: 16px; line-height: 1.6;">
+              Gracias por ponerte en contacto con nosotros. Hemos recibido tu mensaje y nuestro equipo lo revisará a la brevedad.
+            </p>
+            <p style="color: #475569; font-size: 16px; line-height: 1.6;">
+              Te responderemos lo antes posible.
+            </p>
+            <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 24px 0;" />
+            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 0;">
+              Saludos,<br />
+              <strong style="color: #0f172a;">Nexus Global</strong><br />
+              <a href="https://nexusglobal.com" style="color: #22c55e; text-decoration: none;">nexusglobal.com</a>
+            </p>
+          </div>
+        </div>
       `,
     });
 
