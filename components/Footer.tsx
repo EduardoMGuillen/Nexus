@@ -62,7 +62,7 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Síguenos</h3>
             <div className="flex justify-center md:justify-start space-x-4">
               <motion.a
-                href="https://www.instagram.com/nexus_suministros/"
+                href="https://www.instagram.com/nexusglobalhn/"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}

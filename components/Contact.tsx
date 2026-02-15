@@ -134,7 +134,7 @@ export default function Contact() {
               </motion.a>
 
               <motion.a
-                href="https://www.instagram.com/nexus_suministros/"
+                href="https://www.instagram.com/nexusglobalhn/"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ x: 5 }}
@@ -145,7 +145,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="text-sm text-slate-600 dark:text-dark-400">Instagram</div>
-                  <div className="text-slate-900 dark:text-white">@nexus_suministros</div>
+                  <div className="text-slate-900 dark:text-white">@nexusglobalhn</div>
                 </div>
               </motion.a>
             </div>
