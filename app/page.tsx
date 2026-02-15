@@ -21,6 +21,10 @@ const Technologies = dynamic(() => import("@/components/Technologies"), {
   loading: () => null,
 });
 
+const Partners = dynamic(() => import("@/components/Partners"), {
+  loading: () => null,
+});
+
 const Contact = dynamic(() => import("@/components/Contact"), {
   loading: () => null,
 });
@@ -63,6 +67,7 @@ export default function Home() {
       <Showcase />
       <Process />
       <Technologies />
+      <Partners />
       <Contact />
       <Footer />
     </main>
