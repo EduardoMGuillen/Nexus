@@ -77,7 +77,7 @@ Te responderemos lo antes posible.
 
 Saludos,
 Nexus Global
-nexusglobal.com
+nexusglobalsuministros.com
       `.trim(),
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; background-color: #f8fafc; border-radius: 12px;">
@@ -96,7 +96,7 @@ nexusglobal.com
             <p style="color: #94a3b8; font-size: 14px; margin-bottom: 0;">
               Saludos,<br />
               <strong style="color: #0f172a;">Nexus Global</strong><br />
-              <a href="https://nexusglobal.com" style="color: #22c55e; text-decoration: none;">nexusglobal.com</a>
+              <a href="https://www.nexusglobalsuministros.com" style="color: #22c55e; text-decoration: none;">nexusglobalsuministros.com</a>
             </p>
           </div>
         </div>

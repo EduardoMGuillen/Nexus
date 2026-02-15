@@ -120,7 +120,7 @@ export default function Contact() {
 
             <div className="space-y-6">
               <motion.a
-                href="mailto:contacto@nexusglobal.com"
+                href="mailto:Eduardoguillendev@proton.me"
                 whileHover={{ x: 5 }}
                 className="flex items-center justify-center lg:justify-start space-x-4 p-4 bg-slate-100 dark:bg-dark-800/50 rounded-lg border border-slate-200 dark:border-dark-700 hover:border-primary-500/50 transition-all"
               >
@@ -129,7 +129,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="text-sm text-slate-600 dark:text-dark-400">Email</div>
-                  <div className="text-slate-900 dark:text-white">contacto@nexusglobal.com</div>
+                  <div className="text-slate-900 dark:text-white">Eduardoguillendev@proton.me</div>
                 </div>
               </motion.a>
 

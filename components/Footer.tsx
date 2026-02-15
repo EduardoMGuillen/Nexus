@@ -73,7 +73,7 @@ export default function Footer() {
                 <Instagram className="w-5 h-5 text-primary-400" />
               </motion.a>
               <motion.a
-                href="mailto:contacto@nexusglobal.com"
+                href="mailto:Eduardoguillendev@proton.me"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 className="p-3 bg-dark-800 rounded-lg hover:bg-primary-500/20 transition-colors"
