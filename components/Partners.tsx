@@ -3,33 +3,43 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 const partners = [
   {
-    name: "Astro, Casablanca y Studio54",
+    name: "Astro",
+    logo: "/partners/astrologo.png",
     url: "https://www.lagrancasablanca.com",
-    gradient: "from-amber-500 to-orange-600",
+  },
+  {
+    name: "Casablanca",
+    logo: "/partners/casablancadorado.png",
+    url: "https://www.lagrancasablanca.com",
+  },
+  {
+    name: "Studio 54",
+    logo: "/partners/studio54logo.png",
+    url: "https://www.lagrancasablanca.com",
   },
   {
     name: "Stellare",
+    logo: "/partners/stellarelogo.png",
     url: "https://www.stellare.co",
-    gradient: "from-purple-500 to-indigo-600",
   },
   {
     name: "InmoModerna",
+    logo: "/partners/inmomodernalogo.png",
     url: "https://www.inmobiliariamodernahn.com",
-    gradient: "from-blue-500 to-cyan-600",
   },
   {
     name: "TeamLink",
+    logo: "/partners/teamlinklogo.png",
     url: "https://www.teamlink.lat",
-    gradient: "from-green-500 to-teal-600",
   },
   {
     name: "BizzTrack",
+    logo: "/partners/Bizztracklogo.png",
     url: "https://www.bizztrack.pro",
-    gradient: "from-rose-500 to-pink-600",
   },
 ];
 
@@ -75,28 +85,31 @@ export default function Partners() {
         <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-l from-slate-100 dark:from-dark-800 to-transparent z-10 pointer-events-none" />
 
         {/* Scrolling track */}
-        <div className="flex animate-marquee group-hover:[animation-play-state:paused]">
+        <div className="flex items-center animate-marquee group-hover:[animation-play-state:paused]">
           {marqueePartners.map((partner, index) => (
             <a
               key={`${partner.name}-${index}`}
               href={partner.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-shrink-0 mx-4"
+              className="flex-shrink-0 mx-6 sm:mx-10"
             >
-              <div className="relative flex items-center gap-3 px-8 py-5 bg-white dark:bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-dark-700 hover:border-primary-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10 group/card">
-                {/* Gradient dot */}
-                <div
-                  className={`w-3 h-3 rounded-full bg-gradient-to-br ${partner.gradient} flex-shrink-0`}
-                />
+              <div className="relative flex flex-col items-center gap-4 px-8 py-6 bg-white dark:bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-dark-700 hover:border-primary-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10 group/card w-44 sm:w-52">
+                {/* Logo */}
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center">
+                  <Image
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 640px) 96px, 112px"
+                  />
+                </div>
 
                 {/* Name */}
-                <span className="text-lg font-semibold text-slate-800 dark:text-white whitespace-nowrap">
+                <span className="text-sm sm:text-base font-semibold text-slate-800 dark:text-white whitespace-nowrap">
                   {partner.name}
                 </span>
-
-                {/* External link icon */}
-                <ExternalLink className="w-4 h-4 text-slate-400 dark:text-dark-500 group-hover/card:text-primary-500 transition-colors flex-shrink-0" />
 
                 {/* Hover glow */}
                 <div className="absolute inset-0 rounded-2xl bg-primary-500/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none" />
