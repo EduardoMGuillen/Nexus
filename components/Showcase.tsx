@@ -36,7 +36,7 @@ const projects = [
     description:
       "App de acceso residencial inteligente para conjuntos, apartamentos y urbanizaciones. El residente anuncia visitas y seguridad valida ingresos escaneando un QR.",
     tech: ["QR Seguro", "Validación en Portón", "Tiempo Real", "Acceso Residencial"],
-    image: "/miporton.png",
+    image: "/mivista.png",
     gradient: "from-cyan-500 to-blue-600",
     link: "/miporton",
   },
