@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "MiVisita - Acceso residencial inteligente",
     description:
       "Gestiona visitas con QR, valida ingresos y mantente informado en tiempo real cuando tu visita llegue al portón.",
-    url: "https://nexusglobal.com/MiVisita",
+    url: "https://nexusglobal.com/mivisita",
     images: [
       {
         url: "/mivisita.png",
