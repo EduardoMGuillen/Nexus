@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     url: "https://nexusglobal.com/MiVisita",
     images: [
       {
-        url: "/MiVisita.png",
+        url: "/mivisita.png",
         width: 512,
         height: 512,
         alt: "Logo MiVisita",
