@@ -31,6 +31,15 @@ const projects = [
     gradient: "from-orange-500 to-red-600",
     link: "/paginas-web",
   },
+  {
+    title: "MiPorton",
+    description:
+      "App de acceso residencial inteligente para conjuntos, apartamentos y urbanizaciones. El residente anuncia visitas y seguridad valida ingresos escaneando un QR.",
+    tech: ["QR Seguro", "Validación en Portón", "Tiempo Real", "Acceso Residencial"],
+    image: "/miporton.png",
+    gradient: "from-cyan-500 to-blue-600",
+    link: "/miporton",
+  },
 ];
 
 export default function Showcase() {
@@ -59,7 +68,7 @@ export default function Showcase() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
