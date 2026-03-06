@@ -6,11 +6,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "MiPorton - Acceso residencial inteligente",
+  title: "MiVisita - Acceso residencial inteligente",
   description:
-    "MiPorton es la app de acceso residencial inteligente para urbanizaciones y apartamentos: anuncia visitas con QR y valida ingresos en tiempo real.",
+    "MiVisita es la app de acceso residencial inteligente para urbanizaciones y apartamentos: anuncia visitas con QR y valida ingresos en tiempo real.",
   keywords: [
-    "MiPorton",
+    "MiVisita",
     "acceso residencial",
     "control de visitas",
     "QR de acceso",
@@ -19,16 +19,16 @@ export const metadata: Metadata = {
     "apartamentos",
   ],
   openGraph: {
-    title: "MiPorton - Acceso residencial inteligente",
+    title: "MiVisita - Acceso residencial inteligente",
     description:
       "Gestiona visitas con QR, valida ingresos y mantente informado en tiempo real cuando tu visita llegue al portón.",
-    url: "https://nexusglobal.com/miporton",
+    url: "https://nexusglobal.com/MiVisita",
     images: [
       {
-        url: "/miporton.png",
+        url: "/MiVisita.png",
         width: 512,
         height: 512,
-        alt: "Logo MiPorton",
+        alt: "Logo MiVisita",
       },
     ],
   },
@@ -41,7 +41,7 @@ const highlights = [
   "Notificaciones en tiempo real para mejor control.",
 ];
 
-export default function MiPortonPage() {
+export default function MiVisitaPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-dark-900 to-dark-800">
       <Header />
@@ -59,11 +59,11 @@ export default function MiPortonPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
               <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-                <span className="text-white">MiPorton:</span>{" "}
+                <span className="text-white">MiVisita:</span>{" "}
                 <span className="gradient-text">tu acceso residencial digital</span>
               </h1>
               <p className="text-lg text-dark-300 mb-6">
-                MiPorton es una web app pensada para conjuntos residenciales, edificios y
+                MiVisita es una web app pensada para conjuntos residenciales, edificios y
                 urbanizaciones. Permite que un residente anuncie a su visitante y que
                 seguridad valide su ingreso escaneando un QR de forma rapida y segura.
               </p>
@@ -78,12 +78,12 @@ export default function MiPortonPage() {
               </div>
 
               <a
-                href="http://miporton.vercel.app/"
+                href="http://MiVisita.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-7 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-400 hover:to-primary-500 transition-all shadow-lg shadow-primary-600/30"
               >
-                Ir a MiPorton
+                Ir a MiVisita
                 <ArrowRight className="w-5 h-5 ml-2" />
               </a>
             </div>
@@ -91,8 +91,8 @@ export default function MiPortonPage() {
             <div className="bg-dark-800/60 border border-dark-700 rounded-2xl p-6 sm:p-8">
               <div className="flex justify-center mb-8">
                 <Image
-                  src="/miporton.png"
-                  alt="Logo de MiPorton"
+                  src="/MiVisita.png"
+                  alt="Logo de MiVisita"
                   width={280}
                   height={280}
                   priority
