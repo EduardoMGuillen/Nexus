@@ -38,7 +38,7 @@ const projects = [
     tech: ["QR Seguro", "Validación en Portón", "Tiempo Real", "Acceso Residencial"],
     image: "/miporton.png",
     gradient: "from-cyan-500 to-blue-600",
-    link: "/miporton",
+    link: "/mivista",
   },
 ];
 
