@@ -91,7 +91,7 @@ export default function MiVisitaPage() {
             <div className="bg-dark-800/60 border border-dark-700 rounded-2xl p-6 sm:p-8">
               <div className="flex justify-center mb-8">
                 <Image
-                  src="/MiVista.png"
+                  src="/mivista.png"
                   alt="Logo de MiVista"
                   width={280}
                   height={280}
