@@ -92,7 +92,7 @@ export default function MiVisitaPage() {
               <div className="flex justify-center mb-8">
                 <Image
                   src="/MiVisita.png"
-                  alt="Logo de MiVisita"
+                  alt="Logo de MiVista"
                   width={280}
                   height={280}
                   priority
