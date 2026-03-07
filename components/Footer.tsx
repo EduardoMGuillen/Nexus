@@ -15,7 +15,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link
-              href="#inicio"
+              href="/#inicio"
               className="flex flex-col md:flex-row items-center md:space-x-3 space-y-2 md:space-y-0 mb-4"
             >
               <div className="relative w-10 h-10">
@@ -40,10 +40,10 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Enlaces Rápidos</h3>
             <ul className="space-y-2">
               {[
-                { name: "Inicio", href: "#inicio" },
-                { name: "Servicios", href: "#servicios" },
-                { name: "Proyectos", href: "#proyectos" },
-                { name: "Contacto", href: "#contacto" },
+                { name: "Inicio", href: "/#inicio" },
+                { name: "Servicios", href: "/#servicios" },
+                { name: "Proyectos", href: "/#proyectos" },
+                { name: "Contacto", href: "/#contacto" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link

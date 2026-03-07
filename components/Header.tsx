@@ -21,12 +21,12 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { name: "Inicio", href: "#inicio" },
-    { name: "Servicios", href: "#servicios" },
-    { name: "Proyectos", href: "#proyectos" },
-    { name: "Proceso", href: "#proceso" },
-    { name: "Partners", href: "#partners" },
-    { name: "Contacto", href: "#contacto" },
+    { name: "Inicio", href: "/#inicio" },
+    { name: "Servicios", href: "/#servicios" },
+    { name: "Proyectos", href: "/#proyectos" },
+    { name: "Proceso", href: "/#proceso" },
+    { name: "Partners", href: "/#partners" },
+    { name: "Contacto", href: "/#contacto" },
   ];
 
   return (
@@ -43,7 +43,7 @@ export default function Header() {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="#inicio" className="flex items-center space-x-3 group">
+          <Link href="/#inicio" className="flex items-center space-x-3 group">
             <motion.div
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
