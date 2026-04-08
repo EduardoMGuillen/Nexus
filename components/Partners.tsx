@@ -5,7 +5,14 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 
-const partners = [
+type Partner = {
+  name: string;
+  logo: string;
+  url: string;
+  logoBg?: string;
+};
+
+const partners: Partner[] = [
   {
     name: "Astro",
     logo: "/partners/astrologo.png",
@@ -40,6 +47,17 @@ const partners = [
     name: "BizzTrack",
     logo: "/partners/Bizztracklogo.png",
     url: "https://www.bizztrack.pro",
+  },
+  {
+    name: "Bravex Trade Services",
+    logo: "/partners/bravex_sinf.png",
+    url: "https://bravextradeservices.com/",
+    logoBg: "bg-neutral-900 rounded-xl",
+  },
+  {
+    name: "Marta Martínez Estética",
+    logo: "/partners/marta_martinez_estetica.png",
+    url: "https://www.martamartinezestetica.com/",
   },
 ];
 
@@ -96,7 +114,9 @@ export default function Partners() {
             >
               <div className="relative flex items-center justify-center px-8 py-6 bg-white dark:bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-dark-700 hover:border-primary-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10 group/card w-44 sm:w-52">
                 {/* Logo */}
-                <div className="relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center">
+                <div
+                  className={`relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center ${partner.logoBg ?? ""}`}
+                >
                   <Image
                     src={partner.logo}
                     alt={`${partner.name} logo`}
