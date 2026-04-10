@@ -112,9 +112,9 @@ export const en = {
           "Showcase listings and services—built for agencies and property advisors.",
       },
       {
-        name: "Marta Martínez Estética",
+        name: "Beauty & wellness",
         description:
-          "A real production site for a beauty and aesthetics studio—an example of what we deliver.",
+          "A live aesthetics-center site—reference for spas, beauty salons, and personal care brands.",
       },
     ],
   },
@@ -263,6 +263,10 @@ export const en = {
         description: "An easy control panel to manage your online presence.",
       },
     ],
+    offersTitle1: "Plans",
+    offersTitle2: "web & hosting",
+    offersSubtitle:
+      "One-time Basic Website or monthly maintenance with hosting. Pay securely with PayPal.",
     basicTitle1: "Basic Website",
     basicTitle2: "300 USD",
     basicSubtitle:

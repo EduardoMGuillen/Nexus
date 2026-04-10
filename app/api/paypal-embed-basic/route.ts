@@ -29,16 +29,23 @@ export async function GET() {
   <title>PayPal</title>
   <style>
     * { box-sizing: border-box; }
+    html {
+      margin: 0;
+      padding: 0;
+    }
     body {
       margin: 0;
-      padding: 12px;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #0f172a;
+      padding: 24px 20px 32px;
+      background: #ffffff;
+      color: #0f172a;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
-    #${CONTAINER_ID} { width: 100%; max-width: 400px; }
+    #${CONTAINER_ID} {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+    }
   </style>
 </head>
 <body>

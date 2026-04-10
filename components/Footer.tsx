@@ -13,9 +13,9 @@ export default function Footer() {
 
   const quickLinks = [
     { name: nav.home, href: "/#inicio" },
-    { name: nav.services, href: "/#servicios" },
+    { name: nav.services, href: "/paginas-web#ofertas" },
     { name: nav.projects, href: "/#proyectos" },
-    { name: nav.templates, href: "/#plantillas" },
+    { name: nav.templates, href: "/paginas-web#plantillas" },
     { name: nav.contact, href: "/#contacto" },
   ];
 

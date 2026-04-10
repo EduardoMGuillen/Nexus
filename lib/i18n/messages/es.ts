@@ -110,9 +110,9 @@ export const es = {
           "Presenta propiedades y servicios; pensada para agencias y asesores del sector inmobiliario.",
       },
       {
-        name: "Marta Martínez Estética",
+        name: "Estética y bienestar",
         description:
-          "Sitio real en producción para centro de estética y bienestar: referencia del tipo de entrega que ofrecemos.",
+          "Sitio real en producción para un centro de estética: referencia para spa, belleza y cuidado personal.",
       },
     ],
   },
@@ -262,6 +262,10 @@ export const es = {
         description: "Panel de control fácil de usar para gestionar tu presencia online.",
       },
     ],
+    offersTitle1: "Planes",
+    offersTitle2: "web y hosting",
+    offersSubtitle:
+      "Basic Website de pago único o mantenimiento mensual con hosting. Paga con PayPal de forma segura.",
     basicTitle1: "Basic Website",
     basicTitle2: "300 USD",
     basicSubtitle:

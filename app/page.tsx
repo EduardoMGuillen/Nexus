@@ -4,16 +4,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 
-// Lazy-load secciones que están por debajo del primer pantallazo
-const Services = dynamic(() => import("@/components/Services"), {
-  loading: () => null,
-});
-
 const Showcase = dynamic(() => import("@/components/Showcase"), {
-  loading: () => null,
-});
-
-const TemplateShowcase = dynamic(() => import("@/components/TemplateShowcase"), {
   loading: () => null,
 });
 
@@ -67,9 +58,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <Hero />
-      <Services />
       <Showcase />
-      <TemplateShowcase />
       <Process />
       <Technologies />
       <Partners />

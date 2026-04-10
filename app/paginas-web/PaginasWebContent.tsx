@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import TemplateShowcase from "@/components/TemplateShowcase";
 import {
   Globe,
   Search,
@@ -27,17 +28,17 @@ export default function PaginasWebContent() {
     <main className="min-h-screen bg-gradient-to-b from-dark-900 to-dark-800">
       <Header />
 
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="pt-28 pb-10 px-4 sm:px-6 lg:px-8 sm:pt-32">
         <div className="container mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-8"
+            className="mb-6"
           >
             <Link
               href="/#proyectos"
-              className="inline-flex items-center text-primary-400 hover:text-primary-300 mb-6 transition-colors"
+              className="inline-flex items-center text-primary-400 hover:text-primary-300 mb-4 transition-colors text-sm sm:text-base"
             >
               <ArrowLeft className="w-5 h-5 mr-2" />
               {m.common.backToProjects}
@@ -47,22 +48,105 @@ export default function PaginasWebContent() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-center mb-12"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-center mb-6 sm:mb-8"
           >
-            <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 mb-6">
-              <Globe className="w-12 h-12 text-white" />
+            <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 mb-5">
+              <Globe className="w-11 h-11 sm:w-12 sm:h-12 text-white" />
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-4">
               <span className="text-white">{p.heroTitle1}</span>{" "}
               <span className="gradient-text">{p.heroTitle2}</span>
             </h1>
-            <p className="text-xl text-dark-300 max-w-2xl mx-auto">{p.heroSubtitle}</p>
+            <p className="text-lg sm:text-xl text-dark-300 max-w-2xl mx-auto">{p.heroSubtitle}</p>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section
+        id="ofertas"
+        className="px-4 sm:px-6 lg:px-8 pb-14 sm:pb-16 border-b border-dark-700/70 bg-gradient-to-b from-dark-900/80 to-dark-900/40"
+      >
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-8 sm:mb-10"
+          >
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3">
+              <span className="text-white">{p.offersTitle1}</span>{" "}
+              <span className="gradient-text">{p.offersTitle2}</span>
+            </h2>
+            <p className="text-dark-300 text-sm sm:text-base max-w-2xl mx-auto">
+              {p.offersSubtitle}
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.05 }}
+              className="rounded-2xl border border-dark-600 bg-dark-800/50 p-5 sm:p-6 shadow-lg shadow-black/20"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600">
+                  <LayoutTemplate className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-left">
+                  <span className="text-white">{p.basicTitle1}</span>{" "}
+                  <span className="gradient-text">{p.basicTitle2}</span>
+                </h3>
+              </div>
+              <p className="text-dark-300 text-sm mb-4 text-left">{p.basicSubtitle}</p>
+              <ul className="flex flex-col gap-2 mb-6 text-left">
+                {p.basicFeatures.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-dark-200">
+                    <CheckCircle className="w-4 h-4 text-primary-500 shrink-0 mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <PayPalBasicWebsiteHosted />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="rounded-2xl border border-dark-600 bg-dark-800/50 p-5 sm:p-6 shadow-lg shadow-black/20"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 rounded-xl bg-gradient-to-br from-primary-600 to-emerald-600">
+                  <Server className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-left">
+                  <span className="text-white">{p.subscribeTitle1}</span>{" "}
+                  <span className="gradient-text">{p.subscribeTitle2}</span>
+                </h3>
+              </div>
+              <p className="text-dark-300 text-sm mb-4 text-left">{p.subscribeSubtitle}</p>
+              <ul className="flex flex-col gap-2 mb-6 text-left">
+                {p.subscribeFeatures.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-dark-200">
+                    <CheckCircle className="w-4 h-4 text-primary-500 shrink-0 mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <PayPalMaintenanceSubscribe />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <TemplateShowcase />
+
+      <section id="servicios" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {p.features.map((feature, index) => {
@@ -71,7 +155,8 @@ export default function PaginasWebContent() {
                 <motion.div
                   key={feature.title}
                   initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="p-8 bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700 hover:border-primary-500/50 transition-all"
                 >
@@ -87,7 +172,7 @@ export default function PaginasWebContent() {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-800/30">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-dark-800/30">
         <div className="container mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -121,7 +206,7 @@ export default function PaginasWebContent() {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -154,67 +239,7 @@ export default function PaginasWebContent() {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-dark-700/80 bg-dark-900/30">
-        <div className="container mx-auto max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-10"
-          >
-            <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 mb-6">
-              <LayoutTemplate className="w-10 h-10 text-white" />
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              <span className="text-white">{p.basicTitle1}</span>{" "}
-              <span className="gradient-text">{p.basicTitle2}</span>
-            </h2>
-            <p className="text-dark-300 text-lg max-w-2xl mx-auto mb-8">{p.basicSubtitle}</p>
-            <ul className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-x-8 sm:gap-y-2 text-sm text-dark-200 mb-8">
-              {p.basicFeatures.map((item) => (
-                <li key={item} className="flex items-center justify-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-primary-500 shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-          <PayPalBasicWebsiteHosted />
-        </div>
-      </section>
-
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-y border-dark-700/80 bg-dark-900/40">
-        <div className="container mx-auto max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-10"
-          >
-            <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-primary-600 to-emerald-600 mb-6">
-              <Server className="w-10 h-10 text-white" />
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              <span className="text-white">{p.subscribeTitle1}</span>{" "}
-              <span className="gradient-text">{p.subscribeTitle2}</span>
-            </h2>
-            <p className="text-dark-300 text-lg max-w-2xl mx-auto mb-8">{p.subscribeSubtitle}</p>
-            <ul className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-x-8 sm:gap-y-2 text-sm text-dark-200 mb-4">
-              {p.subscribeFeatures.map((item) => (
-                <li key={item} className="flex items-center justify-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-primary-500 shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-          <PayPalMaintenanceSubscribe />
-        </div>
-      </section>
-
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

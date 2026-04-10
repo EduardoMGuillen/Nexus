@@ -109,7 +109,7 @@ export default function Hero() {
             {m.hero.ctaStart}
           </motion.a>
           <motion.a
-            href="#servicios"
+            href="/paginas-web#ofertas"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 bg-dark-800/50 backdrop-blur-sm text-white rounded-lg font-semibold text-lg border border-dark-700 hover:border-primary-500/50 transition-all"
