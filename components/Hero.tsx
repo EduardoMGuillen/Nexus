@@ -1,12 +1,14 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import ParticleNetwork from "./ParticleNetwork";
+import { useMessages } from "./LocaleProvider";
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const m = useMessages();
 
   return (
     <section
@@ -63,7 +65,7 @@ export default function Hero() {
             <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 mx-auto">
               <Image
                 src="/NexusGPTHD.png"
-                alt="Nexus Global Logo"
+                alt={m.hero.logoAlt}
                 fill
                 className="object-contain drop-shadow-2xl"
                 priority
@@ -78,9 +80,9 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6"
         >
-          <span className="text-slate-900 dark:text-white">Conectamos tu</span>
+          <span className="text-slate-900 dark:text-white">{m.hero.titleLine1}</span>
           <br />
-          <span className="gradient-text">futuro digital</span>
+          <span className="gradient-text">{m.hero.titleHighlight}</span>
         </motion.h1>
 
         <motion.p
@@ -89,8 +91,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-xl sm:text-2xl text-slate-600 dark:text-dark-300 mb-12 max-w-3xl mx-auto"
         >
-          Creamos páginas web, plataformas personalizadas y soluciones digitales
-          que transforman ideas en realidad.
+          {m.hero.subtitle}
         </motion.p>
 
         <motion.div
@@ -105,7 +106,7 @@ export default function Hero() {
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-lg font-semibold text-lg shadow-lg shadow-primary-500/50 hover:shadow-xl hover:shadow-primary-500/50 transition-all"
           >
-            Comenzar Proyecto
+            {m.hero.ctaStart}
           </motion.a>
           <motion.a
             href="#servicios"
@@ -113,7 +114,7 @@ export default function Hero() {
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 bg-dark-800/50 backdrop-blur-sm text-white rounded-lg font-semibold text-lg border border-dark-700 hover:border-primary-500/50 transition-all"
           >
-            Ver Servicios
+            {m.hero.ctaServices}
           </motion.a>
         </motion.div>
       </div>

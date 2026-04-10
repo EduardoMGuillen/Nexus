@@ -3,51 +3,27 @@
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ShoppingCart, CreditCard, Package, TrendingUp, CheckCircle, ArrowLeft } from "lucide-react";
+import {
+  ShoppingCart,
+  CreditCard,
+  Package,
+  TrendingUp,
+  CheckCircle,
+  ArrowLeft,
+} from "lucide-react";
 import Link from "next/link";
+import { useMessages } from "@/components/LocaleProvider";
+
+const featureIcons = [ShoppingCart, CreditCard, Package, TrendingUp] as const;
 
 export default function EcommerceContent() {
-  const features = [
-    {
-      icon: ShoppingCart,
-      title: "Tiendas en Línea Completas",
-      description: "Desarrollamos tiendas online profesionales con Shopify, WooCommerce y plataformas personalizadas. Desde la configuración inicial hasta el lanzamiento.",
-    },
-    {
-      icon: CreditCard,
-      title: "Integración de Pagos",
-      description: "Conectamos múltiples métodos de pago: Stripe, PayPal, tarjetas de crédito y métodos locales. Proceso de checkout optimizado para maximizar conversiones.",
-    },
-    {
-      icon: Package,
-      title: "Gestión de Inventario",
-      description: "Sistemas automatizados para control de stock, alertas de inventario bajo, sincronización multi-canal y gestión de variantes de productos.",
-    },
-    {
-      icon: TrendingUp,
-      title: "Optimización de Conversiones",
-      description: "A/B testing, optimización de velocidad, diseño responsive y UX mejorada para aumentar tus ventas y reducir el abandono del carrito.",
-    },
-  ];
-
-  const services = [
-    "Configuración de tienda Shopify/WooCommerce",
-    "Diseño personalizado y branding",
-    "Integración de pasarelas de pago",
-    "Sistemas de gestión de inventario",
-    "Optimización SEO para productos",
-    "Configuración de envíos y logística",
-    "Panel de administración completo",
-    "Integración con redes sociales",
-    "Apps y extensiones personalizadas",
-    "Soporte y mantenimiento continuo",
-  ];
+  const m = useMessages();
+  const e = m.ecommerce;
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-dark-900 to-dark-800">
       <Header />
-      
-      {/* Hero Section */}
+
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-4xl">
           <motion.div
@@ -61,7 +37,7 @@ export default function EcommerceContent() {
               className="inline-flex items-center text-primary-400 hover:text-primary-300 mb-6 transition-colors"
             >
               <ArrowLeft className="w-5 h-5 mr-2" />
-              Volver a proyectos
+              {m.common.backToProjects}
             </Link>
           </motion.div>
 
@@ -75,45 +51,39 @@ export default function EcommerceContent() {
               <ShoppingCart className="w-12 h-12 text-white" />
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-white">E-commerce</span>{" "}
-              <span className="gradient-text">Moderno</span>
+              <span className="text-white">{e.heroTitle1}</span>{" "}
+              <span className="gradient-text">{e.heroTitle2}</span>
             </h1>
-            <p className="text-xl text-dark-300 max-w-2xl mx-auto">
-              Soluciones completas de comercio electrónico con Shopify y plataformas personalizadas. 
-              Todo lo que necesitas para vender en línea de manera exitosa.
-            </p>
+            <p className="text-xl text-dark-300 max-w-2xl mx-auto">{e.heroSubtitle}</p>
           </motion.div>
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="p-8 bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700 hover:border-primary-500/50 transition-all"
-              >
-                <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 mb-4">
-                  <feature.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-dark-300">
-                  {feature.description}
-                </p>
-              </motion.div>
-            ))}
+            {e.features.map((feature, index) => {
+              const Icon = featureIcons[index];
+              return (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="p-8 bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700 hover:border-primary-500/50 transition-all"
+                >
+                  <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 mb-4">
+                    <Icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-3">{feature.title}</h3>
+                  <p className="text-dark-300">{feature.description}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Services List */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-800/30">
         <div className="container mx-auto max-w-4xl">
           <motion.div
@@ -124,16 +94,14 @@ export default function EcommerceContent() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              <span className="text-white">Lo que</span>{" "}
-              <span className="gradient-text">Incluimos</span>
+              <span className="text-white">{e.includeTitle1}</span>{" "}
+              <span className="gradient-text">{e.includeTitle2}</span>
             </h2>
-            <p className="text-dark-300">
-              Un servicio completo de principio a fin
-            </p>
+            <p className="text-dark-300">{e.includeSubtitle}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {services.map((service, index) => (
+            {e.servicesList.map((service, index) => (
               <motion.div
                 key={service}
                 initial={{ opacity: 0, x: -20 }}
@@ -150,7 +118,6 @@ export default function EcommerceContent() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div
@@ -160,19 +127,17 @@ export default function EcommerceContent() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              <span className="text-white">¿Listo para vender</span>{" "}
-              <span className="gradient-text">en línea?</span>
+              <span className="text-white">{e.ctaTitle1}</span>{" "}
+              <span className="gradient-text">{e.ctaTitle2}</span>
             </h2>
-            <p className="text-dark-300 mb-8 text-lg">
-              Contáctanos y comencemos a construir tu tienda online hoy mismo
-            </p>
+            <p className="text-dark-300 mb-8 text-lg">{e.ctaSubtitle}</p>
             <motion.a
               href="/#contacto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-block px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-lg font-semibold text-lg shadow-lg shadow-primary-500/50"
             >
-              Solicitar Cotización
+              {m.common.requestQuote}
             </motion.a>
           </motion.div>
         </div>

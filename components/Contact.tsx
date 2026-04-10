@@ -4,11 +4,13 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Send, Mail, Phone, MapPin, Instagram, CheckCircle } from "lucide-react";
+import { Send, Mail, Instagram, CheckCircle } from "lucide-react";
+import { useMessages } from "./LocaleProvider";
 
 export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const m = useMessages();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -36,7 +38,7 @@ export default function Contact() {
       const data = await res.json();
 
       if (!res.ok || !data.success) {
-        throw new Error(data.error || "Error al enviar el mensaje");
+        throw new Error(data.error || m.contact.errSend);
       }
 
       setSubmitted(true);
@@ -45,12 +47,10 @@ export default function Contact() {
       setTimeout(() => {
         setSubmitted(false);
       }, 4000);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(err);
-      setError(
-        err?.message ||
-          "Ocurrió un error al enviar tu mensaje. Inténtalo nuevamente."
-      );
+      const msg = err instanceof Error ? err.message : m.contact.errGeneric;
+      setError(msg || m.contact.errGeneric);
     } finally {
       setIsSubmitting(false);
     }
@@ -69,7 +69,6 @@ export default function Contact() {
       ref={ref}
       className="py-24 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-dark-900 dark:to-dark-800 relative overflow-hidden"
     >
-      {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{
@@ -93,16 +92,15 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            <span className="text-slate-900 dark:text-white">Hablemos de tu</span>{" "}
-            <span className="gradient-text">Proyecto</span>
+            <span className="text-slate-900 dark:text-white">{m.contact.titleLets}</span>{" "}
+            <span className="gradient-text">{m.contact.titleHighlight}</span>
           </h2>
           <p className="text-slate-600 dark:text-dark-300 text-lg max-w-2xl mx-auto">
-            Estamos listos para convertir tus ideas en realidad digital
+            {m.contact.subtitle}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -111,11 +109,9 @@ export default function Contact() {
           >
             <div>
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
-                Información de Contacto
+                {m.contact.infoTitle}
               </h3>
-              <p className="text-slate-600 dark:text-dark-300 mb-8">
-                Completa el formulario o contáctanos directamente. Estamos aquí para ayudarte.
-              </p>
+              <p className="text-slate-600 dark:text-dark-300 mb-8">{m.contact.infoDesc}</p>
             </div>
 
             <div className="space-y-6">
@@ -128,7 +124,7 @@ export default function Contact() {
                   <Mail className="w-5 h-5 text-primary-400" />
                 </div>
                 <div>
-                  <div className="text-sm text-slate-600 dark:text-dark-400">Email</div>
+                  <div className="text-sm text-slate-600 dark:text-dark-400">{m.contact.email}</div>
                   <div className="text-slate-900 dark:text-white">Eduardoguillendev@proton.me</div>
                 </div>
               </motion.a>
@@ -144,14 +140,15 @@ export default function Contact() {
                   <Instagram className="w-5 h-5 text-primary-400" />
                 </div>
                 <div>
-                  <div className="text-sm text-slate-600 dark:text-dark-400">Instagram</div>
+                  <div className="text-sm text-slate-600 dark:text-dark-400">
+                    {m.contact.instagram}
+                  </div>
                   <div className="text-slate-900 dark:text-white">@nexusglobalhn</div>
                 </div>
               </motion.a>
             </div>
           </motion.div>
 
-          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -162,8 +159,11 @@ export default function Contact() {
               className="p-8 bg-slate-100 dark:bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-dark-700 space-y-6"
             >
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-dark-300 mb-2">
-                  Nombre
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-slate-700 dark:text-dark-300 mb-2"
+                >
+                  {m.contact.labelName}
                 </label>
                 <input
                   type="text"
@@ -173,13 +173,16 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-white dark:bg-dark-900 border border-slate-300 dark:border-dark-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-dark-500 focus:outline-none focus:border-primary-500 transition-colors"
-                  placeholder="Tu nombre"
+                  placeholder={m.contact.phName}
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-dark-300 mb-2">
-                  Email
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-slate-700 dark:text-dark-300 mb-2"
+                >
+                  {m.contact.labelEmail}
                 </label>
                 <input
                   type="email"
@@ -189,13 +192,16 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-white dark:bg-dark-900 border border-slate-300 dark:border-dark-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-dark-500 focus:outline-none focus:border-primary-500 transition-colors"
-                  placeholder="tu@email.com"
+                  placeholder={m.contact.phEmail}
                 />
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-slate-700 dark:text-dark-300 mb-2">
-                  Teléfono (Opcional)
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-slate-700 dark:text-dark-300 mb-2"
+                >
+                  {m.contact.labelPhone}
                 </label>
                 <input
                   type="tel"
@@ -204,13 +210,16 @@ export default function Contact() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-white dark:bg-dark-900 border border-slate-300 dark:border-dark-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-dark-500 focus:outline-none focus:border-primary-500 transition-colors"
-                  placeholder="+1 234 567 8900"
+                  placeholder={m.contact.phPhone}
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-dark-300 mb-2">
-                  Mensaje
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-slate-700 dark:text-dark-300 mb-2"
+                >
+                  {m.contact.labelMessage}
                 </label>
                 <textarea
                   id="message"
@@ -220,13 +229,11 @@ export default function Contact() {
                   required
                   rows={5}
                   className="w-full px-4 py-3 bg-white dark:bg-dark-900 border border-slate-300 dark:border-dark-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-dark-500 focus:outline-none focus:border-primary-500 transition-colors resize-none"
-                  placeholder="Cuéntanos sobre tu proyecto..."
+                  placeholder={m.contact.phMessage}
                 />
               </div>
 
-              {error && (
-                <p className="text-sm text-red-400">{error}</p>
-              )}
+              {error && <p className="text-sm text-red-400">{error}</p>}
 
               <motion.button
                 type="submit"
@@ -238,17 +245,17 @@ export default function Contact() {
                 {submitted ? (
                   <>
                     <CheckCircle className="w-5 h-5" />
-                    <span>¡Mensaje Enviado!</span>
+                    <span>{m.contact.btnSent}</span>
                   </>
                 ) : isSubmitting ? (
                   <>
                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    <span>Enviando...</span>
+                    <span>{m.contact.btnSending}</span>
                   </>
                 ) : (
                   <>
                     <Send className="w-5 h-5" />
-                    <span>Enviar Mensaje</span>
+                    <span>{m.contact.btnSend}</span>
                   </>
                 )}
               </motion.button>
@@ -259,4 +266,3 @@ export default function Contact() {
     </section>
   );
 }
-

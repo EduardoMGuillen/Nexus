@@ -3,25 +3,28 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { useMessages } from "./LocaleProvider";
 
 const technologies = [
-  { name: "Next.js", category: "Framework" },
-  { name: "React", category: "Library" },
-  { name: "TypeScript", category: "Language" },
-  { name: "Node.js", category: "Runtime" },
-  { name: "PostgreSQL", category: "Database" },
-  { name: "MongoDB", category: "Database" },
-  { name: "Tailwind CSS", category: "Styling" },
-  { name: "AWS", category: "Cloud" },
-  { name: "Docker", category: "DevOps" },
-  { name: "GraphQL", category: "API" },
-  { name: "Prisma", category: "ORM" },
-  { name: "Redis", category: "Cache" },
+  { name: "Next.js", category: "Framework" as const },
+  { name: "React", category: "Library" as const },
+  { name: "TypeScript", category: "Language" as const },
+  { name: "Node.js", category: "Runtime" as const },
+  { name: "PostgreSQL", category: "Database" as const },
+  { name: "MongoDB", category: "Database" as const },
+  { name: "Tailwind CSS", category: "Styling" as const },
+  { name: "AWS", category: "Cloud" as const },
+  { name: "Docker", category: "DevOps" as const },
+  { name: "GraphQL", category: "API" as const },
+  { name: "Prisma", category: "ORM" as const },
+  { name: "Redis", category: "Cache" as const },
 ];
 
 export default function Technologies() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const m = useMessages();
+  const cat = m.technologies.categories;
 
   return (
     <section
@@ -36,11 +39,11 @@ export default function Technologies() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            <span className="text-slate-900 dark:text-white">Tecnologías</span>{" "}
-            <span className="gradient-text">Modernas</span>
+            <span className="text-slate-900 dark:text-white">{m.technologies.titleTech}</span>{" "}
+            <span className="gradient-text">{m.technologies.titleHighlight}</span>
           </h2>
           <p className="text-slate-600 dark:text-dark-300 text-lg max-w-2xl mx-auto">
-            Utilizamos las mejores herramientas para crear soluciones de clase mundial
+            {m.technologies.subtitle}
           </p>
         </motion.div>
 
@@ -58,9 +61,10 @@ export default function Technologies() {
                 <div className="text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:gradient-text transition-all">
                   {tech.name}
                 </div>
-                <div className="text-xs text-slate-600 dark:text-dark-400">{tech.category}</div>
-                
-                {/* Hover Glow */}
+                <div className="text-xs text-slate-600 dark:text-dark-400">
+                  {cat[tech.category]}
+                </div>
+
                 <div className="absolute inset-0 rounded-xl bg-primary-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
             </motion.div>
@@ -73,13 +77,9 @@ export default function Technologies() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-12 text-center"
         >
-          <p className="text-slate-600 dark:text-dark-400 text-sm">
-            Y muchas más tecnologías según las necesidades de tu proyecto
-          </p>
+          <p className="text-slate-600 dark:text-dark-400 text-sm">{m.technologies.footer}</p>
         </motion.div>
       </div>
     </section>
   );
 }
-
-

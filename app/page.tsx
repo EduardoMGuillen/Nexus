@@ -13,6 +13,10 @@ const Showcase = dynamic(() => import("@/components/Showcase"), {
   loading: () => null,
 });
 
+const TemplateShowcase = dynamic(() => import("@/components/TemplateShowcase"), {
+  loading: () => null,
+});
+
 const Process = dynamic(() => import("@/components/Process"), {
   loading: () => null,
 });
@@ -65,6 +69,7 @@ export default function Home() {
       <Hero />
       <Services />
       <Showcase />
+      <TemplateShowcase />
       <Process />
       <Technologies />
       <Partners />

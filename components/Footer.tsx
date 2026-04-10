@@ -4,15 +4,25 @@ import { motion } from "framer-motion";
 import { Instagram, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useMessages } from "./LocaleProvider";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const m = useMessages();
+  const nav = m.header.nav;
+
+  const quickLinks = [
+    { name: nav.home, href: "/#inicio" },
+    { name: nav.services, href: "/#servicios" },
+    { name: nav.projects, href: "/#proyectos" },
+    { name: nav.templates, href: "/#plantillas" },
+    { name: nav.contact, href: "/#contacto" },
+  ];
 
   return (
     <footer className="bg-slate-900 dark:bg-dark-900 border-t border-dark-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
-          {/* Brand */}
           <div>
             <Link
               href="/#inicio"
@@ -21,31 +31,21 @@ export default function Footer() {
               <div className="relative w-10 h-10">
                 <Image
                   src="/NexusGPTHD.png"
-                  alt="Nexus Global Logo"
+                  alt={m.hero.logoAlt}
                   fill
                   className="object-contain"
                 />
               </div>
-              <span className="text-xl font-bold gradient-text">
-                Nexus Global
-              </span>
+              <span className="text-xl font-bold gradient-text">{m.common.brandName}</span>
             </Link>
-            <p className="text-slate-300 dark:text-dark-400 text-sm">
-              Conectando tu negocio con el futuro digital
-            </p>
+            <p className="text-slate-300 dark:text-dark-400 text-sm">{m.footer.tagline}</p>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Enlaces Rápidos</h3>
+            <h3 className="text-white font-semibold mb-4">{m.footer.quickLinks}</h3>
             <ul className="space-y-2">
-              {[
-                { name: "Inicio", href: "/#inicio" },
-                { name: "Servicios", href: "/#servicios" },
-                { name: "Proyectos", href: "/#proyectos" },
-                { name: "Contacto", href: "/#contacto" },
-              ].map((link) => (
-                <li key={link.name}>
+              {quickLinks.map((link) => (
+                <li key={link.href}>
                   <Link
                     href={link.href}
                     className="text-slate-300 dark:text-dark-400 hover:text-primary-400 transition-colors text-sm"
@@ -57,9 +57,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Social */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Síguenos</h3>
+            <h3 className="text-white font-semibold mb-4">{m.footer.follow}</h3>
             <div className="flex justify-center md:justify-start space-x-4">
               <motion.a
                 href="https://www.instagram.com/nexusglobalhn/"
@@ -68,7 +67,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 className="p-3 bg-dark-800 rounded-lg hover:bg-primary-500/20 transition-colors"
-                aria-label="Instagram"
+                aria-label={m.footer.ariaInstagram}
               >
                 <Instagram className="w-5 h-5 text-primary-400" />
               </motion.a>
@@ -77,7 +76,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 className="p-3 bg-dark-800 rounded-lg hover:bg-primary-500/20 transition-colors"
-                aria-label="Email"
+                aria-label={m.footer.ariaEmail}
               >
                 <Mail className="w-5 h-5 text-primary-400" />
               </motion.a>
@@ -85,18 +84,13 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom */}
         <div className="border-t border-dark-800 pt-8 flex flex-col sm:flex-row justify-center sm:justify-between items-center text-center">
           <p className="text-slate-400 dark:text-dark-500 text-sm">
-            © {currentYear} Nexus Global. Todos los derechos reservados.
+            © {currentYear} {m.common.brandName}. {m.footer.rights}
           </p>
-          <p className="text-slate-400 dark:text-dark-500 text-sm mt-2 sm:mt-0">
-            Hecho con ❤️ por Nexus Global
-          </p>
+          <p className="text-slate-400 dark:text-dark-500 text-sm mt-2 sm:mt-0">{m.footer.madeWith}</p>
         </div>
       </div>
     </footer>
   );
 }
-
-
