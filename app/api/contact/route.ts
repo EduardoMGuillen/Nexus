@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { createSmtpTransport, getNotificationEmail } from "@/lib/mail";
+
+export const runtime = "nodejs";
 
 export async function POST(request: Request) {
   try {
@@ -12,13 +14,8 @@ export async function POST(request: Request) {
       );
     }
 
-    // Configura estas variables de entorno en tu hosting (.env.local)
-    const host = process.env.SMTP_HOST;
-    const port = process.env.SMTP_PORT;
-    const user = process.env.SMTP_USER;
-    const pass = process.env.SMTP_PASS;
-
-    if (!host || !port || !user || !pass) {
+    const transporter = createSmtpTransport();
+    if (!transporter) {
       console.error("SMTP env vars are missing");
       return NextResponse.json(
         { success: false, error: "La configuración del servidor de correo no está completa" },
@@ -26,17 +23,15 @@ export async function POST(request: Request) {
       );
     }
 
-    const transporter = nodemailer.createTransport({
-      host,
-      port: Number(port),
-      secure: Number(port) === 465,
-      auth: {
-        user,
-        pass,
-      },
-    });
+    const user = process.env.SMTP_USER;
+    if (!user) {
+      return NextResponse.json(
+        { success: false, error: "La configuración del servidor de correo no está completa" },
+        { status: 500 }
+      );
+    }
 
-    const to = process.env.CONTACT_EMAIL || "Eduardoguillendev@proton.me";
+    const to = getNotificationEmail();
 
     // 1. Email to Nexus (notification with contact details)
     await transporter.sendMail({

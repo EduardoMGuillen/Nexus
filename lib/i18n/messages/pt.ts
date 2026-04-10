@@ -4,7 +4,7 @@ export const pt: Messages = {
   header: {
     nav: {
       home: "Início",
-      services: "Serviços",
+      services: "Sites web",
       projects: "Projetos",
       process: "Processo",
       partners: "Parceiros",
@@ -266,7 +266,7 @@ export const pt: Messages = {
     offersTitle1: "Planos",
     offersTitle2: "web e alojamento",
     offersSubtitle:
-      "Basic Website de pagamento único ou manutenção mensual com alojamento. Pagamento seguro com PayPal.",
+      "Basic Website, Premium (até 10 páginas) ou manutenção mensual com alojamento. Pagamento seguro com PayPal.",
     basicTitle1: "Basic Website",
     basicTitle2: "300 USD",
     basicSubtitle:
@@ -275,9 +275,24 @@ export const pt: Messages = {
       "Até 3 páginas ou uma landing focada em conversão",
       "Design responsivo, pronto para publicar",
       "Preço fixo em dólares (USD)",
+      "Revisões incluídas antes de publicar",
     ],
     basicIframeTitle: "Pagar Basic Website com PayPal",
     basicSecureNote: "Pagamento seguro via PayPal.",
+    basicPurchaseSuccess: "Pagamento concluído com sucesso!",
+    basicOrderIdLabel: "ID do pedido",
+    premiumTitle1: "Premium Website",
+    premiumTitle2: "500 USD",
+    premiumSubtitle:
+      "Site amplo com até 10 páginas. Ideal quando você precisa de mais seções, conteúdo detalhado e uma estrutura mais completa que o Basic.",
+    premiumFeatures: [
+      "Até 10 páginas com navegação clara e hierarquia de conteúdo",
+      "Design responsivo, desempenho e bases de SEO on-page",
+      "Formulários, galerias e blocos avançados conforme o projeto",
+      "Revisões incluídas antes de publicar",
+    ],
+    premiumHostedAria: "Pagar Premium Website com PayPal",
+    premiumSecureNote: "Pagamento seguro via PayPal.",
     subscribeTitle1: "Plano",
     subscribeTitle2: "Manutenção + Alojamento",
     subscribeSubtitle:
@@ -286,12 +301,29 @@ export const pt: Messages = {
       "Alojamento e certificado SSL",
       "Backups e atualizações",
       "Monitorização e suporte técnico",
+      "Revisões e pequenos ajustes de conteúdo incluídos no plano",
     ],
     subscribeSuccess: "Subscrição ativada com sucesso!",
     subscribeIdLabel: "ID da subscrição",
     subscribeLoadError:
       "Não foi possível carregar o PayPal. Atualize a página ou tente mais tarde.",
     subscribeSecureNote: "Pagamentos processados com segurança pelo PayPal.",
+    purchaseDataTitle: "Os seus dados para o projeto",
+    purchaseNameLabel: "Nome completo",
+    purchaseEmailLabel: "E-mail",
+    purchasePhoneLabel: "Telefone",
+    purchaseFilesLabel: "Link para os seus ficheiros",
+    purchaseFilesHint:
+      "Opcional: Google Drive, Dropbox, WeTransfer, etc. URL que comece por https://",
+    purchaseEnablePayHint:
+      "Preencha nome, e-mail e telefone para ativar o pagamento com PayPal.",
+    purchaseNotifyFail:
+      "O pagamento foi registado, mas não foi possível enviar o e-mail automático. Guarde o ID do PayPal e contacte-nos se necessário.",
+    purchaseBuyCta: "Comprar",
+    purchaseModalIntro:
+      "Preencha os seus dados. Quando nome, e-mail e telefone estiverem completos, os botões do PayPal aparecem para pagar com segurança.",
+    purchaseModalClose: "Fechar",
+    purchaseCheckoutPaypalTitle: "Pagamento com PayPal",
   },
   ecommerce: {
     heroTitle1: "E-commerce",

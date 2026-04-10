@@ -4,31 +4,31 @@ import { useMessages } from "@/components/LocaleProvider";
 import PayPalOneTimeBuy from "@/components/PayPalOneTimeBuy";
 import type { PurchaseCustomerDetails } from "@/lib/purchase-customer";
 
-const BASIC_AMOUNT =
-  process.env.NEXT_PUBLIC_PAYPAL_BASIC_AMOUNT ?? "300.00";
+const PREMIUM_AMOUNT =
+  process.env.NEXT_PUBLIC_PAYPAL_PREMIUM_AMOUNT ?? "500.00";
 
 type Props = {
   customer: PurchaseCustomerDetails;
   customerValid: boolean;
 };
 
-export default function PayPalBasicWebsiteHosted({ customer, customerValid }: Props) {
+export default function PayPalPremiumWebsiteHosted({ customer, customerValid }: Props) {
   const { paginasWeb: copy } = useMessages();
 
   return (
     <PayPalOneTimeBuy
-      packageType="basic"
+      packageType="premium"
       customer={customer}
       customerValid={customerValid}
-      amount={BASIC_AMOUNT}
-      purchaseDescription="Basic Website — Landing / 1–3 pages"
-      ariaLabel={copy.basicIframeTitle}
-      secureNote={copy.basicSecureNote}
+      amount={PREMIUM_AMOUNT}
+      purchaseDescription="Premium Website — Up to 10 pages"
+      ariaLabel={copy.premiumHostedAria}
+      secureNote={copy.premiumSecureNote}
       successMessage={copy.basicPurchaseSuccess}
       orderIdLabel={copy.basicOrderIdLabel}
       loadErrorMessage={copy.subscribeLoadError}
       notifyFailMessage={copy.purchaseNotifyFail}
-      containerId="paypal-button-container-basic-website"
+      containerId="paypal-button-container-premium-website"
     />
   );
 }

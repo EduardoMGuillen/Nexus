@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -12,17 +13,60 @@ import {
   CheckCircle,
   ArrowLeft,
   LayoutTemplate,
+  Layers,
 } from "lucide-react";
 import Link from "next/link";
 import { useMessages } from "@/components/LocaleProvider";
 import PayPalMaintenanceSubscribe from "@/components/PayPalMaintenanceSubscribe";
 import PayPalBasicWebsiteHosted from "@/components/PayPalBasicWebsiteHosted";
+import PayPalPremiumWebsiteHosted from "@/components/PayPalPremiumWebsiteHosted";
+import { PayPalOffersSdkProvider } from "@/components/PayPalOffersSdkProvider";
+import OfferCheckoutModal, {
+  type CheckoutPackage,
+} from "@/components/OfferCheckoutModal";
+import type { PurchaseCustomerDetails } from "@/lib/purchase-customer";
 
 const featureIcons = [Globe, Search, Server, Users] as const;
+
+const emptyCustomer = (): PurchaseCustomerDetails => ({
+  name: "",
+  email: "",
+  phone: "",
+  filesUrl: "",
+});
 
 export default function PaginasWebContent() {
   const m = useMessages();
   const p = m.paginasWeb;
+
+  const [basicCustomer, setBasicCustomer] = useState(emptyCustomer);
+  const [premiumCustomer, setPremiumCustomer] = useState(emptyCustomer);
+  const [subCustomer, setSubCustomer] = useState(emptyCustomer);
+  const [checkoutOpen, setCheckoutOpen] = useState<CheckoutPackage | null>(null);
+
+  const purchaseFieldLabels = {
+    title: p.purchaseDataTitle,
+    name: p.purchaseNameLabel,
+    email: p.purchaseEmailLabel,
+    phone: p.purchasePhoneLabel,
+    files: p.purchaseFilesLabel,
+    filesHint: p.purchaseFilesHint,
+    enablePayHint: p.purchaseEnablePayHint,
+  };
+
+  const checkoutPlanTitle = (kind: CheckoutPackage) =>
+    kind === "basic"
+      ? `${p.basicTitle1} ${p.basicTitle2}`
+      : kind === "premium"
+        ? `${p.premiumTitle1} ${p.premiumTitle2}`
+        : `${p.subscribeTitle1} ${p.subscribeTitle2}`;
+
+  const checkoutCustomerPair = (kind: CheckoutPackage) =>
+    kind === "basic"
+      ? { customer: basicCustomer, onCustomerChange: setBasicCustomer }
+      : kind === "premium"
+        ? { customer: premiumCustomer, onCustomerChange: setPremiumCustomer }
+        : { customer: subCustomer, onCustomerChange: setSubCustomer };
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-dark-900 to-dark-800">
@@ -84,13 +128,14 @@ export default function PaginasWebContent() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+          <PayPalOffersSdkProvider>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-8">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.05 }}
-              className="rounded-2xl border border-dark-600 bg-dark-800/50 p-5 sm:p-6 shadow-lg shadow-black/20"
+              className="rounded-2xl border border-dark-600 bg-dark-800/50 p-5 sm:p-6 shadow-lg shadow-black/20 flex flex-col"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2.5 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600">
@@ -102,7 +147,7 @@ export default function PaginasWebContent() {
                 </h3>
               </div>
               <p className="text-dark-300 text-sm mb-4 text-left">{p.basicSubtitle}</p>
-              <ul className="flex flex-col gap-2 mb-6 text-left">
+              <ul className="flex flex-col gap-2 mb-6 text-left flex-1">
                 {p.basicFeatures.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-dark-200">
                     <CheckCircle className="w-4 h-4 text-primary-500 shrink-0 mt-0.5" />
@@ -110,7 +155,47 @@ export default function PaginasWebContent() {
                   </li>
                 ))}
               </ul>
-              <PayPalBasicWebsiteHosted />
+              <button
+                type="button"
+                onClick={() => setCheckoutOpen("basic")}
+                className="w-full mt-auto py-3.5 px-4 rounded-xl font-semibold text-white bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 transition shadow-lg shadow-black/25 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:ring-offset-2 focus:ring-offset-dark-800"
+              >
+                {p.purchaseBuyCta}
+              </button>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.08 }}
+              className="rounded-2xl border border-dark-600 bg-dark-800/50 p-5 sm:p-6 shadow-lg shadow-black/20 flex flex-col"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 rounded-xl bg-gradient-to-br from-violet-600 to-fuchsia-600">
+                  <Layers className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-left">
+                  <span className="text-white">{p.premiumTitle1}</span>{" "}
+                  <span className="gradient-text">{p.premiumTitle2}</span>
+                </h3>
+              </div>
+              <p className="text-dark-300 text-sm mb-4 text-left">{p.premiumSubtitle}</p>
+              <ul className="flex flex-col gap-2 mb-6 text-left flex-1">
+                {p.premiumFeatures.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-dark-200">
+                    <CheckCircle className="w-4 h-4 text-primary-500 shrink-0 mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <button
+                type="button"
+                onClick={() => setCheckoutOpen("premium")}
+                className="w-full mt-auto py-3.5 px-4 rounded-xl font-semibold text-white bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 transition shadow-lg shadow-black/25 focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:ring-offset-2 focus:ring-offset-dark-800"
+              >
+                {p.purchaseBuyCta}
+              </button>
             </motion.div>
 
             <motion.div
@@ -118,7 +203,7 @@ export default function PaginasWebContent() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-2xl border border-dark-600 bg-dark-800/50 p-5 sm:p-6 shadow-lg shadow-black/20"
+              className="rounded-2xl border border-dark-600 bg-dark-800/50 p-5 sm:p-6 shadow-lg shadow-black/20 flex flex-col"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2.5 rounded-xl bg-gradient-to-br from-primary-600 to-emerald-600">
@@ -130,7 +215,7 @@ export default function PaginasWebContent() {
                 </h3>
               </div>
               <p className="text-dark-300 text-sm mb-4 text-left">{p.subscribeSubtitle}</p>
-              <ul className="flex flex-col gap-2 mb-6 text-left">
+              <ul className="flex flex-col gap-2 mb-6 text-left flex-1">
                 {p.subscribeFeatures.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-dark-200">
                     <CheckCircle className="w-4 h-4 text-primary-500 shrink-0 mt-0.5" />
@@ -138,9 +223,29 @@ export default function PaginasWebContent() {
                   </li>
                 ))}
               </ul>
-              <PayPalMaintenanceSubscribe />
+              <button
+                type="button"
+                onClick={() => setCheckoutOpen("subscription")}
+                className="w-full mt-auto py-3.5 px-4 rounded-xl font-semibold text-white bg-gradient-to-r from-primary-600 to-emerald-600 hover:from-primary-500 hover:to-emerald-500 transition shadow-lg shadow-black/25 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-dark-800"
+              >
+                {p.purchaseBuyCta}
+              </button>
             </motion.div>
           </div>
+          {checkoutOpen !== null && (
+            <OfferCheckoutModal
+              open
+              onClose={() => setCheckoutOpen(null)}
+              packageKind={checkoutOpen}
+              planTitle={checkoutPlanTitle(checkoutOpen)}
+              intro={p.purchaseModalIntro}
+              closeLabel={p.purchaseModalClose}
+              paySectionTitle={p.purchaseCheckoutPaypalTitle}
+              labels={purchaseFieldLabels}
+              {...checkoutCustomerPair(checkoutOpen)}
+            />
+          )}
+          </PayPalOffersSdkProvider>
         </div>
       </section>
 

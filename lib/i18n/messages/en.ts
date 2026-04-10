@@ -4,7 +4,7 @@ export const en = {
   header: {
     nav: {
       home: "Home",
-      services: "Services",
+      services: "Websites",
       projects: "Projects",
       process: "Process",
       partners: "Partners",
@@ -266,7 +266,7 @@ export const en = {
     offersTitle1: "Plans",
     offersTitle2: "web & hosting",
     offersSubtitle:
-      "One-time Basic Website or monthly maintenance with hosting. Pay securely with PayPal.",
+      "Basic Website, Premium (up to 10 pages), or monthly maintenance with hosting. Pay securely with PayPal.",
     basicTitle1: "Basic Website",
     basicTitle2: "300 USD",
     basicSubtitle:
@@ -275,9 +275,24 @@ export const en = {
       "Up to 3 pages or one conversion-focused landing",
       "Responsive design, ready to go live",
       "Fixed price in US dollars (USD)",
+      "Revisions included before launch",
     ],
     basicIframeTitle: "Pay for Basic Website with PayPal",
     basicSecureNote: "Secure checkout powered by PayPal.",
+    basicPurchaseSuccess: "Payment completed successfully!",
+    basicOrderIdLabel: "Order ID",
+    premiumTitle1: "Premium Website",
+    premiumTitle2: "500 USD",
+    premiumSubtitle:
+      "A larger site with up to 10 pages. Best when you need more sections, richer content, and a more complete structure than Basic.",
+    premiumFeatures: [
+      "Up to 10 pages with clear navigation and content hierarchy",
+      "Responsive design, performance, and on-page SEO foundations",
+      "Forms, galleries, and advanced blocks tailored to your project",
+      "Revisions included before launch",
+    ],
+    premiumHostedAria: "Pay for Premium Website with PayPal",
+    premiumSecureNote: "Secure checkout powered by PayPal.",
     subscribeTitle1: "Plan",
     subscribeTitle2: "Maintenance + Hosting",
     subscribeSubtitle:
@@ -286,11 +301,27 @@ export const en = {
       "Hosting and SSL certificate",
       "Backups and updates",
       "Monitoring and technical support",
+      "Revisions and small content tweaks included in the plan",
     ],
     subscribeSuccess: "Subscription activated successfully!",
     subscribeIdLabel: "Subscription ID",
     subscribeLoadError: "Could not load PayPal. Please refresh the page or try again later.",
     subscribeSecureNote: "Payments are processed securely by PayPal.",
+    purchaseDataTitle: "Your project details",
+    purchaseNameLabel: "Full name",
+    purchaseEmailLabel: "Email",
+    purchasePhoneLabel: "Phone",
+    purchaseFilesLabel: "Link to your files",
+    purchaseFilesHint:
+      "Optional: Google Drive, Dropbox, WeTransfer, etc. Must be a URL starting with https://",
+    purchaseEnablePayHint: "Enter your name, email, and phone to enable PayPal checkout.",
+    purchaseNotifyFail:
+      "Your payment went through, but we could not send the automatic email. Keep your PayPal ID and contact us if needed.",
+    purchaseBuyCta: "Buy now",
+    purchaseModalIntro:
+      "Fill in your details. Once name, email, and phone are complete, the PayPal buttons will appear so you can pay securely.",
+    purchaseModalClose: "Close",
+    purchaseCheckoutPaypalTitle: "Pay with PayPal",
   },
   ecommerce: {
     heroTitle1: "E-commerce",

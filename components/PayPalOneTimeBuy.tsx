@@ -2,16 +2,29 @@
 
 import { useEffect, useRef, useState } from "react";
 import { CheckCircle } from "lucide-react";
-import { useMessages } from "@/components/LocaleProvider";
 import { usePayPalOffersSdk } from "@/components/PayPalOffersSdkProvider";
 import type { PurchaseCustomerDetails } from "@/lib/purchase-customer";
-
-const PLAN_ID =
-  process.env.NEXT_PUBLIC_PAYPAL_PLAN_ID ?? "P-1GF80607EP151353RNHMD3TI";
 
 type PayPalButtonInstance = {
   render: (container: HTMLElement | string) => Promise<void>;
   close: () => void;
+};
+
+type OrderCreateActions = {
+  order: {
+    create: (opts: {
+      purchase_units: Array<{
+        description?: string;
+        amount: { value: string; currency_code: string };
+      }>;
+    }) => Promise<string>;
+  };
+};
+
+type OrderCaptureActions = {
+  order: {
+    capture: () => Promise<{ id?: string }>;
+  };
 };
 
 type PayPalNamespace = {
@@ -24,6 +37,21 @@ declare global {
   }
 }
 
+export type PayPalOneTimeBuyProps = {
+  packageType: "basic" | "premium";
+  customer: PurchaseCustomerDetails;
+  customerValid: boolean;
+  amount: string;
+  purchaseDescription: string;
+  ariaLabel: string;
+  secureNote: string;
+  successMessage: string;
+  orderIdLabel: string;
+  loadErrorMessage: string;
+  notifyFailMessage: string;
+  containerId: string;
+};
+
 async function postOrderNotification(body: Record<string, unknown>) {
   const res = await fetch("/api/order-notification", {
     method: "POST",
@@ -33,14 +61,20 @@ async function postOrderNotification(body: Record<string, unknown>) {
   return res.ok;
 }
 
-type Props = {
-  customer: PurchaseCustomerDetails;
-  customerValid: boolean;
-};
-
-export default function PayPalMaintenanceSubscribe({ customer, customerValid }: Props) {
-  const m = useMessages();
-  const copy = m.paginasWeb;
+export default function PayPalOneTimeBuy({
+  packageType,
+  customer,
+  customerValid,
+  amount,
+  purchaseDescription,
+  ariaLabel,
+  secureNote,
+  successMessage,
+  orderIdLabel,
+  loadErrorMessage,
+  notifyFailMessage,
+  containerId,
+}: PayPalOneTimeBuyProps) {
   const { sdkReady, sdkError } = usePayPalOffersSdk();
   const containerRef = useRef<HTMLDivElement>(null);
   const instanceRef = useRef<PayPalButtonInstance | null>(null);
@@ -78,23 +112,29 @@ export default function PayPalMaintenanceSubscribe({ customer, customerValid }: 
         shape: "pill",
         color: "gold",
         layout: "vertical",
-        label: "subscribe",
+        label: "paypal",
       },
-      createSubscription: (
-        _data: unknown,
-        actions: { subscription: { create: (o: { plan_id: string }) => Promise<string> } }
-      ) => {
-        return actions.subscription.create({
-          plan_id: PLAN_ID,
+      createOrder: (_data: unknown, actions: OrderCreateActions) => {
+        return actions.order.create({
+          purchase_units: [
+            {
+              description: purchaseDescription,
+              amount: {
+                value: amount,
+                currency_code: "USD",
+              },
+            },
+          ],
         });
       },
-      onApprove: async (data: { subscriptionID?: string }) => {
-        const id = data.subscriptionID ?? "";
+      onApprove: async (_data: unknown, actions: OrderCaptureActions) => {
+        const details = await actions.order.capture();
+        const id = details.id ?? "";
         setSuccessId(id);
         setNotifyFailed(false);
         const ok = await postOrderNotification({
-          packageType: "subscription",
-          paypalSubscriptionId: id,
+          packageType,
+          paypalOrderId: id,
           name: cust.name.trim(),
           email: cust.email.trim(),
           phone: cust.phone.trim(),
@@ -123,10 +163,18 @@ export default function PayPalMaintenanceSubscribe({ customer, customerValid }: 
         instanceRef.current = null;
       }
     };
-  }, [sdkReady, sdkError, customerValid, customer]);
+  }, [
+    sdkReady,
+    sdkError,
+    customerValid,
+    customer,
+    amount,
+    purchaseDescription,
+    packageType,
+  ]);
 
   return (
-    <div className="w-full max-w-md mx-auto">
+    <div className="w-full max-w-md mx-auto" role="region" aria-label={ariaLabel}>
       {successId && (
         <div
           className="mb-6 p-4 rounded-xl bg-primary-500/15 border border-primary-500/40 text-left"
@@ -135,15 +183,13 @@ export default function PayPalMaintenanceSubscribe({ customer, customerValid }: 
           <div className="flex items-start gap-3">
             <CheckCircle className="w-5 h-5 text-primary-400 shrink-0 mt-0.5" />
             <div>
-              <p className="text-white font-semibold mb-1">{copy.subscribeSuccess}</p>
+              <p className="text-white font-semibold mb-1">{successMessage}</p>
               <p className="text-dark-300 text-sm">
-                <span className="text-dark-400">{copy.subscribeIdLabel}: </span>
+                <span className="text-dark-400">{orderIdLabel}: </span>
                 <span className="font-mono text-dark-200 break-all">{successId}</span>
               </p>
               {notifyFailed && (
-                <p className="text-amber-400/95 text-xs mt-3 leading-relaxed">
-                  {copy.purchaseNotifyFail}
-                </p>
+                <p className="text-amber-400/95 text-xs mt-3 leading-relaxed">{notifyFailMessage}</p>
               )}
             </div>
           </div>
@@ -151,16 +197,16 @@ export default function PayPalMaintenanceSubscribe({ customer, customerValid }: 
       )}
 
       {(sdkError || renderError) && (
-        <p className="text-sm text-red-400 text-center mb-4">{copy.subscribeLoadError}</p>
+        <p className="text-sm text-red-400 text-center mb-4">{loadErrorMessage}</p>
       )}
 
       <div
         ref={containerRef}
-        id="paypal-button-container-maintenance-hosting"
+        id={containerId}
         className="min-h-[120px] flex flex-col items-stretch justify-center"
       />
 
-      <p className="text-xs text-dark-500 text-center mt-4">{copy.subscribeSecureNote}</p>
+      <p className="text-xs text-dark-500 text-center mt-4">{secureNote}</p>
     </div>
   );
 }

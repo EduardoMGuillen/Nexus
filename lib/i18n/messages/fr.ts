@@ -4,7 +4,7 @@ export const fr: Messages = {
   header: {
     nav: {
       home: "Accueil",
-      services: "Services",
+      services: "Sites web",
       projects: "Projets",
       process: "Processus",
       partners: "Partenaires",
@@ -266,7 +266,7 @@ export const fr: Messages = {
     offersTitle1: "Offres",
     offersTitle2: "site et hébergement",
     offersSubtitle:
-      "Basic Website en paiement unique ou maintenance mensuelle avec hébergement. Paiement sécurisé PayPal.",
+      "Basic Website, Premium (jusqu'à 10 pages) ou maintenance mensuelle avec hébergement. Paiement sécurisé PayPal.",
     basicTitle1: "Basic Website",
     basicTitle2: "300 USD",
     basicSubtitle:
@@ -275,9 +275,24 @@ export const fr: Messages = {
       "Jusqu’à 3 pages ou une landing orientée conversion",
       "Design responsive, prêt à la mise en ligne",
       "Prix fixe en dollars (USD)",
+      "Révisions incluses avant la mise en ligne",
     ],
     basicIframeTitle: "Payer Basic Website avec PayPal",
     basicSecureNote: "Paiement sécurisé via PayPal.",
+    basicPurchaseSuccess: "Paiement effectué avec succès !",
+    basicOrderIdLabel: "N° de commande",
+    premiumTitle1: "Premium Website",
+    premiumTitle2: "500 USD",
+    premiumSubtitle:
+      "Site étendu jusqu'à 10 pages. Idéal si vous avez besoin de plus de sections, de contenu riche et d'une structure plus complète que l'offre Basic.",
+    premiumFeatures: [
+      "Jusqu'à 10 pages avec navigation claire et hiérarchie de contenu",
+      "Design responsive, performance et bases de SEO on-page",
+      "Formulaires, galeries et blocs avancés selon votre projet",
+      "Révisions incluses avant la mise en ligne",
+    ],
+    premiumHostedAria: "Payer Premium Website avec PayPal",
+    premiumSecureNote: "Paiement sécurisé via PayPal.",
     subscribeTitle1: "Forfait",
     subscribeTitle2: "Maintenance + Hébergement",
     subscribeSubtitle:
@@ -286,12 +301,29 @@ export const fr: Messages = {
       "Hébergement et certificat SSL",
       "Sauvegardes et mises à jour",
       "Surveillance et support technique",
+      "Révisions et petits ajustements de contenu inclus dans le forfait",
     ],
     subscribeSuccess: "Abonnement activé avec succès !",
     subscribeIdLabel: "ID d’abonnement",
     subscribeLoadError:
       "Impossible de charger PayPal. Actualisez la page ou réessayez plus tard.",
     subscribeSecureNote: "Paiements traités en toute sécurité par PayPal.",
+    purchaseDataTitle: "Vos informations pour le projet",
+    purchaseNameLabel: "Nom complet",
+    purchaseEmailLabel: "E-mail",
+    purchasePhoneLabel: "Téléphone",
+    purchaseFilesLabel: "Lien vers vos fichiers",
+    purchaseFilesHint:
+      "Facultatif : Google Drive, Dropbox, WeTransfer, etc. URL commençant par https://",
+    purchaseEnablePayHint:
+      "Renseignez nom, e-mail et téléphone pour activer le paiement PayPal.",
+    purchaseNotifyFail:
+      "Paiement enregistré, mais l’e-mail automatique n’a pas pu être envoyé. Conservez votre ID PayPal et contactez-nous si besoin.",
+    purchaseBuyCta: "Acheter",
+    purchaseModalIntro:
+      "Renseignez vos informations. Une fois le nom, l’e-mail et le téléphone complétés, les boutons PayPal s’affichent pour payer en toute sécurité.",
+    purchaseModalClose: "Fermer",
+    purchaseCheckoutPaypalTitle: "Paiement avec PayPal",
   },
   ecommerce: {
     heroTitle1: "E-commerce",
