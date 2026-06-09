@@ -4,65 +4,12 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { useMessages } from "./LocaleProvider";
+import { CLIENTS } from "@/lib/clients";
 
-type Partner = {
-  name: string;
-  logo: string;
-  url: string;
-  logoBg?: string;
-};
-
-const partners: Partner[] = [
-  {
-    name: "Astro",
-    logo: "/partners/astrologo.png",
-    url: "https://www.lagrancasablanca.com",
-  },
-  {
-    name: "Casablanca",
-    logo: "/partners/casablancadorado.png",
-    url: "https://www.lagrancasablanca.com",
-  },
-  {
-    name: "Studio 54",
-    logo: "/partners/studio54logo.png",
-    url: "https://www.lagrancasablanca.com",
-  },
-  {
-    name: "Stellare",
-    logo: "/partners/stellarelogo.png",
-    url: "https://www.stellare.co",
-  },
-  {
-    name: "InmoModerna",
-    logo: "/partners/inmomodernalogo.png",
-    url: "https://www.inmobiliariamodernahn.com",
-  },
-  {
-    name: "TeamLink",
-    logo: "/partners/teamlinklogo.png",
-    url: "https://www.teamlink.lat",
-  },
-  {
-    name: "BizzTrack",
-    logo: "/partners/Bizztracklogo.png",
-    url: "https://www.bizztrack.pro",
-  },
-  {
-    name: "Bravex Trade Services",
-    logo: "/partners/bravex_sinf.png",
-    url: "https://bravextradeservices.com/",
-    logoBg: "bg-neutral-900 rounded-xl",
-  },
-  {
-    name: "Marta Martínez Estética",
-    logo: "/partners/marta_martinez_estetica.png",
-    url: "https://www.martamartinezestetica.com/",
-  },
-];
-
-const marqueePartners = [...partners, ...partners];
+const marqueeClients = [...CLIENTS, ...CLIENTS];
 
 export default function Partners() {
   const ref = useRef(null);
@@ -71,7 +18,7 @@ export default function Partners() {
 
   return (
     <section
-      id="partners"
+      id="clientes"
       ref={ref}
       className="py-24 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-dark-900 dark:to-dark-800 overflow-hidden"
     >
@@ -80,15 +27,22 @@ export default function Partners() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
             <span className="text-slate-900 dark:text-white">{m.partners.titleOur}</span>{" "}
             <span className="gradient-text">{m.partners.titleHighlight}</span>
           </h2>
-          <p className="text-slate-600 dark:text-dark-300 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-dark-300 text-lg max-w-2xl mx-auto mb-8">
             {m.partners.subtitle}
           </p>
+          <Link
+            href="/clientes"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-400 hover:to-primary-500 transition-all shadow-lg shadow-primary-500/30"
+          >
+            {m.partners.viewAll}
+            <ArrowRight className="w-5 h-5" />
+          </Link>
         </motion.div>
       </div>
 
@@ -102,21 +56,21 @@ export default function Partners() {
         <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-l from-slate-100 dark:from-dark-800 to-transparent z-10 pointer-events-none" />
 
         <div className="flex items-center animate-marquee group-hover:[animation-play-state:paused]">
-          {marqueePartners.map((partner, index) => (
+          {marqueeClients.map((client, index) => (
             <a
-              key={`${partner.name}-${index}`}
-              href={partner.url}
+              key={`${client.name}-${index}`}
+              href={client.url}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-shrink-0 mx-6 sm:mx-10"
             >
               <div className="relative flex items-center justify-center px-8 py-6 bg-white dark:bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-dark-700 hover:border-primary-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10 group/card w-44 sm:w-52">
                 <div
-                  className={`relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center ${partner.logoBg ?? ""}`}
+                  className={`relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center ${client.logoBg ?? ""}`}
                 >
                   <Image
-                    src={partner.logo}
-                    alt={`${partner.name} logo`}
+                    src={client.logo}
+                    alt={`${client.name} logo`}
                     fill
                     className="object-contain"
                     sizes="(max-width: 640px) 96px, 112px"
