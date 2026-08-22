@@ -73,14 +73,14 @@ export function serviceJsonLd() {
     offers: [
       {
         "@type": "Offer",
-        name: "Basic Website",
+        name: "Presencia que vende",
         price: "300",
         priceCurrency: "USD",
         url: `${SITE_URL}/paginas-web#ofertas`,
       },
       {
         "@type": "Offer",
-        name: "Premium Website",
+        name: "Marca online completa",
         price: "500",
         priceCurrency: "USD",
         url: `${SITE_URL}/paginas-web#ofertas`,
@@ -92,7 +92,7 @@ export function serviceJsonLd() {
 export const hondurasFaqs = [
   {
     q: "¿Cuánto cuesta crear una página web en Honduras?",
-    a: "En Nexus Global un sitio Basic (hasta 3 páginas) parte de 300 USD y un Premium (hasta 10 páginas) de 500 USD. También ofrecemos plan mensual de mantenimiento y hosting. Los precios están en dólares y el pago es seguro con PayPal.",
+    a: "En Nexus Global un sitio de lanzamiento — Presencia que vende, hasta 3 páginas — parte de 300 USD y Marca online completa (hasta 10 páginas) de 500 USD. Si el alcance es distinto, el plan Tu presupuesto, tu web se cotiza a medida. También ofrecemos plan mensual de mantenimiento y hosting.",
   },
   {
     q: "¿Hacen páginas web en Tegucigalpa y San Pedro Sula?",

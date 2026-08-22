@@ -28,6 +28,8 @@ export default function Header() {
     { name: nav.services, href: "/paginas-web#ofertas" },
     { name: nav.projects, href: "/#proyectos" },
     { name: nav.clients, href: "/clientes" },
+    { name: nav.blog, href: "/blog" },
+    { name: nav.about, href: "/nosotros" },
     { name: nav.process, href: "/#proceso" },
     { name: nav.contact, href: "/#contacto" },
   ];

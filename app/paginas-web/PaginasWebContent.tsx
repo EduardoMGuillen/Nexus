@@ -14,6 +14,7 @@ import {
   ArrowLeft,
   LayoutTemplate,
   Layers,
+  Wallet,
 } from "lucide-react";
 import Link from "next/link";
 import { useMessages } from "@/components/LocaleProvider";
@@ -135,7 +136,7 @@ export default function PaginasWebContent() {
           </motion.div>
 
           <PayPalOffersSdkProvider>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -202,6 +203,39 @@ export default function PaginasWebContent() {
               >
                 {p.purchaseBuyCta}
               </button>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.12 }}
+              className="rounded-2xl border border-cyan-500/30 bg-dark-800/50 p-5 sm:p-6 shadow-lg shadow-black/20 flex flex-col"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 rounded-xl bg-gradient-to-br from-cyan-500 to-sky-600">
+                  <Wallet className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-left">
+                  <span className="text-white">{p.budgetTitle1}</span>{" "}
+                  <span className="gradient-text">{p.budgetTitle2}</span>
+                </h3>
+              </div>
+              <p className="text-dark-300 text-sm mb-4 text-left">{p.budgetSubtitle}</p>
+              <ul className="flex flex-col gap-2 mb-6 text-left flex-1">
+                {p.budgetFeatures.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-dark-200">
+                    <CheckCircle className="w-4 h-4 text-primary-500 shrink-0 mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/#contacto"
+                className="w-full mt-auto py-3.5 px-4 rounded-xl font-semibold text-center text-white bg-gradient-to-r from-cyan-600 to-sky-600 hover:from-cyan-500 hover:to-sky-500 transition shadow-lg shadow-black/25"
+              >
+                {p.budgetCta}
+              </Link>
             </motion.div>
 
             <motion.div

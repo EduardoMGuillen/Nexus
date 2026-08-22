@@ -121,8 +121,8 @@ export default function HondurasLandingContent() {
               Precios para empezar
             </h2>
             <p className="text-dark-300 mb-6">
-              Basic Website <strong className="text-white">300 USD</strong> (hasta 3 páginas) y
-              Premium Website <strong className="text-white">500 USD</strong> (hasta 10 páginas).
+              Presencia que vende <strong className="text-white">300 USD</strong> (hasta 3 páginas) y
+              Marca online completa <strong className="text-white">500 USD</strong> (hasta 10 páginas).
               Plan de mantenimiento y hosting por suscripción. Pago con PayPal.
             </p>
             <Link

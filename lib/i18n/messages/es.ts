@@ -6,6 +6,8 @@ export const es = {
       projects: "Proyectos",
       process: "Proceso",
       clients: "Clientes",
+      blog: "Blog",
+      about: "Nosotros",
       contact: "Contacto",
     },
     ariaTheme: "Cambiar tema",
@@ -209,6 +211,8 @@ export const es = {
     errSend: "Error al enviar el mensaje",
     email: "Email",
     instagram: "Instagram",
+    privacyNote: "Al enviar aceptas el tratamiento de tus datos según la",
+    privacyLink: "política de privacidad",
   },
   footer: {
     tagline: "Agencia de páginas web y soluciones digitales en Honduras",
@@ -218,6 +222,7 @@ export const es = {
     follow: "Síguenos",
     rights: "Todos los derechos reservados.",
     madeWith: "Hecho con ❤️ por Nexus Global",
+    privacy: "Privacidad",
     ariaInstagram: "Instagram",
     ariaEmail: "Correo",
   },
@@ -226,7 +231,7 @@ export const es = {
     title: "Crear página web en Honduras",
     lead: "Diseño y desarrollo web para negocios hondureños: sitios que se ven bien en el celular, cargan rápido y ayudan a que te encuentren en Google.",
     points: [
-      "Planes claros: Basic 300 USD y Premium 500 USD, con revisiones incluidas.",
+      "Planes claros: Presencia que vende 300 USD y Marca online completa 500 USD, con revisiones incluidas.",
       "SEO local para Tegucigalpa, San Pedro Sula y búsquedas como “crear página web en Honduras”.",
       "Hosting, SSL y mantenimiento para que tu sitio siga en línea.",
       "Clientes reales: floristerías, estética, inmobiliarias y más marcas locales.",
@@ -252,6 +257,91 @@ export const es = {
     backToProjects: "Volver a proyectos",
     requestQuote: "Solicitar Cotización",
     brandName: "Nexus Global",
+  },
+  about: {
+    backHome: "Volver al inicio",
+    badge: "Honduras · atención nacional",
+    title: "Quiénes somos",
+    lead: "Nexus Global es una agencia de desarrollo web en Honduras. Diseñamos sitios, tiendas y plataformas para negocios que quieren verse profesionales y aparecer en Google.",
+    whereTitle: "Dónde estamos",
+    whereBody: "Honduras. Atención nacional: Tegucigalpa, San Pedro Sula y el resto del país, de forma remota o con reuniones según el proyecto.",
+    contactTitle: "Contacto",
+    httpsTitle: "Sitio seguro",
+    httpsBody: "nexusglobalsuministros.com se sirve por HTTPS (cifrado). Los pagos de planes web los procesa PayPal; no guardamos números de tarjeta.",
+    storyTitle: "Cómo trabajamos",
+    story: [
+      "Somos un equipo pequeño y cercano: te hablamos claro de plazos, precios y lo que sí entra en cada plan. No prometemos “primeros en Google en una semana”; sí entregamos sitios rápidos, móviles y con bases de SEO local.",
+      "Hemos publicado marcas reales — floristería, estética, inmobiliarias, acceso residencial — que puedes abrir hoy mismo. Esa es la prueba, no un mockup.",
+    ],
+    casesTitle: "Casos en producción",
+    casesLead:
+      "Antes y después en lenguaje honesto: no inventamos métricas. El “después” es un sitio publicado que puedes visitar.",
+    beforeLabel: "Antes",
+    afterLabel: "Después",
+    visitLive: "Ver sitio en vivo",
+    ctaContact: "Escribirnos",
+    privacyLink: "Política de privacidad",
+    cases: [
+      {
+        name: "RoseLune Floristería",
+        before: "Marca premium de flores sin una web a la altura del branding (oro y negro) ni un destino claro para pedidos.",
+        after: "Sitio en producción en roselunehn.com: identidad cuidada, presencia de catálogo y un canal directo para clientes en Honduras.",
+      },
+      {
+        name: "Marta Martínez Estética",
+        before: "Un centro de estética necesitaba verse tan profesional en internet como en el local, con contacto fácil para citas.",
+        after: "Sitio live en martamartinezestetica.com: referencia de entrega real para spa, belleza y bienestar.",
+      },
+      {
+        name: "Stellare",
+        before: "Proyecto inmobiliario que requería transmitir calidad y captar interesados fuera del boca a boca.",
+        after: "Presencia en stellare.co: marca y propiedades en un sitio rápido, listo para campañas y WhatsApp.",
+      },
+      {
+        name: "MiVisita",
+        before: "Conjuntos y torres gestionaban visitas en papel o grupos de chat, con fricción en el portón.",
+        after: "Producto en mivisita.app: acceso con QR, validación en tiempo real y una marca digital propia.",
+      },
+    ],
+  },
+  privacy: {
+    back: "Inicio",
+    title: "Política de privacidad",
+    updated: "Última actualización: 21 de agosto de 2026",
+    sections: [
+      {
+        h: "Quiénes somos",
+        p: [
+          "Nexus Global (sitio nexusglobalsuministros.com) es una agencia de desarrollo web en Honduras. Responsable del tratamiento: el equipo de Nexus Global. Contacto: Eduardoguillendev@proton.me.",
+        ],
+      },
+      {
+        h: "Qué datos recogemos",
+        p: [
+          "Formulario de contacto: nombre, correo, teléfono (opcional) y mensaje. Los usamos solo para responderte y dar seguimiento al proyecto.",
+          "Checkout de planes web: nombre, correo, teléfono y, si lo indicas, un enlace a archivos (Drive, etc.). Eso se envía por correo interno para iniciar el trabajo después de un pago o suscripción PayPal.",
+          "PayPal recibe los datos de pago (tarjeta o cuenta) en sus servidores. Nexus no almacena números de tarjeta ni CVV.",
+        ],
+      },
+      {
+        h: "Cookies y analítica",
+        p: [
+          "Usamos Google Analytics (identificador G-7TYVWC1F92) para entender visitas de forma agregada. Puedes bloquear cookies en el navegador.",
+        ],
+      },
+      {
+        h: "Conservación y seguridad",
+        p: [
+          "El sitio se sirve por HTTPS. Los correos se envían por SMTP autenticado. No vendemos listas de contactos. Conservamos mensajes el tiempo necesario para atenderte o por obligación legal.",
+        ],
+      },
+      {
+        h: "Tus derechos",
+        p: [
+          "Puedes pedir acceso, corrección o borrado de tus datos escribiendo a Eduardoguillendev@proton.me. Si PayPal procesó un pago, parte de la información vive en tu cuenta PayPal y su propia política.",
+        ],
+      },
+    ],
   },
   paginasWeb: {
     heroTitle1: "Páginas Web",
@@ -317,33 +407,44 @@ export const es = {
     offersTitle1: "Planes",
     offersTitle2: "web y hosting",
     offersSubtitle:
-      "Basic Website, Premium (hasta 10 páginas) o mantenimiento mensual con hosting. Paga con PayPal de forma segura.",
-    basicTitle1: "Basic Website",
+      "Presencia que vende, marca online completa, un plan a tu presupuesto, o mantenimiento mensual con hosting.",
+    basicTitle1: "Presencia que vende",
     basicTitle2: "300 USD",
     basicSubtitle:
-      "Landing page o sitio web de 1 a 3 páginas. Pago único; ideal para arrancar tu presencia online con rapidez.",
+      "Tu marca en internet con impacto: landing o sitio de 1 a 3 páginas pensado para WhatsApp, Google y conversión. Pago único.",
     basicFeatures: [
-      "Hasta 3 páginas o una landing enfocada en conversión",
-      "Diseño responsive y entrega lista para publicar",
-      "Precio fijo en dólares (USD)",
+      "Hasta 3 páginas o una landing enfocada en conseguir clientes",
+      "Diseño responsive, listo para publicar en Honduras",
+      "Precio fijo en dólares (USD) — sin sorpresas",
       "Revisiones incluidas antes de publicar",
     ],
-    basicIframeTitle: "Pagar Basic Website con PayPal",
+    basicIframeTitle: "Pagar Presencia que vende con PayPal",
     basicSecureNote: "Pago seguro procesado por PayPal.",
     basicPurchaseSuccess: "¡Pago completado correctamente!",
     basicOrderIdLabel: "ID de pedido",
-    premiumTitle1: "Premium Website",
+    premiumTitle1: "Marca online completa",
     premiumTitle2: "500 USD",
     premiumSubtitle:
-      "Sitio amplio de hasta 10 páginas. Ideal si necesitas más secciones, más contenido y una estructura más completa que el paquete Basic.",
+      "Sitio de hasta 10 páginas con arquitectura, SEO on-page y bloques avanzados. La presencia que una marca seria necesita.",
     premiumFeatures: [
       "Hasta 10 páginas con navegación clara y jerarquía de contenido",
       "Diseño responsive, rendimiento y bases de SEO on-page",
       "Formularios, galerías y bloques avanzados según tu proyecto",
       "Revisiones incluidas antes de publicar",
     ],
-    premiumHostedAria: "Pagar Premium Website con PayPal",
+    premiumHostedAria: "Pagar Marca online completa con PayPal",
     premiumSecureNote: "Pago seguro procesado por PayPal.",
+    budgetTitle1: "Tu presupuesto, tu web",
+    budgetTitle2: "A medida",
+    budgetSubtitle:
+      "Tú defines el alcance y el presupuesto. Rediseño, menos páginas, más integraciones o un proyecto híbrido: cotizamos sin encajarte en un paquete rígido.",
+    budgetFeatures: [
+      "Alcance y precio acordados por escrito antes de empezar",
+      "Ideal si 300 o 500 USD no calzan con lo que necesitas",
+      "Puede incluir tienda, reservas, CRM o contenido extra",
+      "Revisiones incluidas según el alcance pactado",
+    ],
+    budgetCta: "Pedir cotización",
     subscribeTitle1: "Plan",
     subscribeTitle2: "Mantenimiento + Hosting",
     subscribeSubtitle:

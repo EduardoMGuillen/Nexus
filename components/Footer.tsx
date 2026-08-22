@@ -16,6 +16,8 @@ export default function Footer() {
     { name: nav.services, href: "/paginas-web#ofertas" },
     { name: nav.projects, href: "/#proyectos" },
     { name: nav.clients, href: "/clientes" },
+    { name: nav.blog, href: "/blog" },
+    { name: nav.about, href: "/nosotros" },
     { name: nav.contact, href: "/#contacto" },
   ];
 
@@ -91,11 +93,16 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-dark-800 pt-8 flex flex-col sm:flex-row justify-center sm:justify-between items-center text-center">
+        <div className="border-t border-dark-800 pt-8 flex flex-col sm:flex-row justify-center sm:justify-between items-center text-center gap-3">
           <p className="text-slate-400 dark:text-dark-500 text-sm">
             © {currentYear} {m.common.brandName}. {m.footer.rights}
           </p>
-          <p className="text-slate-400 dark:text-dark-500 text-sm mt-2 sm:mt-0">{m.footer.madeWith}</p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+            <Link href="/privacidad" className="text-slate-400 dark:text-dark-500 text-sm hover:text-primary-400">
+              {m.footer.privacy}
+            </Link>
+            <p className="text-slate-400 dark:text-dark-500 text-sm">{m.footer.madeWith}</p>
+          </div>
         </div>
       </div>
     </footer>

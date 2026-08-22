@@ -21,7 +21,7 @@ export default function PayPalPremiumWebsiteHosted({ customer, customerValid }: 
       customer={customer}
       customerValid={customerValid}
       amount={PREMIUM_AMOUNT}
-      purchaseDescription="Premium Website — Up to 10 pages"
+      purchaseDescription="Marca online completa — Up to 10 pages"
       ariaLabel={copy.premiumHostedAria}
       secureNote={copy.premiumSecureNote}
       successMessage={copy.basicPurchaseSuccess}

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Send, Mail, Instagram, CheckCircle } from "lucide-react";
+import Link from "next/link";
 import { useMessages } from "./LocaleProvider";
 
 export default function Contact() {
@@ -259,6 +260,13 @@ export default function Contact() {
                   </>
                 )}
               </motion.button>
+              <p className="text-xs text-slate-500 dark:text-dark-500 text-center">
+                {m.contact.privacyNote}{" "}
+                <Link href="/privacidad" className="text-primary-600 dark:text-primary-400 hover:underline">
+                  {m.contact.privacyLink}
+                </Link>
+                .
+              </p>
             </form>
           </motion.div>
         </div>

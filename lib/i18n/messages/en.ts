@@ -8,6 +8,8 @@ export const en = {
       projects: "Projects",
       process: "Process",
       clients: "Clients",
+      blog: "Blog",
+      about: "About",
       contact: "Contact",
     },
     ariaTheme: "Toggle theme",
@@ -210,6 +212,8 @@ export const en = {
     errSend: "Failed to send message",
     email: "Email",
     instagram: "Instagram",
+    privacyNote: "By sending you agree to our handling of your data under the",
+    privacyLink: "privacy policy",
   },
   footer: {
     tagline: "Website and digital solutions agency in Honduras",
@@ -219,6 +223,7 @@ export const en = {
     follow: "Follow us",
     rights: "All rights reserved.",
     madeWith: "Made with ❤️ by Nexus Global",
+    privacy: "Privacy",
     ariaInstagram: "Instagram",
     ariaEmail: "Email",
   },
@@ -227,7 +232,7 @@ export const en = {
     title: "Build a website in Honduras",
     lead: "Web design for Honduran businesses: mobile-first sites that load fast and help customers find you on Google.",
     points: [
-      "Clear pricing: Basic $300 USD and Premium $500 USD, with revisions included.",
+      "Clear pricing: Launch Presence $300 USD and Complete Brand Site $500 USD, with revisions included.",
       "Local SEO for Tegucigalpa, San Pedro Sula, and searches like “create a website in Honduras”.",
       "Hosting, SSL, and maintenance so your site stays online.",
       "Real local clients: florists, clinics, real estate, and more.",
@@ -253,6 +258,90 @@ export const en = {
     backToProjects: "Back to projects",
     requestQuote: "Request a quote",
     brandName: "Nexus Global",
+  },
+  about: {
+    backHome: "Back to home",
+    badge: "Honduras · nationwide",
+    title: "About us",
+    lead: "Nexus Global is a web development agency in Honduras. We design sites, stores, and platforms for businesses that want to look professional and show up on Google.",
+    whereTitle: "Where we are",
+    whereBody: "Honduras. Nationwide: Tegucigalpa, San Pedro Sula, and the rest of the country—remote or in-person as needed.",
+    contactTitle: "Contact",
+    httpsTitle: "Secure site",
+    httpsBody: "nexusglobalsuministros.com is served over HTTPS. Web-plan payments are processed by PayPal; we do not store card numbers.",
+    storyTitle: "How we work",
+    story: [
+      "We are a small team: clear timelines, prices, and what each plan includes. We do not promise “#1 on Google in a week”; we do ship fast, mobile sites with local SEO foundations.",
+      "We have live brands—florist, aesthetics, real estate, residential access—that you can open today. That is the proof, not a mockup.",
+    ],
+    casesTitle: "Live cases",
+    casesLead: "Honest before/after: we do not invent metrics. “After” is a published site you can visit.",
+    beforeLabel: "Before",
+    afterLabel: "After",
+    visitLive: "View live site",
+    ctaContact: "Contact us",
+    privacyLink: "Privacy policy",
+    cases: [
+      {
+        name: "RoseLune Florist",
+        before: "A premium flower brand without a site matching its gold-and-black identity or a clear place to order.",
+        after: "Live at roselunehn.com: careful branding, catalog presence, and a direct channel for customers in Honduras.",
+      },
+      {
+        name: "Marta Martínez Estética",
+        before: "An aesthetics center needed to look as professional online as in the studio, with easy booking contact.",
+        after: "Live at martamartinezestetica.com: a real delivery for spa, beauty, and wellness.",
+      },
+      {
+        name: "Stellare",
+        before: "A real-estate project that needed to signal quality and capture interest beyond word of mouth.",
+        after: "Live at stellare.co: brand and properties on a fast site ready for campaigns and WhatsApp.",
+      },
+      {
+        name: "MiVisita",
+        before: "Buildings managed visits on paper or chat groups, with friction at the gate.",
+        after: "Product at mivisita.app: QR access, real-time validation, and its own digital brand.",
+      },
+    ],
+  },
+  privacy: {
+    back: "Home",
+    title: "Privacy policy",
+    updated: "Last updated: 21 August 2026",
+    sections: [
+      {
+        h: "Who we are",
+        p: [
+          "Nexus Global (nexusglobalsuministros.com) is a web agency in Honduras. Controller: the Nexus Global team. Contact: Eduardoguillendev@proton.me.",
+        ],
+      },
+      {
+        h: "What we collect",
+        p: [
+          "Contact form: name, email, optional phone, and message—only to reply and follow up on your project.",
+          "Web-plan checkout: name, email, phone, and an optional files URL. We email that internally after a PayPal payment or subscription.",
+          "PayPal processes payment data on its servers. Nexus does not store card numbers or CVV.",
+        ],
+      },
+      {
+        h: "Cookies and analytics",
+        p: [
+          "We use Google Analytics (G-7TYVWC1F92) for aggregated traffic. You can block cookies in your browser.",
+        ],
+      },
+      {
+        h: "Retention and security",
+        p: [
+          "The site is served over HTTPS. Email is sent via authenticated SMTP. We do not sell contact lists. We keep messages as long as needed to help you or as required by law.",
+        ],
+      },
+      {
+        h: "Your rights",
+        p: [
+          "You may request access, correction, or deletion at Eduardoguillendev@proton.me. If PayPal processed a payment, some data lives in your PayPal account and their policy.",
+        ],
+      },
+    ],
   },
   paginasWeb: {
     heroTitle1: "Websites",
@@ -318,33 +407,44 @@ export const en = {
     offersTitle1: "Plans",
     offersTitle2: "web & hosting",
     offersSubtitle:
-      "Basic Website, Premium (up to 10 pages), or monthly maintenance with hosting. Pay securely with PayPal.",
-    basicTitle1: "Basic Website",
+      "Launch Presence, Complete Brand Site, a custom budget plan, or monthly hosting.",
+    basicTitle1: "Launch Presence",
     basicTitle2: "300 USD",
     basicSubtitle:
-      "Landing page or a small site with 1–3 pages. One-time payment—perfect to launch your online presence quickly.",
+      "Your brand online with impact: a landing or 1–3 page site built for WhatsApp, Google, and conversions. One-time payment.",
     basicFeatures: [
-      "Up to 3 pages or one conversion-focused landing",
-      "Responsive design, ready to go live",
+      "Up to 3 pages or one landing focused on getting clients",
+      "Responsive design, ready to publish",
       "Fixed price in US dollars (USD)",
       "Revisions included before launch",
     ],
-    basicIframeTitle: "Pay for Basic Website with PayPal",
+    basicIframeTitle: "Pay for Launch Presence with PayPal",
     basicSecureNote: "Secure checkout powered by PayPal.",
     basicPurchaseSuccess: "Payment completed successfully!",
     basicOrderIdLabel: "Order ID",
-    premiumTitle1: "Premium Website",
+    premiumTitle1: "Complete Brand Site",
     premiumTitle2: "500 USD",
     premiumSubtitle:
-      "A larger site with up to 10 pages. Best when you need more sections, richer content, and a more complete structure than Basic.",
+      "Up to 10 pages with information architecture, on-page SEO, and advanced blocks. The presence a serious brand needs.",
     premiumFeatures: [
       "Up to 10 pages with clear navigation and content hierarchy",
       "Responsive design, performance, and on-page SEO foundations",
       "Forms, galleries, and advanced blocks tailored to your project",
       "Revisions included before launch",
     ],
-    premiumHostedAria: "Pay for Premium Website with PayPal",
+    premiumHostedAria: "Pay for Complete Brand Site with PayPal",
     premiumSecureNote: "Secure checkout powered by PayPal.",
+    budgetTitle1: "Your Budget, Your Web",
+    budgetTitle2: "Custom",
+    budgetSubtitle:
+      "You set the scope and the budget. Redesign, fewer pages, more integrations, or a hybrid project—we quote without forcing a rigid package.",
+    budgetFeatures: [
+      "Scope and price agreed in writing before we start",
+      "Ideal when $300 or $500 doesn’t match what you need",
+      "Can include store, bookings, CRM, or extra content",
+      "Revisions included according to the agreed scope",
+    ],
+    budgetCta: "Request a quote",
     subscribeTitle1: "Plan",
     subscribeTitle2: "Maintenance + Hosting",
     subscribeSubtitle:

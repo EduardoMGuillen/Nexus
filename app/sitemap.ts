@@ -11,6 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/ecommerce",
     "/dashboard",
     "/mivisita",
+    "/nosotros",
+    "/privacidad",
+    "/blog",
+    "/blog/cuanto-cuesta-pagina-web-honduras",
+    "/blog/paginas-web-inmobiliaria-clinica-floristeria",
+    "/blog/inteligencia-artificial-negocios-honduras",
+    "/blog/como-google-e-ia-eligen-agencia-web",
   ];
 
   return paths.map((path) => ({
