@@ -1,36 +1,47 @@
 import type { Metadata } from "next";
 import PaginasWebContent from "./PaginasWebContent";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, serviceJsonLd } from "@/lib/jsonld";
+import { HONDURAS_KEYWORDS, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Páginas Web para Negocios - Diseño, Google Ads, Hosting y CRM",
-  description: "Páginas web profesionales con integración de anuncios de Google, diseño responsive, hosteo optimizado y CRM integrado. Soluciones completas para hacer crecer tu negocio online.",
+  title: "Páginas web en Honduras — Precios, diseño, hosting y SEO",
+  description:
+    "Crea tu página web en Honduras: Basic 300 USD (hasta 3 páginas) o Premium 500 USD (hasta 10). Diseño, hosting, SEO local y PayPal. Tegucigalpa y San Pedro Sula.",
   keywords: [
-    "páginas web",
-    "diseño web",
-    "Google Ads",
-    "hosting web",
-    "CRM",
-    "desarrollo web",
-    "sitios web",
-    "optimización SEO",
-    "marketing digital",
-    "presencia online",
+    ...HONDURAS_KEYWORDS,
+    "precios páginas web Honduras",
+    "hosting web Honduras",
   ],
+  alternates: { canonical: `${SITE_URL}/paginas-web` },
   openGraph: {
-    title: "Páginas Web para Negocios - Diseño, Google Ads, Hosting y CRM | Nexus Global",
-    description: "Páginas web profesionales con integración de anuncios de Google, diseño responsive, hosteo optimizado y CRM integrado.",
-    url: "https://nexusglobal.com/paginas-web",
+    title: "Páginas web en Honduras | Nexus Global",
+    description:
+      "Planes de diseño web para negocios hondureños. Google, hosting y CRM. Desde 300 USD.",
+    url: `${SITE_URL}/paginas-web`,
+    locale: "es_HN",
     images: [
       {
         url: "/NexusGPTHD.png",
         width: 1200,
         height: 630,
-        alt: "Nexus Global - Páginas Web para Negocios",
+        alt: "Páginas web profesionales en Honduras",
       },
     ],
   },
 };
 
 export default function PaginasWebPage() {
-  return <PaginasWebContent />;
+  return (
+    <>
+      <JsonLd data={serviceJsonLd()} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Inicio", path: "/" },
+          { name: "Páginas web", path: "/paginas-web" },
+        ])}
+      />
+      <PaginasWebContent />
+    </>
+  );
 }

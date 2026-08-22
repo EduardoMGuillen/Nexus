@@ -17,7 +17,7 @@ export const es = {
     titleLine1: "Conectamos tu",
     titleHighlight: "futuro digital",
     subtitle:
-      "Creamos páginas web, plataformas personalizadas y soluciones digitales que transforman ideas en realidad.",
+      "Agencia de desarrollo web en Honduras: páginas web, tiendas en línea y plataformas para negocios en Tegucigalpa, San Pedro Sula y todo el país.",
     ctaStart: "Comenzar Proyecto",
     ctaServices: "Ver Servicios",
   },
@@ -211,13 +211,42 @@ export const es = {
     instagram: "Instagram",
   },
   footer: {
-    tagline: "Conectando tu negocio con el futuro digital",
+    tagline: "Agencia de páginas web y soluciones digitales en Honduras",
+    location: "Honduras · Tegucigalpa, San Pedro Sula y todo el país",
+    localSeo: "Crear página web en Honduras",
     quickLinks: "Enlaces Rápidos",
     follow: "Síguenos",
     rights: "Todos los derechos reservados.",
     madeWith: "Hecho con ❤️ por Nexus Global",
     ariaInstagram: "Instagram",
     ariaEmail: "Correo",
+  },
+  seoLocal: {
+    badge: "Honduras",
+    title: "Crear página web en Honduras",
+    lead: "Diseño y desarrollo web para negocios hondureños: sitios que se ven bien en el celular, cargan rápido y ayudan a que te encuentren en Google.",
+    points: [
+      "Planes claros: Basic 300 USD y Premium 500 USD, con revisiones incluidas.",
+      "SEO local para Tegucigalpa, San Pedro Sula y búsquedas como “crear página web en Honduras”.",
+      "Hosting, SSL y mantenimiento para que tu sitio siga en línea.",
+      "Clientes reales: floristerías, estética, inmobiliarias y más marcas locales.",
+    ],
+    faqTitle: "Preguntas frecuentes",
+    moreCta: "Guía completa: crear página web en Honduras",
+    faqs: [
+      {
+        q: "¿Cuánto cuesta una página web en Honduras?",
+        a: "Desde 300 USD un sitio de 1 a 3 páginas y 500 USD hasta 10 páginas. El hosting y mantenimiento van en un plan mensual aparte.",
+      },
+      {
+        q: "¿Trabajan en todo el país?",
+        a: "Sí. Atendemos Tegucigalpa, San Pedro Sula, La Ceiba y el resto de Honduras, de forma remota o con reuniones según el proyecto.",
+      },
+      {
+        q: "¿Apareceré en Google?",
+        a: "Optimizamos títulos, velocidad y datos de contacto. El ranking depende de competencia y contenido, pero dejamos bases sólidas de SEO local.",
+      },
+    ],
   },
   common: {
     backToProjects: "Volver a proyectos",
@@ -228,7 +257,7 @@ export const es = {
     heroTitle1: "Páginas Web",
     heroTitle2: "para Negocios",
     heroSubtitle:
-      "Soluciones completas de presencia online. Diseño profesional, anuncios de Google, hosteo optimizado y CRM integrado. Todo lo que necesitas para hacer crecer tu negocio.",
+      "Diseño web en Honduras: sitios profesionales, Google, hosting y CRM. Precios desde 300 USD para crear tu página web en Tegucigalpa, SPS y todo el país.",
     includeTitle1: "Lo que",
     includeTitle2: "Incluimos",
     includeSubtitle: "Un paquete completo para tu presencia online",

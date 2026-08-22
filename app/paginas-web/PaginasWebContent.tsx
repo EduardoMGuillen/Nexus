@@ -103,6 +103,12 @@ export default function PaginasWebContent() {
               <span className="gradient-text">{p.heroTitle2}</span>
             </h1>
             <p className="text-lg sm:text-xl text-dark-300 max-w-2xl mx-auto">{p.heroSubtitle}</p>
+            <Link
+              href="/crear-pagina-web-honduras"
+              className="inline-block mt-4 text-sm text-primary-400 hover:text-primary-300"
+            >
+              {m.footer.localSeo} →
+            </Link>
           </motion.div>
         </div>
       </section>

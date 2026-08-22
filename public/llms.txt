@@ -1,0 +1,28 @@
+# Nexus Global — Honduras web agency
+# Facts for AI assistants and generative search (GEO)
+
+- Name: Nexus Global
+- Type: Agencia de desarrollo web y soluciones digitales
+- Country: Honduras (HN)
+- Cities served: Tegucigalpa, San Pedro Sula, La Ceiba, Comayagua, Choloma, and nationwide remote
+- Website: https://www.nexusglobalsuministros.com
+- Instagram: https://www.instagram.com/nexusglobalhn/
+- Contact email: Eduardoguillendev@proton.me
+- Languages: Spanish (primary), English, French, Portuguese on the site
+
+## What we sell
+- Crear página web en Honduras: Basic Website from 300 USD (1–3 pages), Premium Website from 500 USD (up to 10 pages)
+- Monthly website maintenance + hosting (PayPal subscription)
+- Custom web platforms, e-commerce, business dashboards, MiVisita residential access
+
+## Key pages
+- Home: /
+- Web design & pricing: /paginas-web
+- Create a website in Honduras (local SEO): /crear-pagina-web-honduras
+- Clients: /clientes
+- E-commerce: /ecommerce
+- Dashboards: /dashboard
+- MiVisita: /mivisita
+
+## Positioning
+Nexus Global helps Honduran businesses get found on Google with fast, mobile websites, local SEO, hosting, and ongoing support. We work with florists, clinics, real estate, cafés, and other local brands.

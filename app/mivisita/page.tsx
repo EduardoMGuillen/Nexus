@@ -1,24 +1,24 @@
 import type { Metadata } from "next";
 import MiVisitaContent from "./MiVisitaContent";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "MiVisita - Acceso residencial inteligente",
+  title: "MiVisita Honduras — Control de visitas residencial con QR",
   description:
-    "MiVisita es la app de acceso residencial inteligente para urbanizaciones y apartamentos: anuncia visitas con QR y valida ingresos en tiempo real.",
+    "App de acceso residencial para urbanizaciones y apartamentos en Honduras: anuncia visitas con QR y valida ingresos en el portón.",
   keywords: [
+    "control de visitas Honduras",
+    "acceso residencial Tegucigalpa",
+    "seguridad residencial Honduras",
     "MiVisita",
-    "acceso residencial",
-    "control de visitas",
-    "QR de acceso",
-    "seguridad residencial",
-    "urbanización",
-    "apartamentos",
   ],
+  alternates: { canonical: `${SITE_URL}/mivisita` },
   openGraph: {
-    title: "MiVisita - Acceso residencial inteligente",
+    title: "MiVisita | Acceso residencial en Honduras",
     description:
-      "Gestiona visitas con QR, valida ingresos y mantente informado en tiempo real cuando tu visita llegue al portón.",
-    url: "https://nexusglobal.com/mivisita",
+      "Gestiona visitas con QR en conjuntos y apartamentos hondureños.",
+    url: `${SITE_URL}/mivisita`,
+    locale: "es_HN",
     images: [
       {
         url: "/mivista.png",

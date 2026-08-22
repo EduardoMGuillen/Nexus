@@ -1,0 +1,23 @@
+export const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.nexusglobalsuministros.com"
+).replace(/\/$/, "");
+
+export const SITE_NAME = "Nexus Global";
+export const SITE_EMAIL = "Eduardoguillendev@proton.me";
+export const SITE_INSTAGRAM = "https://www.instagram.com/nexusglobalhn/";
+
+export const HONDURAS_KEYWORDS = [
+  "crear pagina web en honduras",
+  "crear página web en Honduras",
+  "diseño web Honduras",
+  "desarrollo web Honduras",
+  "agencia web Honduras",
+  "páginas web Tegucigalpa",
+  "páginas web San Pedro Sula",
+  "hacer una página web Honduras",
+  "diseñador web Honduras",
+  "empresa de páginas web Honduras",
+  "sitio web para negocios Honduras",
+  "landing page Honduras",
+  "tienda online Honduras",
+];

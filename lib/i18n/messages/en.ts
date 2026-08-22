@@ -19,7 +19,7 @@ export const en = {
     titleLine1: "We connect your",
     titleHighlight: "digital future",
     subtitle:
-      "We build websites, custom platforms, and digital solutions that turn ideas into reality.",
+      "Web development agency in Honduras: websites, online stores, and platforms for businesses in Tegucigalpa, San Pedro Sula, and nationwide.",
     ctaStart: "Start a project",
     ctaServices: "View services",
   },
@@ -212,13 +212,42 @@ export const en = {
     instagram: "Instagram",
   },
   footer: {
-    tagline: "Connecting your business to the digital future",
+    tagline: "Website and digital solutions agency in Honduras",
+    location: "Honduras · Tegucigalpa, San Pedro Sula, and nationwide",
+    localSeo: "Create a website in Honduras",
     quickLinks: "Quick links",
     follow: "Follow us",
     rights: "All rights reserved.",
     madeWith: "Made with ❤️ by Nexus Global",
     ariaInstagram: "Instagram",
     ariaEmail: "Email",
+  },
+  seoLocal: {
+    badge: "Honduras",
+    title: "Build a website in Honduras",
+    lead: "Web design for Honduran businesses: mobile-first sites that load fast and help customers find you on Google.",
+    points: [
+      "Clear pricing: Basic $300 USD and Premium $500 USD, with revisions included.",
+      "Local SEO for Tegucigalpa, San Pedro Sula, and searches like “create a website in Honduras”.",
+      "Hosting, SSL, and maintenance so your site stays online.",
+      "Real local clients: florists, clinics, real estate, and more.",
+    ],
+    faqTitle: "FAQ",
+    moreCta: "Full guide: create a website in Honduras",
+    faqs: [
+      {
+        q: "How much does a website cost in Honduras?",
+        a: "From $300 USD for 1–3 pages and $500 USD for up to 10 pages. Hosting and maintenance are a separate monthly plan.",
+      },
+      {
+        q: "Do you work nationwide?",
+        a: "Yes. We serve Tegucigalpa, San Pedro Sula, La Ceiba, and the rest of Honduras—remote or in-person as needed.",
+      },
+      {
+        q: "Will I show up on Google?",
+        a: "We optimize titles, speed, and contact data. Rankings depend on competition, but we set a strong local SEO foundation.",
+      },
+    ],
   },
   common: {
     backToProjects: "Back to projects",
@@ -229,7 +258,7 @@ export const en = {
     heroTitle1: "Websites",
     heroTitle2: "for Business",
     heroSubtitle:
-      "Complete online presence: professional design, Google Ads, optimized hosting, and integrated CRM. Everything you need to grow.",
+      "Web design in Honduras: professional sites, Google, hosting, and CRM. From $300 USD to launch in Tegucigalpa, SPS, and nationwide.",
     includeTitle1: "What we",
     includeTitle2: "Include",
     includeSubtitle: "A full package for your online presence",

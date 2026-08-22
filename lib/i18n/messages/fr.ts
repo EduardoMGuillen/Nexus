@@ -19,7 +19,7 @@ export const fr: Messages = {
     titleLine1: "Nous connectons votre",
     titleHighlight: "futur numérique",
     subtitle:
-      "Nous créons des sites web, des plateformes sur mesure et des solutions numériques qui transforment les idées en réalité.",
+      "Agence web au Honduras : sites, boutiques en ligne et plateformes pour Tegucigalpa, San Pedro Sula et tout le pays.",
     ctaStart: "Démarrer un projet",
     ctaServices: "Voir les services",
   },
@@ -212,13 +212,42 @@ export const fr: Messages = {
     instagram: "Instagram",
   },
   footer: {
-    tagline: "Nous connectons votre entreprise au futur numérique",
+    tagline: "Agence de sites web et solutions numériques au Honduras",
+    location: "Honduras · Tegucigalpa, San Pedro Sula et tout le pays",
+    localSeo: "Créer un site web au Honduras",
     quickLinks: "Liens rapides",
     follow: "Suivez-nous",
     rights: "Tous droits réservés.",
     madeWith: "Fait avec ❤️ par Nexus Global",
     ariaInstagram: "Instagram",
     ariaEmail: "E-mail",
+  },
+  seoLocal: {
+    badge: "Honduras",
+    title: "Créer un site web au Honduras",
+    lead: "Conception web pour entreprises honduriennes : sites mobiles, rapides, pensés pour Google.",
+    points: [
+      "Tarifs clairs : Basic 300 USD et Premium 500 USD, révisions incluses.",
+      "SEO local pour Tegucigalpa, San Pedro Sula et les recherches “créer un site au Honduras”.",
+      "Hébergement, SSL et maintenance pour rester en ligne.",
+      "Clients locaux : fleuristes, instituts, immobilier et plus.",
+    ],
+    faqTitle: "FAQ",
+    moreCta: "Guide : créer un site web au Honduras",
+    faqs: [
+      {
+        q: "Combien coûte un site web au Honduras ?",
+        a: "À partir de 300 USD pour 1 à 3 pages et 500 USD jusqu’à 10 pages. L’hébergement est un forfait mensuel séparé.",
+      },
+      {
+        q: "Travaillez-vous dans tout le pays ?",
+        a: "Oui. Tegucigalpa, San Pedro Sula, La Ceiba et le reste du Honduras, à distance ou en réunion selon le projet.",
+      },
+      {
+        q: "Vais-je apparaître sur Google ?",
+        a: "Nous optimisons titres, vitesse et coordonnées. Le classement dépend de la concurrence ; nous posons de solides bases SEO local.",
+      },
+    ],
   },
   common: {
     backToProjects: "Retour aux projets",
@@ -229,7 +258,7 @@ export const fr: Messages = {
     heroTitle1: "Sites web",
     heroTitle2: "pour entreprises",
     heroSubtitle:
-      "Présence en ligne complète : design professionnel, Google Ads, hébergement optimisé et CRM intégré. Tout pour faire grandir votre activité.",
+      "Création de sites au Honduras : design, Google, hébergement et CRM. Dès 300 USD à Tegucigalpa, SPS et dans tout le pays.",
     includeTitle1: "Ce que nous",
     includeTitle2: "Incluons",
     includeSubtitle: "Un package complet pour votre présence en ligne",

@@ -39,6 +39,13 @@ export default function Footer() {
               <span className="text-xl font-bold gradient-text">{m.common.brandName}</span>
             </Link>
             <p className="text-slate-300 dark:text-dark-400 text-sm">{m.footer.tagline}</p>
+            <p className="text-slate-400 dark:text-dark-500 text-sm mt-2">{m.footer.location}</p>
+            <Link
+              href="/crear-pagina-web-honduras"
+              className="inline-block mt-3 text-sm text-primary-400 hover:text-primary-300"
+            >
+              {m.footer.localSeo}
+            </Link>
           </div>
 
           <div>

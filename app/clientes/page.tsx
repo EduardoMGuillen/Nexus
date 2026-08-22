@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
 import ClientesContent from "./ClientesContent";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Clientes - Empresas que confían en Nexus Global",
+  title: "Clientes en Honduras — Marcas que confían en Nexus Global",
   description:
-    "Conoce las empresas y marcas que confían en Nexus Global: inmobiliarias, plataformas digitales, seguridad residencial y más.",
+    "Portafolio de clientes de Nexus Global en Honduras: inmobiliarias, floristerías, estética, plataformas y seguridad residencial.",
+  alternates: { canonical: `${SITE_URL}/clientes` },
   openGraph: {
-    title: "Clientes | Nexus Global",
+    title: "Clientes | Nexus Global Honduras",
     description:
-      "Portafolio de clientes y marcas con presencia digital impulsada por Nexus Global.",
-    url: "https://nexusglobal.com/clientes",
+      "Empresas hondureñas con presencia digital impulsada por Nexus Global.",
+    url: `${SITE_URL}/clientes`,
+    locale: "es_HN",
   },
 };
 

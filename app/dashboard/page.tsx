@@ -1,30 +1,28 @@
 import type { Metadata } from "next";
 import DashboardContent from "./DashboardContent";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Dashboard Empresarial - Sistemas de Gestión Personalizados",
-  description: "Sistemas de gestión empresarial personalizados: comandas a cocina, manejo de cuentas, facturación automatizada y control de inventario. Soluciones integradas para restaurantes, hoteles y retail.",
+  title: "Dashboard empresarial Honduras — Sistemas de gestión",
+  description:
+    "Software a medida en Honduras: comandas, facturación e inventario para restaurantes, hoteles y retail. Automatiza tu operación.",
   keywords: [
-    "dashboard empresarial",
-    "sistema de gestión",
-    "comandas digitales",
-    "facturación electrónica",
-    "control de inventario",
-    "sistema POS",
-    "gestión de restaurantes",
-    "software empresarial",
-    "automatización empresarial",
+    "software empresarial Honduras",
+    "sistema POS Honduras",
+    "dashboard restaurante Honduras",
   ],
+  alternates: { canonical: `${SITE_URL}/dashboard` },
   openGraph: {
-    title: "Dashboard Empresarial - Sistemas de Gestión Personalizados | Nexus Global",
-    description: "Sistemas de gestión empresarial personalizados con comandas, facturación y control de inventario. Todo en una plataforma integrada.",
-    url: "https://nexusglobal.com/dashboard",
+    title: "Dashboard empresarial | Nexus Global Honduras",
+    description: "Sistemas de gestión con comandas, facturación e inventario.",
+    url: `${SITE_URL}/dashboard`,
+    locale: "es_HN",
     images: [
       {
         url: "/NexusGPTHD.png",
         width: 1200,
         height: 630,
-        alt: "Nexus Global - Dashboard Empresarial",
+        alt: "Dashboard empresarial Nexus Global",
       },
     ],
   },
