@@ -109,4 +109,12 @@ export const CLIENTS: Client[] = [
     logo: "/partners/marta_martinez_estetica.png",
     category: "beauty",
   },
+  {
+    name: "RoseLune Floristería",
+    domain: "roselunehn.com",
+    url: "https://roselunehn.com",
+    logo: "/partners/roselune.png",
+    category: "beauty",
+    logoBg: "bg-neutral-900 rounded-xl",
+  },
 ];
