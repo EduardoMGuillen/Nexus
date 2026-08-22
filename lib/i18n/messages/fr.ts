@@ -232,7 +232,7 @@ export const fr: Messages = {
     title: "Créer un site web au Honduras",
     lead: "Conception web pour entreprises honduriennes : sites mobiles, rapides, pensés pour Google.",
     points: [
-      "Tarifs clairs : Présence qui convertit 300 USD et Site de marque complet 500 USD, révisions incluses.",
+      "Tarifs clairs : Plan Pro 300$ et Plan Premium 500$, révisions incluses.",
       "SEO local pour Tegucigalpa, San Pedro Sula et les recherches “créer un site au Honduras”.",
       "Hébergement, SSL et maintenance pour rester en ligne.",
       "Clients locaux : fleuristes, instituts, immobilier et plus.",
@@ -401,9 +401,9 @@ export const fr: Messages = {
     offersTitle1: "Offres",
     offersTitle2: "site et hébergement",
     offersSubtitle:
-      "Présence qui convertit, site de marque complet, un plan à votre budget, ou maintenance mensuelle.",
-    basicTitle1: "Présence qui convertit",
-    basicTitle2: "300 USD",
+      "Votre budget sur mesure, Plan Pro 300$, Plan Premium 500$, ou maintenance mensuelle.",
+    basicTitle1: "Plan Pro",
+    basicTitle2: "300$",
     basicSubtitle:
       "Votre marque en ligne avec impact : landing ou site de 1 à 3 pages pensé pour WhatsApp, Google et la conversion. Paiement unique.",
     basicFeatures: [
@@ -412,12 +412,12 @@ export const fr: Messages = {
       "Prix fixe en dollars (USD)",
       "Révisions incluses avant la mise en ligne",
     ],
-    basicIframeTitle: "Payer Présence qui convertit avec PayPal",
+    basicIframeTitle: "Payer Plan Pro avec PayPal",
     basicSecureNote: "Paiement sécurisé via PayPal.",
     basicPurchaseSuccess: "Paiement effectué avec succès !",
     basicOrderIdLabel: "N° de commande",
-    premiumTitle1: "Site de marque complet",
-    premiumTitle2: "500 USD",
+    premiumTitle1: "Plan Premium",
+    premiumTitle2: "500$",
     premiumSubtitle:
       "Jusqu’à 10 pages, architecture, SEO on-page et blocs avancés. La présence qu’une marque sérieuse mérite.",
     premiumFeatures: [
@@ -426,10 +426,10 @@ export const fr: Messages = {
       "Formulaires, galeries et blocs avancés selon votre projet",
       "Révisions incluses avant la mise en ligne",
     ],
-    premiumHostedAria: "Payer Site de marque complet avec PayPal",
+    premiumHostedAria: "Payer Plan Premium avec PayPal",
     premiumSecureNote: "Paiement sécurisé via PayPal.",
-    budgetTitle1: "Votre budget, votre site",
-    budgetTitle2: "Sur mesure",
+    budgetTitle1: "Votre budget",
+    budgetTitle2: "votre site",
     budgetSubtitle:
       "Vous définissez le périmètre et le budget. Refonte, moins de pages, plus d’intégrations : devis sans paquet figé.",
     budgetFeatures: [

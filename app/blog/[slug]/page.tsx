@@ -57,7 +57,7 @@ export default function BlogArticlePage({ params }: Props) {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-dark-900 to-dark-800">
+    <main className="page-shell">
       <JsonLd data={articleLd} />
       <JsonLd
         data={breadcrumbJsonLd([
@@ -75,10 +75,10 @@ export default function BlogArticlePage({ params }: Props) {
           <p className="mt-6 text-xs uppercase tracking-wide text-primary-400">
             {post.category} · {post.date} · {post.readMinutes} min de lectura
           </p>
-          <h1 className="text-3xl sm:text-5xl font-bold text-white mt-3 mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-bold ink mt-3 mb-6 leading-tight">
             {post.title}
           </h1>
-          <p className="text-lg text-dark-300 mb-8">{post.description}</p>
+          <p className="text-lg ink-muted mb-8">{post.description}</p>
           <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-dark-600 mb-12">
             <Image
               src={post.image}
@@ -91,17 +91,17 @@ export default function BlogArticlePage({ params }: Props) {
           </div>
           {post.sections.map((section) => (
             <section key={section.heading} className="mb-10">
-              <h2 className="text-2xl font-bold text-white mb-4">{section.heading}</h2>
+              <h2 className="text-2xl font-bold ink mb-4">{section.heading}</h2>
               {section.paragraphs.map((p) => (
-                <p key={p.slice(0, 40)} className="text-dark-300 leading-relaxed mb-4">
+                <p key={p.slice(0, 40)} className="ink-muted leading-relaxed mb-4">
                   {p}
                 </p>
               ))}
             </section>
           ))}
           <div className="rounded-2xl border border-primary-500/30 bg-primary-500/10 p-6 sm:p-8 text-center mb-14">
-            <p className="text-white font-semibold mb-2">¿Listo para tu sitio?</p>
-            <p className="text-dark-300 text-sm mb-5">
+            <p className="ink font-semibold mb-2">¿Listo para tu sitio?</p>
+            <p className="ink-muted text-sm mb-5">
               Planes desde 300 USD o un alcance a tu presupuesto. Honduras, atención nacional.
             </p>
             <Link
@@ -111,7 +111,7 @@ export default function BlogArticlePage({ params }: Props) {
               Ver planes
             </Link>
           </div>
-          <h2 className="text-xl font-bold text-white mb-4">Más artículos</h2>
+          <h2 className="text-xl font-bold ink mb-4">Más artículos</h2>
           <ul className="space-y-3">
             {others.map((p) => (
               <li key={p.slug}>

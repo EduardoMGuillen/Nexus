@@ -26,9 +26,9 @@ export default function Header() {
   const navItems = [
     { name: nav.home, href: "/#inicio" },
     { name: nav.services, href: "/paginas-web#ofertas" },
+    { name: nav.blog, href: "/blog" },
     { name: nav.projects, href: "/#proyectos" },
     { name: nav.clients, href: "/clientes" },
-    { name: nav.blog, href: "/blog" },
     { name: nav.about, href: "/nosotros" },
     { name: nav.process, href: "/#proceso" },
     { name: nav.contact, href: "/#contacto" },
@@ -47,10 +47,10 @@ export default function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[60] border-b backdrop-blur-md transition-all duration-300 ${
         isScrolled
-          ? "bg-white/80 dark:bg-dark-900/80 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+          ? "bg-brand-snow/95 dark:bg-dark-900/95 border-slate-200 dark:border-dark-700 shadow-sm"
+          : "bg-brand-snow/90 dark:bg-dark-900/90 border-slate-200/80 dark:border-dark-800"
       }`}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,13 +75,13 @@ export default function Header() {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation — xl so 8 links stay visible (md overflow hid Blog) */}
+          <div className="hidden xl:flex items-center gap-4 2xl:gap-6 min-w-0">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-slate-900 dark:text-dark-200 hover:text-primary-400 transition-colors duration-200 relative group"
+                className="shrink-0 text-sm font-medium text-slate-800 dark:text-dark-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 relative group"
               >
                 {item.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300" />
@@ -129,7 +129,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg bg-slate-100 dark:bg-dark-800 hover:bg-slate-200 dark:hover:bg-dark-700 transition-colors"
+              className="xl:hidden p-2 rounded-lg bg-slate-100 dark:bg-dark-800 hover:bg-slate-200 dark:hover:bg-dark-700 transition-colors"
               aria-label={m.header.ariaMenu}
             >
               {isMobileMenuOpen ? (
@@ -149,7 +149,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white/95 dark:bg-dark-900/95 backdrop-blur-md border-t border-dark-800"
+            className="xl:hidden bg-white/95 dark:bg-dark-900/95 backdrop-blur-md border-t border-dark-800"
           >
             <div className="container mx-auto px-4 py-4 space-y-4">
               {navItems.map((item, index) => (

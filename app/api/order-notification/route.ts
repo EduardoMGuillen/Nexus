@@ -10,8 +10,8 @@ export const runtime = "nodejs";
 type PackageType = "basic" | "premium" | "subscription";
 
 const PACKAGE_LABEL: Record<PackageType, string> = {
-  basic: "Presencia que vende — 300 USD (pago único)",
-  premium: "Marca online completa — 500 USD (pago único)",
+  basic: "Plan Pro — 300 USD (pago único)",
+  premium: "Plan Premium — 500 USD (pago único)",
   subscription: "Plan Mantenimiento + Hosting (suscripción PayPal)",
 };
 

@@ -22,31 +22,31 @@ const TEMPLATE_LINKS: {
 }[] = [
   {
     url: "https://constructora-template-pink.vercel.app",
-    gradient: "from-rose-500 via-pink-500 to-fuchsia-600",
+    gradient: "from-primary-400 to-primary-600",
     isLive: false,
     Icon: Building2,
   },
   {
     url: "https://cafe-template-mauve.vercel.app",
-    gradient: "from-violet-500 via-purple-500 to-indigo-600",
+    gradient: "from-primary-500 to-primary-700",
     isLive: false,
     Icon: Coffee,
   },
   {
     url: "https://dentista-template.vercel.app",
-    gradient: "from-sky-500 via-cyan-500 to-teal-600",
+    gradient: "from-primary-400 via-primary-500 to-primary-600",
     isLive: false,
     Icon: Stethoscope,
   },
   {
     url: "https://inmobiliaria-template.vercel.app",
-    gradient: "from-emerald-500 via-green-500 to-lime-600",
+    gradient: "from-primary-500 via-primary-600 to-primary-800",
     isLive: false,
     Icon: Home,
   },
   {
     url: "https://www.martamartinezestetica.com",
-    gradient: "from-amber-500 via-orange-500 to-rose-600",
+    gradient: "from-primary-600 to-primary-800",
     isLive: true,
     Icon: Sparkles,
   },
@@ -62,7 +62,7 @@ export default function TemplateShowcase() {
     <section
       id="plantillas"
       ref={ref}
-      className="py-16 sm:py-20 border-y border-dark-700/80 bg-dark-900/35"
+      className="py-16 sm:py-20 border-y border-slate-200 dark:border-dark-700/80 bg-slate-50 dark:bg-dark-900/35"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -75,10 +75,10 @@ export default function TemplateShowcase() {
             <Sparkles className="w-7 h-7 text-primary-400" />
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3">
-            <span className="text-white">{t.titleOur}</span>{" "}
+            <span className="ink">{t.titleOur}</span>{" "}
             <span className="gradient-text">{t.titleHighlight}</span>
           </h2>
-          <p className="text-dark-300 text-sm sm:text-base max-w-2xl mx-auto">
+          <p className="ink-muted text-sm sm:text-base max-w-2xl mx-auto">
             {t.subtitle}
           </p>
         </motion.div>
@@ -97,7 +97,7 @@ export default function TemplateShowcase() {
                 initial={{ opacity: 0, y: 28 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.06 }}
-                className="flex flex-col w-[min(78vw,260px)] shrink-0 snap-center sm:w-[240px] lg:w-auto lg:min-w-0 rounded-2xl border border-dark-700 bg-dark-800/55 backdrop-blur-sm overflow-hidden shadow-lg hover:border-primary-500/35 transition-colors duration-300"
+                className="flex flex-col w-[min(78vw,260px)] shrink-0 snap-center sm:w-[240px] lg:w-auto lg:min-w-0 rounded-2xl border border-slate-200 dark:border-dark-700 bg-white dark:bg-dark-800/55 backdrop-blur-sm overflow-hidden shadow-lg hover:border-primary-500/35 transition-colors duration-300"
               >
                 <div
                   className={`relative h-28 sm:h-32 bg-gradient-to-br ${meta.gradient} flex items-center justify-center shrink-0`}
@@ -116,10 +116,10 @@ export default function TemplateShowcase() {
                 </div>
 
                 <div className="p-4 flex flex-col flex-1 min-h-0">
-                  <h3 className="text-base sm:text-lg font-bold text-white mb-2 line-clamp-2 leading-tight">
+                  <h3 className="text-base sm:text-lg font-bold ink mb-2 line-clamp-2 leading-tight">
                     {item.name}
                   </h3>
-                  <p className="text-dark-300 text-xs sm:text-sm leading-snug flex-1 mb-4 line-clamp-4">
+                  <p className="ink-muted text-xs sm:text-sm leading-snug flex-1 mb-4 line-clamp-4">
                     {item.description}
                   </p>
                   <motion.a

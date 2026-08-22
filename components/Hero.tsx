@@ -14,7 +14,7 @@ export default function Hero() {
     <section
       id="inicio"
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-brand-snow via-brand-white to-brand-snow dark:from-dark-900 dark:via-dark-800 dark:to-dark-900"
     >
       {/* Animated Background */}
       <ParticleNetwork />

@@ -231,7 +231,7 @@ export const es = {
     title: "Crear página web en Honduras",
     lead: "Diseño y desarrollo web para negocios hondureños: sitios que se ven bien en el celular, cargan rápido y ayudan a que te encuentren en Google.",
     points: [
-      "Planes claros: Presencia que vende 300 USD y Marca online completa 500 USD, con revisiones incluidas.",
+      "Planes claros: Plan Pro 300$ y Plan Premium 500$, con revisiones incluidas.",
       "SEO local para Tegucigalpa, San Pedro Sula y búsquedas como “crear página web en Honduras”.",
       "Hosting, SSL y mantenimiento para que tu sitio siga en línea.",
       "Clientes reales: floristerías, estética, inmobiliarias y más marcas locales.",
@@ -407,9 +407,9 @@ export const es = {
     offersTitle1: "Planes",
     offersTitle2: "web y hosting",
     offersSubtitle:
-      "Presencia que vende, marca online completa, un plan a tu presupuesto, o mantenimiento mensual con hosting.",
-    basicTitle1: "Presencia que vende",
-    basicTitle2: "300 USD",
+      "Tu presupuesto a medida, Plan Pro 300$, Plan Premium 500$, o mantenimiento mensual con hosting.",
+    basicTitle1: "Plan Pro",
+    basicTitle2: "300$",
     basicSubtitle:
       "Tu marca en internet con impacto: landing o sitio de 1 a 3 páginas pensado para WhatsApp, Google y conversión. Pago único.",
     basicFeatures: [
@@ -418,12 +418,12 @@ export const es = {
       "Precio fijo en dólares (USD) — sin sorpresas",
       "Revisiones incluidas antes de publicar",
     ],
-    basicIframeTitle: "Pagar Presencia que vende con PayPal",
+    basicIframeTitle: "Pagar Plan Pro con PayPal",
     basicSecureNote: "Pago seguro procesado por PayPal.",
     basicPurchaseSuccess: "¡Pago completado correctamente!",
     basicOrderIdLabel: "ID de pedido",
-    premiumTitle1: "Marca online completa",
-    premiumTitle2: "500 USD",
+    premiumTitle1: "Plan Premium",
+    premiumTitle2: "500$",
     premiumSubtitle:
       "Sitio de hasta 10 páginas con arquitectura, SEO on-page y bloques avanzados. La presencia que una marca seria necesita.",
     premiumFeatures: [
@@ -432,10 +432,10 @@ export const es = {
       "Formularios, galerías y bloques avanzados según tu proyecto",
       "Revisiones incluidas antes de publicar",
     ],
-    premiumHostedAria: "Pagar Marca online completa con PayPal",
+    premiumHostedAria: "Pagar Plan Premium con PayPal",
     premiumSecureNote: "Pago seguro procesado por PayPal.",
-    budgetTitle1: "Tu presupuesto, tu web",
-    budgetTitle2: "A medida",
+    budgetTitle1: "Tu presupuesto",
+    budgetTitle2: "tu web",
     budgetSubtitle:
       "Tú defines el alcance y el presupuesto. Rediseño, menos páginas, más integraciones o un proyecto híbrido: cotizamos sin encajarte en un paquete rígido.",
     budgetFeatures: [

@@ -21,7 +21,7 @@ export default function PayPalBasicWebsiteHosted({ customer, customerValid }: Pr
       customer={customer}
       customerValid={customerValid}
       amount={BASIC_AMOUNT}
-      purchaseDescription="Presencia que vende — Landing / 1–3 pages"
+      purchaseDescription="Plan Pro — Landing / 1–3 pages"
       ariaLabel={copy.basicIframeTitle}
       secureNote={copy.basicSecureNote}
       successMessage={copy.basicPurchaseSuccess}

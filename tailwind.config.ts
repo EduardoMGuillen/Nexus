@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Brand book: Clover Green #22C55E, Sea Green #16A34A
         primary: {
           50: "#f0fdf4",
           100: "#dcfce7",
@@ -22,17 +23,25 @@ const config: Config = {
           800: "#166534",
           900: "#14532d",
         },
+        // Brand book: Snow White #F8FAFC, Obsidian Black #0F172A
         dark: {
-          50: "#f9fafb",
-          100: "#f3f4f6",
-          200: "#e5e7eb",
-          300: "#d1d5db",
-          400: "#9ca3af",
-          500: "#6b7280",
-          600: "#4b5563",
-          700: "#374151",
-          800: "#1f2937",
-          900: "#111827",
+          50: "#f8fafc",
+          100: "#f1f5f9",
+          200: "#e2e8f0",
+          300: "#cbd5e1",
+          400: "#94a3b8",
+          500: "#64748b",
+          600: "#475569",
+          700: "#334155",
+          800: "#1e293b",
+          900: "#0f172a",
+        },
+        brand: {
+          white: "#ffffff",
+          snow: "#f8fafc",
+          clover: "#22c55e",
+          sea: "#16a34a",
+          obsidian: "#0f172a",
         },
       },
       animation: {

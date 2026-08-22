@@ -8,10 +8,10 @@ import Link from "next/link";
 import { useMessages } from "./LocaleProvider";
 
 const projectStyle = [
-  { gradient: "from-blue-500 to-purple-600", link: "/ecommerce", image: "/project-1.jpg" },
-  { gradient: "from-green-500 to-teal-600", link: "/dashboard", image: "/project-2.jpg" },
-  { gradient: "from-orange-500 to-red-600", link: "/paginas-web", image: "/project-3.jpg" },
-  { gradient: "from-cyan-500 to-blue-600", link: "/mivisita", image: "/mivista.png" },
+  { gradient: "from-primary-500 to-primary-700", link: "/ecommerce", image: "/project-1.jpg" },
+  { gradient: "from-primary-400 to-primary-600", link: "/dashboard", image: "/project-2.jpg" },
+  { gradient: "from-primary-600 to-primary-800", link: "/paginas-web", image: "/project-3.jpg" },
+  { gradient: "from-primary-500 to-primary-600", link: "/mivisita", image: "/mivista.png" },
 ] as const;
 
 export default function Showcase() {
@@ -23,7 +23,7 @@ export default function Showcase() {
     <section
       id="proyectos"
       ref={ref}
-      className="py-24 bg-gradient-to-b from-white to-slate-100 dark:from-dark-800 dark:to-dark-900"
+      className="py-24 bg-gradient-to-b from-brand-white to-brand-snow dark:from-dark-800 dark:to-dark-900"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div

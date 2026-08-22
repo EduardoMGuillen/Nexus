@@ -40,13 +40,13 @@ export default function ClientesContent() {
   ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900">
+    <main className="page-shell">
       <Header />
 
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 left-1/4 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl" />
         </div>
 
         <div className="container mx-auto max-w-6xl relative">
@@ -69,18 +69,18 @@ export default function ClientesContent() {
               {c.badge}
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-white">{c.title1}</span>{" "}
+              <span className="ink">{c.title1}</span>{" "}
               <span className="gradient-text">{c.title2}</span>
             </h1>
-            <p className="text-lg text-dark-300 max-w-3xl mx-auto mb-8">{c.subtitle}</p>
+            <p className="text-lg ink-muted max-w-3xl mx-auto mb-8">{c.subtitle}</p>
 
             <div className="flex flex-wrap justify-center gap-4">
               <div className="px-6 py-4 rounded-2xl bg-dark-800/60 border border-dark-700 min-w-[140px]">
-                <p className="text-3xl font-bold text-white">{CLIENTS.length}</p>
+                <p className="text-3xl font-bold ink">{CLIENTS.length}</p>
                 <p className="text-dark-400 text-sm">{c.statClients}</p>
               </div>
               <div className="px-6 py-4 rounded-2xl bg-dark-800/60 border border-dark-700 min-w-[140px]">
-                <p className="text-3xl font-bold text-white">{CATEGORY_ORDER.length}</p>
+                <p className="text-3xl font-bold ink">{CATEGORY_ORDER.length}</p>
                 <p className="text-dark-400 text-sm">{c.statIndustries}</p>
               </div>
             </div>
@@ -95,7 +95,7 @@ export default function ClientesContent() {
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   activeCategory === filter.key
                     ? "bg-primary-500 text-white shadow-lg shadow-primary-500/30"
-                    : "bg-dark-800/60 text-dark-300 border border-dark-700 hover:border-primary-500/40 hover:text-white"
+                    : "bg-slate-100 dark:bg-dark-800/60 ink-muted border border-slate-200 dark:border-dark-700 hover:border-primary-500/40 hover:text-slate-900 dark:hover:text-white"
                 }`}
               >
                 {filter.label}
@@ -119,7 +119,7 @@ export default function ClientesContent() {
                 whileHover={{ y: -6 }}
                 className="group relative flex flex-col rounded-2xl bg-dark-800/50 border border-dark-700 hover:border-primary-500/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-primary-600/5 opacity-0 group-hover:opacity-100 transition-opacity" />
 
                 <div className="relative p-8 flex items-center justify-center min-h-[180px] bg-dark-900/40">
                   <div
@@ -139,7 +139,7 @@ export default function ClientesContent() {
                   <span className="inline-block w-fit px-3 py-1 rounded-full text-xs font-medium bg-primary-500/15 text-primary-400 mb-3">
                     {c.categories[client.category]}
                   </span>
-                  <h2 className="text-xl font-bold text-white mb-2 group-hover:text-primary-300 transition-colors">
+                  <h2 className="text-xl font-bold ink mb-2 group-hover:text-primary-300 transition-colors">
                     {client.name}
                   </h2>
                   <p className="flex items-center gap-2 text-dark-400 text-sm mb-4">
@@ -160,10 +160,10 @@ export default function ClientesContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mt-16 text-center p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-primary-500/10 to-cyan-500/10 border border-primary-500/20"
+            className="mt-16 text-center p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-primary-500/10 to-primary-600/10 border border-primary-500/20"
           >
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">{c.ctaTitle}</h2>
-            <p className="text-dark-300 mb-8 max-w-2xl mx-auto">{c.ctaBody}</p>
+            <h2 className="text-2xl sm:text-3xl font-bold ink mb-4">{c.ctaTitle}</h2>
+            <p className="ink-muted mb-8 max-w-2xl mx-auto">{c.ctaBody}</p>
             <Link
               href="/#contacto"
               className="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-white bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-400 hover:to-primary-500 transition-all shadow-lg shadow-primary-600/30"

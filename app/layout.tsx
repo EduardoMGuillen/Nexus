@@ -8,7 +8,11 @@ import JsonLd from "@/components/JsonLd";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/jsonld";
 import { HONDURAS_KEYWORDS, SITE_NAME, SITE_URL } from "@/lib/site";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -84,7 +88,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es-HN" suppressHydrationWarning>
+    <html lang="es-HN" className="dark" suppressHydrationWarning>
       <body className={inter.className}>
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={websiteJsonLd()} />

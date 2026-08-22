@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function BlogIndexPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-dark-900 to-dark-800">
+    <main className="page-shell">
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Inicio", path: "/" },
@@ -36,8 +36,8 @@ export default function BlogIndexPage() {
       <section className="pt-28 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
           <p className="text-primary-400 text-sm font-medium mb-3">Nexus Global · Honduras</p>
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Blog</h1>
-          <p className="text-dark-300 text-lg max-w-2xl mb-12">
+          <h1 className="text-4xl sm:text-5xl font-bold ink mb-4">Blog</h1>
+          <p className="ink-muted text-lg max-w-2xl mb-12">
             Guías para crear página web en Honduras, noticias de inteligencia artificial para
             negocios y SEO/GEO para que Google y la IA sepan quién eres.
           </p>
@@ -46,7 +46,7 @@ export default function BlogIndexPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group rounded-2xl border border-dark-600 bg-dark-800/50 overflow-hidden hover:border-primary-500/40 transition-colors"
+                className="group rounded-2xl border border-slate-200 dark:border-dark-600 bg-white dark:bg-dark-800/50 overflow-hidden hover:border-primary-500/40 transition-colors"
               >
                 <div className="relative h-52">
                   <Image
@@ -61,10 +61,10 @@ export default function BlogIndexPage() {
                   <p className="text-xs uppercase tracking-wide text-primary-400 mb-2">
                     {post.category} · {post.readMinutes} min
                   </p>
-                  <h2 className="text-xl font-bold text-white mb-2 group-hover:text-primary-300 transition-colors">
+                  <h2 className="text-xl font-bold ink mb-2 group-hover:text-primary-300 transition-colors">
                     {post.title}
                   </h2>
-                  <p className="text-sm text-dark-300 leading-relaxed">{post.description}</p>
+                  <p className="text-sm ink-muted leading-relaxed">{post.description}</p>
                 </div>
               </Link>
             ))}

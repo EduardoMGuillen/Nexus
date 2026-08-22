@@ -13,43 +13,30 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("dark");
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Initialize theme from localStorage or system preference
-    const savedTheme = localStorage.getItem("theme") as Theme;
-    let initialTheme: Theme = "dark";
-    
-    if (savedTheme) {
-      initialTheme = savedTheme;
-    } else {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      initialTheme = prefersDark ? "dark" : "light";
-    }
-    
+    const savedTheme = localStorage.getItem("theme") as Theme | null;
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const initialTheme: Theme =
+      savedTheme === "light" || savedTheme === "dark"
+        ? savedTheme
+        : prefersDark
+          ? "dark"
+          : "light";
+
     setTheme(initialTheme);
-    // Tailwind uses 'dark' class on html element
-    if (initialTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    setMounted(true);
+    document.documentElement.classList.toggle("dark", initialTheme === "dark");
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    // Tailwind uses 'dark' class on html element
-    if (newTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    setTheme((current) => {
+      const next: Theme = current === "dark" ? "light" : "dark";
+      localStorage.setItem("theme", next);
+      document.documentElement.classList.toggle("dark", next === "dark");
+      return next;
+    });
   };
 
-  // Always provide the context, even before mounted
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}

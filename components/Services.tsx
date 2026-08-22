@@ -9,9 +9,9 @@ import { useMessages } from "./LocaleProvider";
 const icons = [Globe, Code, Zap] as const;
 
 const gradients = [
-  "from-blue-500 to-cyan-500",
-  "from-purple-500 to-pink-500",
-  "from-yellow-500 to-orange-500",
+  "from-primary-400 to-primary-600",
+  "from-primary-500 to-primary-700",
+  "from-primary-600 to-primary-800",
 ] as const;
 
 export default function Services() {
@@ -23,7 +23,7 @@ export default function Services() {
     <section
       id="servicios"
       ref={ref}
-      className="py-24 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-dark-900 dark:to-dark-800"
+      className="py-24 bg-gradient-to-b from-brand-snow to-brand-white dark:from-dark-900 dark:to-dark-800"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div

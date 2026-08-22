@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
+  --foreground-rgb: 15, 23, 42;
+  --background-start-rgb: 248, 250, 252;
   --background-end-rgb: 255, 255, 255;
 }
 
 .dark {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 17, 24, 39;
-  --background-end-rgb: 17, 24, 39;
+  --foreground-rgb: 248, 250, 252;
+  --background-start-rgb: 15, 23, 42;
+  --background-end-rgb: 15, 23, 42;
 }
 
 * {
@@ -38,6 +38,22 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .page-shell {
+    @apply min-h-screen bg-gradient-to-b from-brand-snow to-brand-white dark:from-dark-900 dark:to-dark-800;
+  }
+
+  .ink {
+    @apply text-slate-900 dark:text-white;
+  }
+
+  .ink-muted {
+    @apply text-slate-600 dark:text-dark-300;
+  }
+
+  .ink-soft {
+    @apply text-slate-700 dark:text-dark-200;
   }
   
   .gradient-text {

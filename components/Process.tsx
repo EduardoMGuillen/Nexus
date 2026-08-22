@@ -8,10 +8,10 @@ import { useMessages } from "./LocaleProvider";
 
 const stepIcons = [Search, PenTool, Code2, Rocket] as const;
 const stepColors = [
-  "from-blue-500 to-cyan-500",
-  "from-purple-500 to-pink-500",
-  "from-green-500 to-teal-500",
-  "from-orange-500 to-red-500",
+  "from-primary-400 to-primary-500",
+  "from-primary-500 to-primary-600",
+  "from-primary-600 to-primary-700",
+  "from-primary-500 to-primary-800",
 ] as const;
 
 export default function Process() {
@@ -23,7 +23,7 @@ export default function Process() {
     <section
       id="proceso"
       ref={ref}
-      className="py-24 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-dark-900 dark:to-dark-800 relative overflow-hidden"
+      className="py-24 bg-gradient-to-b from-brand-snow to-brand-white dark:from-dark-900 dark:to-dark-800 relative overflow-hidden"
     >
       <div className="absolute inset-0 opacity-10">
         <div

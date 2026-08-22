@@ -47,7 +47,7 @@ export default function SeoHn() {
         </div>
 
         <div className="rounded-2xl border border-dark-600 bg-dark-800/40 p-6 sm:p-8">
-          <h3 className="text-xl font-bold text-white mb-6">{s.faqTitle}</h3>
+          <h3 className="text-xl font-bold ink mb-6">{s.faqTitle}</h3>
           <dl className="space-y-6">
             {s.faqs.map((faq) => (
               <div key={faq.q}>

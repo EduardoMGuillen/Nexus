@@ -232,7 +232,7 @@ export const pt: Messages = {
     title: "Criar site em Honduras",
     lead: "Design web para negócios hondurenhos: sites rápidos no telemóvel, pensados para o Google.",
     points: [
-      "Preços claros: Presença que vende 300 USD e Marca online completa 500 USD, com revisões.",
+      "Preços claros: Plano Pro 300$ e Plano Premium 500$, com revisões.",
       "SEO local para Tegucigalpa, San Pedro Sula e pesquisas como “criar página web em Honduras”.",
       "Alojamento, SSL e manutenção para o site ficar online.",
       "Clientes reais: floristas, estética, imobiliárias e mais.",
@@ -401,9 +401,9 @@ export const pt: Messages = {
     offersTitle1: "Planos",
     offersTitle2: "web e alojamento",
     offersSubtitle:
-      "Presença que vende, marca online completa, um plano ao seu orçamento, ou manutenção mensal.",
-    basicTitle1: "Presença que vende",
-    basicTitle2: "300 USD",
+      "O seu orçamento à medida, Plano Pro 300$, Plano Premium 500$, ou manutenção mensal.",
+    basicTitle1: "Plano Pro",
+    basicTitle2: "300$",
     basicSubtitle:
       "A sua marca na internet com impacto: landing ou site de 1 a 3 páginas para WhatsApp, Google e conversão. Pagamento único.",
     basicFeatures: [
@@ -412,12 +412,12 @@ export const pt: Messages = {
       "Preço fixo em dólares (USD)",
       "Revisões incluídas antes de publicar",
     ],
-    basicIframeTitle: "Pagar Presença que vende com PayPal",
+    basicIframeTitle: "Pagar Plano Pro com PayPal",
     basicSecureNote: "Pagamento seguro via PayPal.",
     basicPurchaseSuccess: "Pagamento concluído com sucesso!",
     basicOrderIdLabel: "ID do pedido",
-    premiumTitle1: "Marca online completa",
-    premiumTitle2: "500 USD",
+    premiumTitle1: "Plano Premium",
+    premiumTitle2: "500$",
     premiumSubtitle:
       "Até 10 páginas com arquitetura, SEO on-page e blocos avançados. A presença que uma marca séria precisa.",
     premiumFeatures: [
@@ -426,10 +426,10 @@ export const pt: Messages = {
       "Formulários, galerias e blocos avançados conforme o projeto",
       "Revisões incluídas antes de publicar",
     ],
-    premiumHostedAria: "Pagar Marca online completa com PayPal",
+    premiumHostedAria: "Pagar Plano Premium com PayPal",
     premiumSecureNote: "Pagamento seguro via PayPal.",
-    budgetTitle1: "O seu orçamento, o seu site",
-    budgetTitle2: "À medida",
+    budgetTitle1: "O seu orçamento",
+    budgetTitle2: "o seu site",
     budgetSubtitle:
       "Você define o alcance e o orçamento. Redesign, menos páginas ou mais integrações: orçamento sem pacote rígido.",
     budgetFeatures: [

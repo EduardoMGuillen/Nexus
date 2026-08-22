@@ -70,7 +70,7 @@ export default function PaginasWebContent() {
         : { customer: subCustomer, onCustomerChange: setSubCustomer };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-dark-900 to-dark-800">
+    <main className="page-shell">
       <Header />
 
       <section className="pt-28 pb-10 px-4 sm:px-6 lg:px-8 sm:pt-32">
@@ -96,14 +96,14 @@ export default function PaginasWebContent() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-center mb-6 sm:mb-8"
           >
-            <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 mb-5">
+            <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 mb-5">
               <Globe className="w-11 h-11 sm:w-12 sm:h-12 text-white" />
             </div>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-4">
-              <span className="text-white">{p.heroTitle1}</span>{" "}
+              <span className="ink">{p.heroTitle1}</span>{" "}
               <span className="gradient-text">{p.heroTitle2}</span>
             </h1>
-            <p className="text-lg sm:text-xl text-dark-300 max-w-2xl mx-auto">{p.heroSubtitle}</p>
+            <p className="text-lg sm:text-xl ink-muted max-w-2xl mx-auto">{p.heroSubtitle}</p>
             <Link
               href="/crear-pagina-web-honduras"
               className="inline-block mt-4 text-sm text-primary-400 hover:text-primary-300"
@@ -116,9 +116,9 @@ export default function PaginasWebContent() {
 
       <section
         id="ofertas"
-        className="px-4 sm:px-6 lg:px-8 pb-14 sm:pb-16 border-b border-dark-700/70 bg-gradient-to-b from-dark-900/80 to-dark-900/40"
+        className="px-4 sm:px-6 lg:px-8 pb-14 sm:pb-16 border-b border-slate-200 dark:border-dark-700/70 bg-brand-snow/80 dark:bg-gradient-to-b dark:from-dark-900/80 dark:to-dark-900/40"
       >
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -127,36 +127,69 @@ export default function PaginasWebContent() {
             className="text-center mb-8 sm:mb-10"
           >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3">
-              <span className="text-white">{p.offersTitle1}</span>{" "}
+              <span className="ink">{p.offersTitle1}</span>{" "}
               <span className="gradient-text">{p.offersTitle2}</span>
             </h2>
-            <p className="text-dark-300 text-sm sm:text-base max-w-2xl mx-auto">
+            <p className="ink-muted text-sm sm:text-base max-w-2xl mx-auto">
               {p.offersSubtitle}
             </p>
           </motion.div>
 
           <PayPalOffersSdkProvider>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 items-stretch">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.05 }}
-              className="rounded-2xl border border-dark-600 bg-dark-800/50 p-5 sm:p-6 shadow-lg shadow-black/20 flex flex-col"
+              className="rounded-2xl border border-slate-200 dark:border-primary-500/35 bg-white dark:bg-dark-800/50 p-7 sm:p-8 shadow-lg shadow-black/10 dark:shadow-black/20 flex flex-col min-h-[28rem]"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2.5 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600">
-                  <LayoutTemplate className="w-7 h-7 text-white" />
+              <div className="flex flex-col items-start gap-3 mb-5">
+                <div className="p-2.5 rounded-xl bg-gradient-to-br from-primary-400 to-primary-600">
+                  <Wallet className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-left">
-                  <span className="text-white">{p.basicTitle1}</span>{" "}
-                  <span className="gradient-text">{p.basicTitle2}</span>
+                <h3 className="text-left font-bold">
+                  <span className="block ink text-2xl leading-tight">{p.budgetTitle1}</span>
+                  <span className="block gradient-text text-xl mt-1">{p.budgetTitle2}</span>
                 </h3>
               </div>
-              <p className="text-dark-300 text-sm mb-4 text-left">{p.basicSubtitle}</p>
-              <ul className="flex flex-col gap-2 mb-6 text-left flex-1">
+              <p className="ink-muted text-sm mb-4 text-left leading-relaxed">{p.budgetSubtitle}</p>
+              <ul className="flex flex-col gap-2.5 mb-6 text-left flex-1">
+                {p.budgetFeatures.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm ink-soft">
+                    <CheckCircle className="w-4 h-4 text-primary-500 shrink-0 mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/#contacto"
+                className="w-full mt-auto py-3.5 px-4 rounded-xl font-semibold text-center text-white bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-400 hover:to-primary-500 transition shadow-lg shadow-black/25"
+              >
+                {p.budgetCta}
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.08 }}
+              className="rounded-2xl border border-slate-200 dark:border-dark-600 bg-white dark:bg-dark-800/50 p-7 sm:p-8 shadow-lg shadow-black/10 dark:shadow-black/20 flex flex-col min-h-[28rem]"
+            >
+              <div className="flex flex-col items-start gap-3 mb-5">
+                <div className="p-2.5 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700">
+                  <LayoutTemplate className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="text-left font-bold">
+                  <span className="block ink text-2xl leading-tight">{p.basicTitle1}</span>
+                  <span className="block gradient-text text-xl mt-1">{p.basicTitle2}</span>
+                </h3>
+              </div>
+              <p className="ink-muted text-sm mb-4 text-left leading-relaxed">{p.basicSubtitle}</p>
+              <ul className="flex flex-col gap-2.5 mb-6 text-left flex-1">
                 {p.basicFeatures.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-dark-200">
+                  <li key={item} className="flex items-start gap-2 text-sm ink-soft">
                     <CheckCircle className="w-4 h-4 text-primary-500 shrink-0 mt-0.5" />
                     {item}
                   </li>
@@ -165,7 +198,7 @@ export default function PaginasWebContent() {
               <button
                 type="button"
                 onClick={() => setCheckoutOpen("basic")}
-                className="w-full mt-auto py-3.5 px-4 rounded-xl font-semibold text-white bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 transition shadow-lg shadow-black/25 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:ring-offset-2 focus:ring-offset-dark-800"
+                className="w-full mt-auto py-3.5 px-4 rounded-xl font-semibold text-white bg-gradient-to-r from-primary-500 to-primary-700 hover:from-primary-400 hover:to-primary-600 transition shadow-lg shadow-black/25 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-dark-800"
               >
                 {p.purchaseBuyCta}
               </button>
@@ -175,22 +208,22 @@ export default function PaginasWebContent() {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.08 }}
-              className="rounded-2xl border border-dark-600 bg-dark-800/50 p-5 sm:p-6 shadow-lg shadow-black/20 flex flex-col"
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="rounded-2xl border border-slate-200 dark:border-dark-600 bg-white dark:bg-dark-800/50 p-7 sm:p-8 shadow-lg shadow-black/10 dark:shadow-black/20 flex flex-col min-h-[28rem] md:col-span-2 xl:col-span-1"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2.5 rounded-xl bg-gradient-to-br from-violet-600 to-fuchsia-600">
+              <div className="flex flex-col items-start gap-3 mb-5">
+                <div className="p-2.5 rounded-xl bg-gradient-to-br from-primary-600 to-primary-800">
                   <Layers className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-left">
-                  <span className="text-white">{p.premiumTitle1}</span>{" "}
-                  <span className="gradient-text">{p.premiumTitle2}</span>
+                <h3 className="text-left font-bold">
+                  <span className="block ink text-2xl leading-tight">{p.premiumTitle1}</span>
+                  <span className="block gradient-text text-xl mt-1">{p.premiumTitle2}</span>
                 </h3>
               </div>
-              <p className="text-dark-300 text-sm mb-4 text-left">{p.premiumSubtitle}</p>
-              <ul className="flex flex-col gap-2 mb-6 text-left flex-1">
+              <p className="ink-muted text-sm mb-4 text-left leading-relaxed">{p.premiumSubtitle}</p>
+              <ul className="flex flex-col gap-2.5 mb-6 text-left flex-1">
                 {p.premiumFeatures.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-dark-200">
+                  <li key={item} className="flex items-start gap-2 text-sm ink-soft">
                     <CheckCircle className="w-4 h-4 text-primary-500 shrink-0 mt-0.5" />
                     {item}
                   </li>
@@ -199,7 +232,7 @@ export default function PaginasWebContent() {
               <button
                 type="button"
                 onClick={() => setCheckoutOpen("premium")}
-                className="w-full mt-auto py-3.5 px-4 rounded-xl font-semibold text-white bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 transition shadow-lg shadow-black/25 focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:ring-offset-2 focus:ring-offset-dark-800"
+                className="w-full mt-auto py-3.5 px-4 rounded-xl font-semibold text-white bg-gradient-to-r from-primary-600 to-primary-800 hover:from-primary-500 hover:to-primary-700 transition shadow-lg shadow-black/25 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-dark-800"
               >
                 {p.purchaseBuyCta}
               </button>
@@ -210,54 +243,21 @@ export default function PaginasWebContent() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.12 }}
-              className="rounded-2xl border border-cyan-500/30 bg-dark-800/50 p-5 sm:p-6 shadow-lg shadow-black/20 flex flex-col"
+              className="rounded-2xl border border-slate-200 dark:border-dark-600 bg-white dark:bg-dark-800/50 p-7 sm:p-8 shadow-lg shadow-black/10 dark:shadow-black/20 flex flex-col md:col-span-2 xl:col-span-3 xl:max-w-2xl xl:mx-auto xl:w-full"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2.5 rounded-xl bg-gradient-to-br from-cyan-500 to-sky-600">
-                  <Wallet className="w-7 h-7 text-white" />
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-left">
-                  <span className="text-white">{p.budgetTitle1}</span>{" "}
-                  <span className="gradient-text">{p.budgetTitle2}</span>
-                </h3>
-              </div>
-              <p className="text-dark-300 text-sm mb-4 text-left">{p.budgetSubtitle}</p>
-              <ul className="flex flex-col gap-2 mb-6 text-left flex-1">
-                {p.budgetFeatures.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-dark-200">
-                    <CheckCircle className="w-4 h-4 text-primary-500 shrink-0 mt-0.5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/#contacto"
-                className="w-full mt-auto py-3.5 px-4 rounded-xl font-semibold text-center text-white bg-gradient-to-r from-cyan-600 to-sky-600 hover:from-cyan-500 hover:to-sky-500 transition shadow-lg shadow-black/25"
-              >
-                {p.budgetCta}
-              </Link>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-2xl border border-dark-600 bg-dark-800/50 p-5 sm:p-6 shadow-lg shadow-black/20 flex flex-col"
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2.5 rounded-xl bg-gradient-to-br from-primary-600 to-emerald-600">
+              <div className="flex flex-col items-start gap-3 mb-5">
+                <div className="p-2.5 rounded-xl bg-gradient-to-br from-primary-600 to-primary-800">
                   <Server className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-left">
-                  <span className="text-white">{p.subscribeTitle1}</span>{" "}
-                  <span className="gradient-text">{p.subscribeTitle2}</span>
+                <h3 className="text-left font-bold">
+                  <span className="block ink text-2xl leading-tight">{p.subscribeTitle1}</span>
+                  <span className="block gradient-text text-xl mt-1">{p.subscribeTitle2}</span>
                 </h3>
               </div>
-              <p className="text-dark-300 text-sm mb-4 text-left">{p.subscribeSubtitle}</p>
-              <ul className="flex flex-col gap-2 mb-6 text-left flex-1">
+              <p className="ink-muted text-sm mb-4 text-left leading-relaxed">{p.subscribeSubtitle}</p>
+              <ul className="flex flex-col gap-2.5 mb-6 text-left flex-1">
                 {p.subscribeFeatures.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-dark-200">
+                  <li key={item} className="flex items-start gap-2 text-sm ink-soft">
                     <CheckCircle className="w-4 h-4 text-primary-500 shrink-0 mt-0.5" />
                     {item}
                   </li>
@@ -266,7 +266,7 @@ export default function PaginasWebContent() {
               <button
                 type="button"
                 onClick={() => setCheckoutOpen("subscription")}
-                className="w-full mt-auto py-3.5 px-4 rounded-xl font-semibold text-white bg-gradient-to-r from-primary-600 to-emerald-600 hover:from-primary-500 hover:to-emerald-500 transition shadow-lg shadow-black/25 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-dark-800"
+                className="w-full mt-auto py-3.5 px-4 rounded-xl font-semibold text-white bg-gradient-to-r from-primary-600 to-primary-800 hover:from-primary-500 hover:to-primary-700 transition shadow-lg shadow-black/25 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-dark-800"
               >
                 {p.purchaseBuyCta}
               </button>
@@ -303,13 +303,13 @@ export default function PaginasWebContent() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="p-8 bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700 hover:border-primary-500/50 transition-all"
+                  className="p-8 bg-white dark:bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-dark-700 hover:border-primary-500/50 transition-all"
                 >
-                  <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 mb-4">
+                  <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 mb-4">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{feature.title}</h3>
-                  <p className="text-dark-300">{feature.description}</p>
+                  <h3 className="text-2xl font-bold ink mb-3">{feature.title}</h3>
+                  <p className="ink-muted">{feature.description}</p>
                 </motion.div>
               );
             })}
@@ -317,7 +317,7 @@ export default function PaginasWebContent() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-dark-800/30">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-dark-800/30">
         <div className="container mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -327,10 +327,10 @@ export default function PaginasWebContent() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              <span className="text-white">{p.includeTitle1}</span>{" "}
+              <span className="ink">{p.includeTitle1}</span>{" "}
               <span className="gradient-text">{p.includeTitle2}</span>
             </h2>
-            <p className="text-dark-300">{p.includeSubtitle}</p>
+            <p className="ink-muted">{p.includeSubtitle}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -341,10 +341,10 @@ export default function PaginasWebContent() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="flex items-center space-x-3 p-4 bg-dark-800/50 rounded-lg"
+                className="flex items-center space-x-3 p-4 bg-white dark:bg-dark-800/50 rounded-lg border border-slate-200 dark:border-transparent"
               >
                 <CheckCircle className="w-5 h-5 text-primary-500 flex-shrink-0" />
-                <span className="text-dark-200">{service}</span>
+                <span className="ink-soft">{service}</span>
               </motion.div>
             ))}
           </div>
@@ -361,7 +361,7 @@ export default function PaginasWebContent() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              <span className="text-white">{p.benefitsTitle1}</span>{" "}
+              <span className="ink">{p.benefitsTitle1}</span>{" "}
               <span className="gradient-text">{p.benefitsTitle2}</span>
             </h2>
           </motion.div>
@@ -374,10 +374,10 @@ export default function PaginasWebContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="p-6 bg-dark-800/50 rounded-xl border border-dark-700"
+                className="p-6 bg-white dark:bg-dark-800/50 rounded-xl border border-slate-200 dark:border-dark-700"
               >
-                <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
-                <p className="text-dark-300">{benefit.description}</p>
+                <h3 className="text-xl font-bold ink mb-3">{benefit.title}</h3>
+                <p className="ink-muted">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -393,10 +393,10 @@ export default function PaginasWebContent() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              <span className="text-white">{p.ctaTitle1}</span>{" "}
+              <span className="ink">{p.ctaTitle1}</span>{" "}
               <span className="gradient-text">{p.ctaTitle2}</span>
             </h2>
-            <p className="text-dark-300 mb-8 text-lg">{p.ctaSubtitle}</p>
+            <p className="ink-muted mb-8 text-lg">{p.ctaSubtitle}</p>
             <motion.a
               href="/#contacto"
               whileHover={{ scale: 1.05 }}

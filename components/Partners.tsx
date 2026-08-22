@@ -20,7 +20,7 @@ export default function Partners() {
     <section
       id="clientes"
       ref={ref}
-      className="py-24 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-dark-900 dark:to-dark-800 overflow-hidden"
+      className="py-24 bg-gradient-to-b from-brand-snow to-brand-white dark:from-dark-900 dark:to-dark-800 overflow-hidden"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -52,8 +52,8 @@ export default function Partners() {
         transition={{ duration: 0.8, delay: 0.3 }}
         className="relative group"
       >
-        <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-r from-slate-50 dark:from-dark-900 to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-l from-slate-100 dark:from-dark-800 to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-r from-brand-snow dark:from-dark-900 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-l from-brand-white dark:from-dark-800 to-transparent z-10 pointer-events-none" />
 
         <div className="flex items-center animate-marquee group-hover:[animation-play-state:paused]">
           {marqueeClients.map((client, index) => (

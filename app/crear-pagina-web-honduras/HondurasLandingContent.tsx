@@ -34,7 +34,7 @@ const benefits = [
 
 export default function HondurasLandingContent() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-dark-900 to-dark-800">
+    <main className="page-shell">
       <Header />
 
       <article className="pt-28 pb-20 px-4 sm:px-6 lg:px-8">
@@ -56,10 +56,10 @@ export default function HondurasLandingContent() {
               <MapPin className="w-4 h-4" />
               Agencia de desarrollo web en Honduras
             </p>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold ink mb-6 leading-tight">
               Crear página web en Honduras
             </h1>
-            <p className="text-lg sm:text-xl text-dark-300 leading-relaxed">
+            <p className="text-lg sm:text-xl ink-muted leading-relaxed">
               Nexus Global diseña y publica sitios para negocios hondureños: clínicas, floristerías,
               inmobiliarias, restaurantes y marcas que quieren aparecer en Google cuando alguien busca
               sus servicios en Tegucigalpa, San Pedro Sula o en todo el país.
@@ -67,24 +67,24 @@ export default function HondurasLandingContent() {
           </motion.header>
 
           <section className="mb-14">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold ink mb-4">
               Diseño web profesional sin complicaciones
             </h2>
-            <p className="text-dark-300 leading-relaxed mb-4">
-              Si buscas <strong className="text-white">crear una página web en Honduras</strong>,
+            <p className="ink-muted leading-relaxed mb-4">
+              Si buscas <strong className="ink">crear una página web en Honduras</strong>,
               no hace falta una agencia en el extranjero. Trabajamos con tu marca, textos y fotos,
               y te entregamos un sitio listo para publicar: móvil, rápido y con bases de SEO local
               (títulos, descripciones, datos de contacto y llamadas a la acción claras).
             </p>
-            <p className="text-dark-300 leading-relaxed">
-              También ayudamos a quien necesita <strong className="text-white">hacer una página web</strong>{" "}
+            <p className="ink-muted leading-relaxed">
+              También ayudamos a quien necesita <strong className="ink">hacer una página web</strong>{" "}
               por primera vez: te explicamos dominio, hosting, correos y cómo te encuentran en Maps y
               búsquedas como “diseño web Honduras” o el nombre de tu ciudad.
             </p>
           </section>
 
           <section className="mb-14">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Qué incluye</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold ink mb-6">Qué incluye</h2>
             <ul className="space-y-3">
               {benefits.map((item) => (
                 <li key={item} className="flex gap-3 text-dark-200">
@@ -96,10 +96,10 @@ export default function HondurasLandingContent() {
           </section>
 
           <section className="mb-14">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold ink mb-4">
               Ciudades donde atendemos
             </h2>
-            <p className="text-dark-300 mb-6">
+            <p className="ink-muted mb-6">
               Desarrollo web remoto y reuniones según el proyecto. Cubrimos las principales ciudades
               de Honduras:
             </p>
@@ -107,7 +107,7 @@ export default function HondurasLandingContent() {
               {cities.map((city) => (
                 <li
                   key={city}
-                  className="rounded-xl border border-dark-600 bg-dark-800/50 px-3 py-2 text-center text-sm text-white"
+                  className="rounded-xl border border-slate-200 dark:border-dark-600 bg-white dark:bg-dark-800/50 px-3 py-2 text-center text-sm ink"
                 >
                   {city}
                 </li>
@@ -116,13 +116,13 @@ export default function HondurasLandingContent() {
           </section>
 
           <section className="mb-14 rounded-2xl border border-primary-500/30 bg-primary-500/5 p-6 sm:p-8">
-            <h2 className="text-2xl font-bold text-white mb-3 flex items-center gap-2">
+            <h2 className="text-2xl font-bold ink mb-3 flex items-center gap-2">
               <Globe className="w-6 h-6 text-primary-400" />
               Precios para empezar
             </h2>
-            <p className="text-dark-300 mb-6">
-              Presencia que vende <strong className="text-white">300 USD</strong> (hasta 3 páginas) y
-              Marca online completa <strong className="text-white">500 USD</strong> (hasta 10 páginas).
+            <p className="ink-muted mb-6">
+              Plan Pro <strong className="ink">300$</strong> (hasta 3 páginas) y
+              Plan Premium <strong className="ink">500$</strong> (hasta 10 páginas).
               Plan de mantenimiento y hosting por suscripción. Pago con PayPal.
             </p>
             <Link
@@ -134,12 +134,12 @@ export default function HondurasLandingContent() {
           </section>
 
           <section className="mb-14">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Preguntas frecuentes</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold ink mb-6">Preguntas frecuentes</h2>
             <dl className="space-y-8">
               {hondurasFaqs.map((faq) => (
                 <div key={faq.q}>
-                  <dt className="text-lg font-semibold text-white mb-2">{faq.q}</dt>
-                  <dd className="text-dark-300 leading-relaxed">{faq.a}</dd>
+                  <dt className="text-lg font-semibold ink mb-2">{faq.q}</dt>
+                  <dd className="ink-muted leading-relaxed">{faq.a}</dd>
                 </div>
               ))}
             </dl>
@@ -147,8 +147,8 @@ export default function HondurasLandingContent() {
 
           <section className="text-center rounded-2xl border border-dark-600 p-8">
             <MessageCircle className="w-10 h-10 text-primary-400 mx-auto mb-4" />
-            <h2 className="text-2xl font-bold text-white mb-3">Cuéntanos tu negocio</h2>
-            <p className="text-dark-300 mb-6 max-w-xl mx-auto">
+            <h2 className="text-2xl font-bold ink mb-3">Cuéntanos tu negocio</h2>
+            <p className="ink-muted mb-6 max-w-xl mx-auto">
               Escríbenos y te proponemos el plan correcto para crear tu página web en Honduras.
             </p>
             <Link

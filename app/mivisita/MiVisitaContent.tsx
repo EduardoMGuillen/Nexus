@@ -23,7 +23,7 @@ export default function MiVisitaContent() {
   const v = m.mivisita;
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-dark-900 to-dark-800">
+    <main className="page-shell">
       <Header />
 
       <section id="inicio" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
@@ -39,16 +39,16 @@ export default function MiVisitaContent() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
               <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-                <span className="text-white">{v.heroTitle1}</span>{" "}
+                <span className="ink">{v.heroTitle1}</span>{" "}
                 <span className="gradient-text">{v.heroTitle2}</span>
               </h1>
-              <p className="text-lg text-dark-300 mb-6">{v.heroBody}</p>
+              <p className="text-lg ink-muted mb-6">{v.heroBody}</p>
 
               <div className="space-y-3 mb-8">
                 {v.highlights.map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-primary-500 mt-0.5 shrink-0" />
-                    <p className="text-dark-200">{item}</p>
+                    <p className="ink-soft">{item}</p>
                   </div>
                 ))}
               </div>
@@ -64,7 +64,7 @@ export default function MiVisitaContent() {
               </a>
             </div>
 
-            <div className="bg-dark-800/60 border border-dark-700 rounded-2xl p-6 sm:p-8">
+            <div className="bg-white dark:bg-dark-800/60 border border-slate-200 dark:border-dark-700 rounded-2xl p-6 sm:p-8">
               <div className="flex justify-center mb-8">
                 <Image
                   src="/mivista.png"
@@ -80,15 +80,15 @@ export default function MiVisitaContent() {
                 <div className="flex items-start gap-3">
                   <QrCode className="w-5 h-5 text-primary-400 mt-1 shrink-0" />
                   <div>
-                    <p className="font-semibold text-white">{v.cardSecureTitle}</p>
-                    <p className="text-dark-300">{v.cardSecureBody}</p>
+                    <p className="font-semibold ink">{v.cardSecureTitle}</p>
+                    <p className="ink-muted">{v.cardSecureBody}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <ShieldCheck className="w-5 h-5 text-primary-400 mt-1 shrink-0" />
                   <div>
-                    <p className="font-semibold text-white">{v.cardProcessTitle}</p>
-                    <p className="text-dark-300">{v.cardProcessBody}</p>
+                    <p className="font-semibold ink">{v.cardProcessTitle}</p>
+                    <p className="ink-muted">{v.cardProcessBody}</p>
                   </div>
                 </div>
               </div>
@@ -101,10 +101,10 @@ export default function MiVisitaContent() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              <span className="text-white">{v.sectionTitle1}</span>{" "}
+              <span className="ink">{v.sectionTitle1}</span>{" "}
               <span className="gradient-text">{v.sectionTitle2}</span>
             </h2>
-            <p className="text-dark-300 max-w-3xl mx-auto">{v.sectionSubtitle}</p>
+            <p className="ink-muted max-w-3xl mx-auto">{v.sectionSubtitle}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -113,17 +113,17 @@ export default function MiVisitaContent() {
               return (
                 <div
                   key={role.title}
-                  className="bg-dark-800/60 border border-dark-700 rounded-2xl p-6"
+                  className="bg-white dark:bg-dark-800/60 border border-slate-200 dark:border-dark-700 rounded-2xl p-6"
                 >
                   <div className="inline-flex p-3 rounded-lg bg-primary-500/20 mb-4">
                     <Icon className="w-5 h-5 text-primary-400" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-4">{role.title}</h3>
+                  <h3 className="text-xl font-semibold ink mb-4">{role.title}</h3>
                   <div className="space-y-3">
                     {role.points.map((point) => (
                       <div key={point} className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-primary-500 mt-1 shrink-0" />
-                        <p className="text-dark-300 text-sm">{point}</p>
+                        <p className="ink-muted text-sm">{point}</p>
                       </div>
                     ))}
                   </div>
@@ -132,13 +132,13 @@ export default function MiVisitaContent() {
             })}
           </div>
 
-          <div className="bg-dark-800/40 border border-dark-700 rounded-2xl p-6 sm:p-8">
-            <h3 className="text-2xl font-semibold text-white mb-4">{v.securityTitle}</h3>
+          <div className="bg-white dark:bg-dark-800/40 border border-slate-200 dark:border-dark-700 rounded-2xl p-6 sm:p-8">
+            <h3 className="text-2xl font-semibold ink mb-4">{v.securityTitle}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {v.securityBullets.map((text) => (
                 <div key={text} className="flex items-start gap-2">
                   <CheckCircle className="w-5 h-5 text-primary-500 mt-0.5 shrink-0" />
-                  <p className="text-dark-300">{text}</p>
+                  <p className="ink-muted">{text}</p>
                 </div>
               ))}
             </div>

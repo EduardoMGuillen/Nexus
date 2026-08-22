@@ -73,14 +73,14 @@ export function serviceJsonLd() {
     offers: [
       {
         "@type": "Offer",
-        name: "Presencia que vende",
+        name: "Plan Pro",
         price: "300",
         priceCurrency: "USD",
         url: `${SITE_URL}/paginas-web#ofertas`,
       },
       {
         "@type": "Offer",
-        name: "Marca online completa",
+        name: "Plan Premium",
         price: "500",
         priceCurrency: "USD",
         url: `${SITE_URL}/paginas-web#ofertas`,
@@ -92,7 +92,7 @@ export function serviceJsonLd() {
 export const hondurasFaqs = [
   {
     q: "¿Cuánto cuesta crear una página web en Honduras?",
-    a: "En Nexus Global un sitio de lanzamiento — Presencia que vende, hasta 3 páginas — parte de 300 USD y Marca online completa (hasta 10 páginas) de 500 USD. Si el alcance es distinto, el plan Tu presupuesto, tu web se cotiza a medida. También ofrecemos plan mensual de mantenimiento y hosting.",
+    a: "En Nexus Global el Plan Pro (hasta 3 páginas) parte de 300 USD y el Plan Premium (hasta 10 páginas) de 500 USD. Si el alcance es distinto, Tu presupuesto, tu web se cotiza a medida. También ofrecemos plan mensual de mantenimiento y hosting.",
   },
   {
     q: "¿Hacen páginas web en Tegucigalpa y San Pedro Sula?",
@@ -100,7 +100,7 @@ export const hondurasFaqs = [
   },
   {
     q: "¿Cuánto tarda tener mi página web lista?",
-    a: "Un sitio Basic suele entregarse en días o pocas semanas según contenido y revisiones. Un Premium con más páginas y secciones toma más tiempo. Te damos un calendario claro al iniciar.",
+    a: "Un Plan Pro suele entregarse en días o pocas semanas según contenido y revisiones. Un Plan Premium con más páginas y secciones toma más tiempo. Te damos un calendario claro al iniciar.",
   },
   {
     q: "¿Incluyen dominio, hosting y Google?",

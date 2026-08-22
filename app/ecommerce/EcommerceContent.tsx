@@ -21,7 +21,7 @@ export default function EcommerceContent() {
   const e = m.ecommerce;
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-dark-900 to-dark-800">
+    <main className="page-shell">
       <Header />
 
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
@@ -47,14 +47,14 @@ export default function EcommerceContent() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-center mb-12"
           >
-            <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 mb-6">
+            <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 mb-6">
               <ShoppingCart className="w-12 h-12 text-white" />
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-white">{e.heroTitle1}</span>{" "}
+              <span className="ink">{e.heroTitle1}</span>{" "}
               <span className="gradient-text">{e.heroTitle2}</span>
             </h1>
-            <p className="text-xl text-dark-300 max-w-2xl mx-auto">{e.heroSubtitle}</p>
+            <p className="text-xl ink-muted max-w-2xl mx-auto">{e.heroSubtitle}</p>
           </motion.div>
         </div>
       </section>
@@ -70,13 +70,13 @@ export default function EcommerceContent() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="p-8 bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700 hover:border-primary-500/50 transition-all"
+                  className="p-8 bg-white dark:bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-dark-700 hover:border-primary-500/50 transition-all"
                 >
-                  <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 mb-4">
+                  <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 mb-4">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{feature.title}</h3>
-                  <p className="text-dark-300">{feature.description}</p>
+                  <h3 className="text-2xl font-bold ink mb-3">{feature.title}</h3>
+                  <p className="ink-muted">{feature.description}</p>
                 </motion.div>
               );
             })}
@@ -84,7 +84,7 @@ export default function EcommerceContent() {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-800/30">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-dark-800/30">
         <div className="container mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -94,10 +94,10 @@ export default function EcommerceContent() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              <span className="text-white">{e.includeTitle1}</span>{" "}
+              <span className="ink">{e.includeTitle1}</span>{" "}
               <span className="gradient-text">{e.includeTitle2}</span>
             </h2>
-            <p className="text-dark-300">{e.includeSubtitle}</p>
+            <p className="ink-muted">{e.includeSubtitle}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -127,10 +127,10 @@ export default function EcommerceContent() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              <span className="text-white">{e.ctaTitle1}</span>{" "}
+              <span className="ink">{e.ctaTitle1}</span>{" "}
               <span className="gradient-text">{e.ctaTitle2}</span>
             </h2>
-            <p className="text-dark-300 mb-8 text-lg">{e.ctaSubtitle}</p>
+            <p className="ink-muted mb-8 text-lg">{e.ctaSubtitle}</p>
             <motion.a
               href="/#contacto"
               whileHover={{ scale: 1.05 }}

@@ -232,7 +232,7 @@ export const en = {
     title: "Build a website in Honduras",
     lead: "Web design for Honduran businesses: mobile-first sites that load fast and help customers find you on Google.",
     points: [
-      "Clear pricing: Launch Presence $300 USD and Complete Brand Site $500 USD, with revisions included.",
+      "Clear pricing: Plan Pro 300$ and Plan Premium 500$, with revisions included.",
       "Local SEO for Tegucigalpa, San Pedro Sula, and searches like “create a website in Honduras”.",
       "Hosting, SSL, and maintenance so your site stays online.",
       "Real local clients: florists, clinics, real estate, and more.",
@@ -407,9 +407,9 @@ export const en = {
     offersTitle1: "Plans",
     offersTitle2: "web & hosting",
     offersSubtitle:
-      "Launch Presence, Complete Brand Site, a custom budget plan, or monthly hosting.",
-    basicTitle1: "Launch Presence",
-    basicTitle2: "300 USD",
+      "Your budget custom plan, Plan Pro 300$, Plan Premium 500$, or monthly hosting.",
+    basicTitle1: "Plan Pro",
+    basicTitle2: "300$",
     basicSubtitle:
       "Your brand online with impact: a landing or 1–3 page site built for WhatsApp, Google, and conversions. One-time payment.",
     basicFeatures: [
@@ -418,12 +418,12 @@ export const en = {
       "Fixed price in US dollars (USD)",
       "Revisions included before launch",
     ],
-    basicIframeTitle: "Pay for Launch Presence with PayPal",
+    basicIframeTitle: "Pay for Plan Pro with PayPal",
     basicSecureNote: "Secure checkout powered by PayPal.",
     basicPurchaseSuccess: "Payment completed successfully!",
     basicOrderIdLabel: "Order ID",
-    premiumTitle1: "Complete Brand Site",
-    premiumTitle2: "500 USD",
+    premiumTitle1: "Plan Premium",
+    premiumTitle2: "500$",
     premiumSubtitle:
       "Up to 10 pages with information architecture, on-page SEO, and advanced blocks. The presence a serious brand needs.",
     premiumFeatures: [
@@ -432,10 +432,10 @@ export const en = {
       "Forms, galleries, and advanced blocks tailored to your project",
       "Revisions included before launch",
     ],
-    premiumHostedAria: "Pay for Complete Brand Site with PayPal",
+    premiumHostedAria: "Pay for Plan Premium with PayPal",
     premiumSecureNote: "Secure checkout powered by PayPal.",
-    budgetTitle1: "Your Budget, Your Web",
-    budgetTitle2: "Custom",
+    budgetTitle1: "Your budget",
+    budgetTitle2: "your web",
     budgetSubtitle:
       "You set the scope and the budget. Redesign, fewer pages, more integrations, or a hybrid project—we quote without forcing a rigid package.",
     budgetFeatures: [
