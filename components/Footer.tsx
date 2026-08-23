@@ -45,6 +45,12 @@ export default function Footer() {
             >
               {m.footer.localSeo}
             </Link>
+            <Link
+              href="/nexus-honduras"
+              className="block mt-2 text-sm text-primary-400 hover:text-primary-300"
+            >
+              {m.footer.brandSeo}
+            </Link>
           </div>
 
           <div>

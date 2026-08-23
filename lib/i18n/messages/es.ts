@@ -19,7 +19,7 @@ export const es = {
     titleLine1: "Conectando tu negocio",
     titleHighlight: "con el futuro digital",
     subtitle:
-      "Agencia de desarrollo web en Honduras: páginas web, tiendas en línea y plataformas para negocios en Tegucigalpa, San Pedro Sula y todo el país.",
+      "Nexus Honduras (Nexus Global): agencia de desarrollo web en Honduras. Páginas web, tiendas en línea y plataformas para negocios en Tegucigalpa, San Pedro Sula y todo el país.",
     ctaStart: "Comenzar Proyecto",
     ctaServices: "Ver Servicios",
   },
@@ -218,6 +218,7 @@ export const es = {
     tagline: "Agencia de páginas web y soluciones digitales en Honduras",
     location: "Honduras · Tegucigalpa, San Pedro Sula y todo el país",
     localSeo: "Crear página web en Honduras",
+    brandSeo: "Nexus Honduras",
     quickLinks: "Enlaces Rápidos",
     follow: "Síguenos",
     rights: "Todos los derechos reservados.",
@@ -248,6 +249,10 @@ export const es = {
         a: "Sí. Atendemos Tegucigalpa, San Pedro Sula, La Ceiba y el resto de Honduras, de forma remota o con reuniones según el proyecto.",
       },
       {
+        q: "¿Quién es Nexus Honduras?",
+        a: "Nexus Honduras es el nombre con el que buscan a Nexus Global, la agencia de páginas web en Honduras (nexusglobalsuministros.com). Instagram @nexusglobalhn.",
+      },
+      {
         q: "¿Apareceré en Google?",
         a: "Optimizamos títulos, velocidad y datos de contacto. El ranking depende de competencia y contenido, pero dejamos bases sólidas de SEO local.",
       },
@@ -262,7 +267,7 @@ export const es = {
     backHome: "Volver al inicio",
     badge: "Honduras · atención nacional",
     title: "Quiénes somos",
-    lead: "Nexus Global es una agencia de desarrollo web en Honduras. Diseñamos sitios, tiendas y plataformas para negocios que quieren verse profesionales y aparecer en Google.",
+    lead: "Nexus Honduras es Nexus Global: agencia de desarrollo web en Honduras. Diseñamos sitios, tiendas y plataformas para negocios que quieren verse profesionales y aparecer en Google.",
     whereTitle: "Dónde estamos",
     whereBody: "Honduras. Atención nacional: Tegucigalpa, San Pedro Sula y el resto del país, de forma remota o con reuniones según el proyecto.",
     contactTitle: "Contacto",

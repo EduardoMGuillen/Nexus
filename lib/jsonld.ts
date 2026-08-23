@@ -1,4 +1,5 @@
 import {
+  BRAND_ALIASES,
   SITE_EMAIL,
   SITE_INSTAGRAM,
   SITE_NAME,
@@ -11,13 +12,15 @@ export function organizationJsonLd() {
     "@type": ["ProfessionalService", "LocalBusiness", "Organization"],
     "@id": `${SITE_URL}/#organization`,
     name: SITE_NAME,
+    alternateName: [...BRAND_ALIASES],
     legalName: "Nexus Global",
+    slogan: "Nexus Honduras: páginas web, tiendas en línea y plataformas para negocios hondureños.",
     url: SITE_URL,
     logo: `${SITE_URL}/logo-nexus.png`,
     image: `${SITE_URL}/logo-nexus.png`,
     email: SITE_EMAIL,
     description:
-      "Agencia de desarrollo web en Honduras. Creamos páginas web, tiendas en línea, hosting y plataformas a medida para negocios en Tegucigalpa, San Pedro Sula y todo el país.",
+      "Nexus Global (Nexus Honduras) es la agencia de desarrollo web de Nexus Global Suministros. Creamos páginas web, tiendas en línea, hosting y plataformas a medida para negocios en Tegucigalpa, San Pedro Sula y todo Honduras.",
     foundingLocation: {
       "@type": "Country",
       name: "Honduras",
@@ -37,6 +40,13 @@ export function organizationJsonLd() {
     ],
     sameAs: [SITE_INSTAGRAM],
     priceRange: "$$",
+    knowsAbout: [
+      "Nexus Honduras",
+      "crear página web en Honduras",
+      "diseño web Tegucigalpa",
+      "diseño web San Pedro Sula",
+      "SEO local Honduras",
+    ],
     knowsLanguage: ["es", "en"],
     serviceType: [
       "Diseño y desarrollo de páginas web",
@@ -54,8 +64,19 @@ export function websiteJsonLd() {
     "@id": `${SITE_URL}/#website`,
     url: SITE_URL,
     name: SITE_NAME,
+    alternateName: ["Nexus Honduras", "Nexus Global Honduras"],
     inLanguage: "es-HN",
+    description:
+      "Sitio oficial de Nexus Global (Nexus Honduras): agencia de páginas web en Honduras.",
     publisher: { "@id": `${SITE_URL}/#organization` },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${SITE_URL}/paginas-web?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 }
 
@@ -105,6 +126,10 @@ export const hondurasFaqs = [
   {
     q: "¿Incluyen dominio, hosting y Google?",
     a: "Podemos incluir hosting, SSL, copias de seguridad y orientación para dominio. También configuramos presencia en Google (perfil de negocio y bases de SEO local) para que te encuentren al buscar crear página web o tu rubro en Honduras.",
+  },
+  {
+    q: "¿Quién es Nexus Honduras o Nexus Global?",
+    a: "Nexus Honduras es el nombre con el que muchos buscan a Nexus Global, agencia de páginas web en Honduras (nexusglobalsuministros.com). Hacemos sitios, tiendas en línea, hosting y plataformas para negocios en Tegucigalpa, San Pedro Sula y todo el país. Instagram: @nexusglobalhn. Correo: Eduardoguillendev@proton.me.",
   },
   {
     q: "¿Puedo vender en línea desde Honduras?",

@@ -32,13 +32,13 @@ const Contact = dynamic(() => import("@/components/Contact"), {
 });
 
 export const metadata: Metadata = {
-  title: "Crear página web en Honduras — Diseño web Tegucigalpa y SPS",
+  title: "Nexus Honduras | Nexus Global — crear página web en Honduras",
   description:
-    "Nexus Global es tu agencia de páginas web en Honduras. Diseño web en Tegucigalpa, San Pedro Sula y todo el país. Sitios desde 300 USD, SEO local, hosting y PayPal.",
+    "Nexus Honduras (Nexus Global): agencia de páginas web en Honduras. Diseño en Tegucigalpa, San Pedro Sula y todo el país. Sitios desde 300 USD, SEO local, hosting.",
   keywords: HONDURAS_KEYWORDS,
   alternates: { canonical: SITE_URL },
   openGraph: {
-    title: "Crear página web en Honduras | Nexus Global",
+    title: "Nexus Honduras | Crear página web en Honduras",
     description:
       "Diseño y desarrollo web para negocios hondureños. Basic 300 USD, Premium 500 USD. Tegucigalpa, SPS y nacional.",
     url: SITE_URL,

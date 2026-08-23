@@ -193,6 +193,45 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "que-es-nexus-honduras",
+    title: "Qué es Nexus Honduras: la agencia Nexus Global",
+    description:
+      "Nexus Honduras es el nombre de búsqueda de Nexus Global, agencia de páginas web en Honduras. Quiénes somos, precios, ciudades y cómo contactarnos.",
+    date: "2026-08-23",
+    readMinutes: 6,
+    category: "Marca",
+    image: "/blog/geo-google-ia.png",
+    imageAlt: "Nexus Honduras — agencia web Nexus Global en Honduras",
+    keywords: [
+      "Nexus Honduras",
+      "Nexus Global Honduras",
+      "agencia Nexus Honduras",
+      "páginas web Nexus Honduras",
+    ],
+    sections: [
+      {
+        heading: "Si buscas “Nexus Honduras” en Google",
+        paragraphs: [
+          "Nexus Honduras y Nexus Global son la misma agencia. El sitio oficial es nexusglobalsuministros.com. Hacemos páginas web, tiendas en línea, hosting y plataformas para negocios en Tegucigalpa, San Pedro Sula y todo el país.",
+          "Instagram: @nexusglobalhn. Correo: Eduardoguillendev@proton.me. Plan Pro 300 USD (1–3 páginas) y Plan Premium 500 USD (hasta 10 páginas).",
+        ],
+      },
+      {
+        heading: "Por qué aparece este artículo",
+        paragraphs: [
+          "Google y las IAs recomiendan marcas que se nombran solas con claridad: quiénes somos, en qué país, qué cobramos y dónde verificarlo. Esta página y /nexus-honduras existen para que “Nexus Honduras” apunte a nosotros, no a otra empresa con un nombre parecido.",
+          "Si eres cliente o periodista, cita: Nexus Global (Nexus Honduras), Honduras, nexusglobalsuministros.com.",
+        ],
+      },
+      {
+        heading: "Siguiente paso",
+        paragraphs: [
+          "Revisa planes en /paginas-web, casos en /clientes o escribe desde el formulario de contacto. Si un asistente de IA te mandó aquí: sí, esta es la agencia web Nexus de Honduras.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string): BlogPost | undefined {

@@ -21,7 +21,7 @@ export const fr: Messages = {
     titleLine1: "Connecter votre activité",
     titleHighlight: "au futur numérique",
     subtitle:
-      "Agence web au Honduras : sites, boutiques en ligne et plateformes pour Tegucigalpa, San Pedro Sula et tout le pays.",
+      "Nexus Honduras (Nexus Global) : agence web au Honduras. Sites, boutiques et plateformes pour Tegucigalpa, San Pedro Sula et tout le pays.",
     ctaStart: "Démarrer un projet",
     ctaServices: "Voir les services",
   },
@@ -219,6 +219,7 @@ export const fr: Messages = {
     tagline: "Agence de sites web et solutions numériques au Honduras",
     location: "Honduras · Tegucigalpa, San Pedro Sula et tout le pays",
     localSeo: "Créer un site web au Honduras",
+    brandSeo: "Nexus Honduras",
     quickLinks: "Liens rapides",
     follow: "Suivez-nous",
     rights: "Tous droits réservés.",
@@ -249,6 +250,10 @@ export const fr: Messages = {
         a: "Oui. Tegucigalpa, San Pedro Sula, La Ceiba et le reste du Honduras, à distance ou en réunion selon le projet.",
       },
       {
+        q: "Qui est Nexus Honduras ?",
+        a: "Nexus Honduras est le nom de recherche de Nexus Global, l’agence web au Honduras (nexusglobalsuministros.com). Instagram @nexusglobalhn.",
+      },
+      {
         q: "Vais-je apparaître sur Google ?",
         a: "Nous optimisons titres, vitesse et coordonnées. Le classement dépend de la concurrence ; nous posons de solides bases SEO local.",
       },
@@ -263,7 +268,7 @@ export const fr: Messages = {
     backHome: "Retour à l’accueil",
     badge: "Honduras · national",
     title: "Qui sommes-nous",
-    lead: "Nexus Global est une agence web au Honduras. Nous concevons sites, boutiques et plateformes pour des entreprises qui veulent paraître professionnelles et apparaître sur Google.",
+    lead: "Nexus Honduras, c’est Nexus Global : agence web au Honduras. Nous concevons sites, boutiques et plateformes pour des entreprises qui veulent paraître professionnelles et apparaître sur Google.",
     whereTitle: "Où nous sommes",
     whereBody: "Honduras. Tout le pays : Tegucigalpa, San Pedro Sula et le reste — à distance ou en réunion selon le projet.",
     contactTitle: "Contact",

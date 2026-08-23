@@ -62,6 +62,12 @@ export default function SeoHn() {
           >
             {s.moreCta} →
           </Link>
+          <Link
+            href="/nexus-honduras"
+            className="inline-flex mt-4 ml-0 sm:ml-6 text-primary-600 dark:text-primary-400 hover:text-primary-500 dark:hover:text-primary-300 font-semibold"
+          >
+            Nexus Honduras →
+          </Link>
         </div>
       </div>
     </section>

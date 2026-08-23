@@ -17,11 +17,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Nexus Global | Crear página web en Honduras",
+    default: "Nexus Honduras | Nexus Global — páginas web en Honduras",
     template: "%s | Nexus Global",
   },
   description:
-    "Agencia de desarrollo web en Honduras. Creamos páginas web, tiendas en línea y plataformas para negocios en Tegucigalpa, San Pedro Sula y todo el país. Desde 300 USD.",
+    "Nexus Honduras es Nexus Global: agencia de páginas web en Honduras. Sitios, tiendas y plataformas para Tegucigalpa, San Pedro Sula y todo el país. Desde 300 USD.",
   keywords: HONDURAS_KEYWORDS,
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     alternateLocale: ["es_ES", "en_US"],
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: "Nexus Global | Crear página web en Honduras",
+    title: "Nexus Honduras | Nexus Global — agencia web en Honduras",
     description:
       "Diseño y desarrollo web en Honduras: sitios rápidos, SEO local, hosting y mantenimiento. Tegucigalpa, SPS y todo el país.",
     images: [
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nexus Global | Crear página web en Honduras",
+    title: "Nexus Honduras | Nexus Global — agencia web en Honduras",
     description:
       "Agencia hondureña de páginas web, e-commerce y plataformas. Desde 300 USD.",
     images: ["/logo-nexus.png"],

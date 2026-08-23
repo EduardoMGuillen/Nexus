@@ -21,7 +21,7 @@ export const en = {
     titleLine1: "Connecting your business",
     titleHighlight: "to the digital future",
     subtitle:
-      "Web development agency in Honduras: websites, online stores, and platforms for businesses in Tegucigalpa, San Pedro Sula, and nationwide.",
+      "Nexus Honduras (Nexus Global): web agency in Honduras. Websites, online stores, and platforms for businesses in Tegucigalpa, San Pedro Sula, and nationwide.",
     ctaStart: "Start a project",
     ctaServices: "View services",
   },
@@ -219,6 +219,7 @@ export const en = {
     tagline: "Website and digital solutions agency in Honduras",
     location: "Honduras · Tegucigalpa, San Pedro Sula, and nationwide",
     localSeo: "Create a website in Honduras",
+    brandSeo: "Nexus Honduras",
     quickLinks: "Quick links",
     follow: "Follow us",
     rights: "All rights reserved.",
@@ -249,6 +250,10 @@ export const en = {
         a: "Yes. We serve Tegucigalpa, San Pedro Sula, La Ceiba, and the rest of Honduras—remote or in-person as needed.",
       },
       {
+        q: "Who is Nexus Honduras?",
+        a: "Nexus Honduras is how people search for Nexus Global, the Honduras web agency (nexusglobalsuministros.com). Instagram @nexusglobalhn.",
+      },
+      {
         q: "Will I show up on Google?",
         a: "We optimize titles, speed, and contact data. Rankings depend on competition, but we set a strong local SEO foundation.",
       },
@@ -263,7 +268,7 @@ export const en = {
     backHome: "Back to home",
     badge: "Honduras · nationwide",
     title: "About us",
-    lead: "Nexus Global is a web development agency in Honduras. We design sites, stores, and platforms for businesses that want to look professional and show up on Google.",
+    lead: "Nexus Honduras is Nexus Global: a web development agency in Honduras. We design sites, stores, and platforms for businesses that want to look professional and show up on Google.",
     whereTitle: "Where we are",
     whereBody: "Honduras. Nationwide: Tegucigalpa, San Pedro Sula, and the rest of the country—remote or in-person as needed.",
     contactTitle: "Contact",

@@ -21,7 +21,7 @@ export const pt: Messages = {
     titleLine1: "Conectando o seu negócio",
     titleHighlight: "ao futuro digital",
     subtitle:
-      "Agência de desenvolvimento web em Honduras: sites, lojas online e plataformas para Tegucigalpa, San Pedro Sula e todo o país.",
+      "Nexus Honduras (Nexus Global): agência web em Honduras. Sites, lojas online e plataformas para Tegucigalpa, San Pedro Sula e todo o país.",
     ctaStart: "Começar projeto",
     ctaServices: "Ver serviços",
   },
@@ -219,6 +219,7 @@ export const pt: Messages = {
     tagline: "Agência de sites e soluções digitais em Honduras",
     location: "Honduras · Tegucigalpa, San Pedro Sula e todo o país",
     localSeo: "Criar página web em Honduras",
+    brandSeo: "Nexus Honduras",
     quickLinks: "Links rápidos",
     follow: "Siga-nos",
     rights: "Todos os direitos reservados.",
@@ -249,6 +250,10 @@ export const pt: Messages = {
         a: "Sim. Tegucigalpa, San Pedro Sula, La Ceiba e o resto de Honduras, remoto ou com reuniões.",
       },
       {
+        q: "Quem é a Nexus Honduras?",
+        a: "Nexus Honduras é como procuram a Nexus Global, a agência web em Honduras (nexusglobalsuministros.com). Instagram @nexusglobalhn.",
+      },
+      {
         q: "Vou aparecer no Google?",
         a: "Otimizamos títulos, velocidade e contacto. O ranking depende da concorrência; deixamos bases sólidas de SEO local.",
       },
@@ -263,7 +268,7 @@ export const pt: Messages = {
     backHome: "Voltar ao início",
     badge: "Honduras · atendimento nacional",
     title: "Quem somos",
-    lead: "A Nexus Global é uma agência de desenvolvimento web em Honduras. Criamos sites, lojas e plataformas para negócios que querem parecer profissionais e aparecer no Google.",
+    lead: "Nexus Honduras é a Nexus Global: agência de desenvolvimento web em Honduras. Criamos sites, lojas e plataformas para negócios que querem parecer profissionais e aparecer no Google.",
     whereTitle: "Onde estamos",
     whereBody: "Honduras. Atendimento nacional: Tegucigalpa, San Pedro Sula e o resto do país — remoto ou com reuniões.",
     contactTitle: "Contacto",
