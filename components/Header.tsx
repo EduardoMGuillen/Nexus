@@ -25,7 +25,7 @@ export default function Header() {
 
   const navItems = [
     { name: nav.home, href: "/#inicio" },
-    { name: nav.services, href: "/paginas-web#ofertas" },
+    { name: nav.services, href: "/paginas-web" },
     { name: nav.crm, href: "/crm" },
     { name: nav.marketing, href: "/marketing" },
     { name: nav.clients, href: "/clientes" },

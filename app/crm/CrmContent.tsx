@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CrmDashboardDemo from "@/components/CrmDashboardDemo";
 import {
   Columns3,
   UserRound,
@@ -15,33 +16,9 @@ import { useMessages } from "@/components/LocaleProvider";
 
 const featureIcons = [Columns3, UserRound, MessageCircle, BarChart3] as const;
 
-const DEMO_CARDS = [
-  [
-    { name: "Clínica Valle", value: "$1,200", owner: "Ana" },
-    { name: "Inmobiliaria Norte", value: "$4,800", owner: "Luis" },
-    { name: "Café Central", value: "$650", owner: "Ana" },
-  ],
-  [
-    { name: "Ferretería López", value: "$2,100", owner: "María" },
-    { name: "Hotel Brisas", value: "$3,400", owner: "Luis" },
-  ],
-  [
-    { name: "Floristería Rosa", value: "$890", owner: "Ana" },
-    { name: "Agencia SPS", value: "$5,200", owner: "María" },
-  ],
-  [{ name: "Consultorio Dental", value: "$1,750", owner: "Luis" }],
-] as const;
-
 export default function CrmContent() {
   const m = useMessages();
   const c = m.crm;
-  const columns = [c.colNew, c.colContacted, c.colProposal, c.colWon];
-  const kpis = [
-    { label: c.kpiActive, value: "24" },
-    { label: c.kpiPipeline, value: "$18.4k" },
-    { label: c.kpiConversion, value: "32%" },
-    { label: c.kpiClosed, value: "7" },
-  ];
 
   return (
     <main className="page-shell">
@@ -75,51 +52,10 @@ export default function CrmContent() {
       </section>
 
       <section id="demo" className="py-12 px-4 sm:px-6 lg:px-8 scroll-mt-24">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-[1200px]">
           <h2 className="text-2xl sm:text-3xl font-bold ink text-center mb-2">{c.demoTitle}</h2>
           <p className="text-center ink-muted mb-8">{c.demoHint}</p>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            {kpis.map((kpi) => (
-              <div
-                key={kpi.label}
-                className="rounded-2xl border border-slate-200 dark:border-dark-700 bg-white dark:bg-dark-800/50 p-5 text-center"
-              >
-                <p className="text-2xl font-bold gradient-text">{kpi.value}</p>
-                <p className="text-sm ink-muted mt-1">{kpi.label}</p>
-              </div>
-            ))}
-          </div>
-
-          <p className="text-sm text-primary-500 mb-4 text-center">{c.aiBanner}</p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
-            {columns.map((col, i) => (
-              <div
-                key={col}
-                className="rounded-2xl border border-slate-200 dark:border-dark-700 bg-slate-50 dark:bg-dark-900/60 p-3 min-h-[280px]"
-              >
-                <div className="flex items-center justify-between mb-3 px-1">
-                  <h3 className="font-semibold ink text-sm">{col}</h3>
-                  <span className="text-xs ink-muted">{DEMO_CARDS[i].length}</span>
-                </div>
-                <div className="space-y-2">
-                  {DEMO_CARDS[i].map((card) => (
-                    <div
-                      key={card.name}
-                      className="rounded-xl bg-white dark:bg-dark-800 border border-slate-200 dark:border-dark-700 p-3 shadow-sm"
-                    >
-                      <p className="font-medium ink text-sm">{card.name}</p>
-                      <div className="flex justify-between mt-2 text-xs ink-muted">
-                        <span>{card.value}</span>
-                        <span>{card.owner}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+          <CrmDashboardDemo />
         </div>
       </section>
 
