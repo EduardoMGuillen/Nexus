@@ -11,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/clientes",
     "/ecommerce",
     "/dashboard",
+    "/crm",
+    "/marketing",
     "/mivisita",
     "/miporton",
     "/nosotros",

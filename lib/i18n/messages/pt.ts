@@ -639,6 +639,60 @@ export const pt: Messages = {
     ctaBody: "Conte como fecha hoje. Orçamentamos um CRM à medida, não uma licença genérica mensal.",
     ctaButton: "Falar do meu CRM",
   },
+  marketing: {
+    heroKicker: "Digital Marketing · Honduras",
+    heroTitle1: "Marca, redes e",
+    heroTitle2: "presença que vende",
+    heroLead:
+      "Gerimos as suas redes, posicionamos a marca e entregamos um Brand Book claro para tudo parecer e soar como um só negócio — em Tegucigalpa, San Pedro Sula e em todo o país.",
+    ctaPrimary: "Pedir proposta",
+    servicesTitle1: "O que",
+    servicesTitle2: "fazemos",
+    services: [
+      {
+        title: "Gestão de redes sociais",
+        description:
+          "Calendário, design, copies, publicação e comunidade no Instagram, Facebook, TikTok ou LinkedIn. Relatórios mensais, não posts soltos.",
+      },
+      {
+        title: "Posicionamento de marca",
+        description:
+          "Definimos a quem fala, o que promete e como se diferencia. Mensagem, tom e pilares para deixar de improvisar.",
+      },
+      {
+        title: "Brand Book",
+        description:
+          "Manual de marca: logo, cor, tipografia, usos certos e errados, tom de voz e templates. Para a equipe e fornecedores não desorganizarem a identidade.",
+      },
+      {
+        title: "Conteúdo e campanhas",
+        description:
+          "Peças para lançamentos, ads e landings. Alinhamos criativos com o seu site Nexus para o clique chegar a uma página que converte.",
+      },
+      {
+        title: "SEO e GEO local",
+        description:
+          "Fichas do Google, copies de busca e conteúdo para o encontrarem no Google e em IAs quando procuram o seu rubro em Honduras.",
+      },
+      {
+        title: "Pacotes à medida",
+        description:
+          "Não vendemos um “combo infinito”. Orçamentamos por canais, volume e objetivos: awareness, leads ou vendas.",
+      },
+    ],
+    processTitle1: "Como",
+    processTitle2: "trabalhamos",
+    steps: [
+      { title: "Brief", description: "Marca, concorrência, canais atuais e meta de 90 dias." },
+      { title: "Identidade", description: "Se precisar: Brand Book, paleta, voz e templates." },
+      { title: "Operação", description: "Calendário, peças, publicação e resposta à comunidade." },
+      { title: "Medição", description: "O que funcionou, o que cortamos e o que escalamos no mês seguinte." },
+    ],
+    ctaTitle1: "A sua marca,",
+    ctaTitle2: "com critério.",
+    ctaBody: "Conte que redes usa hoje e quem quer atrair. Montamos uma proposta sem recheio.",
+    ctaButton: "Falar de marketing",
+  },
   mivisita: {
     heroTitle1: "MiVisita:",
     heroTitle2: "o seu acesso residencial digital",

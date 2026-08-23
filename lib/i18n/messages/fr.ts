@@ -639,6 +639,60 @@ export const fr: Messages = {
     ctaBody: "Expliquez comment vous concluez aujourd’hui. Nous chiffrons un CRM sur mesure, pas une licence générique.",
     ctaButton: "Parler de mon CRM",
   },
+  marketing: {
+    heroKicker: "Digital Marketing · Honduras",
+    heroTitle1: "Marque, réseaux et",
+    heroTitle2: "présence qui vend",
+    heroLead:
+      "Nous gérons vos réseaux, positionnons votre marque et livrons un Brand Book clair pour que tout ait l’air et le son d’une seule entreprise — à Tegucigalpa, San Pedro Sula et dans tout le pays.",
+    ctaPrimary: "Demander une proposition",
+    servicesTitle1: "Ce que",
+    servicesTitle2: "nous faisons",
+    services: [
+      {
+        title: "Gestion des réseaux sociaux",
+        description:
+          "Calendrier, design, textes, publication et communauté sur Instagram, Facebook, TikTok ou LinkedIn. Rapports mensuels, pas des posts au hasard.",
+      },
+      {
+        title: "Positionnement de marque",
+        description:
+          "Nous définissons à qui vous parlez, ce que vous promettez et comment vous vous distinguez. Message, ton et piliers pour arrêter d’improviser.",
+      },
+      {
+        title: "Brand Book",
+        description:
+          "Manuel de marque : logo, couleur, typo, bons et mauvais usages, ton de voix et modèles. Pour que l’équipe et les prestataires ne cassent pas l’identité.",
+      },
+      {
+        title: "Contenu et campagnes",
+        description:
+          "Pièces pour lancements, pubs et landings. Nous alignons les créas avec votre site Nexus pour que le clic arrive sur une page qui convertit.",
+      },
+      {
+        title: "SEO et GEO local",
+        description:
+          "Fiches Google, textes de recherche et contenu pour que l’on vous trouve — y compris via les IA — dans votre secteur au Honduras.",
+      },
+      {
+        title: "Forfaits sur mesure",
+        description:
+          "Nous ne vendons pas un « combo infini ». Nous chiffrons par canaux, volume et objectifs : notoriété, leads ou ventes.",
+      },
+    ],
+    processTitle1: "Comment",
+    processTitle2: "nous travaillons",
+    steps: [
+      { title: "Brief", description: "Marque, concurrence, canaux actuels et objectif à 90 jours." },
+      { title: "Identité", description: "Si besoin : Brand Book, palette, voix et modèles." },
+      { title: "Opération", description: "Calendrier, pièces, publication et réponses à la communauté." },
+      { title: "Mesure", description: "Ce qui a marché, ce qu’on coupe et ce qu’on scale le mois suivant." },
+    ],
+    ctaTitle1: "Votre marque,",
+    ctaTitle2: "avec du critère.",
+    ctaBody: "Dites-nous quels réseaux vous utilisez et qui vous voulez attirer. Nous préparons une proposition sans remplissage.",
+    ctaButton: "Parler marketing",
+  },
   mivisita: {
     heroTitle1: "MiVisita :",
     heroTitle2: "votre accès résidentiel numérique",

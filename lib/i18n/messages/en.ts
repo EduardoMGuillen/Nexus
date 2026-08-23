@@ -643,6 +643,60 @@ export const en = {
     ctaBody: "Tell us how you close today. We quote a custom CRM—not a generic monthly license.",
     ctaButton: "Talk about my CRM",
   },
+  marketing: {
+    heroKicker: "Digital Marketing · Honduras",
+    heroTitle1: "Brand, social, and",
+    heroTitle2: "presence that sells",
+    heroLead:
+      "We run your socials, position your brand, and deliver a clear Brand Book so everything looks and sounds like one business — in Tegucigalpa, San Pedro Sula, and nationwide.",
+    ctaPrimary: "Request a proposal",
+    servicesTitle1: "What",
+    servicesTitle2: "we do",
+    services: [
+      {
+        title: "Social media management",
+        description:
+          "Calendar, design, copy, publishing, and community on Instagram, Facebook, TikTok, or LinkedIn. Monthly reports — not random posts.",
+      },
+      {
+        title: "Brand positioning",
+        description:
+          "We define who you talk to, what you promise, and how you stand out. Message, tone, and pillars so you stop improvising.",
+      },
+      {
+        title: "Brand Book",
+        description:
+          "Brand manual: logo, color, type, do’s and don’ts, voice, and templates. So your team and vendors don’t scramble the identity.",
+      },
+      {
+        title: "Content and campaigns",
+        description:
+          "Assets for launches, ads, and landings. We align creatives with your Nexus site so the click lands on a page that converts.",
+      },
+      {
+        title: "Local SEO and GEO",
+        description:
+          "Google profiles, search copy, and content so people — and AIs — find you when they look for your category in Honduras.",
+      },
+      {
+        title: "Custom packages",
+        description:
+          "We don’t sell an “infinite combo.” We quote by channels, volume, and goals: awareness, leads, or sales.",
+      },
+    ],
+    processTitle1: "How",
+    processTitle2: "we work",
+    steps: [
+      { title: "Brief", description: "Brand, competitors, current channels, and a 90-day goal." },
+      { title: "Identity", description: "If needed: Brand Book, palette, voice, and templates." },
+      { title: "Operations", description: "Calendar, assets, publishing, and community replies." },
+      { title: "Measurement", description: "What worked, what we cut, and what we scale next month." },
+    ],
+    ctaTitle1: "Your brand,",
+    ctaTitle2: "with judgment.",
+    ctaBody: "Tell us which networks you use today and who you want to attract. We build a proposal without filler.",
+    ctaButton: "Talk about marketing",
+  },
   mivisita: {
     heroTitle1: "MiVisita:",
     heroTitle2: "your digital residential access",

@@ -26,11 +26,10 @@ export default function Header() {
   const navItems = [
     { name: nav.home, href: "/#inicio" },
     { name: nav.services, href: "/paginas-web#ofertas" },
-    { name: nav.blog, href: "/blog" },
-    { name: nav.projects, href: "/#proyectos" },
+    { name: nav.crm, href: "/crm" },
+    { name: nav.marketing, href: "/marketing" },
     { name: nav.clients, href: "/clientes" },
     { name: nav.about, href: "/nosotros" },
-    { name: nav.process, href: "/#proceso" },
     { name: nav.contact, href: "/#contacto" },
   ];
 
@@ -74,13 +73,12 @@ export default function Header() {
             <span className="wordmark hidden sm:block">NEXUS</span>
           </Link>
 
-          {/* Desktop Navigation — xl so 8 links stay visible (md overflow hid Blog) */}
-          <div className="hidden xl:flex items-center gap-4 2xl:gap-6 min-w-0">
+          <div className="hidden xl:flex items-center gap-3 2xl:gap-5 min-w-0">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="shrink-0 text-sm font-medium text-slate-800 dark:text-dark-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 relative group"
+                className="shrink-0 text-[13px] 2xl:text-sm font-medium text-slate-800 dark:text-dark-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 relative group"
               >
                 {item.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300" />
