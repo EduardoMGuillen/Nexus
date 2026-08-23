@@ -13,7 +13,7 @@ export default function Hero() {
     <section
       id="inicio"
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-brand-cloud via-white to-brand-cloud dark:from-black dark:via-dark-900 dark:to-black"
+      className="relative min-h-screen flex items-start sm:items-center justify-center overflow-hidden bg-gradient-to-br from-brand-cloud via-white to-brand-cloud dark:from-black dark:via-dark-900 dark:to-black pt-28 sm:pt-0"
     >
       {/* Animated Background */}
       <ParticleNetwork />
@@ -49,7 +49,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center pb-16 sm:pb-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -61,7 +61,7 @@ export default function Hero() {
             transition={{ duration: 3, repeat: Infinity }}
             className="inline-block mb-6"
           >
-            <div className="w-52 h-52 sm:w-64 sm:h-64 lg:w-80 lg:h-80 mx-auto flex items-center justify-center">
+            <div className="w-40 h-40 sm:w-64 sm:h-64 lg:w-80 lg:h-80 mx-auto flex items-center justify-center">
               {/* Native img keeps PNG alpha; next/image was flattening it to black */}
               <img
                 src="/logo-mark.png"
