@@ -14,6 +14,10 @@ export type Client = {
   logoBg?: string;
 };
 
+export function clientUsesLightPlate(client: Client): boolean {
+  return Boolean(client.logoBg?.includes("bg-white"));
+}
+
 export const CLIENTS: Client[] = [
   {
     name: "Astro",
@@ -57,6 +61,7 @@ export const CLIENTS: Client[] = [
     url: "https://mivisita.app",
     logo: "/partners/mivisita-logo.png",
     category: "security",
+    logoBg: "bg-white rounded-xl",
   },
   {
     name: "MiVisita Dragon",
@@ -108,6 +113,7 @@ export const CLIENTS: Client[] = [
     url: "https://www.martamartinezestetica.com/",
     logo: "/partners/marta_martinez_estetica.png",
     category: "beauty",
+    logoBg: "bg-white rounded-xl ring-1 ring-slate-200 dark:ring-white/10",
   },
   {
     name: "RoseLune Floristería",

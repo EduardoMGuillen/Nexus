@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/crear-pagina-web-honduras`,
     locale: "es_HN",
     type: "website",
-    images: [{ url: "/NexusGPTHD.png", width: 1200, height: 630, alt: "Nexus Global Honduras" }],
+    images: [{ url: "/logo-nexus.png", width: 1200, height: 630, alt: "Nexus Global Honduras" }],
   },
 };
 

@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import ParticleNetwork from "./ParticleNetwork";
 import { useMessages } from "./LocaleProvider";
 
@@ -14,7 +13,7 @@ export default function Hero() {
     <section
       id="inicio"
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-brand-snow via-brand-white to-brand-snow dark:from-dark-900 dark:via-dark-800 dark:to-dark-900"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-brand-cloud via-white to-brand-cloud dark:from-black dark:via-dark-900 dark:to-black"
     >
       {/* Animated Background */}
       <ParticleNetwork />
@@ -62,13 +61,12 @@ export default function Hero() {
             transition={{ duration: 3, repeat: Infinity }}
             className="inline-block mb-6"
           >
-            <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 mx-auto">
-              <Image
-                src="/NexusGPTHD.png"
+            <div className="w-52 h-52 sm:w-64 sm:h-64 lg:w-80 lg:h-80 mx-auto flex items-center justify-center">
+              {/* Native img keeps PNG alpha; next/image was flattening it to black */}
+              <img
+                src="/logo-mark.png"
                 alt={m.hero.logoAlt}
-                fill
-                className="object-contain drop-shadow-2xl"
-                priority
+                className="max-h-full max-w-full object-contain drop-shadow-[0_0_40px_rgba(0,186,196,0.35)]"
               />
             </div>
           </motion.div>
@@ -78,9 +76,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6"
+          className="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-6"
         >
-          <span className="text-slate-900 dark:text-white">{m.hero.titleLine1}</span>
+          <span className="text-brand-navy dark:text-white">{m.hero.titleLine1}</span>
           <br />
           <span className="gradient-text">{m.hero.titleHighlight}</span>
         </motion.h1>
@@ -112,7 +110,7 @@ export default function Hero() {
             href="/paginas-web#ofertas"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-dark-800/50 backdrop-blur-sm text-white rounded-lg font-semibold text-lg border border-dark-700 hover:border-primary-500/50 transition-all"
+            className="px-8 py-4 bg-white dark:bg-dark-800/50 backdrop-blur-sm text-brand-navy dark:text-white rounded-lg font-semibold text-lg border border-brand-navy/20 dark:border-dark-700 hover:border-primary-500/50 transition-all"
           >
             {m.hero.ctaServices}
           </motion.a>

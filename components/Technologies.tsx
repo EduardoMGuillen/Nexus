@@ -47,25 +47,23 @@ export default function Technologies() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 items-stretch">
           {technologies.map((tech, index) => (
             <motion.div
               key={tech.name}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              whileHover={{ scale: 1.1, y: -5 }}
-              className="group relative"
+              whileHover={{ y: -4 }}
+              className="group relative h-full"
             >
-              <div className="p-6 bg-slate-100 dark:bg-dark-800/50 backdrop-blur-sm rounded-xl border border-slate-200 dark:border-dark-700 hover:border-primary-500/50 transition-all duration-300 text-center">
-                <div className="text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:gradient-text transition-all">
+              <div className="h-full min-h-[8.75rem] p-4 sm:p-5 bg-slate-100 dark:bg-dark-800/50 backdrop-blur-sm rounded-xl border border-slate-200 dark:border-dark-700 hover:border-primary-500/50 transition-all duration-300 text-center flex flex-col items-center justify-center">
+                <div className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-tight min-h-[2.75rem] flex items-center justify-center text-center px-0.5 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors">
                   {tech.name}
                 </div>
-                <div className="text-xs text-slate-600 dark:text-dark-400">
+                <div className="text-xs text-slate-600 dark:text-dark-400 mt-1">
                   {cat[tech.category]}
                 </div>
-
-                <div className="absolute inset-0 rounded-xl bg-primary-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
             </motion.div>
           ))}

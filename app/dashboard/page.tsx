@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     locale: "es_HN",
     images: [
       {
-        url: "/NexusGPTHD.png",
+        url: "/logo-nexus.png",
         width: 1200,
         height: 630,
         alt: "Dashboard empresarial Nexus Global",

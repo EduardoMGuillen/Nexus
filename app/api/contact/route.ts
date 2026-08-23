@@ -75,12 +75,12 @@ Nexus Global
 nexusglobalsuministros.com
       `.trim(),
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; background-color: #f8fafc; border-radius: 12px;">
+        <div style="font-family: Inter, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; background-color: #F1F5F9; border-radius: 12px;">
           <div style="text-align: center; margin-bottom: 32px;">
-            <h1 style="color: #0f172a; font-size: 24px; margin: 0;">Nexus Global</h1>
+            <h1 style="color: #102865; font-size: 24px; margin: 0;">Nexus Global</h1>
           </div>
           <div style="background-color: #ffffff; padding: 32px; border-radius: 8px; border: 1px solid #e2e8f0;">
-            <h2 style="color: #0f172a; font-size: 20px; margin-top: 0;">¡Hola ${name}!</h2>
+            <h2 style="color: #102865; font-size: 20px; margin-top: 0;">¡Hola ${name}!</h2>
             <p style="color: #475569; font-size: 16px; line-height: 1.6;">
               Gracias por ponerte en contacto con nosotros. Hemos recibido tu mensaje y nuestro equipo lo revisará a la brevedad.
             </p>
@@ -90,8 +90,8 @@ nexusglobalsuministros.com
             <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 24px 0;" />
             <p style="color: #94a3b8; font-size: 14px; margin-bottom: 0;">
               Saludos,<br />
-              <strong style="color: #0f172a;">Nexus Global</strong><br />
-              <a href="https://www.nexusglobalsuministros.com" style="color: #22c55e; text-decoration: none;">nexusglobalsuministros.com</a>
+              <strong style="color: #102865;">Nexus Global</strong><br />
+              <a href="https://www.nexusglobalsuministros.com" style="color: #00BAC4; text-decoration: none;">nexusglobalsuministros.com</a>
             </p>
           </div>
         </div>

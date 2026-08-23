@@ -8,7 +8,7 @@ import { ArrowLeft, ExternalLink, Globe, Sparkles } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useMessages } from "@/components/LocaleProvider";
-import { CLIENTS, type ClientCategory } from "@/lib/clients";
+import { CLIENTS, clientUsesLightPlate, type ClientCategory } from "@/lib/clients";
 
 const CATEGORY_ORDER: ClientCategory[] = [
   "realEstate",
@@ -117,14 +117,16 @@ export default function ClientesContent() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.04 }}
                 whileHover={{ y: -6 }}
-                className="group relative flex flex-col rounded-2xl bg-dark-800/50 border border-dark-700 hover:border-primary-500/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10"
+                className="group relative flex flex-col rounded-2xl bg-white dark:bg-dark-800 border border-slate-200 dark:border-dark-700 hover:border-primary-500/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-primary-600/5 opacity-0 group-hover:opacity-100 transition-opacity" />
 
-                <div className="relative p-8 flex items-center justify-center min-h-[180px] bg-dark-900/40">
-                  <div
-                    className={`relative w-28 h-28 flex items-center justify-center ${client.logoBg ?? ""}`}
-                  >
+                <div
+                  className={`relative p-8 flex items-center justify-center min-h-[180px] ${
+                    clientUsesLightPlate(client) ? "bg-white" : "bg-black"
+                  }`}
+                >
+                  <div className="relative w-28 h-28 flex items-center justify-center">
                     <Image
                       src={client.logo}
                       alt={`${client.name} logo`}
@@ -135,18 +137,18 @@ export default function ClientesContent() {
                   </div>
                 </div>
 
-                <div className="relative p-6 flex flex-col flex-1 border-t border-dark-700/80">
-                  <span className="inline-block w-fit px-3 py-1 rounded-full text-xs font-medium bg-primary-500/15 text-primary-400 mb-3">
+                <div className="relative p-6 flex flex-col flex-1 border-t border-slate-200 dark:border-dark-700">
+                  <span className="inline-block w-fit px-3 py-1 rounded-full text-xs font-medium bg-primary-500/15 text-primary-700 dark:text-primary-400 mb-3">
                     {c.categories[client.category]}
                   </span>
-                  <h2 className="text-xl font-bold ink mb-2 group-hover:text-primary-300 transition-colors">
+                  <h2 className="text-xl font-bold ink mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-300 transition-colors">
                     {client.name}
                   </h2>
-                  <p className="flex items-center gap-2 text-dark-400 text-sm mb-4">
+                  <p className="flex items-center gap-2 text-slate-500 dark:text-dark-400 text-sm mb-4">
                     <Globe className="w-4 h-4 shrink-0" />
                     {client.domain}
                   </p>
-                  <span className="mt-auto inline-flex items-center gap-2 text-primary-400 text-sm font-semibold">
+                  <span className="mt-auto inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 text-sm font-semibold">
                     {c.visitSite}
                     <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </span>

@@ -116,7 +116,7 @@ export default function PaginasWebContent() {
 
       <section
         id="ofertas"
-        className="px-4 sm:px-6 lg:px-8 pb-14 sm:pb-16 border-b border-slate-200 dark:border-dark-700/70 bg-brand-snow/80 dark:bg-gradient-to-b dark:from-dark-900/80 dark:to-dark-900/40"
+        className="px-4 sm:px-6 lg:px-8 pb-14 sm:pb-16"
       >
         <div className="container mx-auto max-w-7xl">
           <motion.div

@@ -18,8 +18,8 @@ export const pt: Messages = {
   },
   hero: {
     logoAlt: "Logo Nexus Global",
-    titleLine1: "Conectamos o seu",
-    titleHighlight: "futuro digital",
+    titleLine1: "Conectando o seu negócio",
+    titleHighlight: "ao futuro digital",
     subtitle:
       "Agência de desenvolvimento web em Honduras: sites, lojas online e plataformas para Tegucigalpa, San Pedro Sula e todo o país.",
     ctaStart: "Começar projeto",

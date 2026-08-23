@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Instagram, Mail } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { useMessages } from "./LocaleProvider";
 
@@ -22,23 +21,21 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-brand-obsidian border-t border-dark-800">
+    <footer className="bg-black border-t border-primary-500/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
           <div>
             <Link
               href="/#inicio"
-              className="flex flex-col md:flex-row items-center md:space-x-3 space-y-2 md:space-y-0 mb-4"
+              className="flex flex-col items-center md:items-start mb-4"
             >
-              <div className="relative w-10 h-10">
-                <Image
-                  src="/NexusGPTHD.png"
+              <div className="relative w-36 h-36">
+                <img
+                  src="/logo-mark.png"
                   alt={m.hero.logoAlt}
-                  fill
-                  className="object-contain"
+                  className="w-full h-full object-contain"
                 />
               </div>
-              <span className="text-xl font-bold gradient-text">{m.common.brandName}</span>
             </Link>
             <p className="text-slate-300 dark:text-dark-400 text-sm">{m.footer.tagline}</p>
             <p className="text-slate-400 dark:text-dark-500 text-sm mt-2">{m.footer.location}</p>

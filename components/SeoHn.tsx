@@ -46,19 +46,19 @@ export default function SeoHn() {
           ))}
         </div>
 
-        <div className="rounded-2xl border border-dark-600 bg-dark-800/40 p-6 sm:p-8">
-          <h3 className="text-xl font-bold ink mb-6">{s.faqTitle}</h3>
+        <div className="rounded-2xl border border-slate-300 dark:border-dark-600 bg-white dark:bg-dark-800 p-6 sm:p-8 shadow-sm">
+          <h3 className="text-xl font-bold text-brand-navy dark:text-white mb-6">{s.faqTitle}</h3>
           <dl className="space-y-6">
             {s.faqs.map((faq) => (
               <div key={faq.q}>
-                <dt className="font-semibold text-white mb-2">{faq.q}</dt>
-                <dd className="text-dark-300 text-sm sm:text-base leading-relaxed">{faq.a}</dd>
+                <dt className="font-semibold text-brand-navy dark:text-white mb-2">{faq.q}</dt>
+                <dd className="text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">{faq.a}</dd>
               </div>
             ))}
           </dl>
           <Link
             href="/crear-pagina-web-honduras"
-            className="inline-flex mt-8 text-primary-400 hover:text-primary-300 font-semibold"
+            className="inline-flex mt-8 text-primary-600 dark:text-primary-400 hover:text-primary-500 dark:hover:text-primary-300 font-semibold"
           >
             {s.moreCta} →
           </Link>

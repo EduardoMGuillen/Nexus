@@ -134,12 +134,12 @@ export default function HondurasLandingContent() {
           </section>
 
           <section className="mb-14">
-            <h2 className="text-2xl sm:text-3xl font-bold ink mb-6">Preguntas frecuentes</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-brand-navy dark:text-white mb-6">Preguntas frecuentes</h2>
             <dl className="space-y-8">
               {hondurasFaqs.map((faq) => (
                 <div key={faq.q}>
-                  <dt className="text-lg font-semibold ink mb-2">{faq.q}</dt>
-                  <dd className="ink-muted leading-relaxed">{faq.a}</dd>
+                  <dt className="text-lg font-semibold text-brand-navy dark:text-white mb-2">{faq.q}</dt>
+                  <dd className="text-slate-700 dark:text-slate-300 leading-relaxed">{faq.a}</dd>
                 </div>
               ))}
             </dl>

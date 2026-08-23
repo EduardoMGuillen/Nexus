@@ -50,7 +50,7 @@ export default function BlogArticlePage({ params }: Props) {
     datePublished: post.date,
     dateModified: post.date,
     author: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
-    publisher: { "@type": "Organization", name: SITE_NAME, logo: `${SITE_URL}/NexusGPTHD.png` },
+    publisher: { "@type": "Organization", name: SITE_NAME, logo: `${SITE_URL}/logo-nexus.png` },
     mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
     inLanguage: "es-HN",
     keywords: post.keywords.join(", "),

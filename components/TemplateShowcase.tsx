@@ -107,7 +107,7 @@ export default function TemplateShowcase() {
                   <span
                     className={`absolute bottom-2 left-2 text-[10px] sm:text-xs font-bold uppercase tracking-wide px-2 py-0.5 rounded-full ${
                       meta.isLive
-                        ? "bg-emerald-950/90 text-primary-300 border border-primary-500/40"
+                        ? "bg-black/80 text-primary-300 border border-primary-500/40"
                         : "bg-black/40 text-white border border-white/10"
                     }`}
                   >

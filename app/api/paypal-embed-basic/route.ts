@@ -37,7 +37,7 @@ export async function GET() {
       margin: 0;
       padding: 24px 20px 32px;
       background: #ffffff;
-      color: #0f172a;
+      color: #102865;
       font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
     }

@@ -11,7 +11,7 @@ import { HONDURAS_KEYWORDS, SITE_NAME, SITE_URL } from "@/lib/site";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
       "Diseño y desarrollo web en Honduras: sitios rápidos, SEO local, hosting y mantenimiento. Tegucigalpa, SPS y todo el país.",
     images: [
       {
-        url: "/NexusGPTHD.png",
+        url: "/logo-nexus.png",
         width: 1200,
         height: 630,
         alt: "Nexus Global — desarrollo web en Honduras",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "Nexus Global | Crear página web en Honduras",
     description:
       "Agencia hondureña de páginas web, e-commerce y plataformas. Desde 300 USD.",
-    images: ["/NexusGPTHD.png"],
+    images: ["/logo-nexus.png"],
   },
   robots: {
     index: true,
@@ -68,8 +68,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/NexusGPTHD.png",
-    apple: "/NexusGPTHD.png",
+    icon: "/nexus-icon.png",
+    apple: "/nexus-icon.png",
   },
   other: {
     "geo.region": "HN",

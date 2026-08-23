@@ -13,8 +13,8 @@ export function organizationJsonLd() {
     name: SITE_NAME,
     legalName: "Nexus Global",
     url: SITE_URL,
-    logo: `${SITE_URL}/NexusGPTHD.png`,
-    image: `${SITE_URL}/NexusGPTHD.png`,
+    logo: `${SITE_URL}/logo-nexus.png`,
+    image: `${SITE_URL}/logo-nexus.png`,
     email: SITE_EMAIL,
     description:
       "Agencia de desarrollo web en Honduras. Creamos páginas web, tiendas en línea, hosting y plataformas a medida para negocios en Tegucigalpa, San Pedro Sula y todo el país.",

@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 15, 23, 42;
-  --background-start-rgb: 248, 250, 252;
+  --foreground-rgb: 16, 40, 101;
+  --background-start-rgb: 241, 245, 249;
   --background-end-rgb: 255, 255, 255;
 }
 
 .dark {
-  --foreground-rgb: 248, 250, 252;
-  --background-start-rgb: 15, 23, 42;
-  --background-end-rgb: 15, 23, 42;
+  --foreground-rgb: 241, 245, 249;
+  --background-start-rgb: 7, 11, 20;
+  --background-end-rgb: 7, 11, 20;
 }
 
 * {
@@ -45,19 +45,23 @@ body {
   }
 
   .ink {
-    @apply text-slate-900 dark:text-white;
+    @apply text-brand-navy dark:text-white;
   }
 
   .ink-muted {
-    @apply text-slate-600 dark:text-dark-300;
+    @apply text-slate-700 dark:text-slate-300;
   }
 
   .ink-soft {
-    @apply text-slate-700 dark:text-dark-200;
+    @apply text-slate-800 dark:text-slate-200;
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-600 via-primary-500 to-brand-deep dark:from-primary-400 dark:via-primary-500 dark:to-brand-deep bg-clip-text text-transparent;
+  }
+
+  .wordmark {
+    @apply text-xl font-bold tracking-[0.22em] text-brand-navy dark:text-white;
   }
   
   .gradient-border {

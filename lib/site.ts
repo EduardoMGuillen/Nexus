@@ -3,6 +3,8 @@ export const SITE_URL = (
 ).replace(/\/$/, "");
 
 export const SITE_NAME = "Nexus Global";
+export const BRAND_ICON = "/nexus-icon.png";
+export const BRAND_LOGO = "/logo-mark.png";
 export const SITE_EMAIL = "Eduardoguillendev@proton.me";
 export const SITE_INSTAGRAM = "https://www.instagram.com/nexusglobalhn/";
 

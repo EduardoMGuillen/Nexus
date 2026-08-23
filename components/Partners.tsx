@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useMessages } from "./LocaleProvider";
-import { CLIENTS } from "@/lib/clients";
+import { CLIENTS, clientUsesLightPlate } from "@/lib/clients";
 
 const marqueeClients = [...CLIENTS, ...CLIENTS];
 
@@ -64,15 +64,19 @@ export default function Partners() {
               rel="noopener noreferrer"
               className="flex-shrink-0 mx-6 sm:mx-10"
             >
-              <div className="relative flex items-center justify-center px-8 py-6 bg-white dark:bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-dark-700 hover:border-primary-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10 group/card w-44 sm:w-52">
-                <div
-                  className={`relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center ${client.logoBg ?? ""}`}
-                >
+              <div
+                className={`relative flex items-center justify-center px-8 py-6 rounded-2xl border transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10 group/card w-44 sm:w-52 ${
+                  clientUsesLightPlate(client)
+                    ? "bg-white border-slate-200 hover:border-primary-500/50"
+                    : "bg-black border-neutral-800 hover:border-primary-500/50"
+                }`}
+              >
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center">
                   <Image
                     src={client.logo}
                     alt={`${client.name} logo`}
                     fill
-                    className="object-contain"
+                    className="object-contain p-1.5"
                     sizes="(max-width: 640px) 96px, 112px"
                   />
                 </div>

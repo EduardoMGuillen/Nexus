@@ -58,21 +58,20 @@ export default function Header() {
           {/* Logo */}
           <Link href="/#inicio" className="flex items-center space-x-3 group">
             <motion.div
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              whileTap={{ scale: 0.95 }}
-              className="relative w-12 h-12"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              className="relative w-11 h-11 sm:w-12 sm:h-12 shrink-0"
             >
               <Image
-                src="/NexusGPTHD.png"
+                src="/nexus-icon.png"
                 alt={m.hero.logoAlt}
                 fill
+                sizes="48px"
                 className="object-contain"
                 priority
               />
             </motion.div>
-            <span className="text-xl font-bold gradient-text hidden sm:block">
-              {m.common.brandName}
-            </span>
+            <span className="wordmark hidden sm:block">NEXUS</span>
           </Link>
 
           {/* Desktop Navigation — xl so 8 links stay visible (md overflow hid Blog) */}
