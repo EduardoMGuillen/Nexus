@@ -3,12 +3,14 @@ export const es = {
     nav: {
       home: "Inicio",
       services: "Páginas web",
-      projects: "Proyectos",
-      process: "Proceso",
+      crm: "CRM Personalizada",
+      marketing: "Digital Marketing",
       clients: "Clientes",
-      blog: "Blog",
       about: "Nosotros",
       contact: "Contacto",
+      projects: "Proyectos",
+      process: "Proceso",
+      blog: "Blog",
     },
     ariaTheme: "Cambiar tema",
     ariaMenu: "Abrir menú",
@@ -577,6 +579,129 @@ export const es = {
       "Soporte y capacitación",
     ],
     useCases: ["Restaurantes y Cafeterías", "Hoteles y Hospedaje", "Retail y Tiendas"],
+  },
+  crm: {
+    heroKicker: "CRM a medida · Honduras",
+    heroTitle1: "Un CRM hecho",
+    heroTitle2: "para tu operación",
+    heroLead:
+      "No te encajamos en un software genérico. Diseñamos y construimos un CRM a la medida de tu equipo: pipeline, seguimiento, WhatsApp y reportes, con la marca Nexus Global.",
+    ctaPrimary: "Pedir cotización",
+    ctaSecondary: "Ver el demo",
+    demoTitle: "Así se ve un pipeline Nexus",
+    demoHint: "Demo ilustrativa. Tu CRM usa tus etapas, campos y reglas.",
+    aiBanner: "La IA puede priorizar leads y recordarte el siguiente paso. Tú decides si la activamos.",
+    kpiActive: "Leads activos",
+    kpiPipeline: "En pipeline",
+    kpiConversion: "Conversión",
+    kpiClosed: "Cerrados (mes)",
+    colNew: "Nuevos",
+    colContacted: "Contactados",
+    colProposal: "Propuesta",
+    colWon: "Cerrado",
+    featuresTitle1: "Qué incluye",
+    featuresTitle2: "tu CRM",
+    features: [
+      {
+        title: "Pipeline a tu flujo",
+        description:
+          "Etapas reales de tu venta: desde el primer mensaje hasta el cierre. Arrastrar, filtrar y no perder ningún trato.",
+      },
+      {
+        title: "Ficha del cliente",
+        description:
+          "Historial, valor del deal, notas, tareas y quién es el dueño. Un solo lugar para comercial y gerencia.",
+      },
+      {
+        title: "WhatsApp y formularios",
+        description:
+          "Los leads del sitio o de WhatsApp entran al tablero. Seguimiento con recordatorios, no con Excel suelto.",
+      },
+      {
+        title: "Reportes que importan",
+        description:
+          "Cuántos entran, cuánto hay en pipeline, conversión y cerrados del mes. Números para decidir, no para decorar.",
+      },
+    ],
+    processTitle1: "De la idea",
+    processTitle2: "a operar",
+    steps: [
+      { title: "Diagnóstico", description: "Mapeamos cómo venden hoy y dónde se caen los leads." },
+      { title: "Diseño a medida", description: "Campos, etapas y roles según tu negocio, no una plantilla rígida." },
+      { title: "Construcción", description: "Desarrollamos el CRM, lo integramos y lo dejamos listo para el equipo." },
+      { title: "Acompañamiento", description: "Ajustes, capacitación y evolución cuando tu operación crece." },
+    ],
+    includeTitle1: "A medida,",
+    includeTitle2: "no enlatado",
+    includeLead: "Ideal para inmobiliarias, clínicas, agencias, ferreterías y equipos comerciales en Honduras.",
+    bullets: [
+      "Tablero tipo pipeline (kanban) con tus etapas",
+      "Usuarios, permisos y dueño de cada lead",
+      "Valores en USD o HNL, según operes",
+      "Integración con tu web y formularios Nexus",
+      "WhatsApp Business / API según el proyecto",
+      "Panel de métricas para gerencia",
+      "Hosting, SSL y copias de seguridad",
+      "Capacitación al equipo que lo va a usar",
+    ],
+    ctaTitle1: "Deja el Excel.",
+    ctaTitle2: "Vende con un sistema tuyo.",
+    ctaBody: "Cuéntanos cómo cierras hoy. Cotizamos un CRM a medida, no una licencia mensual genérica.",
+    ctaButton: "Hablar de mi CRM",
+  },
+  marketing: {
+    heroKicker: "Digital Marketing · Honduras",
+    heroTitle1: "Marca, redes y",
+    heroTitle2: "presencia que vende",
+    heroLead:
+      "Manejamos tus redes, posicionamos tu marca y dejamos un Brand Book claro para que todo se vea y suene como un solo negocio — en Tegucigalpa, San Pedro Sula y todo el país.",
+    ctaPrimary: "Pedir propuesta",
+    servicesTitle1: "Qué",
+    servicesTitle2: "hacemos",
+    services: [
+      {
+        title: "Manejo de redes sociales",
+        description:
+          "Calendario, diseño, copys, publicación y comunidad en Instagram, Facebook, TikTok o LinkedIn. Reportes mensuales, no “posts sueltos”.",
+      },
+      {
+        title: "Posicionamiento de marca",
+        description:
+          "Definimos a quién le hablas, qué prometes y cómo te diferencias. Mensaje, tono y pilares para que dejes de improvisar.",
+      },
+      {
+        title: "Brand Book",
+        description:
+          "Manual de marca: logo, color, tipografía, usos correctos e incorrectos, tono de voz y plantillas. Para que tu equipo y proveedores no desordenen la identidad.",
+      },
+      {
+        title: "Contenido y campañas",
+        description:
+          "Piezas para lanzamientos, ads y landing. Alineamos creatividades con tu web Nexus para que el clic llegue a un sitio que convierte.",
+      },
+      {
+        title: "SEO y GEO local",
+        description:
+          "Fichas de Google, copys de búsqueda y contenido para que te encuentren en Google y en IAs cuando alguien busca tu rubro en Honduras.",
+      },
+      {
+        title: "Paquetes a medida",
+        description:
+          "No vendemos un “combo infinito”. Cotizamos por canales, volumen y objetivos: awareness, leads o ventas.",
+      },
+    ],
+    processTitle1: "Cómo",
+    processTitle2: "trabajamos",
+    steps: [
+      { title: "Brief", description: "Marca, competencia, canales actuales y meta de 90 días." },
+      { title: "Identidad", description: "Si hace falta: Brand Book, paleta, voz y plantillas." },
+      { title: "Operación", description: "Calendario, piezas, publicación y respuesta a comunidad." },
+      { title: "Medición", description: "Qué funcionó, qué cortamos y qué escalamos el mes siguiente." },
+    ],
+    ctaTitle1: "Tu marca,",
+    ctaTitle2: "con criterio.",
+    ctaBody: "Cuéntanos qué redes usas hoy y a quién quieres atraer. Armamos una propuesta sin relleno.",
+    ctaButton: "Hablar de marketing",
   },
   mivisita: {
     heroTitle1: "MiVisita:",
