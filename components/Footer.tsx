@@ -1,111 +1,128 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Instagram, Mail } from "lucide-react";
 import Link from "next/link";
-import { useMessages } from "./LocaleProvider";
+import { Mail, MapPin } from "lucide-react";
+import Logo from "./Logo";
+import { InstagramIcon, WhatsAppIcon } from "./icons";
+import {
+  INSTAGRAM_HANDLE,
+  SITE_EMAIL,
+  SITE_INSTAGRAM,
+  WHATSAPP_DISPLAY,
+  waLink,
+} from "@/lib/site";
+
+const COLUMNS = [
+  {
+    title: "Servicios",
+    links: [
+      { name: "Páginas web", href: "/paginas-web" },
+      { name: "Planes y precios", href: "/#planes" },
+      { name: "Libro de marca", href: "/#libro-de-marca" },
+      { name: "CRM a medida", href: "/crm" },
+      { name: "Marketing digital", href: "/marketing" },
+    ],
+  },
+  {
+    title: "Nexus",
+    links: [
+      { name: "Clientes", href: "/clientes" },
+      { name: "Blog", href: "/blog" },
+      { name: "Nosotros", href: "/nosotros" },
+      { name: "Privacidad", href: "/privacidad" },
+    ],
+  },
+];
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-  const m = useMessages();
-  const nav = m.header.nav;
-
-  const quickLinks = [
-    { name: nav.home, href: "/#inicio" },
-    { name: nav.services, href: "/paginas-web" },
-    { name: nav.crm, href: "/crm" },
-    { name: nav.marketing, href: "/marketing" },
-    { name: nav.clients, href: "/clientes" },
-    { name: nav.about, href: "/nosotros" },
-    { name: nav.contact, href: "/#contacto" },
-  ];
-
   return (
-    <footer className="bg-black border-t border-primary-500/20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+    <footer className="relative overflow-hidden border-t border-white/[0.06] bg-[#04070d]">
+      <div className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[60rem] -translate-x-1/2 rounded-full bg-primary-500/10 blur-3xl" />
+      <div className="container-x relative pb-10 pt-16">
+        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div>
-            <Link
-              href="/#inicio"
-              className="flex flex-col items-center md:items-start mb-4"
-            >
-              <div className="relative w-36 h-36">
-                <img
-                  src="/logo-mark.png"
-                  alt={m.hero.logoAlt}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-            </Link>
-            <p className="text-slate-300 dark:text-dark-400 text-sm">{m.footer.tagline}</p>
-            <p className="text-slate-400 dark:text-dark-500 text-sm mt-2">{m.footer.location}</p>
-            <Link
-              href="/crear-pagina-web-honduras"
-              className="inline-block mt-3 text-sm text-primary-400 hover:text-primary-300"
-            >
-              {m.footer.localSeo}
-            </Link>
-            <Link
-              href="/nexus-honduras"
-              className="block mt-2 text-sm text-primary-400 hover:text-primary-300"
-            >
-              {m.footer.brandSeo}
-            </Link>
-          </div>
-
-          <div>
-            <h3 className="text-white font-semibold mb-4">{m.footer.quickLinks}</h3>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-slate-300 dark:text-dark-400 hover:text-primary-400 transition-colors text-sm"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-white font-semibold mb-4">{m.footer.follow}</h3>
-            <div className="flex justify-center md:justify-start space-x-4">
-              <motion.a
-                href="https://www.instagram.com/nexusglobalhn/"
+            <Logo />
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-slate-400">
+              Estudio hondureño de desarrollo web y soluciones empresariales. Páginas web,
+              libro de marca, CRM y marketing para negocios que quieren verse y vender mejor.
+            </p>
+            <div className="mt-6 flex gap-3">
+              <a
+                href={waLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.9 }}
-                className="p-3 bg-dark-800 rounded-lg hover:bg-primary-500/20 transition-colors"
-                aria-label={m.footer.ariaInstagram}
+                aria-label="WhatsApp"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-200 transition hover:border-[#25D366]/60 hover:text-[#25D366]"
               >
-                <Instagram className="w-5 h-5 text-primary-400" />
-              </motion.a>
-              <motion.a
-                href="mailto:Eduardoguillendev@proton.me"
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.9 }}
-                className="p-3 bg-dark-800 rounded-lg hover:bg-primary-500/20 transition-colors"
-                aria-label={m.footer.ariaEmail}
+                <WhatsAppIcon className="h-[18px] w-[18px]" />
+              </a>
+              <a
+                href={SITE_INSTAGRAM}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-200 transition hover:border-pink-400/60 hover:text-pink-300"
               >
-                <Mail className="w-5 h-5 text-primary-400" />
-              </motion.a>
+                <InstagramIcon className="h-[18px] w-[18px]" />
+              </a>
+              <a
+                href={`mailto:${SITE_EMAIL}`}
+                aria-label="Correo"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-200 transition hover:border-primary-400/60 hover:text-primary-300"
+              >
+                <Mail className="h-[18px] w-[18px]" />
+              </a>
             </div>
+          </div>
+
+          {COLUMNS.map((col) => (
+            <div key={col.title}>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">{col.title}</p>
+              <ul className="mt-5 space-y-3">
+                {col.links.map((l) => (
+                  <li key={l.href}>
+                    <Link href={l.href} className="text-sm text-slate-300 transition hover:text-primary-300">
+                      {l.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Contacto</p>
+            <ul className="mt-5 space-y-3 text-sm text-slate-300">
+              <li>
+                <a href={waLink()} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary-300">
+                  <WhatsAppIcon className="h-4 w-4 text-[#25D366]" /> {WHATSAPP_DISPLAY}
+                </a>
+              </li>
+              <li>
+                <a href={SITE_INSTAGRAM} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary-300">
+                  <InstagramIcon className="h-4 w-4 text-pink-300" /> {INSTAGRAM_HANDLE}
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${SITE_EMAIL}`} className="flex items-center gap-2 break-all hover:text-primary-300">
+                  <Mail className="h-4 w-4 shrink-0 text-primary-300" /> {SITE_EMAIL}
+                </a>
+              </li>
+              <li className="flex items-center gap-2 text-slate-400">
+                <MapPin className="h-4 w-4 text-primary-300" /> Honduras · Atendemos en todo el país
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="border-t border-dark-800 pt-8 flex flex-col sm:flex-row justify-center sm:justify-between items-center text-center gap-3">
-          <p className="text-slate-400 dark:text-dark-500 text-sm">
-            © {currentYear} {m.common.brandName}. {m.footer.rights}
-          </p>
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
-            <Link href="/privacidad" className="text-slate-400 dark:text-dark-500 text-sm hover:text-primary-400">
-              {m.footer.privacy}
-            </Link>
-            <p className="text-slate-400 dark:text-dark-500 text-sm">{m.footer.madeWith}</p>
-          </div>
+        <p
+          aria-hidden="true"
+          className="pointer-events-none mt-16 select-none bg-gradient-to-b from-white/[0.09] to-transparent bg-clip-text text-center font-display text-[18vw] font-bold leading-none tracking-tighter text-transparent lg:text-[210px]"
+        >
+          NEXUS
+        </p>
+
+        <div className="mt-4 flex flex-col items-center justify-between gap-3 border-t border-white/[0.06] pt-6 text-xs text-slate-500 sm:flex-row">
+          <p>© {new Date().getFullYear()} Nexus Global. Hecho en Honduras.</p>
+          <p>Desarrollo web · Libro de marca · CRM · Marketing</p>
         </div>
       </div>
     </footer>

@@ -3,15 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 16, 40, 101;
-  --background-start-rgb: 241, 245, 249;
-  --background-end-rgb: 255, 255, 255;
-}
-
-.dark {
-  --foreground-rgb: 241, 245, 249;
-  --background-start-rgb: 7, 11, 20;
-  --background-end-rgb: 7, 11, 20;
+  color-scheme: dark;
+  --bg: 5 8 15;
 }
 
 * {
@@ -22,17 +15,75 @@
 
 html {
   scroll-behavior: smooth;
+  background: rgb(var(--bg));
+  overflow-x: clip;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: #e2e8f0;
+  background: rgb(var(--bg));
   overflow-x: hidden;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(0, 186, 196, 0.35);
+  color: #fff;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+
+  .glass {
+    @apply border border-white/10 bg-white/[0.04] backdrop-blur-xl;
+  }
+
+  .glass-strong {
+    @apply border border-white/10 bg-[#0b1322]/80 backdrop-blur-2xl;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-primary-500/30 bg-primary-500/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-primary-300;
+  }
+
+  .h-display {
+    @apply font-display font-bold tracking-tight text-white;
+  }
+
+  .text-glow {
+    @apply bg-gradient-to-r from-primary-300 via-primary-400 to-[#5ee7ff] bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary-500 px-6 py-3.5 text-sm font-semibold text-[#03161a] shadow-[0_0_0_1px_rgba(0,186,196,0.4),0_10px_40px_-8px_rgba(0,186,196,0.65)] transition hover:bg-primary-400 hover:shadow-[0_0_0_1px_rgba(0,186,196,0.6),0_14px_50px_-6px_rgba(0,186,196,0.8)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-300;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-6 py-3.5 text-sm font-semibold text-white transition hover:border-primary-400/60 hover:bg-white/[0.07] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-300;
+  }
+
+  .card {
+    @apply rounded-3xl border border-white/[0.08] bg-gradient-to-b from-white/[0.06] to-white/[0.015];
+  }
+
+  .section {
+    @apply relative py-20 sm:py-28;
+  }
+
+  .prose-nexus h2 {
+    @apply mt-12 mb-4 font-display text-2xl font-bold tracking-tight text-white sm:text-3xl;
+  }
+
+  .prose-nexus p {
+    @apply mb-5 text-[17px] leading-8 text-slate-300;
+  }
+
+  .prose-nexus a {
+    @apply font-medium text-primary-300 underline decoration-primary-500/40 underline-offset-4 hover:text-primary-200;
+  }
 }
 
 @layer utilities {
@@ -40,41 +91,38 @@ body {
     text-wrap: balance;
   }
 
-  .page-shell {
-    @apply min-h-screen bg-gradient-to-b from-brand-snow to-brand-white dark:from-dark-900 dark:to-dark-800;
+  .bg-grid {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
   }
 
-  .ink {
-    @apply text-brand-navy dark:text-white;
+  .mask-fade-y {
+    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
   }
 
-  .ink-muted {
-    @apply text-slate-700 dark:text-slate-300;
+  .mask-fade-x {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   }
 
-  .ink-soft {
-    @apply text-slate-800 dark:text-slate-200;
-  }
-  
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary-600 via-primary-500 to-brand-deep dark:from-primary-400 dark:via-primary-500 dark:to-brand-deep bg-clip-text text-transparent;
+  .shine-border {
+    position: relative;
   }
 
-  .wordmark {
-    @apply text-xl font-bold tracking-[0.22em] text-brand-navy dark:text-white;
-  }
-  
-  .gradient-border {
-    @apply relative;
-  }
-  
-  .gradient-border::before {
-    content: '';
-    @apply absolute inset-0 rounded-lg bg-gradient-to-r from-primary-500 to-primary-600 opacity-20 blur-xl;
+  .shine-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(94, 231, 255, 0.7), rgba(0, 186, 196, 0.1) 40%, rgba(16, 40, 101, 0.4) 60%, rgba(0, 186, 196, 0.7));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
   }
 }
 
-/* Marquee animation for Partners carousel */
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -85,24 +133,57 @@ body {
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 40s linear infinite;
 }
 
-/* Custom scrollbar */
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Scroll reveal: content stays visible without JS; the "js" class is added before paint. */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Reduced motion: keep slow ambient motion, drop bobbing, pulsing and slide-ins. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-float,
+  .animate-float-slow,
+  .animate-ping,
+  .animate-pulse-slow {
+    animation: none !important;
+  }
+
+  .js [data-reveal] {
+    transform: none;
+    transition: opacity 0.4s ease;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-dark-900;
+  background: #05080f;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary-600 rounded-full;
+  @apply rounded-full bg-primary-700;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-primary-500;
 }
-
-

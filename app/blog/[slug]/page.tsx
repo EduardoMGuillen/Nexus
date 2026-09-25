@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import JsonLd from "@/components/JsonLd";
+import BlogCover from "@/components/blog/BlogCover";
+import PostCard, { formatDate } from "@/components/blog/PostCard";
+import { WhatsAppIcon } from "@/components/icons";
 import { BLOG_POSTS, getPost } from "@/lib/blog";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
-import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { SITE_NAME, SITE_URL, waLink } from "@/lib/site";
 
 type Props = { params: { slug: string } };
 
@@ -30,8 +31,8 @@ export function generateMetadata({ params }: Props): Metadata {
       type: "article",
       locale: "es_HN",
       publishedTime: post.date,
-      images: [{ url: post.image, width: 1376, height: 768, alt: post.imageAlt }],
     },
+    twitter: { card: "summary_large_image", title: post.title, description: post.description },
   };
 }
 
@@ -39,14 +40,14 @@ export default function BlogArticlePage({ params }: Props) {
   const post = getPost(params.slug);
   if (!post) notFound();
 
-  const others = BLOG_POSTS.filter((p) => p.slug !== post.slug);
+  const related = BLOG_POSTS.filter((p) => p.slug !== post.slug).slice(0, 3);
 
   const articleLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
-    image: `${SITE_URL}${post.image}`,
+    image: `${SITE_URL}/blog/${post.slug}/opengraph-image`,
     datePublished: post.date,
     dateModified: post.date,
     author: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
@@ -54,10 +55,11 @@ export default function BlogArticlePage({ params }: Props) {
     mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
     inLanguage: "es-HN",
     keywords: post.keywords.join(", "),
+    ...(post.sources ? { citation: post.sources.map((s) => s.url) } : {}),
   };
 
   return (
-    <main className="page-shell">
+    <main className="pb-10 pt-32 sm:pt-36">
       <JsonLd data={articleLd} />
       <JsonLd
         data={breadcrumbJsonLd([
@@ -66,64 +68,86 @@ export default function BlogArticlePage({ params }: Props) {
           { name: post.title, path: `/blog/${post.slug}` },
         ])}
       />
-      <Header />
-      <article className="pt-28 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-3xl">
-          <Link href="/blog" className="text-sm text-primary-400 hover:text-primary-300">
-            ← Blog
+      <article>
+        <header className="container-x max-w-4xl">
+          <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-slate-400 transition hover:text-primary-300">
+            <ArrowLeft className="h-4 w-4" /> Volver al blog
           </Link>
-          <p className="mt-6 text-xs uppercase tracking-wide text-primary-400">
-            {post.category} · {post.date} · {post.readMinutes} min de lectura
+          <p className="mt-8 text-xs font-semibold uppercase tracking-[0.18em] text-primary-300">
+            {post.category} · {formatDate(post.date)} · {post.readMinutes} min de lectura
           </p>
-          <h1 className="text-3xl sm:text-5xl font-bold ink mt-3 mb-6 leading-tight">
-            {post.title}
-          </h1>
-          <p className="text-lg ink-muted mb-8">{post.description}</p>
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-dark-600 mb-12">
-            <Image
-              src={post.image}
-              alt={post.imageAlt}
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 768px"
-            />
+          <h1 className="h-display mt-4 text-balance text-3xl leading-[1.1] sm:text-5xl">{post.title}</h1>
+          <p className="mt-6 text-lg leading-relaxed text-slate-300">{post.description}</p>
+          <div className="mt-10 aspect-[21/9] overflow-hidden rounded-3xl border border-white/10">
+            <BlogCover label={post.coverLabel} category={post.category} accent={post.accent} size="lg" />
           </div>
-          {post.sections.map((section) => (
-            <section key={section.heading} className="mb-10">
-              <h2 className="text-2xl font-bold ink mb-4">{section.heading}</h2>
-              {section.paragraphs.map((p) => (
-                <p key={p.slice(0, 40)} className="ink-muted leading-relaxed mb-4">
-                  {p}
-                </p>
-              ))}
-            </section>
-          ))}
-          <div className="rounded-2xl border border-primary-500/30 bg-primary-500/10 p-6 sm:p-8 text-center mb-14">
-            <p className="ink font-semibold mb-2">¿Listo para tu sitio?</p>
-            <p className="ink-muted text-sm mb-5">
-              Planes desde 300 USD o un alcance a tu presupuesto. Honduras, atención nacional.
-            </p>
-            <Link
-              href="/paginas-web#ofertas"
-              className="inline-flex px-6 py-3 rounded-xl bg-primary-600 text-white font-semibold hover:bg-primary-500"
-            >
-              Ver planes
-            </Link>
-          </div>
-          <h2 className="text-xl font-bold ink mb-4">Más artículos</h2>
-          <ul className="space-y-3">
-            {others.map((p) => (
-              <li key={p.slug}>
-                <Link href={`/blog/${p.slug}`} className="text-primary-400 hover:text-primary-300">
-                  {p.title}
-                </Link>
-              </li>
+        </header>
+
+        <div className="container-x mt-12 max-w-3xl">
+          <div className="prose-nexus">
+            {post.sections.map((section) => (
+              <section key={section.heading}>
+                <h2>{section.heading}</h2>
+                {section.paragraphs.map((p) => (
+                  <p key={p.slice(0, 48)}>{p}</p>
+                ))}
+              </section>
             ))}
-          </ul>
+          </div>
+
+          {post.sources && (
+            <aside className="mt-12 rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Fuentes</p>
+              <ul className="mt-4 space-y-2.5">
+                {post.sources.map((s) => (
+                  <li key={s.url}>
+                    <a
+                      href={s.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm text-primary-300 hover:text-primary-200"
+                    >
+                      {s.label} <ExternalLink className="h-3.5 w-3.5" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          )}
+
+          <div className="shine-border relative mt-12 overflow-hidden rounded-3xl bg-gradient-to-br from-[#0a1a2e] to-[#050810] p-8 text-center sm:p-10">
+            <div className="pointer-events-none absolute left-1/2 top-0 h-40 w-80 -translate-x-1/2 rounded-full bg-primary-500/25 blur-3xl" />
+            <p className="relative font-display text-2xl font-bold text-white">¿Quieres aplicar esto en tu negocio?</p>
+            <p className="relative mx-auto mt-3 max-w-md text-sm text-slate-400">
+              Páginas web desde $150 con libro de marca, CRM y automatizaciones con IA. Te asesoramos sin compromiso.
+            </p>
+            <div className="relative mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+              <a
+                href={waLink(`Hola Nexus, leí el artículo "${post.title}" y quiero asesoría.`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                <WhatsAppIcon className="h-4 w-4" /> Escribir por WhatsApp
+              </a>
+              <Link href="/#planes" className="btn-ghost">
+                Ver planes
+              </Link>
+            </div>
+          </div>
         </div>
       </article>
-      <Footer />
+
+      <section className="section">
+        <div className="container-x">
+          <h2 className="h-display text-2xl sm:text-3xl">Sigue leyendo</h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {related.map((p, i) => (
+              <PostCard key={p.slug} post={p} delay={i * 100} />
+            ))}
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

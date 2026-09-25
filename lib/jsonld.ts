@@ -4,6 +4,7 @@ import {
   SITE_INSTAGRAM,
   SITE_NAME,
   SITE_URL,
+  WHATSAPP_NUMBER,
 } from "@/lib/site";
 
 export function organizationJsonLd() {
@@ -14,17 +15,15 @@ export function organizationJsonLd() {
     name: SITE_NAME,
     alternateName: [...BRAND_ALIASES],
     legalName: "Nexus Global",
-    slogan: "Nexus Honduras: páginas web, tiendas en línea y plataformas para negocios hondureños.",
+    slogan: "Desarrollo web y soluciones empresariales en Honduras. Cada web incluye libro de marca.",
     url: SITE_URL,
     logo: `${SITE_URL}/logo-nexus.png`,
-    image: `${SITE_URL}/logo-nexus.png`,
+    image: `${SITE_URL}/opengraph-image`,
     email: SITE_EMAIL,
+    telephone: `+${WHATSAPP_NUMBER}`,
     description:
-      "Nexus Global (Nexus Honduras) es la agencia de desarrollo web de Nexus Global Suministros. Creamos páginas web, tiendas en línea, hosting y plataformas a medida para negocios en Tegucigalpa, San Pedro Sula y todo Honduras.",
-    foundingLocation: {
-      "@type": "Country",
-      name: "Honduras",
-    },
+      "Nexus Global (Nexus Honduras) es un estudio hondureño de desarrollo web y soluciones empresariales: páginas web desde 150 USD con libro de marca incluido, CRM a medida, sistemas y marketing digital para negocios en Tegucigalpa, San Pedro Sula y todo Honduras.",
+    foundingLocation: { "@type": "Country", name: "Honduras" },
     address: {
       "@type": "PostalAddress",
       addressCountry: "HN",
@@ -36,23 +35,34 @@ export function organizationJsonLd() {
       { "@type": "City", name: "San Pedro Sula" },
       { "@type": "City", name: "La Ceiba" },
       { "@type": "City", name: "Choloma" },
+      { "@type": "City", name: "El Progreso" },
       { "@type": "City", name: "Comayagua" },
     ],
-    sameAs: [SITE_INSTAGRAM],
-    priceRange: "$$",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: `+${WHATSAPP_NUMBER}`,
+      contactType: "sales",
+      areaServed: "HN",
+      availableLanguage: ["es", "en"],
+    },
+    sameAs: [SITE_INSTAGRAM, `https://wa.me/${WHATSAPP_NUMBER}`],
+    priceRange: "$150 - $$$",
     knowsAbout: [
-      "Nexus Honduras",
-      "crear página web en Honduras",
-      "diseño web Tegucigalpa",
-      "diseño web San Pedro Sula",
+      "Desarrollo web en Honduras",
+      "Diseño de páginas web",
+      "Libro de marca y branding",
+      "CRM a medida",
+      "Marketing digital",
       "SEO local Honduras",
+      "Inteligencia artificial para negocios",
     ],
     knowsLanguage: ["es", "en"],
     serviceType: [
       "Diseño y desarrollo de páginas web",
+      "Libro de marca",
       "Tiendas en línea",
-      "Hosting y mantenimiento",
-      "Plataformas web a medida",
+      "CRM y sistemas a medida",
+      "Marketing digital",
     ],
   };
 }
@@ -67,16 +77,8 @@ export function websiteJsonLd() {
     alternateName: ["Nexus Honduras", "Nexus Global Honduras"],
     inLanguage: "es-HN",
     description:
-      "Sitio oficial de Nexus Global (Nexus Honduras): agencia de páginas web en Honduras.",
+      "Nexus Global: desarrollo web y soluciones empresariales en Honduras. Páginas web desde 150 USD con libro de marca.",
     publisher: { "@id": `${SITE_URL}/#organization` },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${SITE_URL}/paginas-web?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 }
 
@@ -84,70 +86,80 @@ export function serviceJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Crear página web en Honduras",
+    name: "Diseño de páginas web en Honduras",
     serviceType: "Desarrollo de sitios web",
     provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: { "@type": "Country", name: "Honduras" },
-    url: `${SITE_URL}/crear-pagina-web-honduras`,
+    url: `${SITE_URL}/paginas-web`,
     description:
-      "Diseño y desarrollo de páginas web para negocios en Honduras: sitios de 1 a 10 páginas, SEO local, hosting y mantenimiento.",
+      "Páginas web profesionales para negocios en Honduras con libro de marca incluido, adaptadas a celular, conectadas a WhatsApp y con SEO local.",
     offers: [
       {
         "@type": "Offer",
-        name: "Plan Pro",
-        price: "300",
+        name: "Web Esencial",
+        price: "150",
         priceCurrency: "USD",
-        url: `${SITE_URL}/paginas-web#ofertas`,
+        description: "Landing page con libro de marca esencial.",
+        url: `${SITE_URL}/#planes`,
       },
       {
         "@type": "Offer",
-        name: "Plan Premium",
-        price: "500",
+        name: "Web Pro",
+        price: "350",
         priceCurrency: "USD",
-        url: `${SITE_URL}/paginas-web#ofertas`,
+        description: "Sitio de hasta 6 páginas con SEO local y libro de marca completo.",
+        url: `${SITE_URL}/#planes`,
+      },
+      {
+        "@type": "Offer",
+        name: "Tu Web, Tu Presupuesto",
+        description: "Proyecto a la medida del presupuesto del cliente.",
+        priceCurrency: "USD",
+        url: `${SITE_URL}/#planes`,
       },
     ],
   };
 }
 
-export const hondurasFaqs = [
+export const homeFaqs = [
   {
-    q: "¿Cuánto cuesta crear una página web en Honduras?",
-    a: "En Nexus Global el Plan Pro (hasta 3 páginas) parte de 300 USD y el Plan Premium (hasta 10 páginas) de 500 USD. Si el alcance es distinto, Tu presupuesto, tu web se cotiza a medida. También ofrecemos plan mensual de mantenimiento y hosting.",
+    q: "¿Cuánto cuesta una página web en Honduras con Nexus?",
+    a: "La Web Esencial cuesta 150 USD (landing page) y la Web Pro 350 USD (hasta 6 páginas con SEO local). Si necesitas algo distinto, con Tu Web, Tu Presupuesto nos dices cuánto quieres invertir y armamos el mejor alcance posible. Todos los planes son pago único e incluyen libro de marca.",
   },
   {
-    q: "¿Hacen páginas web en Tegucigalpa y San Pedro Sula?",
-    a: "Sí. Atendemos negocios en Tegucigalpa, San Pedro Sula, La Ceiba, Comayagua y el resto de Honduras. El proceso es remoto y presencial según el proyecto: reunión, diseño, desarrollo y publicación.",
+    q: "¿Qué es el libro de marca que incluyen?",
+    a: "Es el manual de identidad de tu negocio: logo y sus versiones, paleta de colores, tipografías, aplicaciones (tarjetas, redes, empaques) y tono de voz. La Web Esencial incluye la versión esencial y la Web Pro la versión completa. Lo recibes en PDF con archivos PNG y SVG.",
   },
   {
     q: "¿Cuánto tarda tener mi página web lista?",
-    a: "Un Plan Pro suele entregarse en días o pocas semanas según contenido y revisiones. Un Plan Premium con más páginas y secciones toma más tiempo. Te damos un calendario claro al iniciar.",
+    a: "La Web Esencial se entrega en 5 a 7 días y la Web Pro en 10 a 15 días, contando desde que tenemos tu información (textos, fotos y datos del negocio). Si no tienes contenido, te ayudamos a crearlo.",
   },
   {
-    q: "¿Incluyen dominio, hosting y Google?",
-    a: "Podemos incluir hosting, SSL, copias de seguridad y orientación para dominio. También configuramos presencia en Google (perfil de negocio y bases de SEO local) para que te encuentren al buscar crear página web o tu rubro en Honduras.",
+    q: "¿El dominio y el hosting están incluidos?",
+    a: "El dominio (.com o .hn) y el hosting se pagan aparte porque quedan a tu nombre. Te ayudamos a comprarlos y configurarlos, y ofrecemos un plan mensual opcional de hosting y mantenimiento.",
   },
   {
-    q: "¿Quién es Nexus Honduras o Nexus Global?",
-    a: "Nexus Honduras es el nombre con el que muchos buscan a Nexus Global, agencia de páginas web en Honduras (nexusglobalsuministros.com). Hacemos sitios, tiendas en línea, hosting y plataformas para negocios en Tegucigalpa, San Pedro Sula y todo el país. Instagram: @nexusglobalhn. Correo: Eduardoguillendev@proton.me.",
+    q: "¿Trabajan con negocios fuera de Tegucigalpa y San Pedro Sula?",
+    a: "Sí. Trabajamos con negocios de todo Honduras (El Progreso, Cofradía, La Ceiba, Comayagua y más) e incluso fuera del país, como España. Todo el proceso se coordina por WhatsApp y videollamada.",
   },
   {
-    q: "¿Puedo vender en línea desde Honduras?",
-    a: "Sí. Desarrollamos tiendas online y páginas de servicios con pagos (PayPal y otros). Ideal para comercios, clínicas, inmobiliarias y marcas que quieren clientes en todo el país.",
+    q: "¿Mi web va a aparecer en Google?",
+    a: "Cada web sale con SEO básico: títulos, descripciones, velocidad, datos estructurados y sitemap. La Web Pro incluye además SEO local y configuración de tu perfil de Google Business para aparecer en Maps cuando te buscan en tu ciudad.",
+  },
+  {
+    q: "¿Quién es Nexus Global o Nexus Honduras?",
+    a: "Nexus Global (también conocido como Nexus Honduras) es un estudio hondureño de desarrollo web y soluciones empresariales. Creamos páginas web con libro de marca, tiendas en línea, CRM, sistemas como MiVisita y marketing digital. WhatsApp: +504 9882-3627. Instagram: @nexusglobalhn.",
   },
 ];
 
-export function faqJsonLd(faqs: { q: string; a: string }[] = hondurasFaqs) {
+export function faqJsonLd(faqs: { q: string; a: string }[] = homeFaqs) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: faqs.map((item) => ({
       "@type": "Question",
       name: item.q,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.a,
-      },
+      acceptedAnswer: { "@type": "Answer", text: item.a },
     })),
   };
 }

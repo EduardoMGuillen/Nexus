@@ -1,60 +1,62 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter, Sora } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import { ThemeProvider } from "@/components/ThemeProvider";
-import { LocaleProvider } from "@/components/LocaleProvider";
 import JsonLd from "@/components/JsonLd";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
+import RevealObserver from "@/components/RevealObserver";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/jsonld";
 import { HONDURAS_KEYWORDS, SITE_NAME, SITE_URL } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-sans",
 });
+
+const sora = Sora({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-display",
+});
+
+const DESCRIPTION =
+  "Desarrollo web y soluciones empresariales en Honduras. Páginas web desde 150 USD con libro de marca incluido, CRM a medida y marketing digital. Cotiza por WhatsApp.";
+
+export const viewport: Viewport = {
+  themeColor: "#05080f",
+  colorScheme: "dark",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Nexus Honduras | Nexus Global — páginas web en Honduras",
+    default: "Nexus Global | Desarrollo web y soluciones empresariales en Honduras",
     template: "%s | Nexus Global",
   },
-  description:
-    "Nexus Honduras es Nexus Global: agencia de páginas web en Honduras. Sitios, tiendas y plataformas para Tegucigalpa, San Pedro Sula y todo el país. Desde 300 USD.",
+  description: DESCRIPTION,
   keywords: HONDURAS_KEYWORDS,
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
   category: "technology",
   applicationName: SITE_NAME,
-  alternates: {
-    canonical: SITE_URL,
-  },
+  alternates: { canonical: SITE_URL },
   openGraph: {
     type: "website",
     locale: "es_HN",
-    alternateLocale: ["es_ES", "en_US"],
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: "Nexus Honduras | Nexus Global — agencia web en Honduras",
-    description:
-      "Diseño y desarrollo web en Honduras: sitios rápidos, SEO local, hosting y mantenimiento. Tegucigalpa, SPS y todo el país.",
-    images: [
-      {
-        url: "/logo-nexus.png",
-        width: 1200,
-        height: 630,
-        alt: "Nexus Global — desarrollo web en Honduras",
-      },
-    ],
+    title: "Nexus Global | Páginas web desde $150 con libro de marca",
+    description: DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nexus Honduras | Nexus Global — agencia web en Honduras",
-    description:
-      "Agencia hondureña de páginas web, e-commerce y plataformas. Desde 300 USD.",
-    images: ["/logo-nexus.png"],
+    title: "Nexus Global | Páginas web desde $150 con libro de marca",
+    description: DESCRIPTION,
   },
   robots: {
     index: true,
@@ -74,8 +76,6 @@ export const metadata: Metadata = {
   other: {
     "geo.region": "HN",
     "geo.placename": "Honduras",
-    "geo.position": "14.0723;-87.1921",
-    ICBM: "14.0723, -87.1921",
   },
   verification: {
     google: "C1-TpRohR56HdjN26dHTOVNmkVRqR1PlMgerjWJ6riA",
@@ -88,14 +88,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es-HN" className="dark" suppressHydrationWarning>
-      <body className={inter.className}>
+    <html lang="es-HN" className={`${inter.variable} ${sora.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
+      <body className="font-sans">
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={websiteJsonLd()} />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-7TYVWC1F92"
-          strategy="lazyOnload"
-        />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-7TYVWC1F92" strategy="lazyOnload" />
         <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -104,9 +104,11 @@ export default function RootLayout({
             gtag('config', 'G-7TYVWC1F92');
           `}
         </Script>
-        <ThemeProvider>
-          <LocaleProvider>{children}</LocaleProvider>
-        </ThemeProvider>
+        <Header />
+        {children}
+        <Footer />
+        <WhatsAppFloat />
+        <RevealObserver />
       </body>
     </html>
   );

@@ -7,6 +7,16 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
+  async redirects() {
+    return [
+      { source: "/crear-pagina-web-honduras", destination: "/paginas-web", permanent: true },
+      { source: "/nexus-honduras", destination: "/nosotros", permanent: true },
+      { source: "/ecommerce", destination: "/paginas-web", permanent: true },
+      { source: "/dashboard", destination: "/crm", permanent: true },
+      { source: "/mivisita", destination: "/clientes", permanent: true },
+      { source: "/miporton", destination: "/clientes", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

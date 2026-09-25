@@ -1,5 +1,3 @@
-"use client";
-
 import {
   BarChart3,
   Check,
@@ -16,7 +14,34 @@ import {
   Star,
   Users,
 } from "lucide-react";
-import { useMessages } from "@/components/LocaleProvider";
+
+const c = {
+  uiBrand: "Nexus CRM",
+  uiNewLead: "Nuevo lead",
+  uiNavHome: "Inicio",
+  uiNavLeads: "Leads",
+  uiNavPipeline: "Pipeline",
+  uiNavTasks: "Tareas",
+  uiNavMessages: "Mensajes",
+  uiNavReports: "Reportes",
+  uiSearch: "Buscar...",
+  uiFilters: "Filtros",
+  uiUserName: "Eduardo",
+  uiUserRole: "Admin",
+  uiAiLine: "La IA priorizó 3 leads calientes y agendó 1 llamada esta mañana.",
+  kpiActive: "Leads activos",
+  kpiActiveHint: "+3 hoy",
+  kpiPipeline: "En pipeline",
+  kpiPipelineHint: "18 deals",
+  kpiConversion: "Conversión",
+  kpiConversionHint: "+5 pts",
+  kpiClosed: "Cerrados (mes)",
+  kpiClosedHint: "$22k",
+  colNew: "Nuevos",
+  colContacted: "Contactados",
+  colProposal: "Propuesta",
+  colWon: "Cerrado",
+};
 
 type Channel = "wa" | "mail" | "web" | "won";
 
@@ -142,7 +167,6 @@ function ChannelIcon({ channel }: { channel: Channel }) {
 }
 
 export default function CrmDashboardDemo() {
-  const c = useMessages().crm;
   const nav = [
     { label: c.uiNavHome, icon: Home },
     { label: c.uiNavLeads, icon: Users },

@@ -1,46 +1,32 @@
-import { SITE_URL } from "@/lib/site";
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
+import { BLOG_POSTS } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
-  const paths = [
-    "",
-    "/paginas-web",
-    "/crear-pagina-web-honduras",
-    "/nexus-honduras",
-    "/clientes",
-    "/ecommerce",
-    "/dashboard",
-    "/crm",
-    "/marketing",
-    "/mivisita",
-    "/miporton",
-    "/nosotros",
-    "/privacidad",
-    "/blog",
-    "/blog/cuanto-cuesta-pagina-web-honduras",
-    "/blog/paginas-web-inmobiliaria-clinica-floristeria",
-    "/blog/inteligencia-artificial-negocios-honduras",
-    "/blog/como-google-e-ia-eligen-agencia-web",
-    "/blog/que-es-nexus-honduras",
+  const now = new Date();
+  const pages: { path: string; priority: number; changeFrequency: "weekly" | "monthly" }[] = [
+    { path: "", priority: 1, changeFrequency: "weekly" },
+    { path: "/paginas-web", priority: 0.95, changeFrequency: "weekly" },
+    { path: "/crm", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/marketing", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/clientes", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/blog", priority: 0.8, changeFrequency: "weekly" },
+    { path: "/nosotros", priority: 0.6, changeFrequency: "monthly" },
+    { path: "/privacidad", priority: 0.3, changeFrequency: "monthly" },
   ];
 
-  return paths.map((path) => ({
-    url: `${SITE_URL}${path || "/"}`,
-    lastModified,
-    changeFrequency:
-      path === "/crear-pagina-web-honduras" ||
-      path === "/paginas-web" ||
-      path === "/nexus-honduras"
-        ? "weekly"
-        : "monthly",
-    priority:
-      path === ""
-        ? 1
-        : path === "/paginas-web" ||
-            path === "/crear-pagina-web-honduras" ||
-            path === "/nexus-honduras"
-          ? 0.95
-          : 0.7,
-  }));
+  return [
+    ...pages.map((p) => ({
+      url: `${SITE_URL}${p.path || "/"}`,
+      lastModified: now,
+      changeFrequency: p.changeFrequency,
+      priority: p.priority,
+    })),
+    ...BLOG_POSTS.map((post) => ({
+      url: `${SITE_URL}/blog/${post.slug}`,
+      lastModified: new Date(`${post.date}T12:00:00`),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+  ];
 }

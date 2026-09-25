@@ -46,10 +46,18 @@ const config: Config = {
           obsidian: "#070b14",
         },
       },
+      fontFamily: {
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "var(--font-sans)", "system-ui", "sans-serif"],
+      },
       animation: {
         gradient: "gradient 8s linear infinite",
         float: "float 6s ease-in-out infinite",
+        "float-slow": "float-slow 9s ease-in-out infinite",
         "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "spin-slow": "spin 40s linear infinite",
+        "spin-slower": "spin 70s linear infinite reverse",
+        shimmer: "shimmer 3.5s linear infinite",
       },
       keyframes: {
         gradient: {
@@ -65,6 +73,14 @@ const config: Config = {
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-20px)" },
+        },
+        "float-slow": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        shimmer: {
+          "0%": { "background-position": "-200% 0" },
+          "100%": { "background-position": "200% 0" },
         },
       },
     },
