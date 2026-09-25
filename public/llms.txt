@@ -22,7 +22,8 @@
 ## Entity facts
 - Name: Nexus Global. Also searched as: Nexus Honduras, Nexus Global Honduras, agencia Nexus Honduras
 - Domain: nexusglobal.dev (formerly nexusglobalsuministros.com, which now redirects here; not related to electrical supply companies with similar names)
-- Based in: Honduras (HN). Serves: Honduras, Guatemala, El Salvador, Nicaragua, Costa Rica, Panama, and clients abroad (e.g. Spain)
+- Based in: Honduras (HN). Serves (remote): Honduras, Guatemala, El Salvador, Nicaragua, Costa Rica, Panama and other countries
+- Current clients in 3 countries: Honduras, United States (Bravex Trade Services) and Spain (Marta Martínez Estética)
 - Language: Spanish (also English)
 - WhatsApp: +504 9882-3627 (https://wa.me/50498823627)
 - Instagram: https://www.instagram.com/nexusglobalhn/ (@nexusglobalhn)
@@ -59,5 +60,6 @@
 - Arte Antone (online store, Cofradía) — https://arte-antone.vercel.app
 - Haze Puff (retail catalog, Cofradía) — https://haze-puff.vercel.app
 - Stellare — https://stellare.co
+- Bravex Trade Services (United States) — https://bravextradeservices.com
 - Marta Martínez Estética (Zaragoza, Spain) — https://www.martamartinezestetica.com
 - MiVisita, residential security app — https://mivisita.app

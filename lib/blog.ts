@@ -484,7 +484,7 @@ const POSTS: BlogPost[] = [
       {
         heading: "Algunos proyectos",
         paragraphs: [
-          "Secaira Soluciones Inmobiliarias (San Pedro Sula), RoseLune Floristería (El Progreso), La Gran Casa Blanca (San Pedro Sula), Arte Antone y Haze Puff (Cofradía), Stellare, Marta Martínez Estética (España) y la app de seguridad residencial MiVisita.",
+          "Secaira Soluciones Inmobiliarias (San Pedro Sula), RoseLune Floristería (El Progreso), La Gran Casa Blanca (San Pedro Sula), Arte Antone y Haze Puff (Cofradía), Stellare, Bravex Trade Services (Estados Unidos), Marta Martínez Estética (España) y la app de seguridad residencial MiVisita.",
         ],
       },
       {

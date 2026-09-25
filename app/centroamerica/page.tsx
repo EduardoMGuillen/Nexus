@@ -12,7 +12,7 @@ import { CENTRAL_AMERICA, SITE_URL, waLink } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Diseño web, CRM a medida y libro de marca en Centroamérica",
   description:
-    "Estudio de diseño y desarrollo web en Honduras que trabaja con empresas de Guatemala, El Salvador, Nicaragua, Costa Rica y Panamá. Webs desde $150, CRM a medida y libro de marca.",
+    "Estudio de diseño y desarrollo web en Honduras que atiende a empresas de Guatemala, El Salvador, Nicaragua, Costa Rica y Panamá. Webs desde $150, CRM a medida y libro de marca.",
   alternates: { canonical: `${SITE_URL}/centroamerica` },
   openGraph: {
     title: "Diseño web y CRM a medida en Centroamérica | Nexus Global",
@@ -31,7 +31,7 @@ const HOW = [
 const FAQS = [
   {
     q: "¿Nexus Global trabaja con empresas fuera de Honduras?",
-    a: "Sí. Nexus Global es un estudio hondureño de diseño y desarrollo web que trabaja de forma remota con negocios de Guatemala, El Salvador, Nicaragua, Costa Rica, Panamá y otros países, como España.",
+    a: "Sí. Nexus Global es un estudio hondureño de diseño y desarrollo web que atiende de forma remota a negocios de Guatemala, El Salvador, Nicaragua, Costa Rica y Panamá. Ya tenemos clientes en Honduras, Estados Unidos y España.",
   },
   {
     q: "¿Cuánto cuesta una página web para una empresa en Centroamérica?",

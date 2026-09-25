@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/clientes` },
   openGraph: {
     title: "Clientes y proyectos | Nexus Global",
-    description: "Webs, tiendas y sistemas publicados para marcas de Honduras y España.",
+    description: "Webs, tiendas y sistemas publicados para marcas de Honduras, Estados Unidos y España.",
     url: `${SITE_URL}/clientes`,
   },
 };
@@ -34,7 +34,7 @@ export default function ClientesPage() {
             Marcas reales, <span className="text-glow">resultados publicados</span>
           </>
         }
-        text="Cada proyecto está en línea y puedes visitarlo. Webs, tiendas, catálogos y sistemas para negocios de Honduras y España."
+        text="Cada proyecto está en línea y puedes visitarlo. Webs, tiendas, catálogos y sistemas para negocios de Honduras, Estados Unidos y España."
       >
         <a
           href={waLink("Hola Nexus, vi sus proyectos y quiero algo así para mi negocio.")}

@@ -69,7 +69,7 @@ const FAQS = [
   },
   {
     q: "¿Trabajan con marcas fuera de Honduras?",
-    a: "Sí. Hacemos libros de marca para negocios de toda Centroamérica y otros países. Todo el proceso se coordina por WhatsApp y videollamada, y los archivos se entregan en digital.",
+    a: "Sí. Hacemos libros de marca para negocios de cualquier país de Centroamérica y fuera de la región. Todo el proceso se coordina por WhatsApp y videollamada, y los archivos se entregan en digital.",
   },
 ];
 

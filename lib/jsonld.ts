@@ -200,7 +200,7 @@ export const homeFaqs = [
   },
   {
     q: "¿Trabajan con empresas del resto de Centroamérica?",
-    a: "Sí. Estamos en Honduras y trabajamos de forma remota con negocios de toda Centroamérica (Guatemala, El Salvador, Nicaragua, Costa Rica y Panamá) y de otros países como España. Cotizamos en dólares y coordinamos todo por WhatsApp y videollamada, en la misma zona horaria.",
+    a: "Sí. Estamos en Honduras y atendemos de forma remota a negocios de toda Centroamérica (Guatemala, El Salvador, Nicaragua, Costa Rica y Panamá). Ya tenemos clientes en Honduras, Estados Unidos y España. Cotizamos en dólares y coordinamos todo por WhatsApp y videollamada.",
   },
   {
     q: "¿Hacen CRM a medida?",

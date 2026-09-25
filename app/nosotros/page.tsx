@@ -29,7 +29,7 @@ const VALUES = [
 const NUMBERS = [
   { value: "14+", label: "Proyectos publicados" },
   { value: "7", label: "Industrias" },
-  { value: "2", label: "Países con clientes" },
+  { value: "3", label: "Países con clientes" },
   { value: "$150", label: "Precio de entrada" },
 ];
 
@@ -81,8 +81,8 @@ export default function NosotrosPage() {
             <p>
               Empezamos haciendo páginas web y hoy construimos tiendas en línea, catálogos conectados a WhatsApp,
               CRM a medida, apps como MiVisita y estrategias de marketing. Trabajamos con inmobiliarias,
-              floristerías, centros de entretenimiento, tiendas, estéticas y empresas de servicios, en Honduras y
-              en España.
+              floristerías, centros de entretenimiento, tiendas, estéticas y empresas de servicios en Honduras,
+              Estados Unidos y España.
             </p>
             <p>
               Cada web que entregamos incluye un libro de marca, porque una buena web no sirve de mucho si la marca
