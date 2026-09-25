@@ -116,7 +116,7 @@ export default function BlogArticlePage({ params }: Props) {
           )}
 
           <div className="shine-border relative mt-12 overflow-hidden rounded-3xl bg-gradient-to-br from-[#0a1a2e] to-[#050810] p-8 text-center sm:p-10">
-            <div className="pointer-events-none absolute left-1/2 top-0 h-40 w-80 -translate-x-1/2 rounded-full bg-primary-500/25 blur-3xl" />
+            <div className="pointer-events-none absolute left-1/2 -top-16 h-64 w-[32rem] -translate-x-1/2 bg-[radial-gradient(closest-side,rgba(0,186,196,0.25),transparent)]" />
             <p className="relative font-display text-2xl font-bold text-white">¿Quieres aplicar esto en tu negocio?</p>
             <p className="relative mx-auto mt-3 max-w-md text-sm text-slate-400">
               Páginas web desde $150 con libro de marca, CRM y automatizaciones con IA. Te asesoramos sin compromiso.

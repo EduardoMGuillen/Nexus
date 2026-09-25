@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Check } from "lucide-react";
 import BrandBook from "./BrandBook";
 import { WhatsAppIcon } from "../icons";
@@ -15,7 +16,7 @@ const INCLUDES = [
 export default function BrandBookSection() {
   return (
     <section id="libro-de-marca" className="section scroll-mt-24 overflow-hidden">
-      <div className="pointer-events-none absolute -right-40 top-10 h-[32rem] w-[32rem] rounded-full bg-[#D9A441]/[0.07] blur-[120px]" />
+      <div className="pointer-events-none absolute -right-60 -top-10 h-[44rem] w-[44rem] bg-[radial-gradient(closest-side,rgba(217,164,65,0.09),transparent)]" />
       <div className="container-x relative grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr]">
         <div data-reveal>
           <span className="eyebrow">Incluido en cada web</span>
@@ -37,15 +38,20 @@ export default function BrandBookSection() {
               </li>
             ))}
           </ul>
-          <a
-            href={waLink("Hola Nexus, quiero una web con libro de marca para mi negocio.")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary mt-10"
-          >
-            <WhatsAppIcon className="h-4 w-4" />
-            Quiero mi web con libro de marca
-          </a>
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <a
+              href={waLink("Hola Nexus, quiero una web con libro de marca para mi negocio.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              <WhatsAppIcon className="h-4 w-4" />
+              Quiero mi web con libro de marca
+            </a>
+            <Link href="/libro-de-marca" className="btn-ghost">
+              Qué incluye el libro de marca
+            </Link>
+          </div>
         </div>
         <div data-reveal style={{ ["--reveal-delay" as string]: "150ms" }}>
           <BrandBook />

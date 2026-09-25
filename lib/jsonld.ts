@@ -1,5 +1,6 @@
 import {
   BRAND_ALIASES,
+  CENTRAL_AMERICA,
   SITE_EMAIL,
   SITE_INSTAGRAM,
   SITE_NAME,
@@ -15,14 +16,14 @@ export function organizationJsonLd() {
     name: SITE_NAME,
     alternateName: [...BRAND_ALIASES],
     legalName: "Nexus Global",
-    slogan: "Desarrollo web y soluciones empresariales en Honduras. Cada web incluye libro de marca.",
+    slogan: "Diseño web, CRM a medida y libro de marca en Honduras y Centroamérica.",
     url: SITE_URL,
     logo: `${SITE_URL}/logo-nexus.png`,
     image: `${SITE_URL}/opengraph-image`,
     email: SITE_EMAIL,
     telephone: `+${WHATSAPP_NUMBER}`,
     description:
-      "Nexus Global (Nexus Honduras) es un estudio hondureño de desarrollo web y soluciones empresariales: páginas web desde 150 USD con libro de marca incluido, CRM a medida, sistemas y marketing digital para negocios en Tegucigalpa, San Pedro Sula y todo Honduras.",
+      "Nexus Global (Nexus Honduras) es un estudio hondureño de diseño y desarrollo web y soluciones empresariales: páginas web desde 150 USD con libro de marca incluido, CRM a medida, sistemas y marketing digital para negocios de Honduras y Centroamérica.",
     foundingLocation: { "@type": "Country", name: "Honduras" },
     address: {
       "@type": "PostalAddress",
@@ -30,40 +31,99 @@ export function organizationJsonLd() {
       addressLocality: "Honduras",
     },
     areaServed: [
-      { "@type": "Country", name: "Honduras" },
+      ...CENTRAL_AMERICA.map((c) => ({ "@type": "Country", name: c.name })),
       { "@type": "City", name: "Tegucigalpa" },
       { "@type": "City", name: "San Pedro Sula" },
       { "@type": "City", name: "La Ceiba" },
-      { "@type": "City", name: "Choloma" },
       { "@type": "City", name: "El Progreso" },
-      { "@type": "City", name: "Comayagua" },
+      { "@type": "Place", name: "Centroamérica" },
     ],
     contactPoint: {
       "@type": "ContactPoint",
       telephone: `+${WHATSAPP_NUMBER}`,
       contactType: "sales",
-      areaServed: "HN",
+      areaServed: CENTRAL_AMERICA.map((c) => c.code),
       availableLanguage: ["es", "en"],
     },
     sameAs: [SITE_INSTAGRAM, `https://wa.me/${WHATSAPP_NUMBER}`],
     priceRange: "$150 - $$$",
     knowsAbout: [
-      "Desarrollo web en Honduras",
-      "Diseño de páginas web",
-      "Libro de marca y branding",
+      "Diseño web",
+      "Desarrollo web",
+      "Desarrollo de software a medida",
       "CRM a medida",
+      "Libro de marca",
+      "Manual de identidad corporativa",
+      "Branding",
+      "Tiendas en línea",
       "Marketing digital",
-      "SEO local Honduras",
+      "SEO local",
+      "Automatización con WhatsApp",
       "Inteligencia artificial para negocios",
     ],
     knowsLanguage: ["es", "en"],
-    serviceType: [
-      "Diseño y desarrollo de páginas web",
-      "Libro de marca",
-      "Tiendas en línea",
-      "CRM y sistemas a medida",
-      "Marketing digital",
-    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Servicios de Nexus Global",
+      itemListElement: SERVICES.map((s) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: s.name,
+          url: `${SITE_URL}${s.path}`,
+          description: s.description,
+        },
+      })),
+    },
+  };
+}
+
+export const SERVICES = [
+  {
+    name: "Diseño y desarrollo web",
+    path: "/paginas-web",
+    serviceType: "Diseño y desarrollo de sitios web",
+    description:
+      "Páginas web profesionales desde 150 USD con libro de marca incluido, adaptadas a celular, conectadas a WhatsApp y con SEO.",
+  },
+  {
+    name: "CRM a medida",
+    path: "/crm",
+    serviceType: "Desarrollo de CRM y software a medida",
+    description:
+      "CRM hecho para el proceso de venta de cada empresa: pipeline, leads de la web y WhatsApp, tareas, reportes e IA, sin licencias genéricas.",
+  },
+  {
+    name: "Libro de marca",
+    path: "/libro-de-marca",
+    serviceType: "Diseño de libro de marca y manual de identidad",
+    description:
+      "Manual de identidad con logo y sus versiones, paleta, tipografías, aplicaciones y tono de voz. Incluido con cada página web.",
+  },
+  {
+    name: "Marketing digital",
+    path: "/marketing",
+    serviceType: "Marketing digital y SEO local",
+    description: "Redes sociales, SEO local, Google Business Profile y campañas con objetivos medibles.",
+  },
+] as const;
+
+export function servicePageJsonLd(path: (typeof SERVICES)[number]["path"]) {
+  const s = SERVICES.find((x) => x.path === path)!;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: s.name,
+    serviceType: s.serviceType,
+    description: s.description,
+    url: `${SITE_URL}${s.path}`,
+    provider: { "@id": `${SITE_URL}/#organization` },
+    areaServed: CENTRAL_AMERICA.map((c) => ({ "@type": "Country", name: c.name })),
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: `https://wa.me/${WHATSAPP_NUMBER}`,
+      availableLanguage: "es",
+    },
   };
 }
 
@@ -86,10 +146,10 @@ export function serviceJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Diseño de páginas web en Honduras",
-    serviceType: "Desarrollo de sitios web",
+    name: "Diseño y desarrollo web en Honduras y Centroamérica",
+    serviceType: "Diseño y desarrollo de sitios web",
     provider: { "@id": `${SITE_URL}/#organization` },
-    areaServed: { "@type": "Country", name: "Honduras" },
+    areaServed: CENTRAL_AMERICA.map((c) => ({ "@type": "Country", name: c.name })),
     url: `${SITE_URL}/paginas-web`,
     description:
       "Páginas web profesionales para negocios en Honduras con libro de marca incluido, adaptadas a celular, conectadas a WhatsApp y con SEO local.",
@@ -139,8 +199,12 @@ export const homeFaqs = [
     a: "El dominio (.com o .hn) y el hosting se pagan aparte porque quedan a tu nombre. Te ayudamos a comprarlos y configurarlos, y ofrecemos un plan mensual opcional de hosting y mantenimiento.",
   },
   {
-    q: "¿Trabajan con negocios fuera de Tegucigalpa y San Pedro Sula?",
-    a: "Sí. Trabajamos con negocios de todo Honduras (El Progreso, Cofradía, La Ceiba, Comayagua y más) e incluso fuera del país, como España. Todo el proceso se coordina por WhatsApp y videollamada.",
+    q: "¿Trabajan con empresas del resto de Centroamérica?",
+    a: "Sí. Estamos en Honduras y trabajamos de forma remota con negocios de toda Centroamérica (Guatemala, El Salvador, Nicaragua, Costa Rica y Panamá) y de otros países como España. Cotizamos en dólares y coordinamos todo por WhatsApp y videollamada, en la misma zona horaria.",
+  },
+  {
+    q: "¿Hacen CRM a medida?",
+    a: "Sí. Desarrollamos CRM a la medida del proceso de venta de cada empresa: pipeline con tus etapas, leads que entran solos desde la web y WhatsApp, tareas, reportes e IA que prioriza clientes. Es un sistema tuyo, sin licencias mensuales por usuario.",
   },
   {
     q: "¿Mi web va a aparecer en Google?",

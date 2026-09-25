@@ -6,16 +6,16 @@ import { WhatsAppIcon } from "@/components/icons";
 import CrmDashboardDemo from "@/components/CrmDashboardDemo";
 import ContactSection from "@/components/home/ContactSection";
 import JsonLd from "@/components/JsonLd";
-import { breadcrumbJsonLd } from "@/lib/jsonld";
+import { breadcrumbJsonLd, servicePageJsonLd } from "@/lib/jsonld";
 import { SITE_URL, waLink } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "CRM a medida en Honduras",
+  title: "CRM a medida en Honduras y Centroamérica",
   description:
-    "CRM a la medida de tu negocio en Honduras: pipeline de ventas, leads de tu web y WhatsApp, tareas, reportes e IA. Sin licencias genéricas.",
+    "Desarrollo de CRM a medida para empresas en Honduras y Centroamérica: pipeline de ventas, leads de tu web y WhatsApp, tareas, reportes e IA. Un sistema tuyo, sin licencias por usuario.",
   alternates: { canonical: `${SITE_URL}/crm` },
   openGraph: {
-    title: "CRM a medida en Honduras | Nexus Global",
+    title: "CRM a medida en Honduras y Centroamérica | Nexus Global",
     description: "Pipeline, WhatsApp, reportes e IA en un CRM hecho para tu operación.",
     url: `${SITE_URL}/crm`,
   },
@@ -49,6 +49,7 @@ const STEPS = [
 export default function CrmPage() {
   return (
     <main>
+      <JsonLd data={servicePageJsonLd("/crm")} />
       <JsonLd data={breadcrumbJsonLd([{ name: "Inicio", path: "/" }, { name: "CRM", path: "/crm" }])} />
       <PageHero
         eyebrow="CRM a medida · Honduras"
@@ -75,7 +76,7 @@ export default function CrmPage() {
       <section id="demo" className="scroll-mt-24 pb-10">
         <div className="container-x">
           <div data-reveal className="relative">
-            <div className="pointer-events-none absolute -inset-10 rounded-[40px] bg-primary-500/10 blur-3xl" />
+            <div className="pointer-events-none absolute -inset-16 bg-[radial-gradient(closest-side,rgba(0,186,196,0.12),transparent)]" />
             <div className="relative">
               <CrmDashboardDemo />
             </div>

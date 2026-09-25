@@ -59,23 +59,24 @@ export default function Hero() {
     <section id="inicio" className="relative overflow-hidden pb-16 pt-32 sm:pt-36">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-grid mask-fade-y opacity-60" />
-        <div className="absolute left-1/2 top-[38%] h-[46rem] w-[46rem] -translate-x-1/2 rounded-full bg-primary-500/[0.13] blur-[120px]" />
-        <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-brand-navy/50 blur-[110px]" />
-        <div className="absolute -right-40 top-40 h-96 w-96 rounded-full bg-brand-navy/40 blur-[110px]" />
+        <div className="absolute left-1/2 top-[30%] h-[60rem] w-[60rem] -translate-x-1/2 bg-[radial-gradient(closest-side,rgba(0,186,196,0.16),transparent)]" />
+        <div className="absolute -left-72 top-0 h-[40rem] w-[40rem] bg-[radial-gradient(closest-side,rgba(16,40,101,0.55),transparent)]" />
+        <div className="absolute -right-72 top-20 h-[40rem] w-[40rem] bg-[radial-gradient(closest-side,rgba(16,40,101,0.45),transparent)]" />
       </div>
 
       <div className="container-x relative">
         <div className="mx-auto max-w-4xl text-center">
           <span className="eyebrow">
             <Sparkles className="h-3.5 w-3.5" />
-            Desarrollo web y soluciones empresariales · Honduras
+            Diseño web · CRM a medida · Libro de marca
           </span>
           <h1 className="h-display mt-7 text-balance text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-7xl">
             Páginas web que hacen <span className="text-glow">crecer</span> tu negocio
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-balance text-base leading-relaxed text-slate-300 sm:text-lg">
-            Diseñamos tu web, tu libro de marca y los sistemas que la hacen vender. Desde{" "}
-            <strong className="font-semibold text-white">$150</strong>, lista en días y conectada a tu WhatsApp.
+            Estudio de diseño y desarrollo web en Honduras para toda Centroamérica. Tu web, tu libro de marca y los
+            sistemas que la hacen vender, desde <strong className="font-semibold text-white">$150</strong> y conectados
+            a tu WhatsApp.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a href={waLink()} target="_blank" rel="noopener noreferrer" className="btn-primary w-full sm:w-auto">

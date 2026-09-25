@@ -4,11 +4,11 @@ import { PageHero, SectionHeader } from "@/components/ui";
 import { WhatsAppIcon } from "@/components/icons";
 import ContactSection from "@/components/home/ContactSection";
 import JsonLd from "@/components/JsonLd";
-import { breadcrumbJsonLd } from "@/lib/jsonld";
+import { breadcrumbJsonLd, servicePageJsonLd } from "@/lib/jsonld";
 import { SITE_URL, waLink } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Marketing digital en Honduras",
+  title: "Marketing digital y SEO local en Honduras",
   description:
     "Marketing digital en Honduras: manejo de redes sociales, SEO local, campañas en Google y Meta, contenido y libro de marca para negocios que quieren vender más.",
   alternates: { canonical: `${SITE_URL}/marketing` },
@@ -38,6 +38,7 @@ const STEPS = [
 export default function MarketingPage() {
   return (
     <main>
+      <JsonLd data={servicePageJsonLd("/marketing")} />
       <JsonLd data={breadcrumbJsonLd([{ name: "Inicio", path: "/" }, { name: "Marketing", path: "/marketing" }])} />
       <PageHero
         eyebrow="Marketing digital · Honduras"

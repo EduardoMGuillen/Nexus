@@ -50,7 +50,7 @@ export default function BlogOgImage({ params }: { params: { slug: string } }) {
           </div>
         </div>
         <div style={{ display: "flex", fontSize: 64, fontWeight: 800, lineHeight: 1.08, maxWidth: 1000 }}>{title}</div>
-        <div style={{ display: "flex", fontSize: 22, color: "#66e0e6" }}>nexusglobalsuministros.com</div>
+        <div style={{ display: "flex", fontSize: 22, color: "#66e0e6" }}>nexusglobal.dev</div>
       </div>
     ),
     size

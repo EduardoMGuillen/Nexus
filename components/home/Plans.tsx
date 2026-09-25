@@ -7,7 +7,7 @@ import { waLink } from "@/lib/site";
 export default function Plans({ showHeader = true }: { showHeader?: boolean }) {
   return (
     <section id="planes" className="section scroll-mt-24">
-      <div className="pointer-events-none absolute left-1/2 top-1/3 h-[34rem] w-[60rem] -translate-x-1/2 rounded-full bg-primary-500/[0.07] blur-[120px]" />
+      <div className="pointer-events-none absolute left-1/2 top-1/3 h-[44rem] w-[70rem] -translate-x-1/2 bg-[radial-gradient(closest-side,rgba(0,186,196,0.09),transparent)]" />
       <div className="container-x relative">
         {showHeader && (
           <SectionHeader

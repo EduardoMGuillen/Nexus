@@ -23,8 +23,8 @@ export default function ContactSection({
           data-reveal
           className="shine-border relative overflow-hidden rounded-[32px] bg-gradient-to-br from-[#0a1a2e] via-[#07101f] to-[#050810] p-6 sm:p-10 lg:p-14"
         >
-          <div className="pointer-events-none absolute -left-20 -top-20 h-80 w-80 rounded-full bg-primary-500/20 blur-[100px]" />
-          <div className="pointer-events-none absolute -bottom-32 right-0 h-96 w-96 rounded-full bg-brand-navy/60 blur-[100px]" />
+          <div className="pointer-events-none absolute -left-40 -top-40 h-[32rem] w-[32rem] bg-[radial-gradient(closest-side,rgba(0,186,196,0.22),transparent)]" />
+          <div className="pointer-events-none absolute -bottom-52 -right-20 h-[36rem] w-[36rem] bg-[radial-gradient(closest-side,rgba(16,40,101,0.6),transparent)]" />
           <div className="relative grid gap-12 lg:grid-cols-[1fr_1.1fr]">
             <div>
               <span className="eyebrow">Hablemos</span>
@@ -82,7 +82,7 @@ export default function ContactSection({
                 </a>
               </div>
             </div>
-            <div className="rounded-3xl border border-white/10 bg-[#050912]/70 p-6 backdrop-blur sm:p-8">
+            <div className="rounded-3xl border border-white/10 bg-[#050912]/80 p-6 sm:p-8 md:backdrop-blur">
               <ContactForm />
             </div>
           </div>

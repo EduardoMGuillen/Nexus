@@ -13,9 +13,9 @@ import { DEMOS } from "@/lib/work";
 import { SITE_URL, waLink } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Páginas web en Honduras desde $150 con libro de marca",
+  title: "Diseño y desarrollo web en Honduras desde $150 con libro de marca",
   description:
-    "Diseño de páginas web en Honduras: Web Esencial $150, Web Pro $350 o Tu Web, Tu Presupuesto. Adaptadas a celular, conectadas a WhatsApp, con SEO y libro de marca incluido.",
+    "Diseño y desarrollo de páginas web en Honduras y Centroamérica: Web Esencial $150, Web Pro $350 o Tu Web, Tu Presupuesto. Adaptadas a celular, conectadas a WhatsApp, con SEO y libro de marca incluido.",
   alternates: { canonical: `${SITE_URL}/paginas-web` },
   openGraph: {
     title: "Páginas web en Honduras desde $150 | Nexus Global",

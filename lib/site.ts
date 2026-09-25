@@ -1,5 +1,5 @@
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.nexusglobalsuministros.com"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://nexusglobal.dev"
 ).replace(/\/$/, "");
 
 export const SITE_NAME = "Nexus Global";
@@ -43,4 +43,23 @@ export const HONDURAS_KEYWORDS = [
   "sitio web para negocios Honduras",
   "landing page Honduras",
   "tienda online Honduras",
+  "CRM a medida Honduras",
+  "CRM para empresas Honduras",
+  "libro de marca Honduras",
+  "manual de marca Honduras",
+  "branding Honduras",
+  "diseño web Centroamérica",
+  "desarrollo web Centroamérica",
+  "agencia de diseño web Centroamérica",
+  "CRM a medida Centroamérica",
+  "soluciones empresariales Honduras",
 ];
+
+export const CENTRAL_AMERICA = [
+  { name: "Honduras", code: "HN", tld: ".hn", cities: "Tegucigalpa, San Pedro Sula, La Ceiba, El Progreso" },
+  { name: "Guatemala", code: "GT", tld: ".gt", cities: "Ciudad de Guatemala, Quetzaltenango, Antigua" },
+  { name: "El Salvador", code: "SV", tld: ".sv", cities: "San Salvador, Santa Ana, San Miguel" },
+  { name: "Nicaragua", code: "NI", tld: ".ni", cities: "Managua, León, Granada" },
+  { name: "Costa Rica", code: "CR", tld: ".cr", cities: "San José, Heredia, Alajuela" },
+  { name: "Panamá", code: "PA", tld: ".pa", cities: "Ciudad de Panamá, David, Colón" },
+] as const;

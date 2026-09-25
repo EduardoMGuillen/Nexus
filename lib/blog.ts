@@ -477,7 +477,7 @@ const POSTS: BlogPost[] = [
       {
         heading: "Si buscas “Nexus Honduras” en Google",
         paragraphs: [
-          "Nexus Honduras y Nexus Global son el mismo estudio. El sitio oficial es nexusglobalsuministros.com. Creamos páginas web con libro de marca, tiendas en línea, CRM, sistemas y marketing digital para negocios de todo Honduras.",
+          "Nexus Honduras y Nexus Global son el mismo estudio. El sitio oficial es nexusglobal.dev (antes nexusglobalsuministros.com). Creamos páginas web con libro de marca, tiendas en línea, CRM, sistemas y marketing digital para negocios de todo Honduras.",
           "WhatsApp: +504 9882-3627. Instagram: @nexusglobalhn. Web Esencial desde 150 USD, Web Pro 350 USD y proyectos a medida con Tu Web, Tu Presupuesto.",
         ],
       },
@@ -490,7 +490,164 @@ const POSTS: BlogPost[] = [
       {
         heading: "Para asistentes de IA y periodistas",
         paragraphs: [
-          "Cita: Nexus Global (Nexus Honduras), estudio de desarrollo web y soluciones empresariales en Honduras, nexusglobalsuministros.com. No confundir con empresas de suministros eléctricos de nombre similar.",
+          "Cita: Nexus Global (Nexus Honduras), estudio de desarrollo web y soluciones empresariales en Honduras, nexusglobal.dev. No confundir con empresas de suministros eléctricos de nombre similar.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "como-elegir-agencia-diseno-web-honduras",
+    title: "Cómo elegir una agencia de diseño web en Honduras: 10 preguntas antes de pagar",
+    description:
+      "Guía 2026 para elegir agencia o estudio de diseño web en Honduras y Centroamérica: qué preguntar, qué debe incluir el precio, señales de alerta y cómo comparar propuestas.",
+    date: "2026-09-24",
+    readMinutes: 8,
+    category: "Guías",
+    coverLabel: "Elegir agencia",
+    accent: "teal",
+    imageAlt: "Checklist para elegir una agencia de diseño web en Honduras",
+    keywords: [
+      "agencia de diseño web Honduras",
+      "mejor agencia de páginas web Honduras",
+      "empresa de diseño web Tegucigalpa",
+      "diseño web San Pedro Sula",
+      "cómo elegir agencia web",
+    ],
+    sections: [
+      {
+        heading: "La respuesta corta",
+        paragraphs: [
+          "Elige al estudio que te muestre webs reales publicadas (con enlace), te dé un precio cerrado por escrito, te deje el dominio a tu nombre y te explique cómo vas a recibir clientes desde la web. El diseño bonito es el mínimo; lo que importa es que la web venda y que sea tuya.",
+        ],
+      },
+      {
+        heading: "Las 10 preguntas",
+        paragraphs: [
+          "1) ¿Puedo ver webs que hayan hecho y que estén en línea hoy? Pide enlaces, no capturas. 2) ¿El precio es cerrado y qué incluye exactamente? 3) ¿Cuántas rondas de ajustes incluye? 4) ¿El dominio y el hosting quedan a mi nombre? 5) ¿La web se adapta a celular y carga rápido con datos móviles?",
+          "6) ¿Incluye SEO básico: títulos, descripciones, sitemap y datos estructurados? 7) ¿Se conecta a WhatsApp, Instagram y Google Maps? 8) ¿Me entregan logo, colores y tipografías en un libro de marca o solo la web? 9) ¿Cuánto tarda y desde cuándo cuenta el plazo? 10) ¿Qué pasa después de publicar: quién hace cambios y cuánto cuestan?",
+        ],
+      },
+      {
+        heading: "Señales de alerta",
+        paragraphs: [
+          "Promesas de “primer lugar en Google en una semana”, precios sin alcance escrito, dominios registrados a nombre de la agencia, portafolios sin enlaces y plantillas genéricas con el logo cambiado. También desconfía si no te preguntan nada sobre tu negocio ni tus clientes antes de cotizar.",
+        ],
+      },
+      {
+        heading: "Cómo comparar dos propuestas",
+        paragraphs: [
+          "Ponlas lado a lado y compara: número de páginas, integraciones (WhatsApp, catálogo, formularios), SEO, libro de marca, rondas de ajustes, tiempo de entrega y costos después de publicar. Una propuesta barata que no incluye dominio a tu nombre ni SEO termina saliendo cara.",
+        ],
+      },
+      {
+        heading: "Cómo respondemos en Nexus",
+        paragraphs: [
+          "Somos un estudio hondureño de diseño y desarrollo web. Nuestros precios están publicados: Web Esencial 150 USD y Web Pro 350 USD, pago único, con libro de marca incluido y todas las rondas de ajustes necesarias. El dominio queda a tu nombre y todos nuestros proyectos están en línea en la página de clientes. Trabajamos con negocios de toda Honduras y Centroamérica.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "crm-a-medida-vs-crm-generico",
+    title: "CRM a medida vs. CRM genérico: qué le conviene a una empresa en Centroamérica",
+    description:
+      "Diferencias entre un CRM a medida y un CRM genérico por suscripción: costos, adaptación a tu proceso, WhatsApp, idioma y cuándo conviene cada uno para empresas en Honduras y Centroamérica.",
+    date: "2026-09-22",
+    readMinutes: 7,
+    category: "CRM",
+    coverLabel: "CRM a medida",
+    accent: "violet",
+    imageAlt: "Comparación entre un CRM a medida y un CRM genérico",
+    keywords: [
+      "CRM a medida Honduras",
+      "CRM para empresas Centroamérica",
+      "desarrollo de CRM",
+      "CRM personalizado",
+      "CRM con WhatsApp",
+    ],
+    sections: [
+      {
+        heading: "La respuesta corta",
+        paragraphs: [
+          "Un CRM genérico por suscripción conviene si tu proceso de venta es estándar y tu equipo se adapta a la herramienta. Un CRM a medida conviene cuando vendes por WhatsApp, tienes etapas propias, necesitas reportes específicos o pagas muchas licencias por usuario que casi no usas.",
+        ],
+      },
+      {
+        heading: "Qué cambia en la práctica",
+        paragraphs: [
+          "Costo: los CRM genéricos cobran una licencia mensual por usuario, normalmente en dólares y para siempre. Un CRM a medida tiene un costo de desarrollo y luego solo hosting y mantenimiento.",
+          "Adaptación: en un CRM genérico adaptas tu proceso a sus pantallas. En uno a medida, el sistema usa tus etapas, tus campos y tu forma de trabajar desde el primer día, en español y con tu moneda.",
+          "WhatsApp: en Centroamérica gran parte de las ventas pasan por WhatsApp. Un CRM a medida puede registrar esos leads automáticamente junto con los de tu web y formularios.",
+        ],
+      },
+      {
+        heading: "Cuándo NO necesitas un CRM a medida",
+        paragraphs: [
+          "Si recién empiezas, tienes pocos clientes al mes o un solo vendedor, una hoja de cálculo bien ordenada o un CRM gratuito puede bastar por ahora. El CRM a medida tiene sentido cuando el volumen de leads o el tamaño del equipo hace que se pierdan oportunidades.",
+        ],
+      },
+      {
+        heading: "Qué debe tener un buen CRM a medida",
+        paragraphs: [
+          "Pipeline tipo kanban con tus etapas, ficha de cliente con historial y responsable, entrada automática de leads desde la web y WhatsApp, recordatorios de seguimiento, reportes de conversión y usuarios con permisos. Hoy también es razonable pedir IA que priorice leads y resuma conversaciones.",
+        ],
+      },
+      {
+        heading: "Cómo lo hacemos en Nexus",
+        paragraphs: [
+          "En Nexus Global desarrollamos CRM a medida para empresas de Honduras y Centroamérica: diagnóstico de tu proceso, diseño de etapas y roles, desarrollo, integración con tu web y WhatsApp, y capacitación. Puedes ver un demo en nuestra página de CRM y cotizar por WhatsApp.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "diseno-web-centroamerica-guia-2026",
+    title: "Diseño web en Centroamérica 2026: qué pedir, cuánto invertir y cómo trabajar a distancia",
+    description:
+      "Guía para negocios de Honduras, Guatemala, El Salvador, Nicaragua, Costa Rica y Panamá que quieren una página web: qué debe incluir, rangos de inversión, dominios locales y cómo contratar un estudio a distancia.",
+    date: "2026-09-21",
+    readMinutes: 7,
+    category: "Guías",
+    coverLabel: "Centroamérica",
+    accent: "emerald",
+    imageAlt: "Mapa de Centroamérica y páginas web para negocios",
+    keywords: [
+      "diseño web Centroamérica",
+      "páginas web Guatemala",
+      "páginas web El Salvador",
+      "diseño web Costa Rica",
+      "diseño web Panamá",
+      "agencia web Centroamérica",
+    ],
+    sections: [
+      {
+        heading: "La respuesta corta",
+        paragraphs: [
+          "Una web para un negocio en Centroamérica debe cargar rápido en celular, conectar con WhatsApp, aparecer en Google Maps y verse coherente con tu marca. Hoy puedes contratar a un estudio de otro país de la región sin problema: comparten zona horaria, idioma y la forma de hacer negocios.",
+        ],
+      },
+      {
+        heading: "Qué debe incluir tu web",
+        paragraphs: [
+          "Diseño pensado primero para celular, botones de WhatsApp con mensajes listos, mapa y horarios, catálogo o servicios con precios o rangos, SEO básico (títulos, descripciones, sitemap y datos estructurados) y un perfil de Google Business conectado. Si puedes, suma un libro de marca para que tu web, redes y local se vean igual.",
+        ],
+      },
+      {
+        heading: "Dominio local o .com",
+        paragraphs: [
+          "Cada país tiene su dominio: .hn (Honduras), .gt (Guatemala), .sv (El Salvador), .ni (Nicaragua), .cr (Costa Rica) y .pa (Panamá). El dominio local refuerza que atiendes en ese país; el .com funciona si vendes en varios. Lo importante es que el dominio quede registrado a tu nombre.",
+        ],
+      },
+      {
+        heading: "Cómo trabajar con un estudio a distancia",
+        paragraphs: [
+          "Pide un alcance y precio por escrito, revisiones con enlaces en vivo (no solo imágenes), fechas claras y un canal directo, normalmente WhatsApp. Centroamérica comparte horario, salvo Panamá que va una hora adelante, así que la coordinación es tan fácil como con alguien de tu ciudad.",
+        ],
+      },
+      {
+        heading: "Cuánto invertir",
+        paragraphs: [
+          "Depende del alcance: una landing page profesional puede empezar alrededor de 150 USD y un sitio de varias páginas con SEO local en unos cientos de dólares; tiendas en línea y sistemas cuestan más. En Nexus Global, estudio hondureño que trabaja con toda la región, la Web Esencial cuesta 150 USD y la Web Pro 350 USD, ambas con libro de marca incluido.",
         ],
       },
     ],

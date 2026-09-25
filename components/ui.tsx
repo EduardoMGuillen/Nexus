@@ -41,7 +41,7 @@ export function PageHero({
     <section className="relative overflow-hidden pb-16 pt-36 sm:pb-20 sm:pt-44">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-grid mask-fade-y opacity-50" />
-        <div className="absolute left-1/2 top-0 h-[34rem] w-[60rem] -translate-x-1/2 rounded-full bg-primary-500/[0.12] blur-[120px]" />
+        <div className="absolute left-1/2 top-0 h-[44rem] w-[70rem] -translate-x-1/2 -translate-y-1/4 bg-[radial-gradient(closest-side,rgba(0,186,196,0.15),transparent)]" />
       </div>
       <div className="container-x relative text-center">
         <span className="eyebrow">{eyebrow}</span>

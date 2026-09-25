@@ -16,7 +16,7 @@ const COLUMNS = [
     links: [
       { name: "Páginas web", href: "/paginas-web" },
       { name: "Planes y precios", href: "/#planes" },
-      { name: "Libro de marca", href: "/#libro-de-marca" },
+      { name: "Libro de marca", href: "/libro-de-marca" },
       { name: "CRM a medida", href: "/crm" },
       { name: "Marketing digital", href: "/marketing" },
     ],
@@ -24,6 +24,7 @@ const COLUMNS = [
   {
     title: "Nexus",
     links: [
+      { name: "Centroamérica", href: "/centroamerica" },
       { name: "Clientes", href: "/clientes" },
       { name: "Blog", href: "/blog" },
       { name: "Nosotros", href: "/nosotros" },
@@ -35,7 +36,7 @@ const COLUMNS = [
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-white/[0.06] bg-[#04070d]">
-      <div className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[60rem] -translate-x-1/2 rounded-full bg-primary-500/10 blur-3xl" />
+      <div className="pointer-events-none absolute -top-48 left-1/2 h-96 w-[70rem] -translate-x-1/2 bg-[radial-gradient(closest-side,rgba(0,186,196,0.1),transparent)]" />
       <div className="container-x relative pb-10 pt-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div>
@@ -107,7 +108,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-2 text-slate-400">
-                <MapPin className="h-4 w-4 text-primary-300" /> Honduras · Atendemos en todo el país
+                <MapPin className="h-4 w-4 shrink-0 text-primary-300" /> Honduras · Atendemos toda Centroamérica
               </li>
             </ul>
           </div>

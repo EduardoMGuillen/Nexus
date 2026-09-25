@@ -7,7 +7,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages: { path: string; priority: number; changeFrequency: "weekly" | "monthly" }[] = [
     { path: "", priority: 1, changeFrequency: "weekly" },
     { path: "/paginas-web", priority: 0.95, changeFrequency: "weekly" },
-    { path: "/crm", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/crm", priority: 0.9, changeFrequency: "monthly" },
+    { path: "/libro-de-marca", priority: 0.9, changeFrequency: "monthly" },
+    { path: "/centroamerica", priority: 0.85, changeFrequency: "monthly" },
     { path: "/marketing", priority: 0.8, changeFrequency: "monthly" },
     { path: "/clientes", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog", priority: 0.8, changeFrequency: "weekly" },

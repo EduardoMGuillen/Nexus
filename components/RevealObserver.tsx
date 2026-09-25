@@ -7,13 +7,22 @@ export default function RevealObserver() {
   const pathname = usePathname();
 
   useEffect(() => {
+    if (!("IntersectionObserver" in window)) return;
+
     const nodes = Array.from(
       document.querySelectorAll<HTMLElement>("[data-reveal]:not(.is-visible)")
     );
-    if (!("IntersectionObserver" in window)) {
-      nodes.forEach((n) => n.classList.add("is-visible"));
-      return;
-    }
+    const vh = window.innerHeight;
+    const pending = nodes.filter((n) => {
+      const r = n.getBoundingClientRect();
+      if (r.top < vh && r.bottom > 0) {
+        n.classList.add("is-visible");
+        return false;
+      }
+      return true;
+    });
+    document.documentElement.classList.add("reveal-ready");
+
     const io = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -25,7 +34,7 @@ export default function RevealObserver() {
       },
       { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
     );
-    nodes.forEach((n) => io.observe(n));
+    pending.forEach((n) => io.observe(n));
     return () => io.disconnect();
   }, [pathname]);
 

@@ -47,7 +47,7 @@ export default function Header() {
       <div
         className={`mx-auto flex max-w-7xl items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-300 sm:px-5 ${
           scrolled || open
-            ? "border border-white/10 bg-[#070c17]/80 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.8)] backdrop-blur-xl"
+            ? "border border-white/10 bg-[#070c17]/95 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.8)] md:bg-[#070c17]/80 md:backdrop-blur-xl"
             : "border border-transparent"
         }`}
       >
@@ -92,7 +92,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="mx-auto mt-2 max-w-7xl rounded-2xl border border-white/10 bg-[#070c17]/95 p-3 backdrop-blur-xl lg:hidden">
+        <div className="mx-auto mt-2 max-w-7xl rounded-2xl border border-white/10 bg-[#070c17]/[0.98] p-3 lg:hidden">
           <nav aria-label="Móvil" className="flex flex-col">
             {NAV.map((item) => (
               <Link

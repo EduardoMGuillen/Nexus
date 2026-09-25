@@ -25,6 +25,8 @@ const DESTINATIONS: LatLon[] = [
 ];
 
 const RAD = Math.PI / 180;
+const LAND_BUCKETS = 6;
+const SEA_BUCKETS = 3;
 
 function isLand(lat: number, lon: number) {
   for (const [a, b, ra, rb] of LAND) {
@@ -57,6 +59,15 @@ function slerp(a: LatLon, b: LatLon, t: number): LatLon {
   return [Math.atan2(z, Math.hypot(x, y)) / RAD, Math.atan2(y, x) / RAD];
 }
 
+type Pt = { cosLat: number; sinLat: number; lon: number; lift: number };
+
+const toPt = ([lat, lon]: LatLon, lift = 1): Pt => ({
+  cosLat: Math.cos(lat * RAD),
+  sinLat: Math.sin(lat * RAD),
+  lon: lon * RAD,
+  lift,
+});
+
 export default function Globe({ className = "" }: { className?: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -67,56 +78,67 @@ export default function Globe({ className = "" }: { className?: string }) {
     if (!ctx) return;
 
     const small = window.innerWidth < 768;
-    const count = small ? 1100 : 2200;
+    const count = small ? 750 : 1800;
+    const maxDpr = small ? 1.5 : 2;
+    const frameGap = small ? 1000 / 30 : 0;
 
-    const pts: { lat: number; lon: number; land: boolean }[] = [];
+    const land: Pt[] = [];
+    const sea: Pt[] = [];
     const golden = Math.PI * (3 - Math.sqrt(5));
     for (let i = 0; i < count; i++) {
       const y = 1 - (i / (count - 1)) * 2;
       const lat = Math.asin(y) / RAD;
       const lon = (((i * golden) / RAD) % 360) - 180;
-      pts.push({ lat, lon, land: isLand(lat, lon) });
+      (isLand(lat, lon) ? land : sea).push(toPt([lat, lon]));
     }
 
+    const SEGMENTS = 40;
     const arcs = DESTINATIONS.map((d, i) => ({
-      path: Array.from({ length: 48 }, (_, k) => slerp(HUB, d, k / 47)),
+      pts: Array.from({ length: SEGMENTS + 1 }, (_, k) => {
+        const f = k / SEGMENTS;
+        return toPt(slerp(HUB, d, f), 1 + Math.sin(f * Math.PI) * 0.18);
+      }),
+      end: toPt(d),
       offset: i * 0.37,
     }));
-
-    let w = 0;
-    let h = 0;
-    let dpr = 1;
-    let raf = 0;
-    let running = false;
-    const resize = () => {
-      const rect = canvas.getBoundingClientRect();
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      w = rect.width;
-      h = rect.height;
-      canvas.width = Math.round(w * dpr);
-      canvas.height = Math.round(h * dpr);
-      if (!running) raf = requestAnimationFrame(draw);
-    };
-    const ro = new ResizeObserver(resize);
+    const hub = toPt(HUB);
 
     const tilt = 6 * RAD;
     const cosT = Math.cos(tilt);
     const sinT = Math.sin(tilt);
 
-    const project = (lat: number, lon: number, rot: number, lift = 1) => {
-      const la = lat * RAD;
-      const lo = (lon - rot) * RAD;
-      const x = Math.cos(la) * Math.sin(lo) * lift;
-      const y = Math.sin(la) * lift;
-      const z = Math.cos(la) * Math.cos(lo) * lift;
-      return { x, y: y * cosT - z * sinT, z: y * sinT + z * cosT };
+    let px = 0;
+    let py = 0;
+    let pz = 0;
+    const project = (p: Pt, rot: number) => {
+      const lo = p.lon - rot;
+      const x = p.cosLat * Math.sin(lo) * p.lift;
+      const y = p.sinLat * p.lift;
+      const z = p.cosLat * Math.cos(lo) * p.lift;
+      px = x;
+      py = y * cosT - z * sinT;
+      pz = y * sinT + z * cosT;
     };
 
+    const landXY: number[][] = Array.from({ length: LAND_BUCKETS }, () => []);
+    const seaXY: number[][] = Array.from({ length: SEA_BUCKETS }, () => []);
+    const landStyle = Array.from({ length: LAND_BUCKETS }, (_, b) => {
+      const d = (b + 0.5) / LAND_BUCKETS;
+      return { fill: `rgba(64,224,232,${(0.25 + d * 0.75).toFixed(3)})`, r: 0.7 + d * 1.15 };
+    });
+    const seaStyle = Array.from(
+      { length: SEA_BUCKETS },
+      (_, b) => `rgba(120,160,220,${(((b + 0.5) / SEA_BUCKETS) * 0.3).toFixed(3)})`
+    );
+
+    let w = 0;
+    let h = 0;
+    let dpr = 1;
     const start = performance.now();
 
     const draw = (now: number) => {
       const t = (now - start) / 1000;
-      const rot = -74 + Math.sin(t / 10) * 24;
+      const rot = (-74 + Math.sin(t / 10) * 24) * RAD;
       const R = Math.min(w, h) * 0.46;
       const cx = w / 2;
       const cy = h / 2;
@@ -124,65 +146,100 @@ export default function Globe({ className = "" }: { className?: string }) {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, w, h);
 
-      const body = ctx.createRadialGradient(cx - R * 0.35, cy - R * 0.4, R * 0.1, cx, cy, R);
-      body.addColorStop(0, "rgba(16,40,101,0.55)");
-      body.addColorStop(0.7, "rgba(7,16,36,0.85)");
-      body.addColorStop(1, "rgba(0,186,196,0.18)");
-      ctx.fillStyle = body;
-      ctx.beginPath();
-      ctx.arc(cx, cy, R, 0, Math.PI * 2);
-      ctx.fill();
+      for (const b of landXY) b.length = 0;
+      for (const b of seaXY) b.length = 0;
 
-      for (const p of pts) {
-        const q = project(p.lat, p.lon, rot);
-        if (q.z < -0.15) continue;
-        const depth = Math.max(0, q.z);
-        const sx = cx + q.x * R;
-        const sy = cy - q.y * R;
-        if (p.land) {
-          ctx.fillStyle = `rgba(64,224,232,${0.25 + depth * 0.75})`;
-          ctx.beginPath();
-          ctx.arc(sx, sy, 0.7 + depth * 1.15, 0, Math.PI * 2);
-          ctx.fill();
-        } else if (q.z > 0) {
-          ctx.fillStyle = `rgba(120,160,220,${depth * 0.3})`;
-          ctx.fillRect(sx, sy, 1.2, 1.2);
+      for (const p of land) {
+        project(p, rot);
+        if (pz < -0.15) continue;
+        const d = Math.max(0, pz);
+        landXY[Math.min(LAND_BUCKETS - 1, Math.floor(d * LAND_BUCKETS))].push(cx + px * R, cy - py * R);
+      }
+      for (const p of sea) {
+        project(p, rot);
+        if (pz <= 0) continue;
+        seaXY[Math.min(SEA_BUCKETS - 1, Math.floor(pz * SEA_BUCKETS))].push(cx + px * R, cy - py * R);
+      }
+
+      for (let b = 0; b < SEA_BUCKETS; b++) {
+        const xy = seaXY[b];
+        if (!xy.length) continue;
+        ctx.fillStyle = seaStyle[b];
+        ctx.beginPath();
+        for (let i = 0; i < xy.length; i += 2) ctx.rect(xy[i], xy[i + 1], 1.2, 1.2);
+        ctx.fill();
+      }
+
+      for (let b = 0; b < LAND_BUCKETS; b++) {
+        const xy = landXY[b];
+        if (!xy.length) continue;
+        const { fill, r } = landStyle[b];
+        ctx.fillStyle = fill;
+        ctx.beginPath();
+        for (let i = 0; i < xy.length; i += 2) {
+          ctx.moveTo(xy[i] + r, xy[i + 1]);
+          ctx.arc(xy[i], xy[i + 1], r, 0, Math.PI * 2);
+        }
+        ctx.fill();
+      }
+
+      ctx.lineWidth = 1.4;
+      ctx.strokeStyle = "rgba(94,231,255,0.18)";
+      ctx.beginPath();
+      for (const arc of arcs) {
+        let pen = false;
+        for (const p of arc.pts) {
+          project(p, rot);
+          if (pz < 0) {
+            pen = false;
+            continue;
+          }
+          const x = cx + px * R;
+          const y = cy - py * R;
+          if (pen) ctx.lineTo(x, y);
+          else ctx.moveTo(x, y);
+          pen = true;
         }
       }
+      ctx.stroke();
 
       for (const arc of arcs) {
         const phase = ((t * 0.35 + arc.offset) % 1.6) / 1.2;
-        ctx.lineWidth = 1.4;
-        for (let k = 1; k < arc.path.length; k++) {
-          const f = k / (arc.path.length - 1);
-          const lift = 1 + Math.sin(f * Math.PI) * 0.18;
-          const a = project(arc.path[k - 1][0], arc.path[k - 1][1], rot, lift);
-          const b = project(arc.path[k][0], arc.path[k][1], rot, lift);
-          if (a.z < 0 || b.z < 0) continue;
-          const head = Math.max(0, 1 - Math.abs(f - phase) * 6);
-          const alpha = 0.18 + head * 0.82;
-          ctx.strokeStyle = `rgba(94,231,255,${alpha})`;
-          ctx.beginPath();
-          ctx.moveTo(cx + a.x * R, cy - a.y * R);
-          ctx.lineTo(cx + b.x * R, cy - b.y * R);
-          ctx.stroke();
+        let prevX = 0;
+        let prevY = 0;
+        let prevOk = false;
+        for (let k = 0; k <= SEGMENTS; k++) {
+          project(arc.pts[k], rot);
+          const ok = pz >= 0;
+          const x = cx + px * R;
+          const y = cy - py * R;
+          const head = 1 - Math.abs(k / SEGMENTS - phase) * 6;
+          if (ok && prevOk && head > 0) {
+            ctx.strokeStyle = `rgba(94,231,255,${(head * 0.82).toFixed(3)})`;
+            ctx.beginPath();
+            ctx.moveTo(prevX, prevY);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+          }
+          prevX = x;
+          prevY = y;
+          prevOk = ok;
         }
-        const end = arc.path[arc.path.length - 1];
-        const e = project(end[0], end[1], rot);
-        if (e.z > 0) {
+        project(arc.end, rot);
+        if (pz > 0) {
           ctx.fillStyle = "rgba(94,231,255,0.9)";
           ctx.beginPath();
-          ctx.arc(cx + e.x * R, cy - e.y * R, 2.2, 0, Math.PI * 2);
+          ctx.arc(cx + px * R, cy - py * R, 2.2, 0, Math.PI * 2);
           ctx.fill();
         }
       }
 
-      const hub = project(HUB[0], HUB[1], rot);
-      if (hub.z > 0) {
-        const hx = cx + hub.x * R;
-        const hy = cy - hub.y * R;
+      project(hub, rot);
+      if (pz > 0) {
+        const hx = cx + px * R;
+        const hy = cy - py * R;
         const pulse = (t * 0.8) % 1;
-        ctx.strokeStyle = `rgba(0,186,196,${1 - pulse})`;
+        ctx.strokeStyle = `rgba(0,186,196,${(1 - pulse).toFixed(3)})`;
         ctx.lineWidth = 1.5;
         ctx.beginPath();
         ctx.arc(hx, hy, 4 + pulse * 22, 0, Math.PI * 2);
@@ -196,41 +253,84 @@ export default function Globe({ className = "" }: { className?: string }) {
         ctx.arc(hx, hy, 16, 0, Math.PI * 2);
         ctx.fill();
       }
-
-      const rim = ctx.createRadialGradient(cx, cy, R * 0.86, cx, cy, R * 1.04);
-      rim.addColorStop(0, "rgba(0,186,196,0)");
-      rim.addColorStop(0.75, "rgba(0,186,196,0.22)");
-      rim.addColorStop(1, "rgba(0,186,196,0)");
-      ctx.fillStyle = rim;
-      ctx.beginPath();
-      ctx.arc(cx, cy, R * 1.04, 0, Math.PI * 2);
-      ctx.fill();
-
-      if (running) raf = requestAnimationFrame(draw);
     };
 
+    let raf = 0;
+    let last = 0;
+    let running = false;
+    let started = false;
+    let visible = false;
+    let disposed = false;
+
+    const loop = (now: number) => {
+      if (!running) return;
+      raf = requestAnimationFrame(loop);
+      if (frameGap && now - last < frameGap) return;
+      last = now;
+      draw(now);
+    };
+
+    const sync = () => {
+      const shouldRun = started && visible && !document.hidden;
+      if (shouldRun && !running) {
+        running = true;
+        raf = requestAnimationFrame(loop);
+      } else if (!shouldRun && running) {
+        running = false;
+        cancelAnimationFrame(raf);
+      }
+    };
+
+    const resize = () => {
+      const rect = canvas.getBoundingClientRect();
+      dpr = Math.min(window.devicePixelRatio || 1, maxDpr);
+      w = rect.width;
+      h = rect.height;
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+      if (started) draw(performance.now());
+    };
+    const ro = new ResizeObserver(resize);
     resize();
     ro.observe(canvas);
 
     const io = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && !running) {
-        running = true;
-        cancelAnimationFrame(raf);
-        raf = requestAnimationFrame(draw);
-      } else if (!entry.isIntersecting && running) {
-        running = false;
-        cancelAnimationFrame(raf);
-      }
+      visible = entry.isIntersecting;
+      sync();
     });
     io.observe(canvas);
+    document.addEventListener("visibilitychange", sync);
+
+    // Wait until the page has painted and hydrated so the globe never competes with first render.
+    const begin = () => {
+      if (disposed) return;
+      started = true;
+      draw(performance.now());
+      canvas.style.opacity = "1";
+      sync();
+    };
+    const schedule = () => {
+      if ("requestIdleCallback" in window) window.requestIdleCallback(begin, { timeout: 1500 });
+      else setTimeout(begin, 300);
+    };
+    if (document.readyState === "complete") schedule();
+    else window.addEventListener("load", schedule, { once: true });
 
     return () => {
+      disposed = true;
       running = false;
       cancelAnimationFrame(raf);
+      window.removeEventListener("load", schedule);
+      document.removeEventListener("visibilitychange", sync);
       io.disconnect();
       ro.disconnect();
     };
   }, []);
 
-  return <canvas ref={canvasRef} aria-hidden="true" className={`h-full w-full ${className}`} />;
+  return (
+    <div aria-hidden="true" className={`relative h-full w-full ${className}`}>
+      <div className="absolute inset-[4%] rounded-full bg-[radial-gradient(circle_at_32%_28%,rgba(16,40,101,0.6),rgba(7,16,36,0.9)_68%,rgba(0,186,196,0.2))] shadow-[0_0_70px_-12px_rgba(0,186,196,0.45),inset_0_0_36px_rgba(0,186,196,0.18)]" />
+      <canvas ref={canvasRef} className="relative h-full w-full opacity-0 transition-opacity duration-700" />
+    </div>
+  );
 }

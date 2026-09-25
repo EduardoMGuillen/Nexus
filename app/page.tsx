@@ -14,7 +14,7 @@ import { serviceJsonLd } from "@/lib/jsonld";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Nexus Global | Desarrollo web y soluciones empresariales en Honduras" },
+  title: { absolute: "Nexus Global | Diseño web, CRM a medida y libro de marca en Honduras" },
   alternates: { canonical: SITE_URL },
 };
 

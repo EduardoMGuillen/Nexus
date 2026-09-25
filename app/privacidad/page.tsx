@@ -11,7 +11,7 @@ const SECTIONS = [
   {
     h: "Quiénes somos",
     p: [
-      `Nexus Global (nexusglobalsuministros.com) es un estudio de desarrollo web y soluciones empresariales en Honduras. Contacto: ${SITE_EMAIL} o WhatsApp ${WHATSAPP_DISPLAY}.`,
+      `Nexus Global (nexusglobal.dev) es un estudio de desarrollo web y soluciones empresariales en Honduras. Contacto: ${SITE_EMAIL} o WhatsApp ${WHATSAPP_DISPLAY}.`,
     ],
   },
   {

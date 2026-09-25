@@ -24,7 +24,7 @@ const sora = Sora({
 });
 
 const DESCRIPTION =
-  "Desarrollo web y soluciones empresariales en Honduras. Páginas web desde 150 USD con libro de marca incluido, CRM a medida y marketing digital. Cotiza por WhatsApp.";
+  "Estudio de diseño y desarrollo web en Honduras para toda Centroamérica. Páginas web desde 150 USD con libro de marca incluido, CRM a medida y marketing digital. Cotiza por WhatsApp.";
 
 export const viewport: Viewport = {
   themeColor: "#05080f",
@@ -34,7 +34,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Nexus Global | Desarrollo web y soluciones empresariales en Honduras",
+    default: "Nexus Global | Diseño web, CRM a medida y libro de marca en Honduras",
     template: "%s | Nexus Global",
   },
   description: DESCRIPTION,
@@ -89,9 +89,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es-HN" className={`${inter.variable} ${sora.variable}`} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
-      </head>
       <body className="font-sans">
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={websiteJsonLd()} />
