@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
 import { Send } from "lucide-react";
 import { waLink } from "@/lib/site";
+import { track } from "@/lib/analytics";
 
 const INTERESTS = [
   "Web Esencial ($150)",
@@ -18,6 +19,13 @@ const field =
 
 export default function ContactForm() {
   const [interest, setInterest] = useState(INTERESTS[1]);
+  const started = useRef(false);
+
+  const onStart = () => {
+    if (started.current) return;
+    started.current = true;
+    track("contact_form_start", { form_name: "contacto" });
+  };
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,13 +36,13 @@ export default function ContactForm() {
       `Me interesa: ${interest}`,
       data.get("message") ? `\n${String(data.get("message")).trim()}` : "",
     ].filter(Boolean);
-    const w = window as unknown as { gtag?: (...args: unknown[]) => void };
-    w.gtag?.("event", "generate_lead", { method: "whatsapp_form", interest });
+    track("generate_lead", { form_name: "contacto", method: "whatsapp_form", interest });
+    track("whatsapp_click", { link_location: "formulario", link_text: interest });
     window.open(waLink(lines.join("\n")), "_blank", "noopener,noreferrer");
   };
 
   return (
-    <form onSubmit={onSubmit} className="space-y-4">
+    <form onSubmit={onSubmit} onFocus={onStart} className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
           <span className="mb-1.5 block text-xs font-medium text-slate-400">Tu nombre</span>

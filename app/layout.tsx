@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import RevealObserver from "@/components/RevealObserver";
+import WhatsAppTracker from "@/components/WhatsAppTracker";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/jsonld";
 import { HONDURAS_KEYWORDS, SITE_NAME, SITE_URL } from "@/lib/site";
 
@@ -93,7 +94,7 @@ export default function RootLayout({
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={websiteJsonLd()} />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-7TYVWC1F92" strategy="lazyOnload" />
-        <Script id="google-analytics" strategy="lazyOnload">
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -106,6 +107,7 @@ export default function RootLayout({
         <Footer />
         <WhatsAppFloat />
         <RevealObserver />
+        <WhatsAppTracker />
       </body>
     </html>
   );
