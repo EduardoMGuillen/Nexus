@@ -130,8 +130,8 @@ export default function BlogArticlePage({ params }: Props) {
               >
                 <WhatsAppIcon className="h-4 w-4" /> Escribir por WhatsApp
               </a>
-              <Link href="/#planes" className="btn-ghost">
-                Ver planes
+              <Link href="/paginas-web" className="btn-ghost">
+                Ver páginas web y precios
               </Link>
             </div>
           </div>

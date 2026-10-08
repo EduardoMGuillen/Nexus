@@ -52,6 +52,9 @@
 - [Custom CRM vs generic CRM](https://nexusglobal.dev/blog/crm-a-medida-vs-crm-generico)
 - [Web design in Central America 2026](https://nexusglobal.dev/blog/diseno-web-centroamerica-guia-2026)
 - [What is a brand book](https://nexusglobal.dev/blog/que-es-libro-de-marca)
+- [Google AI Mode and fewer clicks: what businesses should do](https://nexusglobal.dev/blog/google-ai-mode-menos-clics-web-negocio)
+- [WhatsApp Business service message charges since October 1, 2026](https://nexusglobal.dev/blog/whatsapp-business-cobro-mensajes-octubre-2026)
+- [GPT-6 and Intelligent UI for businesses](https://nexusglobal.dev/blog/gpt-6-intelligent-ui-chatgpt-negocios)
 
 ## Selected projects (live)
 - Secaira Soluciones Inmobiliarias (real estate, San Pedro Sula) — https://secairainmobiliaria.com

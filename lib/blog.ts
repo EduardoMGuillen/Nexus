@@ -647,9 +647,191 @@ const POSTS: BlogPost[] = [
       {
         heading: "Cuánto invertir",
         paragraphs: [
-          "Depende del alcance: una landing page profesional puede empezar alrededor de 150 USD y un sitio de varias páginas con SEO local en unos cientos de dólares; tiendas en línea y sistemas cuestan más. En Nexus Global, estudio hondureño que trabaja con toda la región, la Web Esencial cuesta 150 USD y la Web Pro 350 USD, ambas con libro de marca incluido.",
+          "Depende del alcance: una landing page profesional puede empezar alrededor de 150 USD y un sitio de varias páginas con SEO local en unos cientos de dólares; tiendas en línea y sistemas cuestan más. En Nexus Global, estudio hondureño que atiende a toda la región, la Web Esencial cuesta 150 USD y la Web Pro 350 USD, ambas con libro de marca incluido.",
         ],
       },
+    ],
+  },
+  {
+    slug: "gpt-6-intelligent-ui-chatgpt-negocios",
+    title: "GPT-6 llegó a ChatGPT: qué es Intelligent UI y cómo aprovecharlo en tu negocio",
+    description:
+      "OpenAI lanzó GPT-6 en ChatGPT el 7 de octubre de 2026 con Intelligent UI: respuestas con gráficos, botones y mini apps. Qué cambia, quién lo tiene y cómo usarlo en una pyme en Honduras.",
+    date: "2026-10-07",
+    readMinutes: 7,
+    category: "IA y noticias",
+    coverLabel: "GPT-6",
+    accent: "blue",
+    imageAlt: "GPT-6 e Intelligent UI en ChatGPT explicados para negocios",
+    keywords: [
+      "GPT-6",
+      "GPT-6 Intelligent UI",
+      "ChatGPT GPT-6 qué es",
+      "GPT-6 Sol Luna precio",
+      "inteligencia artificial negocios Honduras",
+    ],
+    sections: [
+      {
+        heading: "La respuesta corta",
+        paragraphs: [
+          "El 7 de octubre de 2026 OpenAI empezó a activar GPT-6 en ChatGPT para todo el mundo. La gran novedad se llama Intelligent UI: en lugar de responder casi solo con texto, ChatGPT ahora arma respuestas con gráficos, tablas, botones, formularios y hasta pequeñas herramientas que puedes usar dentro del chat, como una calculadora de ahorro.",
+          "Los usuarios de pago (Plus, Pro, Business y Enterprise) reciben GPT-6 Sol desde el primer día; los usuarios gratuitos y del plan Go reciben GPT-6 Luna un día después. Si no lo ves todavía, es normal: el despliegue es gradual.",
+        ],
+      },
+      {
+        heading: "Qué cambia con Intelligent UI",
+        paragraphs: [
+          "El formato se adapta a la pregunta. Si pides comparar dos proveedores, los verás lado a lado; si pides explicar tus ventas del mes, puede responder con un gráfico interactivo. También puede construir mini apps al momento: un cotizador, una tabla de precios o un simulador de cuotas.",
+          "GPT-6 además puede empezar a responder mientras todavía está “pensando”. Según OpenAI, eso reduce el tiempo de espera en 44% y en sus pruebas internas dio mejores resultados que GPT-5.6 en búsquedas web difíciles. Si prefieres menos elementos visuales, la cantidad de visuales se puede ajustar.",
+        ],
+      },
+      {
+        heading: "La familia GPT-6 y sus precios en la API",
+        paragraphs: [
+          "GPT-6 tiene tres niveles: Astra (el más potente), Sol (equilibrado) y Luna (el más rápido y económico). En la API de OpenAI, Astra cuesta 10 USD por millón de tokens de entrada y 50 USD de salida; Sol, 2 y 10 USD; y Luna, apenas 0.10 y 0.50 USD. OpenAI bajó 50% los precios de Sol y Luna frente a la promoción de GPT-5.6.",
+          "Para ponerlo en perspectiva: con Luna, responder miles de preguntas frecuentes de clientes al mes cuesta centavos. Eso hace viable automatizar tareas que hace un año no tenían sentido económico para una pyme.",
+        ],
+      },
+      {
+        heading: "Cómo usarlo hoy en tu negocio",
+        paragraphs: [
+          "1) Reportes que se entienden: pega tus ventas o gastos del mes (sin datos sensibles de clientes) y pide un resumen con gráficos y las tres decisiones que deberías tomar. 2) Cotizadores rápidos: pide una mini calculadora con tus precios para usarla en llamadas o por WhatsApp. 3) Comparativas: proveedores, planes de internet o maquinaria, lado a lado y con pros y contras.",
+          "4) Contenido para redes: ideas, textos y calendario mensual con el tono de tu marca. Si tienes un libro de marca, compártele el tono de voz y los mensajes clave para que todo suene igual. 5) Capacitación: guías paso a paso para tu equipo sobre cómo atender clientes o usar tu sistema.",
+        ],
+      },
+      {
+        heading: "Lo que significa para tu web",
+        paragraphs: [
+          "Cada vez más clientes van a comparar negocios desde ChatGPT antes de entrar a Google. Para que te recomiende, tu web necesita información clara y verificable: qué haces, en qué ciudades, precios o rangos, proyectos reales y formas de contacto. Es lo que llamamos GEO, optimizar para motores de IA.",
+          "En Nexus Global hacemos páginas web desde 150 USD preparadas para Google y para asistentes de IA, y conectamos modelos como GPT-6 o Claude a formularios, WhatsApp y CRM a medida. Si quieres ver qué puedes automatizar, escríbenos por WhatsApp.",
+        ],
+      },
+    ],
+    sources: [
+      { label: "OpenAI: GPT-6 and Intelligent UI for everyone", url: "https://openai.com/index/gpt-6-for-everyone" },
+      { label: "TechCrunch: ChatGPT is getting a lot more visual", url: "https://techcrunch.com/2026/10/07/chatgpt-is-getting-a-lot-more-visual-with-the-launch-of-a-new-interface/" },
+      { label: "OpenAI: Introducing GPT-6 Sol and Luna", url: "https://openai.com/index/introducing-gpt-6-sol-and-luna/" },
+      { label: "OpenAI API: precios", url: "https://developers.openai.com/api/docs/pricing" },
+    ],
+  },
+  {
+    slug: "whatsapp-business-cobro-mensajes-octubre-2026",
+    title: "WhatsApp Business cobra las respuestas desde el 1 de octubre de 2026: qué cambió y qué hacer",
+    description:
+      "Desde el 1 de octubre de 2026 Meta cobra los mensajes de servicio en la API de WhatsApp Business, con 1,000 gratis al mes por número. A quién afecta, a quién no y cómo evitar sorpresas en Honduras.",
+    date: "2026-10-06",
+    readMinutes: 7,
+    category: "Automatización",
+    coverLabel: "WhatsApp API",
+    accent: "emerald",
+    imageAlt: "Cambios de precios de WhatsApp Business Platform en octubre de 2026",
+    keywords: [
+      "WhatsApp Business cobro mensajes 2026",
+      "WhatsApp API precios Honduras",
+      "mensajes de servicio WhatsApp cobro",
+      "WhatsApp Business octubre 2026",
+      "chatbot WhatsApp Honduras",
+    ],
+    sections: [
+      {
+        heading: "La respuesta corta",
+        paragraphs: [
+          "Si usas la app gratuita de WhatsApp Business en tu celular, no cambia nada: sigue siendo gratis. El cambio es para empresas que usan la API de WhatsApp Business (WhatsApp Business Platform), la que se conecta a chatbots, CRM y sistemas de atención.",
+          "Desde el 1 de octubre de 2026, Meta cobra por cada mensaje de servicio entregado, es decir, las respuestas libres que la empresa envía dentro de la ventana de 24 horas después de que el cliente escribe. Antes eran gratis desde noviembre de 2024. Cada número recibe 1,000 mensajes de servicio gratis al mes.",
+        ],
+      },
+      {
+        heading: "Qué cambió exactamente",
+        paragraphs: [
+          "Mensajes de servicio: ahora se cobran por mensaje, con la misma tarifa que los mensajes de utilidad y autenticación de cada país, y sin descuentos por volumen. Los primeros 1,000 de cada mes por número son gratis; no se acumulan si no los usas.",
+          "Plantillas de utilidad dentro de la ventana de 24 horas (confirmaciones de pedido, recordatorios, estados de envío): también empezaron a cobrarse; eran gratis desde julio de 2025. Además, desde el 1 de agosto de 2026 los mensajes generados por el agente de IA de Meta (Meta Business Agent) se cobran por uso de tokens.",
+        ],
+      },
+      {
+        heading: "Lo que sigue igual",
+        paragraphs: [
+          "Los mensajes que te mandan tus clientes no se cobran. La ventana gratuita que abre un anuncio de clic a WhatsApp se mantiene: si respondes en menos de 24 horas, los mensajes de ese periodo de 72 horas no tienen costo. Y las reglas de cuándo puedes escribir no cambian: fuera de la ventana de 24 horas solo puedes enviar plantillas aprobadas.",
+          "Honduras está en el grupo de precios “Resto de Latinoamérica” de Meta, junto con Guatemala, El Salvador, Nicaragua, Costa Rica y Panamá. Las tarifas se publican en la documentación de Meta y pueden actualizarse cada trimestre.",
+        ],
+      },
+      {
+        heading: "Cuidado: sin método de pago se detienen los mensajes",
+        paragraphs: [
+          "Meta avisó que las cuentas conectadas por API sin un método de pago registrado al 30 de septiembre de 2026 dejarían de entregar mensajes de servicio desde el 1 de octubre. Si tu chatbot o CRM “dejó de responder” estos días, revisa primero eso en tu cuenta de WhatsApp Business o con tu proveedor.",
+        ],
+      },
+      {
+        heading: "Qué hacer si tienes un negocio en Honduras",
+        paragraphs: [
+          "1) Si solo usas la app en el celular, sigue igual. 2) Si usas API, revisa cuántas respuestas envías al mes: muchos negocios pequeños quedan dentro de los 1,000 gratis. 3) Evita mensajes innecesarios: agrupa la información en una sola respuesta y usa menús o botones en lugar de cinco mensajes cortos.",
+          "4) Lleva a tu web lo que se repite: precios, horarios, catálogo y preguntas frecuentes. Una buena página web con botones de WhatsApp que ya incluyen el producto o servicio reduce las idas y vueltas en el chat. 5) Mide: conecta WhatsApp a tu CRM para saber qué conversaciones terminan en venta.",
+          "En Nexus Global conectamos WhatsApp a páginas web y CRM a medida para que cada conversación llegue ordenada y con contexto. Si quieres revisar tu caso, escríbenos.",
+        ],
+      },
+    ],
+    sources: [
+      { label: "Meta: Pricing on the WhatsApp Business Platform", url: "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing" },
+      { label: "Meta: Upcoming pricing updates for service and utility messages", url: "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages" },
+      { label: "The Times of India: WhatsApp Business payment method deadline", url: "https://timesofindia.indiatimes.com/technology/tech-news/starting-october-1-whatsapp-to-stop-delivering-messages-from-these-whatsapp-business-accounts/articleshow/134606597.cms" },
+    ],
+  },
+  {
+    slug: "google-ai-mode-menos-clics-web-negocio",
+    title: "Google AI Mode y los resúmenes con IA reducen los clics: qué hacer con la web de tu negocio",
+    description:
+      "Un estudio de 2026 encontró que Google AI Mode reduce 18.8 puntos los clics a sitios web. Qué significa para negocios en Honduras y Centroamérica y cómo adaptar tu web para Google y la IA.",
+    date: "2026-10-07",
+    readMinutes: 8,
+    category: "SEO y GEO",
+    coverLabel: "AI Mode",
+    accent: "amber",
+    imageAlt: "Google AI Mode y AI Overviews y su efecto en el tráfico web",
+    keywords: [
+      "Google AI Mode",
+      "AI Overviews tráfico",
+      "SEO 2026 Honduras",
+      "GEO optimización para IA",
+      "posicionamiento web Honduras",
+    ],
+    sections: [
+      {
+        heading: "La respuesta corta",
+        paragraphs: [
+          "Google responde cada vez más preguntas directamente en la página de resultados con IA, así que hay menos clics para las páginas que solo explican cosas generales. Las páginas que ayudan a decidir y comprar (precios, servicios por ciudad, proyectos reales, reservas y contacto) siguen recibiendo clics. La estrategia ya no es solo “salir primero”, sino ser la fuente que Google y la IA citan y la página a la que el cliente quiere entrar.",
+        ],
+      },
+      {
+        heading: "Lo que dicen los datos",
+        paragraphs: [
+          "En agosto de 2026, investigadores de la Universidad de Pensilvania y Northeastern publicaron el primer experimento controlado sobre el tema. Cuando a los usuarios se les pasó a Google AI Mode, la proporción de búsquedas que terminaba en un clic a otro sitio bajó 18.8 puntos porcentuales. Y al quitar las funciones de IA que ya aparecen en Google normal, los clics a sitios web subieron 8.8 puntos.",
+          "Para la mayoría de usuarios AI Mode todavía es opcional, pero los resúmenes con IA (AI Overviews) ya aparecen en muchas búsquedas. Por eso el impacto se nota sobre todo en contenido informativo, no tanto en búsquedas de alguien que ya quiere contratar.",
+        ],
+      },
+      {
+        heading: "Qué páginas resisten mejor",
+        paragraphs: [
+          "Las que tienen información que un resumen no reemplaza: precios claros, comparativas específicas, casos y proyectos reales con enlaces, detalles locales (ciudades, horarios, mapa), herramientas como cotizadores y formas directas de contacto. Una página de “qué es una página web” compite con la IA; una página de “páginas web en San Pedro Sula desde 150 USD con ejemplos reales” le da al cliente una razón para entrar.",
+        ],
+      },
+      {
+        heading: "Cómo medirlo en Search Console",
+        paragraphs: [
+          "Google lanzó en junio de 2026 un informe de rendimiento de funciones de IA generativa en Search Console y desde el 31 de agosto está disponible para todos los sitios. Muestra cuántas veces tus páginas aparecen en AI Overviews y AI Mode. Úsalo junto con el informe normal de clics.",
+          "No midas solo visitas: cuenta también llamadas, mensajes de WhatsApp, solicitudes de cotización, acciones en tu perfil de Google Business y búsquedas de tu marca. Pregunta a cada cliente nuevo cómo te encontró; cada vez más van a responder “me lo recomendó ChatGPT” o “salió en Google”.",
+        ],
+      },
+      {
+        heading: "Qué hacer con la web de tu negocio",
+        paragraphs: [
+          "1) Ten una página por servicio con precios o rangos y preguntas frecuentes reales. 2) Menciona tus ciudades y muestra proyectos o clientes verificables. 3) Agrega datos estructurados (schema) para que Google entienda quién eres, qué ofreces y dónde. 4) Mantén actualizado tu perfil de Google Business y pide reseñas. 5) Publica contenido con información propia: tus precios, tu experiencia y tus resultados, no textos genéricos.",
+          "Esto es lo que llamamos SEO y GEO: optimizar para Google y para los motores de IA al mismo tiempo. En Nexus Global cada web sale con datos estructurados, SEO básico y estructura pensada para que te encuentren y te citen. La Web Pro incluye además SEO local y tu perfil de Google Business.",
+        ],
+      },
+    ],
+    sources: [
+      { label: "Intelligency Group: Google AI Mode cut clicks by nearly a fifth", url: "https://www.intelligencygroup.com/blog/google-ai-mode-cut-clicks-by-nearly-a-fifth-in-the-first-controlled-study/" },
+      { label: "Oppira: Google AI Overviews and small business traffic", url: "https://oppira.com/guides/ai-overviews-small-brands/" },
+      { label: "Verticality: How to optimize for AI Overviews and AI Mode", url: "https://www.verticality.co/blog/how-to-optimize-for-google-ai-overviews-and-ai-mode/" },
     ],
   },
 ];

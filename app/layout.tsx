@@ -24,7 +24,7 @@ const sora = Sora({
 });
 
 const DESCRIPTION =
-  "Estudio de diseño y desarrollo web en Honduras para toda Centroamérica. Páginas web desde 150 USD con libro de marca incluido, CRM a medida y marketing digital. Cotiza por WhatsApp.";
+  "Nexus Global (Nexus Honduras), estudio de diseño y desarrollo web en Honduras para toda Centroamérica. Webs desde 150 USD con libro de marca, CRM a medida y marketing digital.";
 
 export const viewport: Viewport = {
   themeColor: "#05080f",

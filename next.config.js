@@ -10,7 +10,7 @@ const nextConfig = {
   async redirects() {
     return [
       { source: "/crear-pagina-web-honduras", destination: "/paginas-web", permanent: true },
-      { source: "/nexus-honduras", destination: "/nosotros", permanent: true },
+      { source: "/nexus-honduras", destination: "/blog/que-es-nexus-honduras", permanent: true },
       { source: "/ecommerce", destination: "/paginas-web", permanent: true },
       { source: "/dashboard", destination: "/crm", permanent: true },
       { source: "/mivisita", destination: "/clientes", permanent: true },
