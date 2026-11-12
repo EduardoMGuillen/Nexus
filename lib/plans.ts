@@ -82,8 +82,24 @@ export const PLANS: Plan[] = [
   },
 ];
 
+export const MAINTENANCE = {
+  name: "Hosting + Mantenimiento",
+  price: "$20",
+  priceNote: "al mes · opcional",
+  short: "+ $20 al mes de hosting y mantenimiento (opcional)",
+  tagline: "Tu web siempre en línea, segura y al día, sin que tengas que tocar nada.",
+  features: [
+    "Hosting rápido y seguro",
+    "Certificado de seguridad (SSL)",
+    "Hasta 2 cambios de contenido al mes: textos, fotos, precios u horarios",
+    "Soporte directo por WhatsApp",
+  ],
+  cta: "Quiero el plan mensual",
+  whatsappMessage:
+    "Hola Nexus, me interesa el plan de hosting y mantenimiento de $20 al mes. ¿Me dan más información?",
+};
+
 export const PLAN_EXTRAS = [
-  "Dominio y hosting: te ayudamos a comprarlos y configurarlos",
-  "Plan mensual opcional de hosting + mantenimiento",
+  "Dominio a tu nombre: te ayudamos a comprarlo y configurarlo",
   "Fotos, textos y contenido: podemos crearlos contigo",
 ];

@@ -1,7 +1,7 @@
 import { BookOpen, Check, Clock, Plus } from "lucide-react";
 import { SectionHeader } from "../ui";
 import { WhatsAppIcon } from "../icons";
-import { PLANS, PLAN_EXTRAS } from "@/lib/plans";
+import { MAINTENANCE, PLANS, PLAN_EXTRAS } from "@/lib/plans";
 import { waLink } from "@/lib/site";
 
 export default function Plans({ showHeader = true }: { showHeader?: boolean }) {
@@ -17,7 +17,7 @@ export default function Plans({ showHeader = true }: { showHeader?: boolean }) {
                 Una web profesional <span className="text-glow">al alcance de tu negocio</span>
               </>
             }
-            text="Precios claros, pago único y sin letras pequeñas. Todos los planes incluyen tu libro de marca."
+            text="Precios claros, pago único y sin letras pequeñas. Todos los planes incluyen tu libro de marca. Hosting y mantenimiento opcional por $20 al mes."
           />
         )}
 
@@ -49,6 +49,9 @@ export default function Plans({ showHeader = true }: { showHeader?: boolean }) {
                 </span>
                 <span className="pb-1.5 text-sm text-slate-400">{plan.priceNote}</span>
               </div>
+              {plan.price.startsWith("$") && (
+                <p className="mt-2 text-xs text-primary-200/90">{MAINTENANCE.short}</p>
+              )}
               <p className="mt-4 text-[15px] leading-relaxed text-slate-300">{plan.tagline}</p>
               <p className="mt-2 text-xs text-slate-500">Ideal para: {plan.idealFor}</p>
 
@@ -84,7 +87,45 @@ export default function Plans({ showHeader = true }: { showHeader?: boolean }) {
           ))}
         </div>
 
-        <div data-reveal className="mx-auto mt-12 flex max-w-4xl flex-col gap-3 rounded-2xl border border-white/[0.07] bg-white/[0.02] p-5 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-8">
+        <div
+          id="mantenimiento"
+          data-reveal
+          className="card mx-auto mt-12 flex max-w-4xl scroll-mt-24 flex-col gap-6 rounded-3xl p-7 sm:p-8 md:flex-row md:items-center md:gap-10"
+        >
+          <div className="md:w-[42%]">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-300">{MAINTENANCE.name}</p>
+            <div className="mt-4 flex flex-wrap items-end gap-x-2 gap-y-1">
+              <span className="whitespace-nowrap font-display text-5xl font-bold tracking-tight text-white">
+                {MAINTENANCE.price}
+              </span>
+              <span className="pb-1.5 text-sm text-slate-400">{MAINTENANCE.priceNote}</span>
+            </div>
+            <p className="mt-4 text-[15px] leading-relaxed text-slate-300">{MAINTENANCE.tagline}</p>
+          </div>
+          <div className="flex-1">
+            <ul className="space-y-3">
+              {MAINTENANCE.features.map((f) => (
+                <li key={f} className="flex items-start gap-3 text-sm text-slate-300">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary-500/15">
+                    <Check className="h-3 w-3 text-primary-300" />
+                  </span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <a
+              href={waLink(MAINTENANCE.whatsappMessage)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ghost mt-6 w-full sm:w-auto"
+            >
+              <WhatsAppIcon className="h-4 w-4" />
+              {MAINTENANCE.cta}
+            </a>
+          </div>
+        </div>
+
+        <div data-reveal className="mx-auto mt-6 flex max-w-4xl flex-col gap-3 rounded-2xl border border-white/[0.07] bg-white/[0.02] p-5 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-8">
           {PLAN_EXTRAS.map((e) => (
             <p key={e} className="flex items-center gap-2 text-sm text-slate-400">
               <Plus className="h-4 w-4 text-primary-400" /> {e}

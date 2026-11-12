@@ -38,7 +38,7 @@ const CITIES = ["Tegucigalpa", "San Pedro Sula", "La Ceiba", "El Progreso", "Cho
 const FAQS = [
   {
     q: "¿Cuánto cuesta una página web en Honduras?",
-    a: "Depende del alcance. Una landing page profesional cuesta desde 150 USD y un sitio de varias páginas con catálogo y SEO local desde 350 USD. Tiendas en línea, reservas o sistemas se cotizan según lo que necesites con Tu Web, Tu Presupuesto. Con Nexus es pago único y el libro de marca va incluido.",
+    a: "Depende del alcance. Una landing page profesional cuesta desde 150 USD y un sitio de varias páginas con catálogo y SEO local desde 350 USD. Tiendas en línea, reservas o sistemas se cotizan según lo que necesites con Tu Web, Tu Presupuesto. Con Nexus es pago único y el libro de marca va incluido. El hosting y mantenimiento es un plan opcional de 20 USD al mes.",
   },
   {
     q: "¿Qué incluye una página web profesional?",
@@ -54,7 +54,7 @@ const FAQS = [
   },
   {
     q: "¿El dominio .hn o .com y el hosting están incluidos?",
-    a: "Se pagan aparte porque quedan a tu nombre, no al nuestro. Te ayudamos a comprarlos y configurarlos, y tenemos un plan mensual opcional de hosting y mantenimiento.",
+    a: "El dominio se paga aparte porque queda a tu nombre, no al nuestro, y te ayudamos a comprarlo y configurarlo. El hosting va en un plan mensual opcional de 20 USD que incluye hosting, certificado de seguridad (SSL), hasta 2 cambios de contenido al mes y soporte por WhatsApp.",
   },
   {
     q: "¿Mi página web va a salir en Google?",

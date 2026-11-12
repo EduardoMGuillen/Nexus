@@ -324,7 +324,7 @@ const POSTS: BlogPost[] = [
       {
         heading: "Dominio y hosting: el costo que la gente olvida",
         paragraphs: [
-          "El dominio (.com o .hn) y el hosting se pagan aparte porque quedan a tu nombre. Te ayudamos a comprarlos y configurarlos. Un sitio caído o sin certificado de seguridad pierde confianza y posiciones en Google, por eso ofrecemos un plan mensual opcional de hosting y mantenimiento.",
+          "El dominio (.com o .hn) se paga aparte porque queda a tu nombre. Te ayudamos a comprarlo y configurarlo. Un sitio caído o sin certificado de seguridad pierde confianza y posiciones en Google, por eso ofrecemos un plan mensual opcional de hosting y mantenimiento por 20 USD al mes: incluye hosting, certificado de seguridad (SSL), hasta 2 cambios de contenido al mes y soporte por WhatsApp.",
         ],
       },
     ],

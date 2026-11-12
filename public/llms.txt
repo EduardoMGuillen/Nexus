@@ -33,7 +33,7 @@
 - Web Esencial — 150 USD: one-page landing (up to 5 sections), WhatsApp integration, map and socials, basic SEO, essential brand book (logo, palette, fonts), all revision rounds needed. Delivery 5–7 days.
 - Web Pro — 350 USD: up to 6 pages, product/service catalog, local SEO + Google Business Profile, blog or gallery, integrations, Google Analytics, complete brand book, all revision rounds needed. Delivery 10–15 days.
 - Tu Web, Tu Presupuesto — custom: the client sets the budget; online stores, bookings, payments, CRM, dashboards, redesigns, automations. Scope and price agreed in writing.
-- Optional: monthly hosting + maintenance. Domain and hosting are paid separately and owned by the client.
+- Optional hosting + maintenance plan: 20 USD per month (hosting, SSL certificate, up to 2 content changes per month, WhatsApp support). The domain is paid separately and owned by the client.
 
 ## Key pages
 - [Home and pricing](https://nexusglobal.dev/#planes)

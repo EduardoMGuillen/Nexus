@@ -184,7 +184,7 @@ export function serviceJsonLd() {
 export const homeFaqs = [
   {
     q: "¿Cuánto cuesta una página web en Honduras con Nexus?",
-    a: "La Web Esencial cuesta 150 USD (landing page) y la Web Pro 350 USD (hasta 6 páginas con SEO local). Si necesitas algo distinto, con Tu Web, Tu Presupuesto nos dices cuánto quieres invertir y armamos el mejor alcance posible. Todos los planes son pago único e incluyen libro de marca.",
+    a: "La Web Esencial cuesta 150 USD (landing page) y la Web Pro 350 USD (hasta 6 páginas con SEO local). Si necesitas algo distinto, con Tu Web, Tu Presupuesto nos dices cuánto quieres invertir y armamos el mejor alcance posible. Todos los planes son pago único e incluyen libro de marca. El hosting y mantenimiento es un plan opcional de 20 USD al mes.",
   },
   {
     q: "¿Qué es el libro de marca que incluyen?",
@@ -196,7 +196,7 @@ export const homeFaqs = [
   },
   {
     q: "¿El dominio y el hosting están incluidos?",
-    a: "El dominio (.com o .hn) y el hosting se pagan aparte porque quedan a tu nombre. Te ayudamos a comprarlos y configurarlos, y ofrecemos un plan mensual opcional de hosting y mantenimiento.",
+    a: "El dominio (.com o .hn) se paga aparte porque queda a tu nombre, y te ayudamos a comprarlo y configurarlo. El hosting va en un plan mensual opcional de 20 USD que incluye hosting, certificado de seguridad (SSL), hasta 2 cambios de contenido al mes y soporte por WhatsApp.",
   },
   {
     q: "¿Trabajan con empresas del resto de Centroamérica?",
