@@ -81,6 +81,15 @@ export const WORK: WorkItem[] = [
     summary: "App de seguridad residencial: QR para visitas, portería, reservas y reportes PDF.",
     tags: ["PWA", "SaaS", "Sistemas"],
   },
+  {
+    name: "Clinara",
+    url: "https://www.clinara.app",
+    image: "/work/clinara.jpg",
+    sector: "Software médico",
+    location: "Honduras y Latinoamérica",
+    summary: "Sistema para clínicas y consultorios: agenda, expediente, recetas, hospitalización y recordatorios por WhatsApp.",
+    tags: ["Agenda", "Expediente", "WhatsApp"],
+  },
 ];
 
 export const DEMOS = [

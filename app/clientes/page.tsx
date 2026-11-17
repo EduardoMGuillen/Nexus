@@ -13,7 +13,7 @@ import { SITE_URL, waLink } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Clientes y proyectos",
   description:
-    "Proyectos reales de Nexus Global: Secaira Inmobiliaria, RoseLune, La Gran Casa Blanca, Arte Antone, Haze Puff, Stellare, Marta Martínez Estética, MiVisita y más.",
+    "Proyectos reales de Nexus Global: Secaira Inmobiliaria, RoseLune, La Gran Casa Blanca, Arte Antone, Haze Puff, Stellare, Marta Martínez Estética, MiVisita, Clinara y más.",
   alternates: { canonical: `${SITE_URL}/clientes` },
   openGraph: {
     title: "Clientes y proyectos | Nexus Global",

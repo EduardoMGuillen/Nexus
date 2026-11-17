@@ -78,6 +78,13 @@ export const CLIENTS: Client[] = [
     category: "platforms",
   },
   {
+    name: "Clinara",
+    domain: "clinara.app",
+    url: "https://www.clinara.app",
+    logo: "/partners/clinara.png",
+    category: "platforms",
+  },
+  {
     name: "Mi Barbería",
     domain: "mibarberia.xyz",
     url: "https://mibarberia.xyz",

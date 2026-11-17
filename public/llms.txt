@@ -47,6 +47,7 @@
 - [Blog: AI news and business guides](https://nexusglobal.dev/blog)
 
 ## Guides
+- [Claude Fable 5.2 for businesses](https://nexusglobal.dev/blog/claude-fable-5-2-que-es-negocios)
 - [How to choose a web design agency in Honduras](https://nexusglobal.dev/blog/como-elegir-agencia-diseno-web-honduras)
 - [How much a website costs in Honduras](https://nexusglobal.dev/blog/cuanto-cuesta-pagina-web-honduras)
 - [Custom CRM vs generic CRM](https://nexusglobal.dev/blog/crm-a-medida-vs-crm-generico)
@@ -66,3 +67,4 @@
 - Bravex Trade Services (United States) — https://bravextradeservices.com
 - Marta Martínez Estética (Zaragoza, Spain) — https://www.martamartinezestetica.com
 - MiVisita, residential security app — https://mivisita.app
+- Clinara, clinic management software — https://www.clinara.app

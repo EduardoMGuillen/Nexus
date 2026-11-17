@@ -48,7 +48,7 @@ const AVATARS = [
 ];
 
 const STATS = [
-  { value: "14+", label: "Proyectos publicados" },
+  { value: "15+", label: "Proyectos publicados" },
   { value: "$150", label: "Precio de entrada" },
   { value: "100%", label: "Webs con libro de marca" },
   { value: "7", label: "Industrias atendidas" },

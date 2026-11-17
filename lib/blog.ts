@@ -18,6 +18,66 @@ export type BlogPost = {
 
 const POSTS: BlogPost[] = [
   {
+    slug: "claude-fable-5-2-que-es-negocios",
+    title: "Claude Fable 5.2: qué es, cuánto cuesta y cuándo le conviene a tu negocio",
+    description:
+      "Anthropic lanzó Claude Fable 5.2 el 9 de noviembre de 2026: hasta 30% más rápido que Fable 5.1 y más barato. Qué hace, en qué se diferencia de Opus 5.5 y cuándo usarlo en una pyme.",
+    date: "2026-11-16",
+    readMinutes: 7,
+    category: "IA y noticias",
+    coverLabel: "Fable 5.2",
+    accent: "emerald",
+    imageAlt: "Claude Fable 5.2 de Anthropic explicado para negocios en Honduras",
+    keywords: [
+      "Claude Fable 5.2",
+      "Anthropic Fable 5.2 precio",
+      "Fable 5.2 vs Opus 5.5",
+      "inteligencia artificial Honduras 2026",
+    ],
+    sections: [
+      {
+        heading: "La noticia en 30 segundos",
+        paragraphs: [
+          "El 9 de noviembre de 2026 Anthropic presentó Claude Fable 5.2, su modelo para el trabajo más difícil: razonar durante mucho tiempo, programar y terminar tareas de varias horas sin que alguien lo guíe en cada paso. Según la empresa, responde hasta 30% más rápido que Fable 5.1 y cuesta menos.",
+          "No reemplaza al modelo del día a día. Anthropic recomienda empezar con Claude Opus 5.5 para la mayoría de tareas de redacción, análisis y programación, y subir a Fable 5.2 solo cuando el trabajo es largo, ambiguo o técnico.",
+        ],
+      },
+      {
+        heading: "Precio, velocidad y dónde está",
+        paragraphs: [
+          "En la API cuesta 8 USD por millón de tokens de entrada y 40 USD por millón de salida. Fable 5.1 costaba 10 y 50 USD, así que la baja es de 20%. Un millón de tokens equivale a cientos de miles de palabras: un historial de ventas, un manual o muchas conversaciones con clientes.",
+          "Tiene memoria de 1 millón de tokens y puede escribir respuestas de hasta 128,000 tokens. El “pensamiento” adaptativo viene siempre activado: el modelo decide cuánto razonar según la dificultad. Hay un modo rápido opcional, hasta 2.5 veces más veloz, a 16 USD de entrada y 80 USD de salida por millón de tokens.",
+          "Está disponible como claude-fable-5-2 en la API de Claude, Amazon Bedrock, Google Cloud y Microsoft Foundry, y también en los planes de pago de la app de Claude.",
+        ],
+      },
+      {
+        heading: "Fable, Mythos y Opus: no son lo mismo",
+        paragraphs: [
+          "Fable 5.2 y Mythos 5.2 son el mismo modelo. Fable trae salvaguardas de ciberseguridad y biología y está abierto a todo el mundo. Mythos 5.2, sin esas restricciones, solo se entrega a organizaciones verificadas en los programas de ciencias de la vida y de ciberseguridad de Anthropic. Para un negocio normal, el que importa es Fable.",
+          "Anthropic lo describe como un escalón por encima de Opus 5.5 en la mayoría de sus pruebas. En su evaluación de trabajo remoto (Remote Labor Index), Fable 5.2 con el nivel de esfuerzo alto llegó a 41.3%, frente a 21.3% de Opus 5.5. Aun así, la propia empresa dice que Opus 5.5 sigue siendo el modelo para el trabajo diario, y que Fable puede actuar como asesor de modelos más pequeños o como coordinador que les reparte las tareas simples.",
+        ],
+      },
+      {
+        heading: "Qué significa para un negocio en Honduras",
+        paragraphs: [
+          "Si usas la IA para responder WhatsApp, redactar publicaciones o resumir una cotización, Fable 5.2 es más de lo que necesitas y más caro. Opus 5.5, Sonnet o Haiku resuelven eso por menos.",
+          "Sí conviene cuando la tarea dura horas y tiene muchas piezas: armar un informe a partir de meses de ventas, revisar un contrato largo y dejar un resumen con pendientes, o construir un asistente que consulte tu inventario, tu CRM y tus precios antes de contestar. También cuando un modelo más pequeño se atasca y necesita que uno más capaz revise el resultado.",
+        ],
+      },
+      {
+        heading: "Cómo probarlo sin pagar de más",
+        paragraphs: [
+          "1) Elige una sola tarea que hoy te tome una tarde, no un mensaje suelto. 2) Pruébala en la app de Claude con documentos reales de tu negocio y compara el resultado con Opus 5.5. 3) Si la diferencia se nota, automatízala: un formulario de tu web, WhatsApp o el CRM pueden llamar al modelo solo en los casos difíciles.",
+          "En Nexus conectamos estos modelos a páginas web y sistemas a medida: asistentes que responden con la información de tu negocio, formularios que califican leads y paneles que resumen lo importante. Si quieres ver qué se puede automatizar en tu caso, escríbenos por WhatsApp.",
+        ],
+      },
+    ],
+    sources: [
+      { label: "Anthropic: Claude Fable 5.2 y Mythos 5.2", url: "https://www.anthropic.com/claude-fable-and-mythos-5-2" },
+      { label: "Documentación de Claude Fable 5.2", url: "https://platform.claude.com/docs/en/models/fable-5-2/overview" },
+    ],
+  },
+  {
     slug: "claude-opus-5-5-que-es-negocios",
     title: "Claude Opus 5.5: qué es, qué cambia y cómo lo puede usar tu negocio",
     description:

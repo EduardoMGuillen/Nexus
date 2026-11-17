@@ -27,7 +27,7 @@ const VALUES = [
 ];
 
 const NUMBERS = [
-  { value: "14+", label: "Proyectos publicados" },
+  { value: "15+", label: "Proyectos publicados" },
   { value: "7", label: "Industrias" },
   { value: "3", label: "Países con clientes" },
   { value: "$150", label: "Precio de entrada" },
